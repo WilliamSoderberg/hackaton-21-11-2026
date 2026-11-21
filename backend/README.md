@@ -34,4 +34,4 @@ ANTHROPIC_API_KEY=sk-ant-... cargo run   # listens on :8080 (set PORT to change)
 cargo test
 ```
 
-The frontend proxies requests through its own `/api/classify` route, which calls `http://localhost:8080` server-side by default; set `BACKEND_URL` (runtime, server-only) on the frontend to point it elsewhere. The backend does not need to be reachable from the browser.
+The frontend calls the backend from a Server Action (`frontend/app/lib/classify.ts`), which uses `http://localhost:8080` server-side by default; set `BACKEND_URL` (runtime, server-only) on the frontend to point it elsewhere. The backend does not need to be reachable from the browser.

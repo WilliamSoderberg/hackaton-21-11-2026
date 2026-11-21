@@ -94,20 +94,5 @@ export const emptyClassification: Classification = {
 };
 
 // All categorisation happens in the Rust backend (backend/src); the frontend
-// only sends the transcript and displays the result. Requests go to the
-// Next.js route handler (app/api/classify/route.ts), which forwards them to
-// the backend server-side.
-
-export async function fetchClassification(
-  lines: TranscriptLine[],
-  signal?: AbortSignal,
-): Promise<Classification> {
-  const res = await fetch("/api/classify", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ lines }),
-    signal,
-  });
-  if (!res.ok) throw new Error(`Backend returned ${res.status}`);
-  return res.json();
-}
+// only sends the transcript and displays the result, via the classifyTranscript
+// Server Action (app/lib/classify.ts).

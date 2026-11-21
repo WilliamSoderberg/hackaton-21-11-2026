@@ -1,0 +1,23 @@
+# Runs the frontend and backend on a shared network. The browser only talks to
+# the frontend (port 3000); the frontend reaches the backend at
+# http://backend:8080 via its /api/classify proxy route.
+services:
+  backend:
+    build: ./backend
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      CLAUDE_MODEL: ${CLAUDE_MODEL:-claude-opus-5-5}
+      RUST_LOG: ${RUST_LOG:-info,tower_http=info}
+    expose:
+      - "8080"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    environment:
+      BACKEND_URL: http://backend:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped

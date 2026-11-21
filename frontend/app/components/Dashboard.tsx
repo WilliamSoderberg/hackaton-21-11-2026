@@ -7,9 +7,9 @@ import {
   type TranscriptLine,
   type Urgency,
   emptyClassification,
-  fetchClassification,
   scenarios,
 } from "../lib/calls";
+import { classifyTranscript } from "../lib/classify";
 import { downloadCallSummary } from "../lib/summaryPdf";
 import { isSpeechRecognitionSupported, useSpeechRecognition } from "../lib/useSpeechRecognition";
 
@@ -64,7 +64,7 @@ export default function Dashboard() {
     if (lines.length === 0) return;
     const seq = ++requestSeq.current;
     const lineCount = lines.length;
-    fetchClassification(lines)
+    classifyTranscript(lines)
       .then((value) => {
         if (seq < appliedSeq.current) return;
         appliedSeq.current = seq;
