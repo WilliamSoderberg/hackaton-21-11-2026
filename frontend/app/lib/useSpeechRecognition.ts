@@ -16,6 +16,7 @@ type SpeechRecognitionLike = {
   onerror: ((event: { error: string }) => void) | null;
   onend: (() => void) | null;
   start(): void;
+  stop(): void;
   abort(): void;
 };
 type SpeechRecognitionCtor = new () => SpeechRecognitionLike;
@@ -99,7 +100,9 @@ export function useSpeechRecognition({
     recognition.start();
     return () => {
       stopped = true;
-      recognition.abort();
+      // stop(), not abort(): the phrase still being spoken is delivered as a
+      // final result, so muting right after talking doesn't lose the last words.
+      recognition.stop();
     };
   }, [listening, lang]);
 

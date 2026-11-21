@@ -117,6 +117,29 @@ export type CallState = {
   // Latest backend assessment, tagged with how many caller lines it covers.
   assessment: { callerLineCount: number; value: Classification } | null;
   backendError: string | null;
+  // Whose microphone is on in a live call. Only one side talks at a time, so a
+  // mic in the same room never transcribes the other person's voice.
+  floor: Role | null;
   participants: Record<Role, number>;
   serverNow: number; // server clock when this state was sent
+};
+
+// One row of the call log the backend keeps in SQLite (backend/src/calls.rs).
+// Urgency and ambulance stay null until the first assessment arrives.
+export type CallRecord = {
+  id: number;
+  sourceId: string;
+  label: string;
+  location: string;
+  status: "active" | "ended";
+  startedAt: number; // ms
+  endedAt: number | null;
+  urgency: Urgency | null;
+  urgencyScore: number | null;
+  ambulance: boolean | null;
+  physical: number | null;
+  mental: number | null;
+  indicators: string[];
+  transcript: TranscriptLine[];
+  updatedAt: number;
 };

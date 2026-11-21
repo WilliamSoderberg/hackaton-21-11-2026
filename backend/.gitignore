@@ -25,3 +25,8 @@ rustc-ice-*.txt
 
 # local env files
 .env
+
+# local call database
+*.db
+*.db-shm
+*.db-wal

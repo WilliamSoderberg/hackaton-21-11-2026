@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/", label: "Dispatcher" },
   { href: "/crew", label: "Ambulance crew" },
+  { href: "/calls", label: "Ongoing calls" },
 ];
 
 export default function AppNav() {

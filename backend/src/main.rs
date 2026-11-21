@@ -8,6 +8,7 @@
 //! With `ANTHROPIC_API_KEY` set both models are Claude; otherwise (or if a
 //! Claude call fails) the offline keyword models answer instead.
 
+mod calls;
 mod claude;
 mod keyword;
 mod types;
@@ -18,12 +19,13 @@ use axum::{
     Json, Router,
     extract::State,
     http::StatusCode,
-    routing::{get, post},
+    routing::{get, patch, post},
 };
 use tower_http::{cors::CorsLayer, trace::TraceLayer};
 use tracing::{info, warn};
 
 use crate::{
+    calls::CallDb,
     claude::ClaudeClient,
     types::{
         Classification, ClassifyRequest, ModelSource, Sources, Speaker, TranscriptLine, Triage,
@@ -37,6 +39,7 @@ const MAX_CHARS: usize = 50_000;
 
 struct AppState {
     claude: Option<ClaudeClient>,
+    calls: CallDb,
 }
 
 #[tokio::main]
@@ -57,7 +60,11 @@ async fn main() {
         None => warn!("ANTHROPIC_API_KEY not set: using offline keyword models"),
     }
 
-    let app = router(Arc::new(AppState { claude }));
+    let db_path = std::env::var("CALLS_DB").unwrap_or_else(|_| "calls.db".into());
+    let calls = CallDb::open(&db_path).expect("open call database");
+    info!("storing calls in SQLite at {db_path}");
+
+    let app = router(Arc::new(AppState { claude, calls }));
     let port: u16 = std::env::var("PORT")
         .ok()
         .and_then(|p| p.parse().ok())
@@ -74,6 +81,12 @@ fn router(state: Arc<AppState>) -> Router {
     Router::new()
         .route("/health", get(|| async { "ok" }))
         .route("/api/classify", post(classify_handler))
+        .route(
+            "/api/calls",
+            get(calls::list_handler).post(calls::create_handler),
+        )
+        .route("/api/calls/end-active", post(calls::end_active_handler))
+        .route("/api/calls/{id}", patch(calls::update_handler))
         .layer(CorsLayer::permissive())
         .layer(TraceLayer::new_for_http())
         .with_state(state)

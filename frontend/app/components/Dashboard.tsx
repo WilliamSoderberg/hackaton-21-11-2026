@@ -14,7 +14,7 @@ import {
   scenarios,
   speakerLabel,
 } from "../lib/calls";
-import { addLine, endCall, startCall } from "../lib/callActions";
+import { addLine, endCall, setFloor, startCall } from "../lib/callActions";
 import { downloadCallSummary } from "../lib/summaryPdf";
 import { useSharedCall } from "../lib/useSharedCall";
 import { isSpeechRecognitionSupported, useSpeechRecognition } from "../lib/useSpeechRecognition";
@@ -203,8 +203,6 @@ function Header({
 
 function ResponderView({ state, connected, clockOffset, role, setRole }: ViewProps) {
   const [sourceId, setSourceId] = useState(MICROPHONE_SOURCE_ID);
-  // Call the mic was unmuted for; only the device that answered starts unmuted.
-  const [micCallId, setMicCallId] = useState<number | null>(null);
   const [notes, setNotes] = useState("");
   const [notesCallId, setNotesCallId] = useState(0);
   const [exporting, setExporting] = useState(false);
@@ -217,8 +215,9 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
   const scenario = sources.find((s) => s.id === (status === "idle" ? sourceId : state?.sourceId)) ?? microphoneSource;
   const usingMic = scenario.id === MICROPHONE_SOURCE_ID;
   const elapsed = useCallDuration(state, clockOffset);
-  const micOn = active && usingMic && micCallId === state?.callId;
+  const micOn = active && usingMic && state?.floor === role;
   const mic = useMicrophone(role, micOn);
+  const toggleMic = useTalkToggle(role, micOn, mic.setError);
 
   // Notes belong to one call; clear them when a new one starts.
   if (state && state.callId !== notesCallId) {
@@ -243,8 +242,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
       return;
     }
     mic.setError(null);
-    // The new call gets the next id; unmute this device for it.
-    setMicCallId((state?.callId ?? 0) + 1);
+    // The server gives the responder the floor, which unmutes this mic.
     run(() => startCall(sourceId));
   }
 
@@ -283,7 +281,6 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
             </option>
           ))}
         </select>
-        {active && usingMic && <MicButton on={micOn} onToggle={() => setMicCallId(micOn ? null : (state?.callId ?? null))} />}
         {active ? (
           <button
             onClick={() => run(endCall)}
@@ -371,6 +368,9 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
             className="h-full"
           >
             <div className="h-[32rem] overflow-y-auto pr-1 lg:h-[calc(100vh-14rem)]">
+              {active && usingMic && (
+                <TalkControl role={role} floor={state?.floor ?? null} micOn={micOn} onToggle={toggleMic} compact />
+              )}
               <ErrorNote message={actionError ?? mic.error} />
               <Transcript
                 lines={lines}
@@ -379,7 +379,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
                 pending={active && (usingMic ? !mic.interim : lines.length < scenario.transcript.length)}
                 empty={
                   active && usingMic ? (
-                    "Listening… start speaking."
+                    micOn ? "Listening… start speaking." : "Tap the microphone to speak."
                   ) : (
                     <>
                       Press <span className="font-semibold text-slate-600">Answer call</span> to start transcribing
@@ -423,25 +423,15 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
 
 // The person calling in. They only see the conversation, not the triage.
 function CallerView({ state, connected, clockOffset, role, setRole }: ViewProps) {
-  // The mic is unmuted for one specific call, so it is muted again whenever
-  // a call ends or a new one starts, and the caller taps to speak.
-  const [micCallId, setMicCallId] = useState<number | null>(null);
+  // The caller taps to speak; that mutes the responder's mic, and vice versa.
   const status = state?.status ?? "idle";
   const active = status === "active";
   const live = active && state?.sourceId === MICROPHONE_SOURCE_ID;
   const lines = state?.lines ?? [];
   const elapsed = useCallDuration(state, clockOffset);
-  const micOn = live && micCallId === state?.callId;
+  const micOn = live && state?.floor === role;
   const mic = useMicrophone(role, micOn);
-
-  function toggleMic() {
-    if (!micOn && !isSpeechRecognitionSupported()) {
-      mic.setError("This browser does not support speech recognition. Use Chrome or Edge.");
-      return;
-    }
-    mic.setError(null);
-    setMicCallId(micOn ? null : (state?.callId ?? null));
-  }
+  const toggleMic = useTalkToggle(role, micOn, mic.setError);
 
   return (
     <>
@@ -453,21 +443,7 @@ function CallerView({ state, connected, clockOffset, role, setRole }: ViewProps)
           live={active}
         >
           {active && live ? (
-            <div className="flex flex-col items-center gap-3 py-2">
-              <button
-                onClick={toggleMic}
-                className={`grid h-20 w-20 place-items-center rounded-full text-white shadow-lg transition-colors ${
-                  micOn ? "bg-red-600 hover:bg-red-500" : "bg-slate-900 hover:bg-slate-700"
-                }`}
-                aria-pressed={micOn}
-                aria-label={micOn ? "Mute microphone" : "Unmute microphone"}
-              >
-                <MicIcon off={!micOn} className="h-8 w-8" />
-              </button>
-              <p className="text-sm text-slate-500">
-                {micOn ? "You're speaking as the caller. Tap to mute." : "Tap to start speaking."}
-              </p>
-            </div>
+            <TalkControl role={role} floor={state?.floor ?? null} micOn={micOn} onToggle={toggleMic} />
           ) : (
             <p className="py-2 text-sm text-slate-500">
               {active
@@ -559,18 +535,63 @@ function ErrorNote({ message }: { message: string | null }) {
   return <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 ring-1 ring-red-200">{message}</p>;
 }
 
-function MicButton({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+// Tap to speak. Taking the floor mutes the other side's microphone, so two
+// mics in one room never transcribe the same voice twice.
+function useTalkToggle(role: Role, micOn: boolean, setError: (message: string | null) => void) {
+  return () => {
+    if (!micOn && !isSpeechRecognitionSupported()) {
+      setError("This browser does not support speech recognition. Use Chrome or Edge.");
+      return;
+    }
+    setError(null);
+    setFloor(micOn ? null : role).catch((err: unknown) =>
+      setError(err instanceof Error ? err.message : "Could not switch the microphone"),
+    );
+  };
+}
+
+function TalkControl({
+  role,
+  floor,
+  micOn,
+  onToggle,
+  compact = false,
+}: {
+  role: Role;
+  floor: Role | null;
+  micOn: boolean;
+  onToggle: () => void;
+  compact?: boolean;
+}) {
+  const other = speakerLabel[roleSpeaker[role === "responder" ? "caller" : "responder"]].toLowerCase();
+  const hint = micOn
+    ? "You're speaking. Tap when you're done."
+    : floor && floor !== role
+      ? `The ${other} is speaking. Tap to speak instead.`
+      : "Tap to speak.";
   return (
-    <button
-      onClick={onToggle}
-      aria-pressed={on}
-      className={`flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium ring-1 ${
-        on ? "bg-white text-slate-700 ring-slate-300 hover:bg-slate-50" : "bg-amber-50 text-amber-800 ring-amber-300"
-      }`}
+    <div
+      className={
+        compact
+          ? "mb-3 flex items-center gap-3 rounded-lg bg-slate-50 p-2 ring-1 ring-slate-200"
+          : "flex flex-col items-center gap-3 py-2"
+      }
     >
-      <MicIcon off={!on} className="h-4 w-4" />
-      {on ? "Mute" : "Muted"}
-    </button>
+      <button
+        onClick={onToggle}
+        className={`grid shrink-0 place-items-center rounded-full text-white shadow-lg transition-colors ${
+          compact ? "h-12 w-12" : "h-20 w-20"
+        } ${micOn ? "bg-red-600 hover:bg-red-500" : "bg-slate-900 hover:bg-slate-700"}`}
+        aria-pressed={micOn}
+        aria-label={micOn ? "Mute microphone" : "Unmute microphone"}
+      >
+        <MicIcon off={!micOn} className={compact ? "h-5 w-5" : "h-8 w-8"} />
+      </button>
+      <p className="text-sm text-slate-500">
+        {micOn && <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-red-500" />}
+        {hint}
+      </p>
+    </div>
   );
 }
 

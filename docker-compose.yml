@@ -10,6 +10,8 @@ services:
       RUST_LOG: ${RUST_LOG:-info,tower_http=info}
     expose:
       - "8080"
+    volumes:
+      - calls-db:/data # SQLite call log survives container rebuilds
     restart: unless-stopped
 
   frontend:
@@ -21,3 +23,6 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
+
+volumes:
+  calls-db:

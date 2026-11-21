@@ -1,6 +1,6 @@
 "use server";
 
-import type { Speaker } from "./calls";
+import type { Role, Speaker } from "./calls";
 import * as call from "./callStore";
 
 // Server Actions that change the shared call. Devices see the result through
@@ -15,6 +15,11 @@ export async function startCall(sourceId: string): Promise<void> {
 
 export async function endCall(): Promise<void> {
   call.endCall();
+}
+
+export async function setFloor(role: Role | null): Promise<void> {
+  if (role !== null && role !== "responder" && role !== "caller") throw new Error("Invalid role");
+  call.setFloor(role);
 }
 
 export async function addLine(speaker: Speaker, text: string): Promise<void> {
