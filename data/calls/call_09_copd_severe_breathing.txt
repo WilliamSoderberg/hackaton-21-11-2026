@@ -1,0 +1,18 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_09_copd_severe_breathing: Severe breathing difficulty, COPD, caller speaks in fragments
+
+[00:00] OPERATOR: 112, what's your emergency?
+[00:03] CALLER: Can't... breathe.
+[00:06] OPERATOR: I'm sending help. What is your address?
+[00:09] CALLER: Linero... torg... 6. Lund.
+[00:15] OPERATOR: Linero torg 6, Lund. Which floor? Do you live alone?
+[00:19] CALLER: Three. Alone.
+[00:23] OPERATOR: Do you have lung disease, asthma or COPD?
+[00:27] CALLER: COPD. Oxygen... at home.
+[00:31] OPERATOR: Are you using the oxygen now?
+[00:34] CALLER: Yes. Not... helping.
+[00:38] OPERATOR: Have you used your inhaler?
+[00:41] CALLER: Twice. Lips... blue... I think.
+[00:46] OPERATOR: Sit up and lean forward with your arms on the table. Is your door unlocked?
+[00:51] CALLER: No.
+[00:53] OPERATOR: Don't get up if you can't. The crew will get in. Stay on the line, you don't need to talk, just breathe.

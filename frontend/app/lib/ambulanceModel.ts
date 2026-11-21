@@ -1,9 +1,12 @@
 import model from "./ambulanceModel.json";
 
 // The trained "ambulance or not" model (data/model/train_ambulance.py), run in
-// the browser. TF-IDF over word unigrams + bigrams of the whole conversation,
-// then logistic regression. Tokenising here must match tokenize()/terms() in
-// the Python trainer exactly, or the weights mean something else.
+// the browser. TF-IDF over word unigrams + bigrams of what the CALLER says
+// (pass caller turns only; responder questions like "is he breathing?" must
+// not count), then logistic regression. Words after a negation are tagged
+// "not_" so "not breathing" differs from "breathing fine". Tokenising here must
+// match tokenize()/terms() in the Python trainer exactly, or the weights mean
+// something else.
 // Trained on SYNTHETIC calls only; not clinically validated.
 
 export type AmbulancePrediction = {
@@ -25,9 +28,35 @@ export const modelInfo = {
 
 const index = new Map<string, number>(model.terms.map((t, i) => [t, i]));
 const TOKEN = /[a-z0-9åäöéü]+/g;
+const CLAUSE = /[.,;:!?\n]+|\bbut\b/;
+const NEGATORS = new Set(
+  `no not never cant cannot dont doesnt didnt isnt wasnt arent werent wont wouldnt
+couldnt hasnt havent hadnt shouldnt aint nothing without neither nor none`.split(/\s+/),
+);
+const STOPWORDS = new Set(
+  `i me my myself we us our you your he him his himself she her hers herself they them
+their it its im ive id hes shes theyre youre were a an the and or of to in on at by for with from
+this that these those is am are was be been being do does did so just um uh oh yes yeah okay ok hi
+hello there here`.split(/\s+/),
+);
+const ADDRESS =
+  /(gatan|vägen|väg|torget|torg|allé|gränd|stigen|backen|ringen|lyckan)$|^(lund|malmö|dalby|staffanstorp|lomma|sandby|södra|norra|östra|västra|stora|lilla|kung|oskars|ideon|gateway|flat|floor)$/;
+const NEG_SCOPE = 3;
 
 function tokenize(text: string): string[] {
-  return text.toLowerCase().replace(/['’]/g, "").match(TOKEN) ?? [];
+  const out: string[] = [];
+  for (const clause of text.toLowerCase().replace(/['’]/g, "").split(CLAUSE)) {
+    let scope = 0;
+    for (const t of clause.match(TOKEN) ?? []) {
+      if (NEGATORS.has(t)) scope = NEG_SCOPE;
+      else if (STOPWORDS.has(t) || /^\d+$/.test(t) || ADDRESS.test(t)) continue;
+      else if (scope) {
+        out.push(`not_${t}`);
+        scope--;
+      } else out.push(t);
+    }
+  }
+  return out;
 }
 
 function termCounts(turns: string[]): Map<string, number> {
@@ -43,6 +72,7 @@ function termCounts(turns: string[]): Map<string, number> {
   return counts;
 }
 
+// `turns`: the caller's turns only, in order.
 export function predictAmbulance(turns: string[]): AmbulancePrediction {
   const vec: [number, number][] = [];
   for (const [term, c] of termCounts(turns)) {
@@ -61,15 +91,21 @@ export function predictAmbulance(turns: string[]): AmbulancePrediction {
   return { ambulance: probability >= model.threshold, probability, contributions: contributions.slice(0, 12) };
 }
 
-// Splits a pasted conversation into turns. Accepts lines like
-// "Caller: ...", "RESPONDER: ...", "[00:03] OPERATOR: ..." or plain lines;
-// timestamps and speaker labels are dropped, since the model reads the text.
+// Splits a pasted conversation into the CALLER's turns. Accepts lines like
+// "Caller: ...", "RESPONDER: ...", "[00:03] OPERATOR: ..." or plain lines.
+// Responder/operator lines are dropped (the model only reads the caller);
+// unlabelled lines count as the caller.
 const LINE_PREFIX = /^\s*(\[?\d{1,2}:\d{2}(:\d{2})?\]?\s*)?((caller|responder|operator|dispatcher|112|c|o|r)\s*[:\-–]\s*)?/i;
+const RESPONDER = /^(responder|operator|dispatcher|112|o|r)$/i;
 
 export function parseConversation(text: string): string[] {
-  return text
-    .split(/\r?\n/)
-    .filter((line) => !line.trim().startsWith("#"))
-    .map((line) => line.replace(LINE_PREFIX, "").trim())
-    .filter(Boolean);
+  const turns: string[] = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (line.trim().startsWith("#")) continue;
+    const m = line.match(LINE_PREFIX);
+    if (m?.[4] && RESPONDER.test(m[4])) continue;
+    const t = line.replace(LINE_PREFIX, "").trim();
+    if (t) turns.push(t);
+  }
+  return turns;
 }

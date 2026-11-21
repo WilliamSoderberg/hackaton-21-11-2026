@@ -1,0 +1,239 @@
+{
+  "call_id": "call_07b_collision_driver",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Car vs cyclist, call 2 of 2 (driver)",
+  "incident_id": "incident_07_collision",
+  "language": "en",
+  "location": {
+    "address": "Roundabout Getingevägen / Byggmästaregatan, Lund",
+    "lat": 55.7163,
+    "lng": 13.2152
+  },
+  "tricky_aspects": [
+    "multiple callers, same incident",
+    "second patient (driver)",
+    "caller in shock",
+    "new info updates cyclist status"
+  ],
+  "duration_s": 57,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what's your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "I hit someone. I hit a cyclist with my car, oh God, he came out of nowhere."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "The roundabout by the big ICA, Getingevägen."
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "We have an ambulance on the way to that accident already, someone else called. Are you hurt?"
+    },
+    {
+      "t": 21,
+      "time": "00:21",
+      "speaker": "caller",
+      "text": "I don't know. The airbag went off. My chest hurts when I breathe in. I'm okay, I'm okay, it's him."
+    },
+    {
+      "t": 29,
+      "time": "00:29",
+      "speaker": "operator",
+      "text": "Is the cyclist awake now?"
+    },
+    {
+      "t": 32,
+      "time": "00:32",
+      "speaker": "caller",
+      "text": "He opened his eyes a bit. He's asking what happened, again and again. Someone is holding his head."
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "operator",
+      "text": "Okay, that's good information. How fast were you driving?"
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "caller",
+      "text": "Maybe forty? Forty, fifty. I was braking."
+    },
+    {
+      "t": 48,
+      "time": "00:48",
+      "speaker": "operator",
+      "text": "Please sit down somewhere safe, away from the traffic, and stay there. The ambulance crew will check you too."
+    },
+    {
+      "t": 54,
+      "time": "00:54",
+      "speaker": "caller",
+      "text": "I'm shaking. I can't stop shaking."
+    },
+    {
+      "t": 57,
+      "time": "00:57",
+      "speaker": "operator",
+      "text": "That's normal after a shock. Sit down, breathe slowly. Help is almost there."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [
+      "chest_pain"
+    ],
+    "urgency": "A",
+    "urgency_rationale": "Same incident as call_07a: cyclist (patient 1) still A, now opens eyes but repetitive questioning = head injury. Driver (patient 2) has airbag chest pain on inspiration = B.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "second ambulance or crew assessment for driver",
+      "police"
+    ],
+    "red_flags": [
+      {
+        "label": "airbag deployment",
+        "quote": "The airbag went off",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "pleuritic chest pain (driver)",
+        "quote": "My chest hurts when I breathe in",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "caller minimising own injury",
+        "quote": "I'm okay, I'm okay, it's him",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "repetitive questioning (cyclist head injury)",
+        "quote": "He's asking what happened, again and again",
+        "turn_index": 7,
+        "t": 32,
+        "speaker": "caller"
+      },
+      {
+        "label": "speed 40-50 km/h",
+        "quote": "Forty, fifty",
+        "turn_index": 9,
+        "t": 43,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Driver's age and any blood thinners?",
+      "Is the driver short of breath?",
+      "Did the cyclist vomit?"
+    ],
+    "supplies": [
+      "cervical collar",
+      "vacuum mattress / spinal board",
+      "oxygen",
+      "chest assessment kit / pulse oximeter",
+      "IV fluids"
+    ],
+    "handover": "Update to incident_07: cyclist now opening eyes, repetitive questioning (head injury, GCS reduced). Speed ~40-50 km/h. Driver: airbag deployed, pleuritic chest pain, shaking, ambulatory. Request assessment of 2 patients.",
+    "patients": [
+      {
+        "patient": "cyclist",
+        "urgency": "A",
+        "status": "eyes open, confused, repetitive questioning"
+      },
+      {
+        "patient": "driver",
+        "urgency": "B",
+        "status": "airbag chest pain on inspiration, ambulatory, shaken"
+      }
+    ],
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety / traffic)",
+        "rescue service if trapped or fuel/fire",
+        "second ambulance or crew assessment for driver",
+        "police"
+      ],
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "prepare_en_route": [
+        "cervical collar + vacuum mattress",
+        "haemostatic dressing / tourniquet",
+        "pelvic binder",
+        "IV fluids",
+        "count patients - one ambulance per seriously injured"
+      ],
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "UPDATE: cyclist now eyes open, repeating questions",
+        "speed 40-50 km/h",
+        "2nd patient: driver, airbag chest pain on breathing in"
+      ],
+      "scene_notes": [
+        "2 patients - consider 2nd ambulance",
+        "driver in shock, may walk into traffic"
+      ],
+      "urgency": "A",
+      "bring": [
+        "cervical collar",
+        "vacuum mattress / spinal board",
+        "oxygen",
+        "chest assessment kit / pulse oximeter",
+        "IV fluids"
+      ],
+      "open_questions": [
+        "Driver's age and any blood thinners?",
+        "Is the driver short of breath?",
+        "Did the cyclist vomit?"
+      ],
+      "unit": "AMB 1150",
+      "ambulance_position": {
+        "lat": 55.729,
+        "lng": 13.234
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

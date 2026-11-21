@@ -1,0 +1,225 @@
+{
+  "call_id": "call_07a_collision_witness",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Car vs cyclist, call 1 of 2 (witness)",
+  "incident_id": "incident_07_collision",
+  "language": "en",
+  "location": {
+    "address": "Roundabout Getingevägen / Byggmästaregatan, Lund",
+    "lat": 55.7163,
+    "lng": 13.2152
+  },
+  "tricky_aspects": [
+    "multiple callers, same incident",
+    "witness with partial information"
+  ],
+  "duration_s": 52,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 2,
+      "time": "00:02",
+      "speaker": "caller",
+      "text": "There's been an accident, a car hit a cyclist! At the roundabout, Getingevägen and Byggmästaregatan, in Lund."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Getingevägen and Byggmästaregatan. Are you safe, are you off the road?"
+    },
+    {
+      "t": 13,
+      "time": "00:13",
+      "speaker": "caller",
+      "text": "Yes I'm on the pavement. The guy on the bike flew over the hood, he's on the ground."
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "operator",
+      "text": "Is he moving? Is he talking?"
+    },
+    {
+      "t": 21,
+      "time": "00:21",
+      "speaker": "caller",
+      "text": "No, he's not moving. There's blood coming from his head. He doesn't have a helmet."
+    },
+    {
+      "t": 27,
+      "time": "00:27",
+      "speaker": "operator",
+      "text": "Is he breathing? Can you see his chest moving?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "I... I think so, yes, he's making sounds. Like groaning."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "I'm sending ambulance and police. How many people are injured? Is the driver okay?"
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "The driver got out, she's walking around on the phone. I think it's just the cyclist."
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "operator",
+      "text": "Don't move him. If there's a lot of bleeding, press a jacket or cloth on it. Is anyone directing traffic?"
+    },
+    {
+      "t": 52,
+      "time": "00:52",
+      "speaker": "caller",
+      "text": "Some people stopped. Okay, I'll press on it."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [
+      "unconscious_cardiac_arrest"
+    ],
+    "urgency": "A",
+    "urgency_rationale": "Cyclist thrown over car, no helmet, head bleeding, not moving, only groaning (reduced consciousness).",
+    "urgency_timeline": [
+      {
+        "t": 2,
+        "time": "00:02",
+        "urgency": "B"
+      },
+      {
+        "t": 21,
+        "time": "00:21",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "police (traffic, investigation)"
+    ],
+    "red_flags": [
+      {
+        "label": "high-energy mechanism",
+        "quote": "flew over the hood",
+        "turn_index": 3,
+        "t": 13,
+        "speaker": "caller"
+      },
+      {
+        "label": "not moving",
+        "quote": "he's not moving",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "head bleeding",
+        "quote": "There's blood coming from his head",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "no helmet",
+        "quote": "He doesn't have a helmet",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "reduced consciousness",
+        "quote": "he's making sounds. Like groaning",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Approximate speed of the car?",
+      "Is the bleeding heavy or spurting?",
+      "Cyclist's approximate age?",
+      "Is there anyone with first-aid training on scene?"
+    ],
+    "supplies": [
+      "cervical collar",
+      "vacuum mattress / spinal board",
+      "haemostatic dressing",
+      "oxygen",
+      "airway kit / suction",
+      "IV fluids"
+    ],
+    "handover": "Cyclist (male, age unknown) hit by car at Getingevägen/Byggmästaregatan roundabout, thrown over bonnet, no helmet, head wound, not moving, groaning. Witness pressing on wound.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety / traffic)",
+        "rescue service if trapped or fuel/fire",
+        "police (traffic, investigation)"
+      ],
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "prepare_en_route": [
+        "cervical collar + vacuum mattress",
+        "haemostatic dressing / tourniquet",
+        "pelvic binder",
+        "IV fluids",
+        "count patients - one ambulance per seriously injured"
+      ],
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "cyclist thrown over car bonnet, no helmet",
+        "head wound, not moving, groaning"
+      ],
+      "scene_notes": [
+        "roundabout Getingevägen/Byggmästaregatan - traffic",
+        "2 calls same incident (see call_07b)"
+      ],
+      "urgency": "A",
+      "bring": [
+        "cervical collar",
+        "vacuum mattress / spinal board",
+        "haemostatic dressing",
+        "oxygen",
+        "airway kit / suction",
+        "IV fluids"
+      ],
+      "open_questions": [
+        "Approximate speed of the car?",
+        "Is the bleeding heavy or spurting?",
+        "Cyclist's approximate age?",
+        "Is there anyone with first-aid training on scene?"
+      ],
+      "unit": "AMB 1150",
+      "ambulance_position": {
+        "lat": 55.729,
+        "lng": 13.234
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_26_self_harm_teen: Mother finds daughter 16 with cut forearm (bleeding controlled)
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: My daughter has cut her arm. There was blood on the bathroom floor.
+[00:09] OPERATOR: Where are you?
+[00:11] CALLER: Pilegatan 15, Lund.
+[00:14] OPERATOR: How old is she? Is the bleeding still going?
+[00:17] CALLER: She's 16. I pressed a towel on it, it has almost stopped now.
+[00:23] OPERATOR: How deep and long are the cuts?
+[00:26] CALLER: Several lines on the forearm, most are shallow but one is open, maybe three centimetres.
+[00:33] OPERATOR: Is she awake and talking? Has she taken any pills or alcohol?
+[00:37] CALLER: She's talking, she's crying. She says no pills. She says she did it because she couldn't handle it anymore.
+[00:45] OPERATOR: Has she said she wants to die?
+[00:48] CALLER: She says she doesn't want to die, she just wanted the feeling to stop. She has done it before but not like this.
+[00:56] OPERATOR: I'm sending an ambulance. Keep pressing on the wound, stay with her, and remove sharp objects and medicines from the room.

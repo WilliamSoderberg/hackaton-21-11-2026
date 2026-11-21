@@ -1,0 +1,21 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_03_downplaying_cardiac_arrest: Elderly husband downplays: wife 'a bit sleepy' (cardiac arrest)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Yes, good evening, I'm sorry to bother you, it's probably nothing.
+[00:08] OPERATOR: That's fine. What's happening?
+[00:10] CALLER: My wife, she's a bit sleepy, she sat down in the chair and now she's, she won't really answer me.
+[00:17] OPERATOR: What's your address?
+[00:19] CALLER: Kastanjegatan 3, Dalby. It's a yellow house.
+[00:24] OPERATOR: Kastanjegatan 3, Dalby. Go to her now. Shake her shoulders and shout her name. Does she react?
+[00:31] CALLER: Margit! Margit! ... No. No, she doesn't. Her eyes are half open.
+[00:37] OPERATOR: Is she breathing? Look at her chest.
+[00:40] CALLER: She's breathing kind of funny, like snoring, every now and then. She does that sometimes when she sleeps.
+[00:47] OPERATOR: Okay, listen to me carefully. That is not normal breathing. I'm sending an ambulance now with sirens. We're going to start CPR together.
+[00:54] CALLER: CPR? Oh God. Is she, is she...
+[00:57] OPERATOR: Can you get her down on the floor, on her back?
+[01:00] CALLER: I'll try, she's heavy. Okay. Okay she's on the floor.
+[01:10] OPERATOR: Put the heel of your hand in the middle of her chest, the other hand on top. Push down hard and fast. Count out loud with me. One, two, three, four...
+[01:18] CALLER: One, two, three, four, five...
+[01:35] OPERATOR: Good, keep going, don't stop. Is there anyone else in the house? Is there a defibrillator nearby?
+[01:40] CALLER: No, just us. I don't know about a defibrillator. Twenty-eight, twenty-nine...

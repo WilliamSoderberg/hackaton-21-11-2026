@@ -108,16 +108,8 @@ export async function downloadCallSummary(data: CallSummaryData) {
   }
 
   heading("Assessment");
-  doc.setFont("helvetica", "normal").setFontSize(10).setTextColor(15, 23, 42);
-  ensureSpace(14);
-  doc.text(`Physical ${c.physical}%`, PAGE_MARGIN, y);
-  doc.text(`Mental ${c.mental}%`, pageWidth - PAGE_MARGIN, y, { align: "right" });
-  y += 2;
-  const physicalWidth = (contentWidth * c.physical) / 100;
-  doc.setFillColor(14, 165, 233).rect(PAGE_MARGIN, y, physicalWidth, 4, "F");
-  doc.setFillColor(139, 92, 246).rect(PAGE_MARGIN + physicalWidth, y, contentWidth - physicalWidth, 4, "F");
-  y += 10;
-  doc.setFont("helvetica", "bold").setTextColor(71, 85, 105);
+  ensureSpace(LINE_HEIGHT * 2);
+  doc.setFont("helvetica", "bold").setFontSize(10).setTextColor(71, 85, 105);
   doc.text("Detected indicators", PAGE_MARGIN, y);
   y += LINE_HEIGHT;
   doc.setFont("helvetica", "normal").setTextColor(15, 23, 42);

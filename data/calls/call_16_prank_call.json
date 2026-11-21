@@ -1,0 +1,151 @@
+{
+  "call_id": "call_16_prank_call",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Prank call: teenagers report a fake accident",
+  "incident_id": "call_16_prank_call",
+  "language": "en",
+  "location": {
+    "address": "Clemenstorget, Lund",
+    "lat": 55.7068,
+    "lng": 13.189
+  },
+  "tricky_aspects": [
+    "prank / hoax",
+    "laughter in background",
+    "inconsistent details",
+    "AI must not over-react, but operator still verifies"
+  ],
+  "duration_s": 49,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Yeah hi, there's been a huge accident, a guy got hit by like a bus."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Where is this?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "At, um, Mårtenstorget. Or no wait, Clemenstorget."
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "Which one? Is the person awake?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "He's, uh... (laughing in background) shut up! ... He's totally dead, there's blood everywhere."
+    },
+    {
+      "t": 27,
+      "time": "00:27",
+      "speaker": "operator",
+      "text": "Is there a bus there now? Are other people helping?"
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "caller",
+      "text": "Yeah the bus drove away. Say it's a tractor! (laughing)"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "I need to tell you that calls to 112 are recorded and your phone number is visible to us. Is anyone actually injured?"
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "caller",
+      "text": "... no. Sorry. It was a joke. Sorry sorry."
+    },
+    {
+      "t": 49,
+      "time": "00:49",
+      "speaker": "operator",
+      "text": "Calling 112 when there is no emergency can stop people who need help. I'm ending the call and this will be reported."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [],
+    "urgency": "E",
+    "urgency_rationale": "Inconsistent location and story, laughter and coaching in background, caller admits hoax. No medical response; police informed.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      },
+      {
+        "t": 19,
+        "time": "00:19",
+        "urgency": "B"
+      },
+      {
+        "t": 45,
+        "time": "00:45",
+        "urgency": "E"
+      }
+    ],
+    "ambulance": "no",
+    "other_resources": [
+      "police (hoax report)"
+    ],
+    "red_flags": [
+      {
+        "label": "inconsistent location",
+        "quote": "Or no wait, Clemenstorget",
+        "turn_index": 3,
+        "t": 10,
+        "speaker": "caller"
+      },
+      {
+        "label": "laughter / coaching in background",
+        "quote": "Say it's a tractor!",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "caller admits hoax",
+        "quote": "It was a joke",
+        "turn_index": 9,
+        "t": 45,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Can a police patrol verify the scene before closing?"
+    ],
+    "supplies": [],
+    "handover": "No dispatch. Hoax call, admitted by caller. Reported to police.",
+    "dashboard": {
+      "urgency": "Low",
+      "ambulance": false,
+      "type": "physical"
+    },
+    "crew_briefing": null
+  }
+}

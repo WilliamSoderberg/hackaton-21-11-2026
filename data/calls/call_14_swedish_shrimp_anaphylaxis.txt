@@ -1,0 +1,17 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_14_swedish_shrimp_anaphylaxis: Swedish-speaking caller: anaphylaxis after shrimp
+
+[00:00] OPERATOR: 112, vad har hänt?
+[00:03] CALLER: Hej, min sambo har ätit räkor och nu får han inte luft ordentligt!
+[00:09] OPERATOR: Vilken adress är ni på?
+[00:11] CALLER: Magistratsvägen 47, Lund, trappa tre.
+[00:16] OPERATOR: Hur gammal är han? Är han vaken?
+[00:19] CALLER: Han är 34. Han är vaken men han säger att det känns som att halsen blir trång.
+[00:26] OPERATOR: Har han svullnad i ansiktet eller utslag?
+[00:29] CALLER: Läpparna är jättesvullna och han har röda prickar över hela magen. Han låter hes.
+[00:36] OPERATOR: Har han varit allergisk förut? Har han en adrenalinpenna?
+[00:40] CALLER: Han är allergisk mot skaldjur men vi trodde det var lugnt. Ingen penna, den gick ut förra året.
+[00:48] OPERATOR: Mår han illa eller känner sig yr?
+[00:51] CALLER: Han säger att han är yr och han har kräkts en gång.
+[00:56] OPERATOR: Jag skickar en ambulans med blåljus nu. Låt honom sitta upp om han andas lättare så, men lägg honom ner med benen högt om han blir svimfärdig.
+[01:06] CALLER: Okej. Snälla skynda er.

@@ -1,0 +1,21 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_01_classic_chest_pain: Classic heart attack, man 58
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Yes hi, it's my husband, he has really bad chest pain.
+[00:07] OPERATOR: Okay. What is the address?
+[00:09] CALLER: Vipeholmsvägen 14 in Lund, second floor.
+[00:14] OPERATOR: Vipeholmsvägen 14, Lund. Is he awake and talking to you?
+[00:17] CALLER: Yes he's awake, he's sitting on the sofa but he's all sweaty and grey in the face.
+[00:23] OPERATOR: How old is he and when did the pain start?
+[00:26] CALLER: He's 58. It started maybe twenty minutes ago, he was just watching TV.
+[00:31] OPERATOR: Where does it hurt? Does the pain go anywhere?
+[00:34] CALLER: In the middle, he says it's like a heavy pressure. And it goes down his left arm.
+[00:40] OPERATOR: Is he short of breath or feeling sick?
+[00:43] CALLER: He says he feels sick, yeah. Breathing is okay I think.
+[00:47] OPERATOR: Does he have any heart problems from before?
+[00:50] CALLER: He has high blood pressure, he takes pills for that. Nothing else.
+[00:55] OPERATOR: I'm sending an ambulance now with lights and sirens. Is he allergic to aspirin?
+[01:00] CALLER: No, not that I know.
+[01:02] OPERATOR: If you have aspirin at home he can chew one tablet now. Keep him sitting, open the door, and call back right away if he faints or stops breathing.
+[01:11] CALLER: Okay. Okay. Please hurry.

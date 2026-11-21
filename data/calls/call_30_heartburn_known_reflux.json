@@ -1,0 +1,162 @@
+{
+  "call_id": "call_30_heartburn_known_reflux",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Burning chest after spicy dinner, known reflux",
+  "incident_id": "call_30_heartburn_known_reflux",
+  "language": "en",
+  "location": {
+    "address": "Spolegatan 6, Lund",
+    "lat": 55.703,
+    "lng": 13.1965
+  },
+  "tricky_aspects": [
+    "negative control for chest pain",
+    "AI must still check risk factors, not just 'chest = A'"
+  ],
+  "duration_s": 53,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "I have a burning feeling in my chest after dinner, I just want to check it's nothing serious."
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "operator",
+      "text": "Where are you and how old are you?"
+    },
+    {
+      "t": 13,
+      "time": "00:13",
+      "speaker": "caller",
+      "text": "Spolegatan 6 in Lund. I'm 27."
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "operator",
+      "text": "When did it start and what does it feel like?"
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "caller",
+      "text": "About an hour after I ate a very spicy curry. It burns up behind the breastbone, with a sour taste in my mouth."
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "operator",
+      "text": "Does it go to your arm, jaw or back? Are you sweaty or short of breath?"
+    },
+    {
+      "t": 33,
+      "time": "00:33",
+      "speaker": "caller",
+      "text": "No, nothing like that. It's the same feeling I always get with my reflux."
+    },
+    {
+      "t": 39,
+      "time": "00:39",
+      "speaker": "operator",
+      "text": "Have you taken anything for it?"
+    },
+    {
+      "t": 41,
+      "time": "00:41",
+      "speaker": "caller",
+      "text": "I took an antacid ten minutes ago and it's already a lot better."
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "operator",
+      "text": "Any heart problems in you or your family?"
+    },
+    {
+      "t": 50,
+      "time": "00:50",
+      "speaker": "caller",
+      "text": "No, none."
+    },
+    {
+      "t": 53,
+      "time": "00:53",
+      "speaker": "operator",
+      "text": "This sounds like your reflux. You don't need an ambulance. If the pain changes, gets worse, spreads, or you feel faint or breathless, call 112 again. You can also call 1177."
+    }
+  ],
+  "gold_label": {
+    "category": "chest_pain",
+    "secondary_categories": [],
+    "urgency": "D",
+    "urgency_rationale": "27-year-old with known reflux, burning retrosternal pain after spicy meal with acid taste, no radiation or autonomic symptoms, relieved by antacid, no cardiac risk factors.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 41,
+        "time": "00:41",
+        "urgency": "D"
+      }
+    ],
+    "ambulance": "no",
+    "other_resources": [
+      "1177 advice line"
+    ],
+    "red_flags": [],
+    "negative_findings": [
+      {
+        "label": "typical reflux features",
+        "quote": "with a sour taste in my mouth",
+        "turn_index": 5,
+        "t": 20,
+        "speaker": "caller"
+      },
+      {
+        "label": "no radiation or autonomic symptoms",
+        "quote": "No, nothing like that",
+        "turn_index": 7,
+        "t": 33,
+        "speaker": "caller"
+      },
+      {
+        "label": "relieved by antacid",
+        "quote": "it's already a lot better",
+        "turn_index": 9,
+        "t": 41,
+        "speaker": "caller"
+      },
+      {
+        "label": "no cardiac history",
+        "quote": "No, none.",
+        "turn_index": 11,
+        "t": 50,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Smoking, drugs (e.g. cocaine)?"
+    ],
+    "supplies": [],
+    "handover": "No dispatch. Adult 27, known reflux, burning retrosternal pain after spicy meal, acid taste, relieved by antacid. Safety-net advice given.",
+    "dashboard": {
+      "urgency": "Low",
+      "ambulance": false,
+      "type": "physical"
+    },
+    "crew_briefing": null
+  }
+}

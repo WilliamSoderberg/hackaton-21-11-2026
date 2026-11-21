@@ -1,7 +1,8 @@
 // Urgency on the crew map comes from the trained ambulance model
 // (lib/ambulanceModel.ts): the probability that the call needs an ambulance,
-// banded into four levels. Bands are tuned to the synthetic calls, where
-// ambulance calls score 82-94% and the rest mostly under 50%.
+// banded into four levels. Bands are tuned to the synthetic calls, where most
+// ambulance calls score 88-99%, a few borderline ones 60-80%, and the
+// no-ambulance calls under 10%.
 export type UrgencyBand = { label: string; min: number; hex: string; bg: string };
 
 export const urgencyBands: UrgencyBand[] = [

@@ -1,0 +1,219 @@
+{
+  "call_id": "call_27_rollover_trapped",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Car on its roof on E22, driver trapped, fuel smell",
+  "incident_id": "call_27_rollover_trapped",
+  "language": "en",
+  "location": {
+    "address": "E22 towards Malmö, just after the Lund Södra exit",
+    "lat": 55.6865,
+    "lng": 13.2005
+  },
+  "tricky_aspects": [
+    "multiple resources",
+    "scene safety",
+    "caller on a motorway"
+  ],
+  "duration_s": 52,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "A car has rolled over on the E22, it's lying on its roof in the ditch!"
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Where exactly on the E22? Which direction?"
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "caller",
+      "text": "Towards Malmö, just after the Lund Södra exit."
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "operator",
+      "text": "How many people are in the car?"
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "caller",
+      "text": "I see one, the driver. He's hanging upside down in the belt. He's stuck, the door won't open."
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "operator",
+      "text": "Is he awake?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "He's moaning, he says he can't feel his legs."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "Is there fire or smoke? Is your car parked safely?"
+    },
+    {
+      "t": 38,
+      "time": "00:38",
+      "speaker": "caller",
+      "text": "No fire, but it smells strongly of petrol. My hazard lights are on."
+    },
+    {
+      "t": 44,
+      "time": "00:44",
+      "speaker": "operator",
+      "text": "Do not get close to the car because of the petrol. I'm sending ambulance, rescue service and police now. Is there bleeding you can see?"
+    },
+    {
+      "t": 52,
+      "time": "00:52",
+      "speaker": "caller",
+      "text": "There's blood on his face, I can't see much else."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "High-energy rollover on motorway, trapped driver, possible spinal injury (can't feel legs), fuel leak. Needs rescue service extraction.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "rescue service (extraction, fuel)",
+      "police (motorway closure)"
+    ],
+    "red_flags": [
+      {
+        "label": "rollover (high energy)",
+        "quote": "lying on its roof in the ditch",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "trapped",
+        "quote": "He's stuck, the door won't open",
+        "turn_index": 5,
+        "t": 20,
+        "speaker": "caller"
+      },
+      {
+        "label": "can't feel legs (spinal)",
+        "quote": "he says he can't feel his legs",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "fuel leak",
+        "quote": "it smells strongly of petrol",
+        "turn_index": 9,
+        "t": 38,
+        "speaker": "caller"
+      },
+      {
+        "label": "head bleeding",
+        "quote": "There's blood on his face",
+        "turn_index": 11,
+        "t": 52,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Any passengers in the back seat or thrown out?",
+      "Is he breathing normally?",
+      "Approximate speed?"
+    ],
+    "supplies": [
+      "cervical collar",
+      "vacuum mattress / spinal board",
+      "oxygen",
+      "IV fluids",
+      "tourniquet / haemostatic dressing"
+    ],
+    "handover": "Single-car rollover on E22 towards Malmö after Lund Södra. Driver trapped upside down, conscious, moaning, reports no feeling in legs, facial bleeding. Fuel smell. Rescue service and police dispatched.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety / traffic)",
+        "rescue service if trapped or fuel/fire",
+        "rescue service (extraction, fuel)",
+        "police (motorway closure)"
+      ],
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "prepare_en_route": [
+        "cervical collar + vacuum mattress",
+        "haemostatic dressing / tourniquet",
+        "pelvic binder",
+        "IV fluids",
+        "count patients - one ambulance per seriously injured"
+      ],
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "single-car rollover E22 towards Malmö after Lund Södra",
+        "driver trapped upside down, can't feel legs",
+        "facial bleeding"
+      ],
+      "scene_notes": [
+        "FUEL SMELL - wait for rescue service",
+        "motorway - police closing lane",
+        "check for more passengers"
+      ],
+      "urgency": "A",
+      "bring": [
+        "cervical collar",
+        "vacuum mattress / spinal board",
+        "oxygen",
+        "IV fluids",
+        "tourniquet / haemostatic dressing"
+      ],
+      "open_questions": [
+        "Any passengers in the back seat or thrown out?",
+        "Is he breathing normally?",
+        "Approximate speed?"
+      ],
+      "unit": "AMB 1370",
+      "ambulance_position": {
+        "lat": 55.705,
+        "lng": 13.223
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

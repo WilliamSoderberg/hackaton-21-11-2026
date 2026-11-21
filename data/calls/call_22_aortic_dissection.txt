@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_22_aortic_dissection: Sudden tearing chest pain to the back, man 62
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: My husband got a terrible pain in his chest all of a sudden, he's screaming.
+[00:08] OPERATOR: Where are you?
+[00:10] CALLER: Rådmansvägen 21, Södra Sandby.
+[00:15] OPERATOR: How old is he? Describe the pain.
+[00:18] CALLER: 62. He says it feels like something is tearing inside, and it goes straight through to his back.
+[00:26] OPERATOR: When did it start?
+[00:28] CALLER: Just five minutes ago, it came at once, at full strength, when he was carrying the groceries.
+[00:35] OPERATOR: Is he awake? Is he sweating?
+[00:38] CALLER: He's awake, very pale and sweating. His left leg feels numb, he says.
+[00:44] OPERATOR: Does he have high blood pressure or other illness?
+[00:47] CALLER: Very high blood pressure, but he stopped taking the pills.
+[00:52] OPERATOR: I'm sending an ambulance now with sirens. Let him lie down still. Don't give him any medicine until the ambulance arrives.

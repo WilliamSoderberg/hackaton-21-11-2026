@@ -1,0 +1,243 @@
+{
+  "call_id": "call_19_panic_attack_chest",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Young woman, chest tightness and tingling (panic attack)",
+  "incident_id": "call_19_panic_attack_chest",
+  "language": "en",
+  "location": {
+    "address": "Karl XII-gatan 9, Lund",
+    "lat": 55.7055,
+    "lng": 13.1966
+  },
+  "tricky_aspects": [
+    "mimics heart attack",
+    "anxiety history",
+    "AI should not jump to A, but ask the right questions"
+  ],
+  "duration_s": 70,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "I think I'm having a heart attack, my heart is racing and my chest is tight!"
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Okay, I'm here. Where are you?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "Home, Karl XII-gatan 9, Lund. I'm alone."
+    },
+    {
+      "t": 15,
+      "time": "00:15",
+      "speaker": "operator",
+      "text": "How old are you? When did it start?"
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "caller",
+      "text": "I'm 24. Ten minutes ago, I was studying for an exam tomorrow."
+    },
+    {
+      "t": 24,
+      "time": "00:24",
+      "speaker": "operator",
+      "text": "Are you breathing fast?"
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "caller",
+      "text": "Yes really fast. And my hands and lips are tingling, my fingers are cramping."
+    },
+    {
+      "t": 33,
+      "time": "00:33",
+      "speaker": "operator",
+      "text": "Does the chest pain go to your arm, jaw or back?"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "caller",
+      "text": "No, it's just tight in the middle. It doesn't get worse when I move."
+    },
+    {
+      "t": 42,
+      "time": "00:42",
+      "speaker": "operator",
+      "text": "Have you had anything like this before? Any heart problems, or medicines?"
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "caller",
+      "text": "I've had panic attacks before, last month. No heart problems. I don't take anything."
+    },
+    {
+      "t": 54,
+      "time": "00:54",
+      "speaker": "operator",
+      "text": "Try to breathe slowly with me: in through the nose for four, out through the mouth for six."
+    },
+    {
+      "t": 64,
+      "time": "01:04",
+      "speaker": "caller",
+      "text": "Okay... it's getting a bit better. The tingling is less."
+    },
+    {
+      "t": 70,
+      "time": "01:10",
+      "speaker": "operator",
+      "text": "Good. A nurse will call you back within a few minutes. If you get pain spreading to your arm, faint, or feel worse, call 112 again."
+    }
+  ],
+  "gold_label": {
+    "category": "chest_pain",
+    "secondary_categories": [
+      "mental_health_suicide"
+    ],
+    "urgency": "C",
+    "urgency_rationale": "24-year-old, no risk factors, chest tightness with hyperventilation, perioral and hand paraesthesia, carpopedal spasm, known panic attacks, improves with slow breathing. Likely panic attack; still needs assessment.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 47,
+        "time": "00:47",
+        "urgency": "C"
+      },
+      {
+        "t": 64,
+        "time": "01:04",
+        "urgency": "C"
+      }
+    ],
+    "ambulance": "unclear",
+    "other_resources": [
+      "nurse call-back / 1177",
+      "psychiatric follow-up"
+    ],
+    "red_flags": [
+      {
+        "label": "chest tightness",
+        "quote": "my chest is tight",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "alone at home",
+        "quote": "I'm alone",
+        "turn_index": 3,
+        "t": 10,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "hyperventilation with tingling (panic pattern)",
+        "quote": "my hands and lips are tingling",
+        "turn_index": 7,
+        "t": 26,
+        "speaker": "caller"
+      },
+      {
+        "label": "no radiation, not exertional",
+        "quote": "It doesn't get worse when I move",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      },
+      {
+        "label": "previous panic attacks",
+        "quote": "I've had panic attacks before",
+        "turn_index": 11,
+        "t": 47,
+        "speaker": "caller"
+      },
+      {
+        "label": "improving with breathing",
+        "quote": "it's getting a bit better",
+        "turn_index": 13,
+        "t": 64,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Recent long travel, leg swelling or contraceptive pill (PE risk)?",
+      "Caffeine, energy drinks or stimulants?",
+      "Any thoughts of harming yourself?"
+    ],
+    "supplies": [],
+    "handover": "Female 24, no cardiac history, chest tightness, palpitations, hyperventilation with paraesthesia and carpopedal spasm during exam stress, prior panic attacks, improving with breathing coaching. Nurse call-back.",
+    "dashboard": {
+      "urgency": "Medium",
+      "ambulance": null,
+      "type": "both"
+    },
+    "crew_briefing": {
+      "crew": "ambulance (nurse-staffed)",
+      "extra_units": [
+        "nurse call-back / 1177",
+        "psychiatric follow-up"
+      ],
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "prepare_en_route": [
+        "12-lead ECG ready to transmit",
+        "defibrillator pads ready",
+        "aspirin + nitro dose checked",
+        "IV kit"
+      ],
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "female 24, no cardiac history",
+        "hyperventilation + tingling, known panic attacks, improving"
+      ],
+      "scene_notes": [
+        "alone at home",
+        "nurse call-back decides on dispatch",
+        "still take ECG if sent"
+      ],
+      "urgency": "C",
+      "bring": [],
+      "open_questions": [
+        "Recent long travel, leg swelling or contraceptive pill (PE risk)?",
+        "Caffeine, energy drinks or stimulants?",
+        "Any thoughts of harming yourself?"
+      ],
+      "note": "Dispatch not decided - briefing applies if an ambulance is sent.",
+      "unit": "AMB 1280",
+      "ambulance_position": {
+        "lat": 55.695,
+        "lng": 13.183
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_19_panic_attack_chest: Young woman, chest tightness and tingling (panic attack)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: I think I'm having a heart attack, my heart is racing and my chest is tight!
+[00:08] OPERATOR: Okay, I'm here. Where are you?
+[00:10] CALLER: Home, Karl XII-gatan 9, Lund. I'm alone.
+[00:15] OPERATOR: How old are you? When did it start?
+[00:18] CALLER: I'm 24. Ten minutes ago, I was studying for an exam tomorrow.
+[00:24] OPERATOR: Are you breathing fast?
+[00:26] CALLER: Yes really fast. And my hands and lips are tingling, my fingers are cramping.
+[00:33] OPERATOR: Does the chest pain go to your arm, jaw or back?
+[00:37] CALLER: No, it's just tight in the middle. It doesn't get worse when I move.
+[00:42] OPERATOR: Have you had anything like this before? Any heart problems, or medicines?
+[00:47] CALLER: I've had panic attacks before, last month. No heart problems. I don't take anything.
+[00:54] OPERATOR: Try to breathe slowly with me: in through the nose for four, out through the mouth for six.
+[01:04] CALLER: Okay... it's getting a bit better. The tingling is less.
+[01:10] OPERATOR: Good. A nurse will call you back within a few minutes. If you get pain spreading to your arm, faint, or feel worse, call 112 again.

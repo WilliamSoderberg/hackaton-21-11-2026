@@ -113,7 +113,8 @@ function useAmbulanceModel(lines: TranscriptLine[]): AmbulancePrediction | null 
   }, [lines]);
   useEffect(() => {
     const evaluate = () => {
-      const turns = latest.current.map((l) => l.text);
+      // The model reads the caller only, not the responder's questions.
+      const turns = latest.current.filter((l) => l.speaker === "Caller").map((l) => l.text);
       setPrediction(turns.length ? predictAmbulance(turns) : null);
     };
     const first = setTimeout(evaluate, 0);
@@ -344,9 +345,6 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
               <Stat label="Location" value={lines.length ? scenario.location : "—"} />
             </div>
             <div className="mt-5">
-              <SplitBar physical={classification.physical} mental={classification.mental} />
-            </div>
-            <div className="mt-5">
               <h3 className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Detected indicators</h3>
               {classification.indicators.length ? (
                 <ul className="flex flex-wrap gap-2">
@@ -370,16 +368,6 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
           <Panel title="Current call" subtitle={lines.length ? scenario.label : "No patient yet"}>
             <div className="grid grid-cols-2 gap-3">
               <Stat label="Incident" value={lines.length ? scenario.label : "—"} />
-              <Stat
-                label="Primary concern"
-                value={
-                  classification.indicators.length
-                    ? classification.physical >= classification.mental
-                      ? "Physical"
-                      : "Mental"
-                    : "—"
-                }
-              />
               <Stat label="Call duration" value={status !== "idle" ? formatDuration(elapsed) : "—"} />
               <Stat label="Status" value={active ? "In progress" : status === "ended" ? "Ended" : "Idle"} />
             </div>
@@ -726,21 +714,6 @@ function Stat({ label, value }: { label: string; value: string }) {
       <p className="truncate text-sm font-medium" title={value}>
         {value}
       </p>
-    </div>
-  );
-}
-
-function SplitBar({ physical, mental }: { physical: number; mental: number }) {
-  return (
-    <div>
-      <div className="mb-2 flex justify-between text-xs">
-        <span className="text-slate-700">Physical {physical}%</span>
-        <span className="text-slate-500">Mental {mental}%</span>
-      </div>
-      <div className="flex h-3 overflow-hidden rounded-full bg-slate-100">
-        <div className="bg-slate-600 transition-all duration-500" style={{ width: `${physical}%` }} />
-        <div className="bg-slate-400 transition-all duration-500" style={{ width: `${mental}%` }} />
-      </div>
     </div>
   );
 }

@@ -3,22 +3,28 @@
     python3 data/model/train_ambulance.py
 
 No dependencies (plain Python 3). The model is TF-IDF over word unigrams and
-bigrams of the whole conversation (responder + caller) followed by L2-regularised
-logistic regression. It writes:
+bigrams of what the CALLER says (responder turns are ignored, so "is he
+breathing?" from the responder means nothing) followed by L2-regularised
+logistic regression. Words after a negation ("not", "can't", "no", ...) are
+tagged "not_" up to the end of the clause, so "not breathing" and "breathing
+fine" are different features. Pronouns, filler words and numbers are dropped.
+It writes:
 
   frontend/app/lib/ambulanceModel.json  weights the frontend runs in the browser
                                         (app/lib/ambulanceModel.ts must tokenise
                                         exactly like tokenize() below)
-  data/model/results.md                 leave-one-call-out evaluation
+  data/model/results.md                 held-out evaluation
 
-Training data: every call in data/source whose gold `ambulance` is yes or no,
-plus the extra synthetic calls in extra_training_calls.py (mostly "no", which
-data/source has only 5 of). Calls marked
-"unclear" are left out of training and only reported. Because the dashboard
-re-scores the call while it is still going, each call also contributes its
-partial transcripts (prefixes): a "yes" call counts as "yes" from its first red
-flag onwards, a "no" call counts as "no" from its third turn onwards. Each call
-gets the same total weight, and the two classes are balanced.
+Training data: the extra calls in extra_training_calls.py and the ~200
+template calls in generated_calls.py, plus (for the final model only) every
+call in data/source whose gold `ambulance` is yes or no. The evaluation trains
+on the extra + generated calls alone and scores the hand-written data/source
+calls, which that model never saw. Calls marked "unclear" are never trained on.
+Because the dashboard re-scores the call while it is still going, each call also
+contributes its partial transcripts (prefixes of its caller turns): a "yes"
+call counts as "yes" from its first red flag onwards, a "no" call from the
+turn where it is clearly harmless. Each call gets the same total weight, and
+the two classes are balanced.
 
 SYNTHETIC data, not clinically validated. Do not use for real triage.
 """
@@ -31,25 +37,52 @@ sys.path.insert(0, os.path.join(ROOT, "data", "source"))
 from calls import CALLS  # noqa: E402
 sys.path.insert(0, HERE)
 from extra_training_calls import EXTRA  # noqa: E402
+from generated_calls import GENERATED  # noqa: E402
 
 MODEL_OUT = os.path.join(ROOT, "frontend", "app", "lib", "ambulanceModel.json")
 REPORT_OUT = os.path.join(HERE, "results.md")
 
-MIN_CALLS = 2      # a term must appear in at least this many training calls
-L2 = 1e-3          # regularisation strength
-ITERS = 400
+MIN_CALLS = 3      # a term must appear in at least this many training calls
+L2 = 1e-4          # regularisation strength
+ITERS = 1000
 LR = 2.0
 THRESHOLD = 0.5
-NO_FROM_TURN = 2   # "no" calls count as "no" from this turn index on
+NO_FROM_TURN = 1   # data/source "no" calls count as "no" from this caller turn on
 
 
 # ---- features (keep in sync with frontend/app/lib/ambulanceModel.ts)
 
 TOKEN = re.compile(r"[a-z0-9åäöéü]+")
+CLAUSE = re.compile(r"[.,;:!?\n]+|\bbut\b")
+NEGATORS = set("""no not never cant cannot dont doesnt didnt isnt wasnt arent werent wont wouldnt
+couldnt hasnt havent hadnt shouldnt aint nothing without neither nor none""".split())
+STOPWORDS = set("""i me my myself we us our you your he him his himself she her hers herself they them
+their it its im ive id hes shes theyre youre were a an the and or of to in on at by for with from
+this that these those is am are was be been being do does did so just um uh oh yes yeah okay ok hi
+hello there here""".split())
+# Street and town names: addresses are in every call, so they can only be noise.
+ADDRESS = re.compile(r"(gatan|vägen|väg|torget|torg|allé|gränd|stigen|backen|ringen|lyckan)$|^(lund|malmö|dalby|"
+                     r"staffanstorp|lomma|sandby|södra|norra|östra|västra|stora|lilla|kung|oskars|ideon|gateway|flat|floor)$")
+NEG_SCOPE = 3  # words after a negator that get the "not_" tag
 
 
 def tokenize(text):
-    return TOKEN.findall(text.lower().replace("'", "").replace("\u2019", ""))
+    """Caller text -> feature words: lowercase, no stopwords or numbers, negated words tagged not_."""
+    out = []
+    text = text.lower().replace("'", "").replace("\u2019", "")
+    for clause in CLAUSE.split(text):
+        scope = 0
+        for t in TOKEN.findall(clause):
+            if t in NEGATORS:
+                scope = NEG_SCOPE
+            elif t in STOPWORDS or t.isdigit() or ADDRESS.search(t):
+                continue
+            elif scope:
+                out.append("not_" + t)
+                scope -= 1
+            else:
+                out.append(t)
+    return out
 
 
 def terms(turn_texts):
@@ -80,22 +113,34 @@ def sigmoid(z):
 
 # ---- data
 
+def caller_index(speakers, turn):
+    """Number of caller turns before full-conversation turn index `turn`, i.e. the caller-turn index
+    of the first caller turn at or after it."""
+    return sum(1 for sp in speakers[:turn] if sp == "caller")
+
+
 def load():
     calls = []
     for c in CALLS:
-        texts = [tx for _, _, tx in c["turns"]]
+        speakers = [sp for _, sp, _ in c["turns"]]
+        all_texts = [tx for _, _, tx in c["turns"]]
         g = c["gold"]
         quotes = [q for _, q in g["red_flags"]]
-        flag_turns = [i for i, tx in enumerate(texts) if any(q in tx for q in quotes)]
+        flag_turns = [i for i, tx in enumerate(all_texts) if any(q in tx for q in quotes)]
         calls.append({
-            "id": c["call_id"], "title": c["title"], "gold": g["ambulance"], "texts": texts,
-            "speakers": [sp for _, sp, _ in c["turns"]],
-            "first_flag": min(flag_turns) if flag_turns else 0, "extra": False,
+            "id": c["call_id"], "title": c["title"], "gold": g["ambulance"],
+            "texts": [tx for sp, tx in zip(speakers, all_texts) if sp == "caller"],
+            "full": list(zip(speakers, all_texts)),
+            "first_flag": caller_index(speakers, min(flag_turns)) if flag_turns else 0, "extra": False,
         })
-    extras = [{
-        "id": c["call_id"], "title": c["call_id"], "gold": c["ambulance"], "texts": [tx for _, tx in c["turns"]],
-        "speakers": [sp for sp, _ in c["turns"]], "first_flag": c["label_from"], "extra": True,
-    } for c in EXTRA]
+    extras = []
+    for c in EXTRA + GENERATED:
+        speakers = [sp for sp, _ in c["turns"]]
+        extras.append({
+            "id": c["call_id"], "title": c["call_id"], "gold": c["ambulance"],
+            "texts": [tx for sp, tx in c["turns"] if sp == "caller"], "full": c["turns"],
+            "first_flag": caller_index(speakers, c["label_from"] or 0), "extra": True,
+        })
     return calls, extras
 
 
@@ -103,7 +148,7 @@ def samples_for(call):
     """(turn_texts_prefix, label) pairs for one training call."""
     n = len(call["texts"])
     if call["gold"] == "yes":
-        start, label = call["first_flag"], 1
+        start, label = min(call["first_flag"], n - 1), 1
     elif call["extra"]:
         start, label = min(call["first_flag"], n - 1), 0
     else:
@@ -182,25 +227,22 @@ def main():
           f"({sum(c['gold'] == 'yes' for c in labelled)} yes, {sum(c['gold'] == 'no' for c in labelled)} no) "
           f"+ {len(extras)} extra training calls ({sum(c['gold'] == 'no' for c in extras)} no)")
 
-    # Leave-one-call-out: the score for each call comes from a model that never saw it.
+    # Held out: a model trained without any data/source call scores every data/source call.
+    held = fit(extras)
     results = {}
-    for i, held in enumerate(labelled):
-        m = fit([c for c in labelled + extras if c is not held])
-        p = predict(m, held["texts"])
-        results[held["id"]] = {"prob": p, "first_alert": first_alert(m, held["texts"])}
-        print(f"  [{i + 1:2d}/{len(labelled)}] {held['id']:<40} gold={held['gold']:<3} p={p:.2f}")
+    for c in calls:
+        p = predict(held, c["texts"])
+        results[c["id"]] = {"prob": p, "first_alert": first_alert(held, c["texts"])}
+        print(f"  {c['id']:<40} gold={c['gold']:<7} p={p:.2f}")
 
     final = fit(labelled + extras)
-    for c in calls:
-        if c["id"] not in results:  # unclear calls were never trained on
-            results[c["id"]] = {"prob": predict(final, c["texts"]), "first_alert": first_alert(final, c["texts"])}
 
     correct = sum((results[c["id"]]["prob"] >= THRESHOLD) == (c["gold"] == "yes") for c in labelled)
     tp = sum(results[c["id"]]["prob"] >= THRESHOLD for c in labelled if c["gold"] == "yes")
     tn = sum(results[c["id"]]["prob"] < THRESHOLD for c in labelled if c["gold"] == "no")
     n_yes = sum(c["gold"] == "yes" for c in labelled)
     n_no = len(labelled) - n_yes
-    print(f"leave-one-call-out accuracy {correct}/{len(labelled)}  (ambulance {tp}/{n_yes}, no ambulance {tn}/{n_no})")
+    print(f"held-out accuracy {correct}/{len(labelled)}  (ambulance {tp}/{n_yes}, no ambulance {tn}/{n_no})")
 
     # Strongest terms, for the report and the testbench.
     ranked = sorted(range(len(final["vocab"])), key=lambda j: final["coef"][j])
@@ -211,20 +253,20 @@ def main():
     examples = [{
         "callId": c["id"], "title": c["title"], "gold": c["gold"],
         "looProb": round(results[c["id"]]["prob"], 4),
-        "heldOut": c["gold"] in ("yes", "no"),
-        "text": "\n".join(f"{speaker_name[s]}: {t}" for s, t in zip(c["speakers"], c["texts"])),
+        "heldOut": True,
+        "text": "\n".join(f"{speaker_name[s]}: {t}" for s, t in c["full"]),
     } for c in calls]
 
     model_json = {
         "_note": "SYNTHETIC training data, not clinically validated. Generated by data/model/train_ambulance.py - do not edit by hand.",
-        "version": 1,
+        "version": 2,
         "trainedOn": date.today().isoformat(),
         "threshold": THRESHOLD,
         "bias": round(final["bias"], 6),
         "terms": final["vocab"],
         "idf": [round(v, 6) for v in final["idf"]],
         "weights": [round(v, 6) for v in final["coef"]],
-        "evaluation": {"method": "leave-one-call-out", "correct": correct, "total": len(labelled),
+        "evaluation": {"method": "held-out (trained without data/source)", "correct": correct, "total": len(labelled),
                        "ambulanceCorrect": tp, "ambulanceTotal": n_yes, "noAmbulanceCorrect": tn, "noAmbulanceTotal": n_no},
         "examples": examples,
     }
@@ -232,11 +274,14 @@ def main():
         json.dump(model_json, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
 
-    md = ["# Ambulance model: leave-one-call-out results", "",
+    md = ["# Ambulance model: held-out results", "",
           "SYNTHETIC data, not clinically validated. Generated by `python3 data/model/train_ambulance.py`.", "",
-          f"TF-IDF (unigrams + bigrams, whole conversation) + logistic regression. {len(final['vocab'])} terms, threshold {THRESHOLD}.", "",
+          f"TF-IDF (unigrams + bigrams of the caller's words only, negation-tagged) + logistic regression. "
+          f"{len(final['vocab'])} terms, threshold {THRESHOLD}. Trained on {len(labelled)} data/source calls, "
+          f"{len(EXTRA)} extra calls and {len(GENERATED)} generated calls.", "",
           f"**Accuracy {correct}/{len(labelled)}** (ambulance {tp}/{n_yes}, no ambulance {tn}/{n_no}). "
-          "Each score comes from a model trained without that call. \"Unclear\" calls are not trained on; they are scored by the final model.", "",
+          "Every score below comes from a model trained only on the extra + generated calls, so it has never seen any data/source call. "
+          "\"First says ambulance\" counts caller turns.", "",
           "| Call | Gold | P(ambulance) | Model | First says ambulance at turn |", "|---|---|---|---|---|"]
     for c in calls:
         r = results[c["id"]]

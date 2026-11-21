@@ -1,0 +1,272 @@
+{
+  "call_id": "call_08_hidden_suicide_risk",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Calls 'just to talk', hidden suicide risk and overdose",
+  "incident_id": "call_08_hidden_suicide_risk",
+  "language": "en",
+  "location": {
+    "address": "Fjelievägen 7, Lund (apt 3)",
+    "lat": 55.7179,
+    "lng": 13.1712
+  },
+  "tricky_aspects": [
+    "hidden suicide risk",
+    "indirect phrases",
+    "overdose revealed late",
+    "calm caller"
+  ],
+  "duration_s": 79,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi. I don't know if this is the right number. It's not really an emergency."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "That's okay. What's going on?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "I just can't sleep. I haven't slept properly in weeks. I just wanted to talk to someone, I guess."
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "operator",
+      "text": "I hear you. Are you alone right now?"
+    },
+    {
+      "t": 21,
+      "time": "00:21",
+      "speaker": "caller",
+      "text": "Yeah. I gave my cat to my sister yesterday, so it's really quiet here now."
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "operator",
+      "text": "Why did you give your cat away?"
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "caller",
+      "text": "She'll take better care of him. It won't matter after tonight anyway."
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "When you say it won't matter after tonight, are you thinking about killing yourself?"
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "caller",
+      "text": "... I've sorted things out. I wrote some letters. Everyone would be better off, honestly."
+    },
+    {
+      "t": 51,
+      "time": "00:51",
+      "speaker": "operator",
+      "text": "Thank you for telling me. Have you done anything to hurt yourself today? Have you taken anything?"
+    },
+    {
+      "t": 57,
+      "time": "00:57",
+      "speaker": "caller",
+      "text": "I took a few of my sleeping pills. Maybe more than a few. The whole strip I think."
+    },
+    {
+      "t": 64,
+      "time": "01:04",
+      "speaker": "operator",
+      "text": "What's your address? I want to get help to you right now."
+    },
+    {
+      "t": 67,
+      "time": "01:07",
+      "speaker": "caller",
+      "text": "I don't know... Fjelievägen 7. Lund. Apartment 3."
+    },
+    {
+      "t": 73,
+      "time": "01:13",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance. Can you unlock your front door? And stay on the line with me."
+    },
+    {
+      "t": 79,
+      "time": "01:19",
+      "speaker": "caller",
+      "text": "I'm getting really tired."
+    }
+  ],
+  "gold_label": {
+    "category": "mental_health_suicide",
+    "secondary_categories": [
+      "unconscious_cardiac_arrest"
+    ],
+    "urgency": "A",
+    "urgency_rationale": "Intentional overdose (sleeping pills, a full strip) with clear suicidal intent and goodbye behaviour; becoming drowsy.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "D"
+      },
+      {
+        "t": 31,
+        "time": "00:31",
+        "urgency": "B"
+      },
+      {
+        "t": 57,
+        "time": "00:57",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "police (scene safety / entry if door locked)",
+      "psychiatric follow-up"
+    ],
+    "red_flags": [
+      {
+        "label": "caller downplays",
+        "quote": "It's not really an emergency",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "giving away pet",
+        "quote": "I gave my cat to my sister yesterday",
+        "turn_index": 5,
+        "t": 21,
+        "speaker": "caller"
+      },
+      {
+        "label": "hopelessness / time frame",
+        "quote": "It won't matter after tonight anyway",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      },
+      {
+        "label": "goodbye letters",
+        "quote": "I wrote some letters",
+        "turn_index": 9,
+        "t": 43,
+        "speaker": "caller"
+      },
+      {
+        "label": "burden belief",
+        "quote": "Everyone would be better off",
+        "turn_index": 9,
+        "t": 43,
+        "speaker": "caller"
+      },
+      {
+        "label": "overdose",
+        "quote": "The whole strip I think",
+        "turn_index": 11,
+        "t": 57,
+        "speaker": "caller"
+      },
+      {
+        "label": "decreasing consciousness",
+        "quote": "I'm getting really tired",
+        "turn_index": 15,
+        "t": 79,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Name of the sleeping pills and strength?",
+      "What time did you take them?",
+      "Alcohol or other drugs as well?",
+      "Age?"
+    ],
+    "supplies": [
+      "naloxone (if opioids)",
+      "activated charcoal (per protocol)",
+      "glucometer",
+      "12-lead ECG",
+      "airway kit / suction",
+      "police support"
+    ],
+    "handover": "Adult, alone, intentional overdose of own sleeping pills (~1 strip, drug name unknown), suicidal intent, letters written, now drowsy. Asked to unlock door.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "both"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety, entry)",
+        "psychiatric ambulance / crisis team if available",
+        "police (scene safety / entry if door locked)",
+        "psychiatric follow-up"
+      ],
+      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
+      "prepare_en_route": [
+        "ask dispatch for drug name/amount",
+        "naloxone if opioids",
+        "ECG",
+        "scene safety: wait for police if weapon"
+      ],
+      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "adult alone, intentional overdose of own sleeping pills (~1 strip)",
+        "drug name unknown",
+        "getting drowsy"
+      ],
+      "scene_notes": [
+        "door may be locked - police for entry",
+        "look for pill packages and letters"
+      ],
+      "urgency": "A",
+      "bring": [
+        "naloxone (if opioids)",
+        "activated charcoal (per protocol)",
+        "glucometer",
+        "12-lead ECG",
+        "airway kit / suction",
+        "police support"
+      ],
+      "open_questions": [
+        "Name of the sleeping pills and strength?",
+        "What time did you take them?",
+        "Alcohol or other drugs as well?",
+        "Age?"
+      ],
+      "unit": "AMB 1170",
+      "ambulance_position": {
+        "lat": 55.704,
+        "lng": 13.156
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

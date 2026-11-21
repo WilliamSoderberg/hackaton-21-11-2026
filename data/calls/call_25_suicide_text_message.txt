@@ -1,0 +1,14 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_25_suicide_text_message: Girlfriend got a goodbye text, boyfriend not answering
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: My boyfriend just sent me a text that says 'sorry for everything, I love you, goodbye'. He's not answering.
+[00:11] OPERATOR: Where is he?
+[00:13] CALLER: I think at his flat, Vildandsvägen 7 in Lund. I'm in Malmö.
+[00:19] OPERATOR: Has he talked about hurting himself before?
+[00:22] CALLER: He tried once before, with pills. He's been really down since he lost his job.
+[00:29] OPERATOR: Does he have access to pills or weapons?
+[00:32] CALLER: He has his mum's old sleeping pills. And he has a hunting rifle.
+[00:38] OPERATOR: What's his name, age and phone number?
+[00:42] CALLER: Jonas, 29. I'll send you the number. Please hurry.
+[00:47] OPERATOR: I'm sending police and an ambulance to the flat now. Keep trying to call him, and stay on this line.

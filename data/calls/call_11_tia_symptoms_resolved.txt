@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_11_tia_symptoms_resolved: Stroke symptoms that went away (TIA), urgency B
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hi, I'm calling for my dad, he's 74. About an hour ago his speech went weird for a few minutes.
+[00:11] OPERATOR: What's the address?
+[00:13] CALLER: Stora Södergatan 52, Lund.
+[00:17] OPERATOR: How is he right now?
+[00:19] CALLER: Now he seems fine again, he's talking normally and walking around. He says we're overreacting.
+[00:26] OPERATOR: When it happened, did his face droop or was one arm weak?
+[00:30] CALLER: His left hand felt numb and he dropped his coffee cup. That's gone now too.
+[00:36] OPERATOR: Ask him to smile and lift both arms now.
+[00:40] CALLER: ... He smiles normally, both arms go up fine.
+[00:45] OPERATOR: Does he take blood thinners or have heart rhythm problems?
+[00:49] CALLER: He has atrial fibrillation, he takes Eliquis.
+[00:54] OPERATOR: This could be a warning sign of a stroke even if it has passed. I'm sending an ambulance so he gets to the stroke unit. Call back immediately if the symptoms come back.

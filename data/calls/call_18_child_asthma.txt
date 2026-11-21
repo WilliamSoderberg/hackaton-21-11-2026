@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_18_child_asthma: Boy 10 with asthma attack, inhaler only partly helps
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: My son has asthma and he can't breathe properly, the inhaler isn't working like it should.
+[00:10] OPERATOR: Where are you?
+[00:12] CALLER: Linero, Smörlyckan 5, in Lund. It's a terraced house.
+[00:18] OPERATOR: How old is he? How much inhaler has he taken?
+[00:21] CALLER: He's ten. He's taken four puffs of the blue one in the last half hour.
+[00:27] OPERATOR: Can he speak in full sentences?
+[00:30] CALLER: Only a few words, then he has to breathe. He's sitting leaning forward on the table.
+[00:37] OPERATOR: Is his skin or lips a normal colour?
+[00:40] CALLER: His lips are okay. He's pale. I can see the skin pulling in between his ribs.
+[00:47] OPERATOR: Has he been this bad before?
+[00:50] CALLER: Once, two years ago, he was at hospital overnight. He has a cold this week.
+[00:56] OPERATOR: I'm sending an ambulance. Give two more puffs with the spacer now. Keep him sitting up, keep calm with him.

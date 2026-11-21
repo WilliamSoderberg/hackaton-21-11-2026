@@ -1,0 +1,14 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_16_prank_call: Prank call: teenagers report a fake accident
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Yeah hi, there's been a huge accident, a guy got hit by like a bus.
+[00:08] OPERATOR: Where is this?
+[00:10] CALLER: At, um, Mårtenstorget. Or no wait, Clemenstorget.
+[00:16] OPERATOR: Which one? Is the person awake?
+[00:19] CALLER: He's, uh... (laughing in background) shut up! ... He's totally dead, there's blood everywhere.
+[00:27] OPERATOR: Is there a bus there now? Are other people helping?
+[00:31] CALLER: Yeah the bus drove away. Say it's a tractor! (laughing)
+[00:37] OPERATOR: I need to tell you that calls to 112 are recorded and your phone number is visible to us. Is anyone actually injured?
+[00:45] CALLER: ... no. Sorry. It was a joke. Sorry sorry.
+[00:49] OPERATOR: Calling 112 when there is no emergency can stop people who need help. I'm ending the call and this will be reported.

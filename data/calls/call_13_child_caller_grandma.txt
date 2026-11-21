@@ -1,0 +1,22 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_13_child_caller_grandma: Child (8) calls: grandma won't wake up
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Hi. My mormor won't wake up.
+[00:07] OPERATOR: Okay, you did the right thing calling. What's your name and how old are you?
+[00:11] CALLER: I'm Elsa. I'm eight.
+[00:14] OPERATOR: Elsa, is there a grown-up with you?
+[00:17] CALLER: No, just me and mormor. Mamma is at work.
+[00:21] OPERATOR: Do you know the address where you are?
+[00:24] CALLER: It's mormor's house. It's on Klostergatan, next to the big church. The door is green.
+[00:32] OPERATOR: Good. Is there a number on the door?
+[00:35] CALLER: I think it's 8. Yes, eight.
+[00:39] OPERATOR: Go to mormor. Shake her shoulder and say her name loud. Does she wake up?
+[00:46] CALLER: Mormor! ... She makes a sound but she doesn't open her eyes.
+[00:52] OPERATOR: Is her chest going up and down?
+[00:55] CALLER: Yes, it goes up and down. She's all sweaty and her face is white.
+[01:01] OPERATOR: Is mormor sick with anything? Does she take medicine?
+[01:05] CALLER: She has sugar sickness. She does the pen in her tummy. She didn't eat lunch, she said she wasn't hungry.
+[01:14] OPERATOR: Elsa, you're doing great. The ambulance is coming. Can you roll mormor onto her side, like sleeping on the side?
+[01:22] CALLER: She's heavy. ... Okay, she's on her side.
+[01:28] OPERATOR: Can you open the green door and then come back to the phone? Stay with mormor.

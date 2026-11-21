@@ -1,0 +1,237 @@
+{
+  "call_id": "call_06_panicking_child_seizure",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Panicking parent, 3-year-old with fever having a seizure",
+  "incident_id": "call_06_panicking_child_seizure",
+  "language": "en",
+  "location": {
+    "address": "Ringvägen 40, Staffanstorp",
+    "lat": 55.6411,
+    "lng": 13.2093
+  },
+  "tricky_aspects": [
+    "panicking caller",
+    "screaming / repeated phrases",
+    "operator must calm caller to get info"
+  ],
+  "duration_s": 68,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what's your emergency?"
+    },
+    {
+      "t": 2,
+      "time": "00:02",
+      "speaker": "caller",
+      "text": "Help me! Help, my son, he's shaking, he's shaking, oh my God please!"
+    },
+    {
+      "t": 6,
+      "time": "00:06",
+      "speaker": "operator",
+      "text": "I'm here to help. Tell me your address first."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "caller",
+      "text": "He's shaking! Please just come!"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "operator",
+      "text": "I can only send help if I know where you are. What is the address?"
+    },
+    {
+      "t": 14,
+      "time": "00:14",
+      "speaker": "caller",
+      "text": "Okay, okay, Ringvägen 40, Staffanstorp, the white house!"
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "operator",
+      "text": "Ringvägen 40, Staffanstorp. Good. How old is your son?"
+    },
+    {
+      "t": 23,
+      "time": "00:23",
+      "speaker": "caller",
+      "text": "He's three. He had a fever all day, and now his eyes are rolled back and his arms are jerking."
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "operator",
+      "text": "Is he lying on the floor or the bed?"
+    },
+    {
+      "t": 32,
+      "time": "00:32",
+      "speaker": "caller",
+      "text": "On the bed. His lips look a bit blue, is he dying? Is he dying?"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "Help is on the way with sirens. Move anything hard away from him, don't put anything in his mouth, don't hold him down. How long has he been shaking?"
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "caller",
+      "text": "I don't know, maybe two minutes? Three? It feels like forever."
+    },
+    {
+      "t": 50,
+      "time": "00:50",
+      "speaker": "operator",
+      "text": "Okay. Is it still going on now?"
+    },
+    {
+      "t": 53,
+      "time": "00:53",
+      "speaker": "caller",
+      "text": "Yes... wait, it's slowing down... it stopped. He's not moving, he's breathing, he's breathing heavy."
+    },
+    {
+      "t": 61,
+      "time": "01:01",
+      "speaker": "operator",
+      "text": "Good. Turn him on his side, like this, top leg bent. Keep watching his breathing. Has he ever had a seizure before?"
+    },
+    {
+      "t": 68,
+      "time": "01:08",
+      "speaker": "caller",
+      "text": "No, never. He's never had anything."
+    }
+  ],
+  "gold_label": {
+    "category": "seizure",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Ongoing generalised seizure with cyanosis at time of call, first ever, child 3 with fever. Can be reassessed to B after it stops and child recovers.",
+    "urgency_timeline": [
+      {
+        "t": 2,
+        "time": "00:02",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "ongoing seizure",
+        "quote": "he's shaking, he's shaking",
+        "turn_index": 1,
+        "t": 2,
+        "speaker": "caller"
+      },
+      {
+        "label": "fever",
+        "quote": "He had a fever all day",
+        "turn_index": 7,
+        "t": 23,
+        "speaker": "caller"
+      },
+      {
+        "label": "generalised seizure signs",
+        "quote": "his eyes are rolled back and his arms are jerking",
+        "turn_index": 7,
+        "t": 23,
+        "speaker": "caller"
+      },
+      {
+        "label": "cyanosis",
+        "quote": "His lips look a bit blue",
+        "turn_index": 9,
+        "t": 32,
+        "speaker": "caller"
+      },
+      {
+        "label": "first ever seizure",
+        "quote": "No, never. He's never had anything",
+        "turn_index": 15,
+        "t": 68,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Weight of the child (for medication dose)?",
+      "Any rash, stiff neck or very drowsy before? (meningitis)",
+      "Any fever medicine given and when?",
+      "Exact time the seizure started"
+    ],
+    "supplies": [
+      "midazolam / benzodiazepine (buccal or IV)",
+      "oxygen",
+      "suction",
+      "glucometer",
+      "thermometer / antipyretic for child",
+      "paediatric equipment"
+    ],
+    "handover": "Male 3 y, febrile all day, first-ever generalised tonic-clonic seizure ~2-3 min with perioral cyanosis, stopped at ~00:55, now post-ictal in recovery position, breathing.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [],
+      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
+      "prepare_en_route": [
+        "buccal/IV midazolam dose by weight",
+        "suction",
+        "glucometer",
+        "paediatric kit if child"
+      ],
+      "pre_alert": "ED if seizure ongoing on arrival",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "boy 3 y, fever all day",
+        "first seizure ~2-3 min, now post-ictal",
+        "lips were blue"
+      ],
+      "scene_notes": [
+        "very anxious parent",
+        "weight unknown - estimate ~14 kg for age"
+      ],
+      "urgency": "A",
+      "bring": [
+        "midazolam / benzodiazepine (buccal or IV)",
+        "oxygen",
+        "suction",
+        "glucometer",
+        "thermometer / antipyretic for child",
+        "paediatric equipment"
+      ],
+      "open_questions": [
+        "Weight of the child (for medication dose)?",
+        "Any rash, stiff neck or very drowsy before? (meningitis)",
+        "Any fever medicine given and when?",
+        "Exact time the seizure started"
+      ],
+      "unit": "AMB 1160",
+      "ambulance_position": {
+        "lat": 55.654,
+        "lng": 13.188
+      },
+      "destination_hospital": {
+        "name": "SUS Lund, Barnakuten",
+        "detail": "Paediatric emergency department",
+        "lat": 55.7139,
+        "lng": 13.1972
+      }
+    }
+  }
+}

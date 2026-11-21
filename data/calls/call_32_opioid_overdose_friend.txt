@@ -1,0 +1,17 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_32_opioid_overdose_friend: Friend found barely breathing after heroin (caller fears police)
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Do the police have to come? My friend is just really out of it, I can't wake him.
+[00:09] OPERATOR: We're here to help your friend. Where are you?
+[00:12] CALLER: Södra Esplanaden 22, basement storage area.
+[00:17] OPERATOR: Is he breathing?
+[00:19] CALLER: Kind of. Very slow. Like one breath and then nothing for a long time.
+[00:25] OPERATOR: Did he take anything?
+[00:28] CALLER: Heroin. He shot up about ten minutes ago. He's been clean for months, so maybe he took too much.
+[00:35] OPERATOR: What colour are his lips?
+[00:37] CALLER: Kind of grey-blue.
+[00:40] OPERATOR: Do you have naloxone, the nose spray?
+[00:43] CALLER: Yes, I have one in my bag.
+[00:46] OPERATOR: Spray it up his nose now, all of it in one nostril. Then tilt his head back and give rescue breaths if you can. I'm sending an ambulance with sirens.
+[00:55] CALLER: Okay. I did it. He's still not moving.

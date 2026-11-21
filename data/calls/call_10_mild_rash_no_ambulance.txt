@@ -1,0 +1,18 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_10_mild_rash_no_ambulance: Mild itchy rash, no ambulance needed (negative control)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hi, it's maybe not an emergency, but I have a rash and I'm a bit worried.
+[00:09] OPERATOR: Tell me more. Where are you?
+[00:11] CALLER: I'm at home, Tunavägen 30 in Lund. I washed my clothes with a new detergent and now I have red itchy spots on my arms.
+[00:20] OPERATOR: When did it start?
+[00:22] CALLER: This morning, so maybe four hours ago. It hasn't really changed.
+[00:27] OPERATOR: Any swelling of your lips, tongue or throat? Any trouble breathing or swallowing?
+[00:32] CALLER: No, nothing like that. Breathing is fine. It's only on my arms.
+[00:37] OPERATOR: Do you feel dizzy, faint, or sick to your stomach?
+[00:40] CALLER: No, I feel fine. It's just itchy.
+[00:43] OPERATOR: Do you have any known allergies or an EpiPen?
+[00:46] CALLER: No allergies that I know.
+[00:49] OPERATOR: This doesn't sound dangerous right now. You don't need an ambulance. Wash the skin, change clothes, and you can call 1177 for advice or buy an antihistamine at the pharmacy. If your lips or throat swell or you get trouble breathing, call 112 right away.
+[01:04] CALLER: Okay, thank you, sorry for calling.
+[01:06] OPERATOR: No problem, that's what we're here for.

@@ -1,0 +1,237 @@
+{
+  "call_id": "call_14_swedish_shrimp_anaphylaxis",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Swedish-speaking caller: anaphylaxis after shrimp",
+  "incident_id": "call_14_swedish_shrimp_anaphylaxis",
+  "language": "sv",
+  "location": {
+    "address": "Magistratsvägen 47, Lund (3rd floor)",
+    "lat": 55.7225,
+    "lng": 13.2045
+  },
+  "tricky_aspects": [
+    "whole call in Swedish",
+    "model must classify non-English transcript",
+    "throat symptoms phrased colloquially"
+  ],
+  "duration_s": 66,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, vad har hänt?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hej, min sambo har ätit räkor och nu får han inte luft ordentligt!"
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Vilken adress är ni på?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "Magistratsvägen 47, Lund, trappa tre."
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "Hur gammal är han? Är han vaken?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "Han är 34. Han är vaken men han säger att det känns som att halsen blir trång."
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "operator",
+      "text": "Har han svullnad i ansiktet eller utslag?"
+    },
+    {
+      "t": 29,
+      "time": "00:29",
+      "speaker": "caller",
+      "text": "Läpparna är jättesvullna och han har röda prickar över hela magen. Han låter hes."
+    },
+    {
+      "t": 36,
+      "time": "00:36",
+      "speaker": "operator",
+      "text": "Har han varit allergisk förut? Har han en adrenalinpenna?"
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "Han är allergisk mot skaldjur men vi trodde det var lugnt. Ingen penna, den gick ut förra året."
+    },
+    {
+      "t": 48,
+      "time": "00:48",
+      "speaker": "operator",
+      "text": "Mår han illa eller känner sig yr?"
+    },
+    {
+      "t": 51,
+      "time": "00:51",
+      "speaker": "caller",
+      "text": "Han säger att han är yr och han har kräkts en gång."
+    },
+    {
+      "t": 56,
+      "time": "00:56",
+      "speaker": "operator",
+      "text": "Jag skickar en ambulans med blåljus nu. Låt honom sitta upp om han andas lättare så, men lägg honom ner med benen högt om han blir svimfärdig."
+    },
+    {
+      "t": 66,
+      "time": "01:06",
+      "speaker": "caller",
+      "text": "Okej. Snälla skynda er."
+    }
+  ],
+  "gold_label": {
+    "category": "allergic_reaction",
+    "secondary_categories": [
+      "breathing_difficulty"
+    ],
+    "urgency": "A",
+    "urgency_rationale": "Known shellfish allergy, throat tightness, hoarse voice, lip swelling, widespread hives, dizziness and vomiting = anaphylaxis. No adrenaline available.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      },
+      {
+        "t": 40,
+        "time": "00:40",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "breathing difficulty",
+        "quote": "nu får han inte luft ordentligt",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "throat tightness",
+        "quote": "halsen blir trång",
+        "turn_index": 5,
+        "t": 19,
+        "speaker": "caller"
+      },
+      {
+        "label": "lip swelling",
+        "quote": "Läpparna är jättesvullna",
+        "turn_index": 7,
+        "t": 29,
+        "speaker": "caller"
+      },
+      {
+        "label": "hoarse voice (airway)",
+        "quote": "Han låter hes",
+        "turn_index": 7,
+        "t": 29,
+        "speaker": "caller"
+      },
+      {
+        "label": "no adrenaline available",
+        "quote": "Ingen penna, den gick ut förra året",
+        "turn_index": 9,
+        "t": 40,
+        "speaker": "caller"
+      },
+      {
+        "label": "dizziness and vomiting (systemic)",
+        "quote": "Han säger att han är yr och han har kräkts en gång",
+        "turn_index": 11,
+        "t": 51,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "When did he eat the shrimp?",
+      "Asthma?",
+      "Any antihistamine taken?",
+      "Door code?"
+    ],
+    "supplies": [
+      "adrenaline auto-injector / IM adrenaline",
+      "oxygen",
+      "IV access kit",
+      "antihistamine",
+      "airway kit"
+    ],
+    "handover": "Male 34, known shellfish allergy, ate shrimp. Throat tightness, hoarse, lip swelling, widespread urticaria, dizzy, vomited x1. No adrenaline (expired). Anaphylaxis.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [],
+      "destination": "Emergency department (SUS Lund)",
+      "prepare_en_route": [
+        "adrenaline 0.5 mg IM drawn up (0.3 mg child)",
+        "second dose ready",
+        "IV fluids",
+        "airway kit in reach"
+      ],
+      "pre_alert": "ED if airway swelling",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "male 34, shellfish allergy, ate shrimp",
+        "throat tightness, hoarse, lip swelling, hives, vomited, dizzy",
+        "NO adrenaline on scene (expired)"
+      ],
+      "scene_notes": [
+        "3rd floor",
+        "caller speaks Swedish"
+      ],
+      "urgency": "A",
+      "bring": [
+        "adrenaline auto-injector / IM adrenaline",
+        "oxygen",
+        "IV access kit",
+        "antihistamine",
+        "airway kit"
+      ],
+      "open_questions": [
+        "When did he eat the shrimp?",
+        "Asthma?",
+        "Any antihistamine taken?",
+        "Door code?"
+      ],
+      "unit": "AMB 1240",
+      "ambulance_position": {
+        "lat": 55.715,
+        "lng": 13.225
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

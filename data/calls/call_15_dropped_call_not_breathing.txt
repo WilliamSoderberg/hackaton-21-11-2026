@@ -1,0 +1,9 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_15_dropped_call_not_breathing: Dropped call: 'he's not breathing' then line cuts
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:02] CALLER: Please, my friend, he's not breathing, he just fell down!
+[00:06] OPERATOR: Where are you? Give me the address.
+[00:08] CALLER: We're at the student flats on Sparta, Tornavägen, the building by the...
+[00:13] OPERATOR: Hello? Which building? Hello?
+[00:16] OPERATOR: The line is dead. I'm calling back and starting a phone position trace.

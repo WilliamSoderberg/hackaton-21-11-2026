@@ -1,0 +1,19 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_06_panicking_child_seizure: Panicking parent, 3-year-old with fever having a seizure
+
+[00:00] OPERATOR: 112, what's your emergency?
+[00:02] CALLER: Help me! Help, my son, he's shaking, he's shaking, oh my God please!
+[00:06] OPERATOR: I'm here to help. Tell me your address first.
+[00:08] CALLER: He's shaking! Please just come!
+[00:11] OPERATOR: I can only send help if I know where you are. What is the address?
+[00:14] CALLER: Okay, okay, Ringvägen 40, Staffanstorp, the white house!
+[00:20] OPERATOR: Ringvägen 40, Staffanstorp. Good. How old is your son?
+[00:23] CALLER: He's three. He had a fever all day, and now his eyes are rolled back and his arms are jerking.
+[00:30] OPERATOR: Is he lying on the floor or the bed?
+[00:32] CALLER: On the bed. His lips look a bit blue, is he dying? Is he dying?
+[00:37] OPERATOR: Help is on the way with sirens. Move anything hard away from him, don't put anything in his mouth, don't hold him down. How long has he been shaking?
+[00:45] CALLER: I don't know, maybe two minutes? Three? It feels like forever.
+[00:50] OPERATOR: Okay. Is it still going on now?
+[00:53] CALLER: Yes... wait, it's slowing down... it stopped. He's not moving, he's breathing, he's breathing heavy.
+[01:01] OPERATOR: Good. Turn him on his side, like this, top leg bent. Keep watching his breathing. Has he ever had a seizure before?
+[01:08] CALLER: No, never. He's never had anything.

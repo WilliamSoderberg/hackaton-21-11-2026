@@ -1,0 +1,15 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_07a_collision_witness: Car vs cyclist, call 1 of 2 (witness)
+
+[00:00] OPERATOR: 112, what has happened?
+[00:02] CALLER: There's been an accident, a car hit a cyclist! At the roundabout, Getingevägen and Byggmästaregatan, in Lund.
+[00:09] OPERATOR: Getingevägen and Byggmästaregatan. Are you safe, are you off the road?
+[00:13] CALLER: Yes I'm on the pavement. The guy on the bike flew over the hood, he's on the ground.
+[00:19] OPERATOR: Is he moving? Is he talking?
+[00:21] CALLER: No, he's not moving. There's blood coming from his head. He doesn't have a helmet.
+[00:27] OPERATOR: Is he breathing? Can you see his chest moving?
+[00:30] CALLER: I... I think so, yes, he's making sounds. Like groaning.
+[00:35] OPERATOR: I'm sending ambulance and police. How many people are injured? Is the driver okay?
+[00:40] CALLER: The driver got out, she's walking around on the phone. I think it's just the cyclist.
+[00:46] OPERATOR: Don't move him. If there's a lot of bleeding, press a jacket or cloth on it. Is anyone directing traffic?
+[00:52] CALLER: Some people stopped. Okay, I'll press on it.

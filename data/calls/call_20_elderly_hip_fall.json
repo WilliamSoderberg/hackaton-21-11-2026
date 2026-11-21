@@ -1,0 +1,251 @@
+{
+  "call_id": "call_20_elderly_hip_fall",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Woman 84 fell at night, can't get up, leg turned out",
+  "incident_id": "call_20_elderly_hip_fall",
+  "language": "en",
+  "location": {
+    "address": "Bryggaregatan 4B, Lund (ground floor)",
+    "lat": 55.709,
+    "lng": 13.1924
+  },
+  "tricky_aspects": [
+    "long lie (on floor since night)",
+    "found by home-care staff",
+    "hip fracture signs"
+  ],
+  "duration_s": 61,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, I'm from home care. I just arrived at a client's flat and she's lying on the kitchen floor."
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "operator",
+      "text": "Address?"
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "caller",
+      "text": "Bryggaregatan 4B, Lund, ground floor."
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "Is she awake and talking?"
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "caller",
+      "text": "Yes, she's awake and talking. She says she fell when she got up for water in the night, around two."
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "operator",
+      "text": "So she has been on the floor for several hours?"
+    },
+    {
+      "t": 29,
+      "time": "00:29",
+      "speaker": "caller",
+      "text": "Yes, maybe seven hours. She's very cold and she has wet herself."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "Where does she have pain?"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "caller",
+      "text": "Her right hip. The right leg looks shorter and the foot is turned out to the side."
+    },
+    {
+      "t": 44,
+      "time": "00:44",
+      "speaker": "operator",
+      "text": "Did she hit her head? Is she confused?"
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "caller",
+      "text": "She has a bump on the forehead. She's a bit slow but she knows where she is."
+    },
+    {
+      "t": 53,
+      "time": "00:53",
+      "speaker": "operator",
+      "text": "Does she take blood thinners?"
+    },
+    {
+      "t": 56,
+      "time": "00:56",
+      "speaker": "caller",
+      "text": "Let me check the list... yes, Waran."
+    },
+    {
+      "t": 61,
+      "time": "01:01",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance. Don't try to lift her. Put a blanket over her and under her if you can without moving the leg."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [],
+    "urgency": "B",
+    "urgency_rationale": "Suspected hip fracture (shortened, externally rotated leg), long lie ~7 h with hypothermia risk, head bump on warfarin. Raise to A if consciousness drops.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 37,
+        "time": "00:37",
+        "urgency": "B"
+      },
+      {
+        "t": 56,
+        "time": "00:56",
+        "urgency": "B"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "long lie",
+        "quote": "maybe seven hours",
+        "turn_index": 7,
+        "t": 29,
+        "speaker": "caller"
+      },
+      {
+        "label": "cold (hypothermia risk)",
+        "quote": "She's very cold",
+        "turn_index": 7,
+        "t": 29,
+        "speaker": "caller"
+      },
+      {
+        "label": "shortened, externally rotated leg",
+        "quote": "The right leg looks shorter and the foot is turned out",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      },
+      {
+        "label": "head injury",
+        "quote": "She has a bump on the forehead",
+        "turn_index": 11,
+        "t": 47,
+        "speaker": "caller"
+      },
+      {
+        "label": "anticoagulant (warfarin)",
+        "quote": "yes, Waran",
+        "turn_index": 13,
+        "t": 56,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "awake and oriented",
+        "quote": "she knows where she is",
+        "turn_index": 11,
+        "t": 47,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Why did she fall: dizziness, chest pain, blacked out?",
+      "Has she vomited?",
+      "Normal level of confusion for her?"
+    ],
+    "supplies": [
+      "vacuum mattress / scoop stretcher",
+      "pain relief (IV)",
+      "warming blanket",
+      "glucometer",
+      "12-lead ECG"
+    ],
+    "handover": "Female 84, fall ~02:00, long lie ~7 h, cold. Right leg shortened and externally rotated (suspected hip fracture). Forehead bump, on warfarin, slightly slow but oriented.",
+    "dashboard": {
+      "urgency": "High",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety / traffic)",
+        "rescue service if trapped or fuel/fire"
+      ],
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "prepare_en_route": [
+        "cervical collar + vacuum mattress",
+        "haemostatic dressing / tourniquet",
+        "pelvic binder",
+        "IV fluids",
+        "count patients - one ambulance per seriously injured"
+      ],
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "female 84, long lie ~7 h, cold",
+        "right leg short + externally rotated",
+        "head bump, ON WARFARIN"
+      ],
+      "scene_notes": [
+        "home-care staff on scene",
+        "ground floor",
+        "warm her - hypothermia"
+      ],
+      "urgency": "B",
+      "bring": [
+        "vacuum mattress / scoop stretcher",
+        "pain relief (IV)",
+        "warming blanket",
+        "glucometer",
+        "12-lead ECG"
+      ],
+      "open_questions": [
+        "Why did she fall: dizziness, chest pain, blacked out?",
+        "Has she vomited?",
+        "Normal level of confusion for her?"
+      ],
+      "unit": "AMB 1290",
+      "ambulance_position": {
+        "lat": 55.72,
+        "lng": 13.176
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

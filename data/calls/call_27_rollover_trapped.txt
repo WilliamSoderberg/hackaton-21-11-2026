@@ -1,0 +1,15 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_27_rollover_trapped: Car on its roof on E22, driver trapped, fuel smell
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: A car has rolled over on the E22, it's lying on its roof in the ditch!
+[00:09] OPERATOR: Where exactly on the E22? Which direction?
+[00:12] CALLER: Towards Malmö, just after the Lund Södra exit.
+[00:17] OPERATOR: How many people are in the car?
+[00:20] CALLER: I see one, the driver. He's hanging upside down in the belt. He's stuck, the door won't open.
+[00:28] OPERATOR: Is he awake?
+[00:30] CALLER: He's moaning, he says he can't feel his legs.
+[00:35] OPERATOR: Is there fire or smoke? Is your car parked safely?
+[00:38] CALLER: No fire, but it smells strongly of petrol. My hazard lights are on.
+[00:44] OPERATOR: Do not get close to the car because of the petrol. I'm sending ambulance, rescue service and police now. Is there bleeding you can see?
+[00:52] CALLER: There's blood on his face, I can't see much else.

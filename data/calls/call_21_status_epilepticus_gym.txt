@@ -1,0 +1,15 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_21_status_epilepticus_gym: Man seizing at the gym for over 5 minutes
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: A guy is having a seizure here at the gym, he's shaking all over!
+[00:08] OPERATOR: Which gym, what address?
+[00:10] CALLER: The gym at Nova Lund shopping centre, upstairs.
+[00:15] OPERATOR: How long has he been shaking?
+[00:17] CALLER: It started before I called, now it's like six, seven minutes. It's not stopping.
+[00:24] OPERATOR: Is there anything around him he can hit? Move things away, don't put anything in his mouth.
+[00:30] CALLER: We moved the weights. There's foam coming from his mouth and his lips look blue.
+[00:37] OPERATOR: Does anyone know him? Does he have epilepsy or diabetes?
+[00:41] CALLER: Nobody knows him. He was lifting heavy and then just fell.
+[00:47] OPERATOR: I'm sending an ambulance with sirens. When the shaking stops, turn him on his side and check if he's breathing.
+[00:55] CALLER: Still shaking. Okay. Staff is getting the defibrillator too.

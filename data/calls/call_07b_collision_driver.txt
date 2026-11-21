@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_07b_collision_driver: Car vs cyclist, call 2 of 2 (driver)
+
+[00:00] OPERATOR: 112, what's your emergency?
+[00:03] CALLER: I hit someone. I hit a cyclist with my car, oh God, he came out of nowhere.
+[00:09] OPERATOR: Where are you?
+[00:11] CALLER: The roundabout by the big ICA, Getingevägen.
+[00:16] OPERATOR: We have an ambulance on the way to that accident already, someone else called. Are you hurt?
+[00:21] CALLER: I don't know. The airbag went off. My chest hurts when I breathe in. I'm okay, I'm okay, it's him.
+[00:29] OPERATOR: Is the cyclist awake now?
+[00:32] CALLER: He opened his eyes a bit. He's asking what happened, again and again. Someone is holding his head.
+[00:40] OPERATOR: Okay, that's good information. How fast were you driving?
+[00:43] CALLER: Maybe forty? Forty, fifty. I was braking.
+[00:48] OPERATOR: Please sit down somewhere safe, away from the traffic, and stay there. The ambulance crew will check you too.
+[00:54] CALLER: I'm shaking. I can't stop shaking.
+[00:57] OPERATOR: That's normal after a shock. Sit down, breathe slowly. Help is almost there.

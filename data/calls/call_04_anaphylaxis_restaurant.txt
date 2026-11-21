@@ -1,0 +1,19 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_04_anaphylaxis_restaurant: Anaphylaxis after peanuts, 16-year-old in restaurant
+
+[00:00] OPERATOR: 112, what's your emergency?
+[00:02] CALLER: My friend is having an allergic reaction, she ate something with peanuts! We're at a restaurant!
+[00:07] OPERATOR: Which restaurant, what address?
+[00:09] CALLER: Uh, the Thai place on Klostergatan, Klostergatan 5 in Lund.
+[00:14] OPERATOR: How old is she and how is she now?
+[00:17] CALLER: She's 16. Her lips are swelling up really fast and she's scratching her neck.
+[00:23] OPERATOR: Is she having any trouble breathing?
+[00:25] CALLER: She says her throat feels tight. And her voice sounds weird, kind of hoarse. [background: is she okay?]
+[00:32] OPERATOR: Does she have an EpiPen, an adrenaline pen?
+[00:34] CALLER: Yes, it's in her bag, but she said she wants to wait and see if it gets better.
+[00:39] OPERATOR: She needs to use it now. Take the pen, blue cap off, press the orange tip hard into the outside of her thigh, through the jeans is fine, and hold for three seconds.
+[00:49] CALLER: Okay okay, I'm doing it... done. I held it.
+[00:53] OPERATOR: Good. I'm sending an ambulance with sirens. Let her sit if she's breathing badly, or lie down with legs up if she feels faint.
+[01:00] CALLER: She says she feels dizzy now.
+[01:02] OPERATOR: Then lay her down with her legs up. Does she have a second pen?
+[01:05] CALLER: I don't know, I'll check.

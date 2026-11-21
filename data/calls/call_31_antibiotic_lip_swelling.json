@@ -1,0 +1,238 @@
+{
+  "call_id": "call_31_antibiotic_lip_swelling",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Mild lip swelling after new antibiotic (borderline)",
+  "incident_id": "call_31_antibiotic_lip_swelling",
+  "language": "en",
+  "location": {
+    "address": "Fäladstorget 10, Lund",
+    "lat": 55.723,
+    "lng": 13.183
+  },
+  "tricky_aspects": [
+    "borderline allergic reaction",
+    "ambulance unclear",
+    "AI should list missing airway questions"
+  ],
+  "duration_s": 50,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "My lip has swollen up a bit. I started penicillin yesterday for a throat infection."
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "caller",
+      "text": "Home, Fäladstorget 10 in Lund."
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "How old are you? When did the swelling start?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "I'm 52. I noticed it maybe half an hour ago. Only the lower lip."
+    },
+    {
+      "t": 25,
+      "time": "00:25",
+      "speaker": "operator",
+      "text": "Any swelling of the tongue or throat, trouble swallowing or breathing, hoarse voice?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "No, I can swallow and breathe fine. My voice is normal."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "Any rash, itching, dizziness or stomach pain?"
+    },
+    {
+      "t": 39,
+      "time": "00:39",
+      "speaker": "caller",
+      "text": "A few itchy red spots on my neck. No dizziness."
+    },
+    {
+      "t": 44,
+      "time": "00:44",
+      "speaker": "operator",
+      "text": "Have you taken a dose today?"
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "caller",
+      "text": "Yes, an hour ago."
+    },
+    {
+      "t": 50,
+      "time": "00:50",
+      "speaker": "operator",
+      "text": "Don't take more penicillin. If you have an antihistamine you can take it now. A nurse will call you back to decide if you should come in. If your tongue or throat swells or breathing gets hard, call 112 immediately."
+    }
+  ],
+  "gold_label": {
+    "category": "allergic_reaction",
+    "secondary_categories": [],
+    "urgency": "C",
+    "urgency_rationale": "New drug allergy with localised lip angioedema and mild urticaria, no airway, breathing or circulatory involvement. Within an hour of last dose - may progress, so safety-net and reassessment needed.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 30,
+        "time": "00:30",
+        "urgency": "C"
+      },
+      {
+        "t": 39,
+        "time": "00:39",
+        "urgency": "C"
+      }
+    ],
+    "ambulance": "unclear",
+    "other_resources": [
+      "nurse call-back / 1177",
+      "own transport to ED"
+    ],
+    "red_flags": [
+      {
+        "label": "lip swelling (angioedema)",
+        "quote": "My lip has swollen up a bit",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "new drug",
+        "quote": "I started penicillin yesterday",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "urticaria",
+        "quote": "A few itchy red spots on my neck",
+        "turn_index": 9,
+        "t": 39,
+        "speaker": "caller"
+      },
+      {
+        "label": "recent dose (may progress)",
+        "quote": "Yes, an hour ago",
+        "turn_index": 11,
+        "t": 47,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "no airway symptoms",
+        "quote": "I can swallow and breathe fine",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "no dizziness",
+        "quote": "No dizziness",
+        "turn_index": 9,
+        "t": 39,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Is anyone with you?",
+      "Previous allergic reactions or asthma?",
+      "Do you have an antihistamine at home?",
+      "ACE inhibitor (blood pressure) medication?"
+    ],
+    "supplies": [
+      "adrenaline auto-injector / IM adrenaline",
+      "antihistamine",
+      "oxygen"
+    ],
+    "handover": "Adult 52, started penicillin yesterday, last dose 1 h ago. Lower lip swelling and mild urticaria on neck for 30 min, no airway/breathing/circulation symptoms. Nurse call-back; antihistamine advised, penicillin stopped.",
+    "dashboard": {
+      "urgency": "Medium",
+      "ambulance": null,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "nurse call-back / 1177",
+        "own transport to ED"
+      ],
+      "destination": "Emergency department (SUS Lund)",
+      "prepare_en_route": [
+        "adrenaline 0.5 mg IM drawn up (0.3 mg child)",
+        "second dose ready",
+        "IV fluids",
+        "airway kit in reach"
+      ],
+      "pre_alert": "ED if airway swelling",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "adult 52, penicillin started yesterday, last dose 1 h ago",
+        "lip swelling + few hives, airway OK"
+      ],
+      "scene_notes": [
+        "nurse call-back decides on dispatch",
+        "upgrade to A if tongue/throat swelling"
+      ],
+      "urgency": "C",
+      "bring": [
+        "adrenaline auto-injector / IM adrenaline",
+        "antihistamine",
+        "oxygen"
+      ],
+      "open_questions": [
+        "Is anyone with you?",
+        "Previous allergic reactions or asthma?",
+        "Do you have an antihistamine at home?",
+        "ACE inhibitor (blood pressure) medication?"
+      ],
+      "note": "Dispatch not decided - briefing applies if an ambulance is sent.",
+      "unit": "AMB 1380",
+      "ambulance_position": {
+        "lat": 55.712,
+        "lng": 13.17
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

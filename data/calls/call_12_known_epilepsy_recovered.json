@@ -1,0 +1,219 @@
+{
+  "call_id": "call_12_known_epilepsy_recovered",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Known epilepsy, typical short seizure, now awake (urgency C, ambulance unclear)",
+  "incident_id": "call_12_known_epilepsy_recovered",
+  "language": "en",
+  "location": {
+    "address": "Delphi, Tornavägen 1, Lund (room 214)",
+    "lat": 55.7196,
+    "lng": 13.2072
+  },
+  "tricky_aspects": [
+    "borderline case",
+    "ambulance 'unclear' label",
+    "AI should show missing questions rather than guess"
+  ],
+  "duration_s": 48,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, my roommate just had a seizure. She has epilepsy."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "Delphi student housing, Sparta... no sorry, Delphi, Tornavägen 1, room 214."
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "operator",
+      "text": "Is the seizure over?"
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "caller",
+      "text": "Yes, it lasted maybe a minute. She's awake now, a bit confused but she knows who I am."
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "operator",
+      "text": "Is she breathing normally? Did she hurt herself?"
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "caller",
+      "text": "Breathing is fine. She bit her tongue a bit, there's a little blood. She didn't hit her head, she was on the bed."
+    },
+    {
+      "t": 39,
+      "time": "00:39",
+      "speaker": "operator",
+      "text": "Is this like her usual seizures?"
+    },
+    {
+      "t": 42,
+      "time": "00:42",
+      "speaker": "caller",
+      "text": "I think so? She says it's her normal kind. She forgot her medicine yesterday."
+    },
+    {
+      "t": 48,
+      "time": "00:48",
+      "speaker": "operator",
+      "text": "Okay. Stay with her, let her rest on her side. A nurse will call you back in a few minutes to decide whether she needs to come in."
+    }
+  ],
+  "gold_label": {
+    "category": "seizure",
+    "secondary_categories": [],
+    "urgency": "C",
+    "urgency_rationale": "Known epilepsy, typical ~1 min seizure, now awake and recovering, no head injury; missed dose is the likely trigger. Needs follow-up but not emergency dispatch unless a second seizure or slow recovery.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 31,
+        "time": "00:31",
+        "urgency": "C"
+      }
+    ],
+    "ambulance": "unclear",
+    "other_resources": [
+      "nurse call-back / 1177",
+      "own epilepsy clinic"
+    ],
+    "red_flags": [
+      {
+        "label": "post-ictal confusion",
+        "quote": "a bit confused",
+        "turn_index": 5,
+        "t": 20,
+        "speaker": "caller"
+      },
+      {
+        "label": "tongue bite",
+        "quote": "She bit her tongue a bit",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      },
+      {
+        "label": "missed medication (risk of new seizure)",
+        "quote": "She forgot her medicine yesterday",
+        "turn_index": 9,
+        "t": 42,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "short seizure, ended",
+        "quote": "it lasted maybe a minute",
+        "turn_index": 5,
+        "t": 20,
+        "speaker": "caller"
+      },
+      {
+        "label": "normal breathing",
+        "quote": "Breathing is fine",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      },
+      {
+        "label": "no head injury",
+        "quote": "She didn't hit her head",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      },
+      {
+        "label": "typical seizure",
+        "quote": "She says it's her normal kind",
+        "turn_index": 9,
+        "t": 42,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Is she pregnant?",
+      "Any alcohol or drugs?",
+      "Does she have rescue medicine (e.g. buccal midazolam)?",
+      "Is someone able to stay with her for the next hours?"
+    ],
+    "supplies": [],
+    "handover": "Female student, known epilepsy, typical generalised seizure ~1 min, missed dose yesterday, now awake, mild confusion, tongue bite, no head injury. Nurse call-back for decision.",
+    "dashboard": {
+      "urgency": "Medium",
+      "ambulance": null,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "nurse call-back / 1177",
+        "own epilepsy clinic"
+      ],
+      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
+      "prepare_en_route": [
+        "buccal/IV midazolam dose by weight",
+        "suction",
+        "glucometer",
+        "paediatric kit if child"
+      ],
+      "pre_alert": "ED if seizure ongoing on arrival",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "known epilepsy, typical seizure, awake",
+        "missed dose yesterday"
+      ],
+      "scene_notes": [
+        "nurse call-back decides on dispatch"
+      ],
+      "urgency": "C",
+      "bring": [],
+      "open_questions": [
+        "Is she pregnant?",
+        "Any alcohol or drugs?",
+        "Does she have rescue medicine (e.g. buccal midazolam)?",
+        "Is someone able to stay with her for the next hours?"
+      ],
+      "note": "Dispatch not decided - briefing applies if an ambulance is sent.",
+      "unit": "AMB 1220",
+      "ambulance_position": {
+        "lat": 55.73,
+        "lng": 13.198
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

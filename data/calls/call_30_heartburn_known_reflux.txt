@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_30_heartburn_known_reflux: Burning chest after spicy dinner, known reflux
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: I have a burning feeling in my chest after dinner, I just want to check it's nothing serious.
+[00:10] OPERATOR: Where are you and how old are you?
+[00:13] CALLER: Spolegatan 6 in Lund. I'm 27.
+[00:17] OPERATOR: When did it start and what does it feel like?
+[00:20] CALLER: About an hour after I ate a very spicy curry. It burns up behind the breastbone, with a sour taste in my mouth.
+[00:28] OPERATOR: Does it go to your arm, jaw or back? Are you sweaty or short of breath?
+[00:33] CALLER: No, nothing like that. It's the same feeling I always get with my reflux.
+[00:39] OPERATOR: Have you taken anything for it?
+[00:41] CALLER: I took an antacid ten minutes ago and it's already a lot better.
+[00:47] OPERATOR: Any heart problems in you or your family?
+[00:50] CALLER: No, none.
+[00:53] OPERATOR: This sounds like your reflux. You don't need an ambulance. If the pain changes, gets worse, spreads, or you feel faint or breathless, call 112 again. You can also call 1177.

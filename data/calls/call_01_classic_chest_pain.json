@@ -1,0 +1,243 @@
+{
+  "call_id": "call_01_classic_chest_pain",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Classic heart attack, man 58",
+  "incident_id": "call_01_classic_chest_pain",
+  "language": "en",
+  "location": {
+    "address": "Vipeholmsvägen 14, Lund",
+    "lat": 55.6992,
+    "lng": 13.2047
+  },
+  "tricky_aspects": [
+    "baseline / easy case"
+  ],
+  "duration_s": 71,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Yes hi, it's my husband, he has really bad chest pain."
+    },
+    {
+      "t": 7,
+      "time": "00:07",
+      "speaker": "operator",
+      "text": "Okay. What is the address?"
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "caller",
+      "text": "Vipeholmsvägen 14 in Lund, second floor."
+    },
+    {
+      "t": 14,
+      "time": "00:14",
+      "speaker": "operator",
+      "text": "Vipeholmsvägen 14, Lund. Is he awake and talking to you?"
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "caller",
+      "text": "Yes he's awake, he's sitting on the sofa but he's all sweaty and grey in the face."
+    },
+    {
+      "t": 23,
+      "time": "00:23",
+      "speaker": "operator",
+      "text": "How old is he and when did the pain start?"
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "caller",
+      "text": "He's 58. It started maybe twenty minutes ago, he was just watching TV."
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "operator",
+      "text": "Where does it hurt? Does the pain go anywhere?"
+    },
+    {
+      "t": 34,
+      "time": "00:34",
+      "speaker": "caller",
+      "text": "In the middle, he says it's like a heavy pressure. And it goes down his left arm."
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "operator",
+      "text": "Is he short of breath or feeling sick?"
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "caller",
+      "text": "He says he feels sick, yeah. Breathing is okay I think."
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "operator",
+      "text": "Does he have any heart problems from before?"
+    },
+    {
+      "t": 50,
+      "time": "00:50",
+      "speaker": "caller",
+      "text": "He has high blood pressure, he takes pills for that. Nothing else."
+    },
+    {
+      "t": 55,
+      "time": "00:55",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance now with lights and sirens. Is he allergic to aspirin?"
+    },
+    {
+      "t": 60,
+      "time": "01:00",
+      "speaker": "caller",
+      "text": "No, not that I know."
+    },
+    {
+      "t": 62,
+      "time": "01:02",
+      "speaker": "operator",
+      "text": "If you have aspirin at home he can chew one tablet now. Keep him sitting, open the door, and call back right away if he faints or stops breathing."
+    },
+    {
+      "t": 71,
+      "time": "01:11",
+      "speaker": "caller",
+      "text": "Okay. Okay. Please hurry."
+    }
+  ],
+  "gold_label": {
+    "category": "chest_pain",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Chest pressure radiating to left arm with sweating, grey skin and nausea, age 58.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 17,
+        "time": "00:17",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "sweating / grey skin",
+        "quote": "he's all sweaty and grey in the face",
+        "turn_index": 5,
+        "t": 17,
+        "speaker": "caller"
+      },
+      {
+        "label": "pressure-type chest pain",
+        "quote": "it's like a heavy pressure",
+        "turn_index": 9,
+        "t": 34,
+        "speaker": "caller"
+      },
+      {
+        "label": "radiation to left arm",
+        "quote": "it goes down his left arm",
+        "turn_index": 9,
+        "t": 34,
+        "speaker": "caller"
+      },
+      {
+        "label": "nausea",
+        "quote": "He says he feels sick",
+        "turn_index": 11,
+        "t": 43,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Has he taken nitroglycerin / does he have any?",
+      "Diabetes or previous heart attack in family?",
+      "Door code / is the door unlocked?"
+    ],
+    "supplies": [
+      "12-lead ECG",
+      "defibrillator (AED)",
+      "aspirin",
+      "nitroglycerin",
+      "oxygen",
+      "IV access kit"
+    ],
+    "handover": "Male 58, central chest pressure radiating to left arm since ~20 min, sweaty, grey, nauseous. Known hypertension. Aspirin advised. Suspected ACS.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance (nurse-staffed)",
+      "extra_units": [],
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "prepare_en_route": [
+        "12-lead ECG ready to transmit",
+        "defibrillator pads ready",
+        "aspirin + nitro dose checked",
+        "IV kit"
+      ],
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "male 58",
+        "chest pressure to left arm ~20 min",
+        "sweaty, grey",
+        "aspirin advised"
+      ],
+      "scene_notes": [
+        "2nd floor, door left open"
+      ],
+      "urgency": "A",
+      "bring": [
+        "12-lead ECG",
+        "defibrillator (AED)",
+        "aspirin",
+        "nitroglycerin",
+        "oxygen",
+        "IV access kit"
+      ],
+      "open_questions": [
+        "Has he taken nitroglycerin / does he have any?",
+        "Diabetes or previous heart attack in family?",
+        "Door code / is the door unlocked?"
+      ],
+      "unit": "AMB 1120",
+      "ambulance_position": {
+        "lat": 55.7093,
+        "lng": 13.221
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

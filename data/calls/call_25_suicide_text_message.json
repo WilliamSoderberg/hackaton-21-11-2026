@@ -1,0 +1,213 @@
+{
+  "call_id": "call_25_suicide_text_message",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Girlfriend got a goodbye text, boyfriend not answering",
+  "incident_id": "call_25_suicide_text_message",
+  "language": "en",
+  "location": {
+    "address": "Vildandsvägen 7, Lund (presumed, not confirmed)",
+    "lat": 55.725,
+    "lng": 13.215
+  },
+  "tricky_aspects": [
+    "third-party caller",
+    "patient not on scene",
+    "location uncertain",
+    "police lead"
+  ],
+  "duration_s": 47,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "My boyfriend just sent me a text that says 'sorry for everything, I love you, goodbye'. He's not answering."
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "operator",
+      "text": "Where is he?"
+    },
+    {
+      "t": 13,
+      "time": "00:13",
+      "speaker": "caller",
+      "text": "I think at his flat, Vildandsvägen 7 in Lund. I'm in Malmö."
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "operator",
+      "text": "Has he talked about hurting himself before?"
+    },
+    {
+      "t": 22,
+      "time": "00:22",
+      "speaker": "caller",
+      "text": "He tried once before, with pills. He's been really down since he lost his job."
+    },
+    {
+      "t": 29,
+      "time": "00:29",
+      "speaker": "operator",
+      "text": "Does he have access to pills or weapons?"
+    },
+    {
+      "t": 32,
+      "time": "00:32",
+      "speaker": "caller",
+      "text": "He has his mum's old sleeping pills. And he has a hunting rifle."
+    },
+    {
+      "t": 38,
+      "time": "00:38",
+      "speaker": "operator",
+      "text": "What's his name, age and phone number?"
+    },
+    {
+      "t": 42,
+      "time": "00:42",
+      "speaker": "caller",
+      "text": "Jonas, 29. I'll send you the number. Please hurry."
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "operator",
+      "text": "I'm sending police and an ambulance to the flat now. Keep trying to call him, and stay on this line."
+    }
+  ],
+  "gold_label": {
+    "category": "mental_health_suicide",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Explicit goodbye message, previous attempt, recent loss, access to pills and a firearm, not answering. Imminent suicide risk; police lead because of the weapon.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "police (lead - firearm, entry)",
+      "phone positioning",
+      "psychiatric team"
+    ],
+    "red_flags": [
+      {
+        "label": "goodbye message",
+        "quote": "sorry for everything, I love you, goodbye",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "not answering",
+        "quote": "He's not answering",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "previous attempt",
+        "quote": "He tried once before, with pills",
+        "turn_index": 5,
+        "t": 22,
+        "speaker": "caller"
+      },
+      {
+        "label": "recent loss",
+        "quote": "since he lost his job",
+        "turn_index": 5,
+        "t": 22,
+        "speaker": "caller"
+      },
+      {
+        "label": "access to means incl. firearm",
+        "quote": "And he has a hunting rifle",
+        "turn_index": 7,
+        "t": 32,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "When was the message sent?",
+      "Does anyone nearby have a key?",
+      "Alcohol or drugs?",
+      "Car - could he be somewhere else?"
+    ],
+    "supplies": [
+      "naloxone",
+      "ECG",
+      "trauma kit / tourniquet"
+    ],
+    "handover": "Male 29, goodbye text to girlfriend, not answering. Previous attempt (pills), job loss. Access to sleeping pills and hunting rifle. Presumed at Vildandsvägen 7. Police lead; ambulance staging.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "mental"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety, entry)",
+        "psychiatric ambulance / crisis team if available",
+        "police (lead - firearm, entry)",
+        "phone positioning",
+        "psychiatric team"
+      ],
+      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
+      "prepare_en_route": [
+        "ask dispatch for drug name/amount",
+        "naloxone if opioids",
+        "ECG",
+        "scene safety: wait for police if weapon"
+      ],
+      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "male 29, goodbye text, not answering",
+        "previous attempt, sleeping pills",
+        "HUNTING RIFLE in flat"
+      ],
+      "scene_notes": [
+        "WAIT FOR POLICE - firearm",
+        "location presumed, not confirmed",
+        "caller (girlfriend) in Malmö"
+      ],
+      "urgency": "A",
+      "bring": [
+        "naloxone",
+        "ECG",
+        "trauma kit / tourniquet"
+      ],
+      "open_questions": [
+        "When was the message sent?",
+        "Does anyone nearby have a key?",
+        "Alcohol or drugs?",
+        "Car - could he be somewhere else?"
+      ],
+      "unit": "AMB 1350",
+      "ambulance_position": {
+        "lat": 55.71,
+        "lng": 13.2
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

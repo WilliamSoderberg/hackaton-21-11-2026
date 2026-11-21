@@ -1,0 +1,164 @@
+{
+  "call_id": "call_29_cough_cold_no_ambulance",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Cough and cold for 3 days, talks normally",
+  "incident_id": "call_29_cough_cold_no_ambulance",
+  "language": "en",
+  "location": {
+    "address": "Nilstorpsvägen 3, Lund",
+    "lat": 55.696,
+    "lng": 13.1985
+  },
+  "tricky_aspects": [
+    "negative control",
+    "'breathing' keyword but mild",
+    "should be D"
+  ],
+  "duration_s": 49,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, I've had a bad cough for three days and it hurts a bit to breathe when I cough. I can't get through to my health centre."
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "operator",
+      "text": "Where are you calling from?"
+    },
+    {
+      "t": 14,
+      "time": "00:14",
+      "speaker": "caller",
+      "text": "Home, Nilstorpsvägen 3 in Lund."
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "operator",
+      "text": "How old are you? Are you short of breath when you sit still?"
+    },
+    {
+      "t": 22,
+      "time": "00:22",
+      "speaker": "caller",
+      "text": "I'm 41. No, sitting still is fine, it's only when I cough a lot."
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "operator",
+      "text": "Do you have a fever?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "Thirty-eight point two yesterday, today thirty-seven point eight."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "Any chest pain when you're not coughing, or coughing up blood?"
+    },
+    {
+      "t": 39,
+      "time": "00:39",
+      "speaker": "caller",
+      "text": "No, none of that. I'm just tired and annoyed."
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "operator",
+      "text": "Do you have asthma, heart or lung disease?"
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "caller",
+      "text": "No, I'm healthy otherwise."
+    },
+    {
+      "t": 49,
+      "time": "00:49",
+      "speaker": "operator",
+      "text": "This doesn't need an ambulance. Call 1177 for advice, rest and drink. If you get short of breath at rest, high fever or chest pain, call again."
+    }
+  ],
+  "gold_label": {
+    "category": "breathing_difficulty",
+    "secondary_categories": [],
+    "urgency": "D",
+    "urgency_rationale": "Healthy 41-year-old with 3-day cough, low-grade fever falling, no dyspnoea at rest, no chest pain or haemoptysis. Viral respiratory infection; 1177.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 22,
+        "time": "00:22",
+        "urgency": "D"
+      }
+    ],
+    "ambulance": "no",
+    "other_resources": [
+      "1177 advice line",
+      "health centre"
+    ],
+    "red_flags": [],
+    "negative_findings": [
+      {
+        "label": "no dyspnoea at rest",
+        "quote": "sitting still is fine",
+        "turn_index": 5,
+        "t": 22,
+        "speaker": "caller"
+      },
+      {
+        "label": "fever falling",
+        "quote": "today thirty-seven point eight",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "no chest pain or blood",
+        "quote": "No, none of that",
+        "turn_index": 9,
+        "t": 39,
+        "speaker": "caller"
+      },
+      {
+        "label": "no underlying disease",
+        "quote": "I'm healthy otherwise",
+        "turn_index": 11,
+        "t": 46,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Does anyone at home have symptoms or is at risk?"
+    ],
+    "supplies": [],
+    "handover": "No dispatch. Adult 41, 3-day cough, low-grade fever improving, no dyspnoea at rest. Referred to 1177/health centre.",
+    "dashboard": {
+      "urgency": "Low",
+      "ambulance": false,
+      "type": "physical"
+    },
+    "crew_briefing": null
+  }
+}

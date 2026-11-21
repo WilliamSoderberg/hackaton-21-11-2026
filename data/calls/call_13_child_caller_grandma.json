@@ -1,0 +1,272 @@
+{
+  "call_id": "call_13_child_caller_grandma",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Child (8) calls: grandma won't wake up",
+  "incident_id": "call_13_child_caller_grandma",
+  "language": "en",
+  "location": {
+    "address": "Klostergatan 8, Lund (green door, by the cathedral)",
+    "lat": 55.7041,
+    "lng": 13.1932
+  },
+  "tricky_aspects": [
+    "child caller",
+    "simple vocabulary",
+    "address given as landmarks",
+    "operator must guide step by step"
+  ],
+  "duration_s": 88,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi. My mormor won't wake up."
+    },
+    {
+      "t": 7,
+      "time": "00:07",
+      "speaker": "operator",
+      "text": "Okay, you did the right thing calling. What's your name and how old are you?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "I'm Elsa. I'm eight."
+    },
+    {
+      "t": 14,
+      "time": "00:14",
+      "speaker": "operator",
+      "text": "Elsa, is there a grown-up with you?"
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "caller",
+      "text": "No, just me and mormor. Mamma is at work."
+    },
+    {
+      "t": 21,
+      "time": "00:21",
+      "speaker": "operator",
+      "text": "Do you know the address where you are?"
+    },
+    {
+      "t": 24,
+      "time": "00:24",
+      "speaker": "caller",
+      "text": "It's mormor's house. It's on Klostergatan, next to the big church. The door is green."
+    },
+    {
+      "t": 32,
+      "time": "00:32",
+      "speaker": "operator",
+      "text": "Good. Is there a number on the door?"
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "caller",
+      "text": "I think it's 8. Yes, eight."
+    },
+    {
+      "t": 39,
+      "time": "00:39",
+      "speaker": "operator",
+      "text": "Go to mormor. Shake her shoulder and say her name loud. Does she wake up?"
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "caller",
+      "text": "Mormor! ... She makes a sound but she doesn't open her eyes."
+    },
+    {
+      "t": 52,
+      "time": "00:52",
+      "speaker": "operator",
+      "text": "Is her chest going up and down?"
+    },
+    {
+      "t": 55,
+      "time": "00:55",
+      "speaker": "caller",
+      "text": "Yes, it goes up and down. She's all sweaty and her face is white."
+    },
+    {
+      "t": 61,
+      "time": "01:01",
+      "speaker": "operator",
+      "text": "Is mormor sick with anything? Does she take medicine?"
+    },
+    {
+      "t": 65,
+      "time": "01:05",
+      "speaker": "caller",
+      "text": "She has sugar sickness. She does the pen in her tummy. She didn't eat lunch, she said she wasn't hungry."
+    },
+    {
+      "t": 74,
+      "time": "01:14",
+      "speaker": "operator",
+      "text": "Elsa, you're doing great. The ambulance is coming. Can you roll mormor onto her side, like sleeping on the side?"
+    },
+    {
+      "t": 82,
+      "time": "01:22",
+      "speaker": "caller",
+      "text": "She's heavy. ... Okay, she's on her side."
+    },
+    {
+      "t": 88,
+      "time": "01:28",
+      "speaker": "operator",
+      "text": "Can you open the green door and then come back to the phone? Stay with mormor."
+    }
+  ],
+  "gold_label": {
+    "category": "unconscious_cardiac_arrest",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Adult not waking, only groans, breathing, sweaty and pale, insulin-treated diabetes and skipped meal: suspected severe hypoglycaemia with reduced consciousness. Only a child on scene.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      },
+      {
+        "t": 55,
+        "time": "00:55",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "notify social services / reach parent (child alone)"
+    ],
+    "red_flags": [
+      {
+        "label": "child caller alone with patient",
+        "quote": "No, just me and mormor",
+        "turn_index": 5,
+        "t": 17,
+        "speaker": "caller"
+      },
+      {
+        "label": "unresponsive, only groans",
+        "quote": "She makes a sound but she doesn't open her eyes",
+        "turn_index": 11,
+        "t": 46,
+        "speaker": "caller"
+      },
+      {
+        "label": "sweating and pallor",
+        "quote": "She's all sweaty and her face is white",
+        "turn_index": 13,
+        "t": 55,
+        "speaker": "caller"
+      },
+      {
+        "label": "insulin-treated diabetes",
+        "quote": "She does the pen in her tummy",
+        "turn_index": 15,
+        "t": 65,
+        "speaker": "caller"
+      },
+      {
+        "label": "missed meal",
+        "quote": "She didn't eat lunch",
+        "turn_index": 15,
+        "t": 65,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "breathing",
+        "quote": "Yes, it goes up and down",
+        "turn_index": 13,
+        "t": 55,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Mother's phone number?",
+      "Is there a glucose meter at home?",
+      "Did grandma fall or hit her head?"
+    ],
+    "supplies": [
+      "glucometer",
+      "IV glucose / glucagon",
+      "airway kit / suction",
+      "oxygen",
+      "defibrillator (AED)"
+    ],
+    "handover": "Elderly female, insulin-treated diabetes, skipped lunch, found by 8-year-old granddaughter unresponsive to voice, groaning, breathing, sweaty and pale. Placed in recovery position by child. Suspected hypoglycaemia. Child alone on scene.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance x2 if available",
+      "extra_units": [
+        "first responder / rescue service with AED",
+        "physician unit if available",
+        "notify social services / reach parent (child alone)"
+      ],
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "prepare_en_route": [
+        "AED/defibrillator first in hand",
+        "mechanical CPR device",
+        "airway + BVM",
+        "adrenaline for CPR"
+      ],
+      "pre_alert": "Resuscitation room",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "elderly female, insulin diabetes, skipped lunch",
+        "unresponsive to voice, groaning, breathing, sweaty, pale",
+        "child put her in recovery position"
+      ],
+      "scene_notes": [
+        "ONLY CHILD ON SCENE (girl 8) - green door, Klostergatan 8 by the cathedral",
+        "contact mother / social services"
+      ],
+      "urgency": "A",
+      "bring": [
+        "glucometer",
+        "IV glucose / glucagon",
+        "airway kit / suction",
+        "oxygen",
+        "defibrillator (AED)"
+      ],
+      "open_questions": [
+        "Mother's phone number?",
+        "Is there a glucose meter at home?",
+        "Did grandma fall or hit her head?"
+      ],
+      "unit": "AMB 1230",
+      "ambulance_position": {
+        "lat": 55.693,
+        "lng": 13.206
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

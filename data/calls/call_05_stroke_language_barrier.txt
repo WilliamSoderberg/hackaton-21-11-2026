@@ -1,0 +1,19 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_05_stroke_language_barrier: Stroke, caller with limited English (mixes Swedish)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hello. Ambulans please. My pappa... he is not good.
+[00:08] OPERATOR: Okay. Where are you? Address?
+[00:10] CALLER: Address... Norra Fäladen, Kämnärsvägen 22, Lund. Lägenhet... flat 1104.
+[00:19] OPERATOR: Kämnärsvägen 22, flat 1104. What happened to your father?
+[00:23] CALLER: His face... one side is, how you say, down. Hänger. And he talk strange, I cannot understand him.
+[00:31] OPERATOR: Can he lift both arms?
+[00:34] CALLER: Arms? Wait. ... Pappa, lyft armarna. ... Right arm no. Only left arm up.
+[00:43] OPERATOR: When did this start? What time?
+[00:46] CALLER: I come home now, ten minutes. He was like this. Before, morning, he was okay.
+[00:53] OPERATOR: What time in the morning did you last see him okay?
+[00:56] CALLER: Morning... I go to work eight o'clock. He was okay, drinking coffee.
+[01:02] OPERATOR: I'm sending an ambulance with sirens. Is he awake?
+[01:05] CALLER: Yes awake, sitting on floor. He fall down from chair.
+[01:10] OPERATOR: Don't give him anything to eat or drink. Do you want an interpreter? Arabic?
+[01:14] CALLER: Yes, Arabic, yes please.

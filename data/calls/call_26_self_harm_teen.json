@@ -1,0 +1,243 @@
+{
+  "call_id": "call_26_self_harm_teen",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Mother finds daughter 16 with cut forearm (bleeding controlled)",
+  "incident_id": "call_26_self_harm_teen",
+  "language": "en",
+  "location": {
+    "address": "Pilegatan 15, Lund",
+    "lat": 55.7015,
+    "lng": 13.188
+  },
+  "tricky_aspects": [
+    "self-harm without stated intent to die",
+    "bleeding already controlled",
+    "parent distress"
+  ],
+  "duration_s": 56,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "My daughter has cut her arm. There was blood on the bathroom floor."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "Pilegatan 15, Lund."
+    },
+    {
+      "t": 14,
+      "time": "00:14",
+      "speaker": "operator",
+      "text": "How old is she? Is the bleeding still going?"
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "caller",
+      "text": "She's 16. I pressed a towel on it, it has almost stopped now."
+    },
+    {
+      "t": 23,
+      "time": "00:23",
+      "speaker": "operator",
+      "text": "How deep and long are the cuts?"
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "caller",
+      "text": "Several lines on the forearm, most are shallow but one is open, maybe three centimetres."
+    },
+    {
+      "t": 33,
+      "time": "00:33",
+      "speaker": "operator",
+      "text": "Is she awake and talking? Has she taken any pills or alcohol?"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "caller",
+      "text": "She's talking, she's crying. She says no pills. She says she did it because she couldn't handle it anymore."
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "operator",
+      "text": "Has she said she wants to die?"
+    },
+    {
+      "t": 48,
+      "time": "00:48",
+      "speaker": "caller",
+      "text": "She says she doesn't want to die, she just wanted the feeling to stop. She has done it before but not like this."
+    },
+    {
+      "t": 56,
+      "time": "00:56",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance. Keep pressing on the wound, stay with her, and remove sharp objects and medicines from the room."
+    }
+  ],
+  "gold_label": {
+    "category": "mental_health_suicide",
+    "secondary_categories": [
+      "traffic_trauma"
+    ],
+    "urgency": "B",
+    "urgency_rationale": "Self-harm in a minor with a gaping 3 cm laceration, bleeding controlled, no overdose reported, denies suicidal intent but escalating behaviour. Needs ambulance for wound and psychiatric assessment.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 17,
+        "time": "00:17",
+        "urgency": "B"
+      },
+      {
+        "t": 48,
+        "time": "00:48",
+        "urgency": "B"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "child & adolescent psychiatry (BUP) emergency"
+    ],
+    "red_flags": [
+      {
+        "label": "self-harm, minor",
+        "quote": "My daughter has cut her arm",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "open wound",
+        "quote": "one is open, maybe three centimetres",
+        "turn_index": 7,
+        "t": 26,
+        "speaker": "caller"
+      },
+      {
+        "label": "distress",
+        "quote": "she couldn't handle it anymore",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      },
+      {
+        "label": "escalating self-harm",
+        "quote": "She has done it before but not like this",
+        "turn_index": 11,
+        "t": 48,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "bleeding controlled",
+        "quote": "it has almost stopped now",
+        "turn_index": 5,
+        "t": 17,
+        "speaker": "caller"
+      },
+      {
+        "label": "denies suicidal intent",
+        "quote": "She says she doesn't want to die",
+        "turn_index": 11,
+        "t": 48,
+        "speaker": "caller"
+      },
+      {
+        "label": "no pills reported",
+        "quote": "She says no pills",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Is she dizzy or pale (blood loss)?",
+      "Can she move all fingers normally?",
+      "Is there a follow-up contact (BUP, school nurse)?"
+    ],
+    "supplies": [
+      "pressure bandage",
+      "wound care kit"
+    ],
+    "handover": "Female 16, self-harm forearm, multiple superficial cuts and one gaping 3 cm laceration, bleeding controlled with towel. Denies suicidal intent and overdose. Escalating self-harm. Needs wound care + BUP assessment.",
+    "dashboard": {
+      "urgency": "High",
+      "ambulance": true,
+      "type": "both"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety, entry)",
+        "psychiatric ambulance / crisis team if available",
+        "child & adolescent psychiatry (BUP) emergency"
+      ],
+      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
+      "prepare_en_route": [
+        "ask dispatch for drug name/amount",
+        "naloxone if opioids",
+        "ECG",
+        "scene safety: wait for police if weapon"
+      ],
+      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "female 16, self-harm forearm",
+        "one gaping 3 cm cut, bleeding controlled",
+        "denies suicidal intent, no pills"
+      ],
+      "scene_notes": [
+        "mother on scene, distressed",
+        "BUP (child psychiatry) after wound care"
+      ],
+      "urgency": "B",
+      "bring": [
+        "pressure bandage",
+        "wound care kit"
+      ],
+      "open_questions": [
+        "Is she dizzy or pale (blood loss)?",
+        "Can she move all fingers normally?",
+        "Is there a follow-up contact (BUP, school nurse)?"
+      ],
+      "unit": "AMB 1360",
+      "ambulance_position": {
+        "lat": 55.69,
+        "lng": 13.2
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

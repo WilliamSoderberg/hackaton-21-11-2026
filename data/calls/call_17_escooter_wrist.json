@@ -1,0 +1,227 @@
+{
+  "call_id": "call_17_escooter_wrist",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "E-scooter fall, wrist probably broken (stable)",
+  "incident_id": "call_17_escooter_wrist",
+  "language": "en",
+  "location": {
+    "address": "Sölvegatan, outside the physics building (LTH), Lund",
+    "lat": 55.7141,
+    "lng": 13.2086
+  },
+  "tricky_aspects": [
+    "obvious injury but low urgency",
+    "ambulance unclear (own transport possible)"
+  ],
+  "duration_s": 52,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, I fell off an electric scooter and I think my wrist is broken."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "On Sölvegatan, outside the physics building at LTH."
+    },
+    {
+      "t": 15,
+      "time": "00:15",
+      "speaker": "operator",
+      "text": "Did you hit your head? Were you wearing a helmet?"
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "caller",
+      "text": "I had a helmet on. I landed on my hand, my head is fine."
+    },
+    {
+      "t": 23,
+      "time": "00:23",
+      "speaker": "operator",
+      "text": "Were you knocked out at all? Any neck pain?"
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "caller",
+      "text": "No, I remember everything. No neck pain."
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "operator",
+      "text": "Describe the wrist."
+    },
+    {
+      "t": 32,
+      "time": "00:32",
+      "speaker": "caller",
+      "text": "It looks bent, kind of like a fork. It hurts a lot but I can move my fingers."
+    },
+    {
+      "t": 38,
+      "time": "00:38",
+      "speaker": "operator",
+      "text": "Is it bleeding? Is the skin broken?"
+    },
+    {
+      "t": 41,
+      "time": "00:41",
+      "speaker": "caller",
+      "text": "No, just swollen. The skin is okay."
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "operator",
+      "text": "Is someone with you who can drive you to the emergency department?"
+    },
+    {
+      "t": 49,
+      "time": "00:49",
+      "speaker": "caller",
+      "text": "My friend is here, she has a car."
+    },
+    {
+      "t": 52,
+      "time": "00:52",
+      "speaker": "operator",
+      "text": "Then the quickest is that she drives you to the emergency department at SUS Lund. Support the arm, don't eat or drink in case you need surgery. Call back if you feel faint or the fingers go numb."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [],
+    "urgency": "C",
+    "urgency_rationale": "Low-speed fall, helmet, no head or neck injury, closed deformed wrist with intact circulation. Needs ED assessment; own transport acceptable.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 41,
+        "time": "00:41",
+        "urgency": "C"
+      }
+    ],
+    "ambulance": "unclear",
+    "other_resources": [
+      "own transport to ED (SUS Lund)"
+    ],
+    "red_flags": [
+      {
+        "label": "deformed wrist (fracture)",
+        "quote": "It looks bent, kind of like a fork",
+        "turn_index": 9,
+        "t": 32,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "helmet, no head injury",
+        "quote": "I had a helmet on",
+        "turn_index": 5,
+        "t": 18,
+        "speaker": "caller"
+      },
+      {
+        "label": "no loss of consciousness",
+        "quote": "No, I remember everything",
+        "turn_index": 7,
+        "t": 26,
+        "speaker": "caller"
+      },
+      {
+        "label": "closed fracture",
+        "quote": "The skin is okay",
+        "turn_index": 11,
+        "t": 41,
+        "speaker": "caller"
+      },
+      {
+        "label": "fingers move",
+        "quote": "I can move my fingers",
+        "turn_index": 9,
+        "t": 32,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Age?",
+      "Pain anywhere else (hip, ribs)?",
+      "Blood thinners?"
+    ],
+    "supplies": [],
+    "handover": "Young adult, e-scooter fall, helmet, no head/neck injury. Closed dinner-fork deformity of wrist, fingers move. Advised own transport to ED.",
+    "dashboard": {
+      "urgency": "Medium",
+      "ambulance": null,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "police (scene safety / traffic)",
+        "rescue service if trapped or fuel/fire",
+        "own transport to ED (SUS Lund)"
+      ],
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "prepare_en_route": [
+        "cervical collar + vacuum mattress",
+        "haemostatic dressing / tourniquet",
+        "pelvic binder",
+        "IV fluids",
+        "count patients - one ambulance per seriously injured"
+      ],
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "young adult, e-scooter fall, helmet",
+        "closed deformed wrist, fingers move"
+      ],
+      "scene_notes": [
+        "own transport advised - briefing only if ambulance sent"
+      ],
+      "urgency": "C",
+      "bring": [],
+      "open_questions": [
+        "Age?",
+        "Pain anywhere else (hip, ribs)?",
+        "Blood thinners?"
+      ],
+      "note": "Dispatch not decided - briefing applies if an ambulance is sent.",
+      "unit": "AMB 1260",
+      "ambulance_position": {
+        "lat": 55.724,
+        "lng": 13.19
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

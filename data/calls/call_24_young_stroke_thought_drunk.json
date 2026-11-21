@@ -1,0 +1,213 @@
+{
+  "call_id": "call_24_young_stroke_thought_drunk",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Man 38 at a party, friends think he's drunk (stroke)",
+  "incident_id": "call_24_young_stroke_thought_drunk",
+  "language": "en",
+  "location": {
+    "address": "Grönegatan 30, Lund (top floor, party)",
+    "lat": 55.702,
+    "lng": 13.1986
+  },
+  "tricky_aspects": [
+    "symptoms blamed on alcohol",
+    "young patient",
+    "background noise"
+  ],
+  "duration_s": 45,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, sorry, it's loud here. My friend is acting weird, we thought he was just drunk but he only had two beers."
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 13,
+      "time": "00:13",
+      "speaker": "caller",
+      "text": "A party at Grönegatan 30 in Lund, top floor."
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "operator",
+      "text": "What is he doing that is weird?"
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "caller",
+      "text": "He's talking like his mouth is full, and he keeps dropping his glass from his right hand."
+    },
+    {
+      "t": 27,
+      "time": "00:27",
+      "speaker": "operator",
+      "text": "Can he smile and lift both arms?"
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "caller",
+      "text": "His smile is crooked. His right arm goes down slower. He says he has a really bad headache."
+    },
+    {
+      "t": 38,
+      "time": "00:38",
+      "speaker": "operator",
+      "text": "When did this start?"
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "Like twenty minutes ago. Right after he was laughing really hard."
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "operator",
+      "text": "This could be a stroke, even at his age. I'm sending an ambulance with sirens. Keep him lying with his head a bit up, no more drinks."
+    }
+  ],
+  "gold_label": {
+    "category": "stroke",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Acute dysarthria, right arm weakness, facial asymmetry and sudden severe headache in a 38-year-old after minimal alcohol. FAST positive; possible haemorrhage or dissection. Alcohol must not explain it away.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 20,
+        "time": "00:20",
+        "urgency": "B"
+      },
+      {
+        "t": 31,
+        "time": "00:31",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "symptoms blamed on alcohol",
+        "quote": "we thought he was just drunk but he only had two beers",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "slurred speech",
+        "quote": "talking like his mouth is full",
+        "turn_index": 5,
+        "t": 20,
+        "speaker": "caller"
+      },
+      {
+        "label": "arm weakness",
+        "quote": "dropping his glass from his right hand",
+        "turn_index": 5,
+        "t": 20,
+        "speaker": "caller"
+      },
+      {
+        "label": "facial droop",
+        "quote": "His smile is crooked",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      },
+      {
+        "label": "sudden severe headache",
+        "quote": "really bad headache",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Exact time of onset?",
+      "Drugs other than alcohol?",
+      "Did he hit his head or neck?",
+      "Blood thinners or known illness?"
+    ],
+    "supplies": [
+      "glucometer",
+      "stroke scale card (e.g. FAST/NIHSS)",
+      "IV access kit",
+      "oxygen"
+    ],
+    "handover": "Male 38, ~20 min dysarthria, right arm weakness, facial droop, severe headache after laughing. Two beers only. Suspected stroke (consider haemorrhage/dissection). Stroke alarm.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [],
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "prepare_en_route": [
+        "glucometer (rule out low sugar)",
+        "stroke scale card",
+        "note last-seen-well time",
+        "list of medications / anticoagulants"
+      ],
+      "pre_alert": "Stroke team (stroke alarm)",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "male 38, slurred speech, right arm weak, face droop",
+        "sudden severe headache ~20 min",
+        "only 2 beers"
+      ],
+      "scene_notes": [
+        "party, top floor, loud - crowd",
+        "do not attribute to alcohol"
+      ],
+      "urgency": "A",
+      "bring": [
+        "glucometer",
+        "stroke scale card (e.g. FAST/NIHSS)",
+        "IV access kit",
+        "oxygen"
+      ],
+      "open_questions": [
+        "Exact time of onset?",
+        "Drugs other than alcohol?",
+        "Did he hit his head or neck?",
+        "Blood thinners or known illness?"
+      ],
+      "unit": "AMB 1340",
+      "ambulance_position": {
+        "lat": 55.713,
+        "lng": 13.212
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

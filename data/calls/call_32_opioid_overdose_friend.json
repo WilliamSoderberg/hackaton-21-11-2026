@@ -1,0 +1,239 @@
+{
+  "call_id": "call_32_opioid_overdose_friend",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Friend found barely breathing after heroin (caller fears police)",
+  "incident_id": "call_32_opioid_overdose_friend",
+  "language": "en",
+  "location": {
+    "address": "Södra Esplanaden 22, Lund (basement storage)",
+    "lat": 55.7,
+    "lng": 13.195
+  },
+  "tricky_aspects": [
+    "caller hesitant / fears police",
+    "slow breathing described casually",
+    "naloxone instructions"
+  ],
+  "duration_s": 55,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Do the police have to come? My friend is just really out of it, I can't wake him."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "We're here to help your friend. Where are you?"
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "caller",
+      "text": "Södra Esplanaden 22, basement storage area."
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "operator",
+      "text": "Is he breathing?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "Kind of. Very slow. Like one breath and then nothing for a long time."
+    },
+    {
+      "t": 25,
+      "time": "00:25",
+      "speaker": "operator",
+      "text": "Did he take anything?"
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "caller",
+      "text": "Heroin. He shot up about ten minutes ago. He's been clean for months, so maybe he took too much."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "What colour are his lips?"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "caller",
+      "text": "Kind of grey-blue."
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "operator",
+      "text": "Do you have naloxone, the nose spray?"
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "caller",
+      "text": "Yes, I have one in my bag."
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "operator",
+      "text": "Spray it up his nose now, all of it in one nostril. Then tilt his head back and give rescue breaths if you can. I'm sending an ambulance with sirens."
+    },
+    {
+      "t": 55,
+      "time": "00:55",
+      "speaker": "caller",
+      "text": "Okay. I did it. He's still not moving."
+    }
+  ],
+  "gold_label": {
+    "category": "unconscious_cardiac_arrest",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Opioid overdose: unresponsive, very slow breathing, cyanosis, lost tolerance. Respiratory arrest imminent; naloxone and ventilation.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 19,
+        "time": "00:19",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "first responder with AED"
+    ],
+    "red_flags": [
+      {
+        "label": "caller fears police",
+        "quote": "Do the police have to come?",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "unresponsive",
+        "quote": "I can't wake him",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "very slow breathing",
+        "quote": "Like one breath and then nothing for a long time",
+        "turn_index": 5,
+        "t": 19,
+        "speaker": "caller"
+      },
+      {
+        "label": "opioid injection",
+        "quote": "He shot up about ten minutes ago",
+        "turn_index": 7,
+        "t": 28,
+        "speaker": "caller"
+      },
+      {
+        "label": "lost tolerance",
+        "quote": "He's been clean for months",
+        "turn_index": 7,
+        "t": 28,
+        "speaker": "caller"
+      },
+      {
+        "label": "cyanosis",
+        "quote": "Kind of grey-blue",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Other drugs or alcohol taken too?",
+      "Age?",
+      "How do we get into the basement (door code)?"
+    ],
+    "supplies": [
+      "naloxone",
+      "bag-valve mask",
+      "oxygen",
+      "airway kit / suction",
+      "defibrillator (AED)"
+    ],
+    "handover": "Adult male, IV heroin ~10 min ago after months abstinent. Unresponsive, very slow breathing, cyanotic. Bystander naloxone intranasal given at ~00:55, no effect yet.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance x2 if available",
+      "extra_units": [
+        "first responder / rescue service with AED",
+        "physician unit if available",
+        "first responder with AED"
+      ],
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "prepare_en_route": [
+        "AED/defibrillator first in hand",
+        "mechanical CPR device",
+        "airway + BVM",
+        "adrenaline for CPR"
+      ],
+      "pre_alert": "Resuscitation room",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "adult male, IV heroin ~10 min ago, lost tolerance",
+        "unresponsive, very slow breathing, cyanotic",
+        "bystander naloxone given, no effect yet"
+      ],
+      "scene_notes": [
+        "basement storage, Södra Esplanaden 22 - door code unknown",
+        "caller fears police - keep calm on scene"
+      ],
+      "urgency": "A",
+      "bring": [
+        "naloxone",
+        "bag-valve mask",
+        "oxygen",
+        "airway kit / suction",
+        "defibrillator (AED)"
+      ],
+      "open_questions": [
+        "Other drugs or alcohol taken too?",
+        "Age?",
+        "How do we get into the basement (door code)?"
+      ],
+      "unit": "AMB 1390",
+      "ambulance_position": {
+        "lat": 55.711,
+        "lng": 13.209
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

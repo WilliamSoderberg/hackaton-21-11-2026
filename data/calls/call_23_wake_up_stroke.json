@@ -1,0 +1,216 @@
+{
+  "call_id": "call_23_wake_up_stroke",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Woman 79 woke up with weak left side (wake-up stroke)",
+  "incident_id": "call_23_wake_up_stroke",
+  "language": "en",
+  "location": {
+    "address": "Ringvägen 12, Staffanstorp",
+    "lat": 55.6426,
+    "lng": 13.2049
+  },
+  "tricky_aspects": [
+    "onset time unknown - use last seen well",
+    "caller unsure if she is just tired"
+  ],
+  "duration_s": 49,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "My wife woke up strange this morning. I don't know if she's just tired."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "What's the address?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "Ringvägen 12, Staffanstorp."
+    },
+    {
+      "t": 15,
+      "time": "00:15",
+      "speaker": "operator",
+      "text": "What is strange about her?"
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "caller",
+      "text": "Her left arm just falls down on the bed when she tries to lift it. And her words are slurry."
+    },
+    {
+      "t": 24,
+      "time": "00:24",
+      "speaker": "operator",
+      "text": "Ask her to smile. Is the face the same on both sides?"
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "caller",
+      "text": "Smile, Inga. ... The left side of the mouth hangs down."
+    },
+    {
+      "t": 33,
+      "time": "00:33",
+      "speaker": "operator",
+      "text": "When did you last see her normal?"
+    },
+    {
+      "t": 36,
+      "time": "00:36",
+      "speaker": "caller",
+      "text": "Last night, we watched the news together at ten, she was fine. Then we slept."
+    },
+    {
+      "t": 42,
+      "time": "00:42",
+      "speaker": "operator",
+      "text": "Does she take any blood thinners?"
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "caller",
+      "text": "No, just something for cholesterol."
+    },
+    {
+      "t": 49,
+      "time": "00:49",
+      "speaker": "operator",
+      "text": "This sounds like a stroke. I'm sending an ambulance with sirens. Don't give her food or drink."
+    }
+  ],
+  "gold_label": {
+    "category": "stroke",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Left arm weakness, facial droop and slurred speech (FAST positive). Onset unknown, last seen well 22:00 - still stroke alarm; wake-up stroke may qualify for treatment after imaging.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 17,
+        "time": "00:17",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "caller unsure / downplays",
+        "quote": "I don't know if she's just tired",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "arm weakness",
+        "quote": "Her left arm just falls down on the bed",
+        "turn_index": 5,
+        "t": 17,
+        "speaker": "caller"
+      },
+      {
+        "label": "slurred speech",
+        "quote": "her words are slurry",
+        "turn_index": 5,
+        "t": 17,
+        "speaker": "caller"
+      },
+      {
+        "label": "facial droop",
+        "quote": "The left side of the mouth hangs down",
+        "turn_index": 7,
+        "t": 28,
+        "speaker": "caller"
+      },
+      {
+        "label": "last seen well 22:00",
+        "quote": "we watched the news together at ten",
+        "turn_index": 9,
+        "t": 36,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Did she wake up during the night?",
+      "Diabetes (check sugar)?",
+      "Headache or fall?"
+    ],
+    "supplies": [
+      "glucometer",
+      "stroke scale card (e.g. FAST/NIHSS)",
+      "12-lead ECG",
+      "IV access kit"
+    ],
+    "handover": "Female 79, woke with left arm weakness, left facial droop, dysarthria. Last seen well 22:00 last night. No anticoagulant. Wake-up stroke - stroke alarm.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [],
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "prepare_en_route": [
+        "glucometer (rule out low sugar)",
+        "stroke scale card",
+        "note last-seen-well time",
+        "list of medications / anticoagulants"
+      ],
+      "pre_alert": "Stroke team (stroke alarm)",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "female 79, left arm weak, face droop, slurred",
+        "last seen well 22:00 yesterday",
+        "no anticoagulant"
+      ],
+      "scene_notes": [
+        "wake-up stroke - still stroke alarm"
+      ],
+      "urgency": "A",
+      "bring": [
+        "glucometer",
+        "stroke scale card (e.g. FAST/NIHSS)",
+        "12-lead ECG",
+        "IV access kit"
+      ],
+      "open_questions": [
+        "Did she wake up during the night?",
+        "Diabetes (check sugar)?",
+        "Headache or fall?"
+      ],
+      "unit": "AMB 1330",
+      "ambulance_position": {
+        "lat": 55.66,
+        "lng": 13.225
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

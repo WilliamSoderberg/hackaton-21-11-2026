@@ -1,0 +1,222 @@
+{
+  "call_id": "call_11_tia_symptoms_resolved",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Stroke symptoms that went away (TIA), urgency B",
+  "incident_id": "call_11_tia_symptoms_resolved",
+  "language": "en",
+  "location": {
+    "address": "Stora Södergatan 52, Lund",
+    "lat": 55.6986,
+    "lng": 13.1937
+  },
+  "tricky_aspects": [
+    "symptoms resolved before call",
+    "tests that model does not under-triage to D or over-triage to A"
+  ],
+  "duration_s": 54,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, I'm calling for my dad, he's 74. About an hour ago his speech went weird for a few minutes."
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "operator",
+      "text": "What's the address?"
+    },
+    {
+      "t": 13,
+      "time": "00:13",
+      "speaker": "caller",
+      "text": "Stora Södergatan 52, Lund."
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "operator",
+      "text": "How is he right now?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "Now he seems fine again, he's talking normally and walking around. He says we're overreacting."
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "operator",
+      "text": "When it happened, did his face droop or was one arm weak?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "His left hand felt numb and he dropped his coffee cup. That's gone now too."
+    },
+    {
+      "t": 36,
+      "time": "00:36",
+      "speaker": "operator",
+      "text": "Ask him to smile and lift both arms now."
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "... He smiles normally, both arms go up fine."
+    },
+    {
+      "t": 45,
+      "time": "00:45",
+      "speaker": "operator",
+      "text": "Does he take blood thinners or have heart rhythm problems?"
+    },
+    {
+      "t": 49,
+      "time": "00:49",
+      "speaker": "caller",
+      "text": "He has atrial fibrillation, he takes Eliquis."
+    },
+    {
+      "t": 54,
+      "time": "00:54",
+      "speaker": "operator",
+      "text": "This could be a warning sign of a stroke even if it has passed. I'm sending an ambulance so he gets to the stroke unit. Call back immediately if the symptoms come back."
+    }
+  ],
+  "gold_label": {
+    "category": "stroke",
+    "secondary_categories": [],
+    "urgency": "B",
+    "urgency_rationale": "Transient speech disturbance and left hand weakness ~1 h ago, fully resolved, AF on anticoagulant. TIA = B; raise to A if symptoms return.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 40,
+        "time": "00:40",
+        "urgency": "B"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "transient speech disturbance",
+        "quote": "his speech went weird for a few minutes",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "transient one-sided weakness",
+        "quote": "His left hand felt numb and he dropped his coffee cup",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "patient minimises",
+        "quote": "He says we're overreacting",
+        "turn_index": 5,
+        "t": 19,
+        "speaker": "caller"
+      },
+      {
+        "label": "atrial fibrillation / anticoagulant",
+        "quote": "He has atrial fibrillation, he takes Eliquis",
+        "turn_index": 11,
+        "t": 49,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "symptoms resolved",
+        "quote": "Now he seems fine again",
+        "turn_index": 5,
+        "t": 19,
+        "speaker": "caller"
+      },
+      {
+        "label": "normal FAST now",
+        "quote": "He smiles normally, both arms go up fine",
+        "turn_index": 9,
+        "t": 40,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Exact time the symptoms started and stopped?",
+      "Has this happened before?",
+      "Headache, fall or head injury?"
+    ],
+    "supplies": [
+      "glucometer",
+      "12-lead ECG",
+      "stroke scale card (e.g. FAST/NIHSS)"
+    ],
+    "handover": "Male 74, AF on apixaban. ~1 h ago transient dysarthria and left hand weakness for a few minutes, now fully resolved, FAST normal on phone. Suspected TIA.",
+    "dashboard": {
+      "urgency": "High",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [],
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "prepare_en_route": [
+        "glucometer (rule out low sugar)",
+        "stroke scale card",
+        "note last-seen-well time",
+        "list of medications / anticoagulants"
+      ],
+      "pre_alert": "Stroke team (stroke alarm)",
+      "lights_and_sirens": false,
+      "key_facts": [
+        "male 74, AF on apixaban (Eliquis)",
+        "speech + left hand symptoms ~1 h ago, now resolved"
+      ],
+      "scene_notes": [
+        "if symptoms return: upgrade to stroke alarm"
+      ],
+      "urgency": "B",
+      "bring": [
+        "glucometer",
+        "12-lead ECG",
+        "stroke scale card (e.g. FAST/NIHSS)"
+      ],
+      "open_questions": [
+        "Exact time the symptoms started and stopped?",
+        "Has this happened before?",
+        "Headache, fall or head injury?"
+      ],
+      "unit": "AMB 1210",
+      "ambulance_position": {
+        "lat": 55.711,
+        "lng": 13.183
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "call_id": "call_28_fender_bender_no_injury",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Low-speed rear-end collision, nobody hurt",
+  "incident_id": "call_28_fender_bender_no_injury",
+  "language": "en",
+  "location": {
+    "address": "Trollebergsvägen, at the lights by the Coop, Lund",
+    "lat": 55.6985,
+    "lng": 13.176
+  },
+  "tricky_aspects": [
+    "negative control",
+    "traffic but no injury",
+    "should be E (police/towing)"
+  ],
+  "duration_s": 43,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Someone drove into the back of my car at the traffic lights. I don't know who to call."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "Trollebergsvägen, at the lights by the Coop."
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "Is anyone hurt?"
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "caller",
+      "text": "No, nobody. It was slow, like walking speed. We're both standing outside talking."
+    },
+    {
+      "t": 25,
+      "time": "00:25",
+      "speaker": "operator",
+      "text": "Any neck pain, dizziness, anyone pregnant or children in the cars?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "No, I feel fine, he says he's fine too. Just a dent in the bumper."
+    },
+    {
+      "t": 36,
+      "time": "00:36",
+      "speaker": "operator",
+      "text": "Are the cars blocking traffic?"
+    },
+    {
+      "t": 39,
+      "time": "00:39",
+      "speaker": "caller",
+      "text": "A bit, but we can drive them to the side."
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "operator",
+      "text": "Then you don't need an ambulance. Move the cars to the side, exchange details and fill in an accident report. If you feel neck pain later, contact 1177. I'll inform the police."
+    }
+  ],
+  "gold_label": {
+    "category": "traffic_trauma",
+    "secondary_categories": [],
+    "urgency": "E",
+    "urgency_rationale": "Walking-speed rear-end collision, no injuries, both drivers out and well, vehicle damage only.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 18,
+        "time": "00:18",
+        "urgency": "E"
+      }
+    ],
+    "ambulance": "no",
+    "other_resources": [
+      "police (non-emergency)",
+      "insurance / towing"
+    ],
+    "red_flags": [],
+    "negative_findings": [
+      {
+        "label": "nobody hurt",
+        "quote": "No, nobody",
+        "turn_index": 5,
+        "t": 18,
+        "speaker": "caller"
+      },
+      {
+        "label": "very low speed",
+        "quote": "like walking speed",
+        "turn_index": 5,
+        "t": 18,
+        "speaker": "caller"
+      },
+      {
+        "label": "no symptoms",
+        "quote": "No, I feel fine",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "vehicle damage only",
+        "quote": "Just a dent in the bumper",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [],
+    "supplies": [],
+    "handover": "No dispatch. Low-speed rear-end collision, no injuries. Advised to move cars and exchange details; police informed.",
+    "dashboard": {
+      "urgency": "Low",
+      "ambulance": false,
+      "type": "physical"
+    },
+    "crew_briefing": null
+  }
+}

@@ -1,0 +1,19 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_08_hidden_suicide_risk: Calls 'just to talk', hidden suicide risk and overdose
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hi. I don't know if this is the right number. It's not really an emergency.
+[00:08] OPERATOR: That's okay. What's going on?
+[00:10] CALLER: I just can't sleep. I haven't slept properly in weeks. I just wanted to talk to someone, I guess.
+[00:18] OPERATOR: I hear you. Are you alone right now?
+[00:21] CALLER: Yeah. I gave my cat to my sister yesterday, so it's really quiet here now.
+[00:28] OPERATOR: Why did you give your cat away?
+[00:31] CALLER: She'll take better care of him. It won't matter after tonight anyway.
+[00:37] OPERATOR: When you say it won't matter after tonight, are you thinking about killing yourself?
+[00:43] CALLER: ... I've sorted things out. I wrote some letters. Everyone would be better off, honestly.
+[00:51] OPERATOR: Thank you for telling me. Have you done anything to hurt yourself today? Have you taken anything?
+[00:57] CALLER: I took a few of my sleeping pills. Maybe more than a few. The whole strip I think.
+[01:04] OPERATOR: What's your address? I want to get help to you right now.
+[01:07] CALLER: I don't know... Fjelievägen 7. Lund. Apartment 3.
+[01:13] OPERATOR: I'm sending an ambulance. Can you unlock your front door? And stay on the line with me.
+[01:19] CALLER: I'm getting really tired.

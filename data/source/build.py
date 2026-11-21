@@ -130,8 +130,9 @@ for line in all_jsonl:
         errors.append(f"{rec['call_id']}: no MINUTES_SINCE_CALL in locations.py")
     inc["calls"].append({"call_id": rec["call_id"], "title": rec["title"], "minutes_since_call": minutes or 0,
                          "urgency_timeline": g["urgency_timeline"],
-                         # Call text, so the crew map can run the ambulance model on it.
-                         "turns": [t["text"] for t in rec["transcript"]]})
+                         # Caller turns only, so the crew map can run the ambulance model on them
+                         # (the model ignores the responder).
+                         "turns": [t["text"] for t in rec["transcript"] if t["speaker"] == "caller"]})
     if len(inc["calls"]) > 1:
         inc["title"] = inc["calls"][0]["title"].split(", call ")[0] + f" ({len(inc['calls'])} calls)"
     inc["minutes_since_call"] = max(c["minutes_since_call"] for c in inc["calls"])

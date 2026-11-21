@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_23_wake_up_stroke: Woman 79 woke up with weak left side (wake-up stroke)
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: My wife woke up strange this morning. I don't know if she's just tired.
+[00:09] OPERATOR: What's the address?
+[00:11] CALLER: Ringvägen 12, Staffanstorp.
+[00:15] OPERATOR: What is strange about her?
+[00:17] CALLER: Her left arm just falls down on the bed when she tries to lift it. And her words are slurry.
+[00:24] OPERATOR: Ask her to smile. Is the face the same on both sides?
+[00:28] CALLER: Smile, Inga. ... The left side of the mouth hangs down.
+[00:33] OPERATOR: When did you last see her normal?
+[00:36] CALLER: Last night, we watched the news together at ten, she was fine. Then we slept.
+[00:42] OPERATOR: Does she take any blood thinners?
+[00:45] CALLER: No, just something for cholesterol.
+[00:49] OPERATOR: This sounds like a stroke. I'm sending an ambulance with sirens. Don't give her food or drink.

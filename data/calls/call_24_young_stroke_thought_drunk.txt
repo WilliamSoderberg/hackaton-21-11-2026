@@ -1,0 +1,14 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_24_young_stroke_thought_drunk: Man 38 at a party, friends think he's drunk (stroke)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hi, sorry, it's loud here. My friend is acting weird, we thought he was just drunk but he only had two beers.
+[00:11] OPERATOR: Where are you?
+[00:13] CALLER: A party at Grönegatan 30 in Lund, top floor.
+[00:18] OPERATOR: What is he doing that is weird?
+[00:20] CALLER: He's talking like his mouth is full, and he keeps dropping his glass from his right hand.
+[00:27] OPERATOR: Can he smile and lift both arms?
+[00:31] CALLER: His smile is crooked. His right arm goes down slower. He says he has a really bad headache.
+[00:38] OPERATOR: When did this start?
+[00:40] CALLER: Like twenty minutes ago. Right after he was laughing really hard.
+[00:45] OPERATOR: This could be a stroke, even at his age. I'm sending an ambulance with sirens. Keep him lying with his head a bit up, no more drinks.

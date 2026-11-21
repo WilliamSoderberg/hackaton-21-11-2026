@@ -1,0 +1,18 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_20_elderly_hip_fall: Woman 84 fell at night, can't get up, leg turned out
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Hi, I'm from home care. I just arrived at a client's flat and she's lying on the kitchen floor.
+[00:10] OPERATOR: Address?
+[00:12] CALLER: Bryggaregatan 4B, Lund, ground floor.
+[00:16] OPERATOR: Is she awake and talking?
+[00:18] CALLER: Yes, she's awake and talking. She says she fell when she got up for water in the night, around two.
+[00:26] OPERATOR: So she has been on the floor for several hours?
+[00:29] CALLER: Yes, maybe seven hours. She's very cold and she has wet herself.
+[00:35] OPERATOR: Where does she have pain?
+[00:37] CALLER: Her right hip. The right leg looks shorter and the foot is turned out to the side.
+[00:44] OPERATOR: Did she hit her head? Is she confused?
+[00:47] CALLER: She has a bump on the forehead. She's a bit slow but she knows where she is.
+[00:53] OPERATOR: Does she take blood thinners?
+[00:56] CALLER: Let me check the list... yes, Waran.
+[01:01] OPERATOR: I'm sending an ambulance. Don't try to lift her. Put a blanket over her and under her if you can without moving the leg.

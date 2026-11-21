@@ -1,0 +1,173 @@
+{
+  "call_id": "call_15_dropped_call_not_breathing",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Dropped call: 'he's not breathing' then line cuts",
+  "incident_id": "call_15_dropped_call_not_breathing",
+  "language": "en",
+  "location": {
+    "address": "Sparta student housing, Tornavägen, Lund (building unknown)",
+    "lat": 55.7172,
+    "lng": 13.2063
+  },
+  "tricky_aspects": [
+    "call drops after 15 s",
+    "partial address only",
+    "very little information but must still be A"
+  ],
+  "duration_s": 16,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 2,
+      "time": "00:02",
+      "speaker": "caller",
+      "text": "Please, my friend, he's not breathing, he just fell down!"
+    },
+    {
+      "t": 6,
+      "time": "00:06",
+      "speaker": "operator",
+      "text": "Where are you? Give me the address."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "caller",
+      "text": "We're at the student flats on Sparta, Tornavägen, the building by the..."
+    },
+    {
+      "t": 13,
+      "time": "00:13",
+      "speaker": "operator",
+      "text": "Hello? Which building? Hello?"
+    },
+    {
+      "t": 16,
+      "time": "00:16",
+      "speaker": "operator",
+      "text": "The line is dead. I'm calling back and starting a phone position trace."
+    }
+  ],
+  "gold_label": {
+    "category": "unconscious_cardiac_arrest",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Reported collapse with no breathing = possible cardiac arrest. Call dropped; partial location (Sparta, Tornavägen). Dispatch on what is known, do not wait for details.",
+    "urgency_timeline": [
+      {
+        "t": 2,
+        "time": "00:02",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "call-back / phone position (AML)",
+      "first responder with AED (Heartrunner)",
+      "police to help locate building"
+    ],
+    "red_flags": [
+      {
+        "label": "not breathing",
+        "quote": "he's not breathing",
+        "turn_index": 1,
+        "t": 2,
+        "speaker": "caller"
+      },
+      {
+        "label": "sudden collapse",
+        "quote": "he just fell down",
+        "turn_index": 1,
+        "t": 2,
+        "speaker": "caller"
+      },
+      {
+        "label": "call dropped",
+        "quote": "The line is dead",
+        "turn_index": 5,
+        "t": 16,
+        "speaker": "operator"
+      }
+    ],
+    "missing_questions": [
+      "Exact building and flat number?",
+      "Patient age?",
+      "Is CPR being done?",
+      "Drugs or alcohol involved?",
+      "Caller's call-back number confirmed?"
+    ],
+    "supplies": [
+      "defibrillator (AED)",
+      "bag-valve mask",
+      "airway kit / suction",
+      "adrenaline for CPR",
+      "naloxone"
+    ],
+    "handover": "Unknown young adult (student housing), witnessed collapse, reported not breathing. Call dropped at 00:13. Location: Sparta student housing, Tornavägen, building unknown. Call-back and position trace in progress.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance x2 if available",
+      "extra_units": [
+        "first responder / rescue service with AED",
+        "physician unit if available",
+        "call-back / phone position (AML)",
+        "first responder with AED (Heartrunner)",
+        "police to help locate building"
+      ],
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "prepare_en_route": [
+        "AED/defibrillator first in hand",
+        "mechanical CPR device",
+        "airway + BVM",
+        "adrenaline for CPR"
+      ],
+      "pre_alert": "Resuscitation room",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "witnessed collapse, reported not breathing",
+        "call dropped - no CPR confirmed"
+      ],
+      "scene_notes": [
+        "Sparta student housing, Tornavägen - BUILDING UNKNOWN",
+        "dispatch updates location from call-back/position trace",
+        "consider naloxone (student setting)"
+      ],
+      "urgency": "A",
+      "bring": [
+        "defibrillator (AED)",
+        "bag-valve mask",
+        "airway kit / suction",
+        "adrenaline for CPR",
+        "naloxone"
+      ],
+      "open_questions": [
+        "Exact building and flat number?",
+        "Patient age?",
+        "Is CPR being done?",
+        "Drugs or alcohol involved?",
+        "Caller's call-back number confirmed?"
+      ],
+      "unit": "AMB 1250",
+      "ambulance_position": {
+        "lat": 55.706,
+        "lng": 13.189
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

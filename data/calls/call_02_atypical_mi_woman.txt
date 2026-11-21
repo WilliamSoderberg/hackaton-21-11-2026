@@ -1,0 +1,20 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_02_atypical_mi_woman: Atypical heart attack, woman 67 ('just the flu')
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Hi, um, I'm calling about my mother. I'm not sure if this is an emergency, maybe I should call 1177 instead.
+[00:10] OPERATOR: That's okay, tell me what's going on.
+[00:12] CALLER: She's 67, she's been feeling really sick since this morning, she threw up twice. We thought it's the stomach flu.
+[00:20] OPERATOR: Where are you?
+[00:22] CALLER: At her flat, Södra Esplanaden 9 in Lund.
+[00:26] OPERATOR: Is she awake? Is she breathing normally?
+[00:29] CALLER: She's awake, she's lying on the bed. She's a bit out of breath when she walks to the toilet.
+[00:35] OPERATOR: Any pain anywhere?
+[00:37] CALLER: Not really in the stomach. She says her jaw hurts, kind of up into the teeth, and between the shoulder blades. She thought she slept wrong.
+[00:46] OPERATOR: Okay. Anything else unusual?
+[00:48] CALLER: She's very tired, she's never like this. And she's a bit cold and clammy when I touch her.
+[00:54] OPERATOR: Does she have diabetes or any heart disease?
+[00:57] CALLER: She has diabetes, type 2. She takes metformin.
+[01:01] OPERATOR: I'm sending an ambulance now. Keep her resting, don't let her walk around. If she has aspirin and is not allergic she can chew one.
+[01:09] CALLER: Really? Is it serious?
+[01:11] OPERATOR: These symptoms can come from the heart, especially in women with diabetes, so we want her checked right away.

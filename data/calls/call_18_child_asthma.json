@@ -1,0 +1,231 @@
+{
+  "call_id": "call_18_child_asthma",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Boy 10 with asthma attack, inhaler only partly helps",
+  "incident_id": "call_18_child_asthma",
+  "language": "en",
+  "location": {
+    "address": "Smörlyckan 5, Linero, Lund (terraced house)",
+    "lat": 55.7021,
+    "lng": 13.2331
+  },
+  "tricky_aspects": [
+    "parent caller",
+    "partial response to inhaler",
+    "child talks in short sentences"
+  ],
+  "duration_s": 56,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "My son has asthma and he can't breathe properly, the inhaler isn't working like it should."
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "caller",
+      "text": "Linero, Smörlyckan 5, in Lund. It's a terraced house."
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "operator",
+      "text": "How old is he? How much inhaler has he taken?"
+    },
+    {
+      "t": 21,
+      "time": "00:21",
+      "speaker": "caller",
+      "text": "He's ten. He's taken four puffs of the blue one in the last half hour."
+    },
+    {
+      "t": 27,
+      "time": "00:27",
+      "speaker": "operator",
+      "text": "Can he speak in full sentences?"
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "Only a few words, then he has to breathe. He's sitting leaning forward on the table."
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "Is his skin or lips a normal colour?"
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "His lips are okay. He's pale. I can see the skin pulling in between his ribs."
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "operator",
+      "text": "Has he been this bad before?"
+    },
+    {
+      "t": 50,
+      "time": "00:50",
+      "speaker": "caller",
+      "text": "Once, two years ago, he was at hospital overnight. He has a cold this week."
+    },
+    {
+      "t": 56,
+      "time": "00:56",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance. Give two more puffs with the spacer now. Keep him sitting up, keep calm with him."
+    }
+  ],
+  "gold_label": {
+    "category": "breathing_difficulty",
+    "secondary_categories": [],
+    "urgency": "B",
+    "urgency_rationale": "Child with acute asthma, only a few words per breath, intercostal recession, poor response to reliever, prior admission. Not cyanotic. Raise to A if lips turn blue or he gets drowsy.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 40,
+        "time": "00:40",
+        "urgency": "B"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "reliever not working",
+        "quote": "the inhaler isn't working like it should",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "speaks only a few words",
+        "quote": "Only a few words, then he has to breathe",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "tripod position",
+        "quote": "leaning forward on the table",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "intercostal recession",
+        "quote": "the skin pulling in between his ribs",
+        "turn_index": 9,
+        "t": 40,
+        "speaker": "caller"
+      },
+      {
+        "label": "previous hospital admission",
+        "quote": "he was at hospital overnight",
+        "turn_index": 11,
+        "t": 50,
+        "speaker": "caller"
+      }
+    ],
+    "negative_findings": [
+      {
+        "label": "no cyanosis",
+        "quote": "His lips are okay",
+        "turn_index": 9,
+        "t": 40,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Is he getting tired or drowsy?",
+      "Weight?",
+      "Does he have steroid tablets at home?",
+      "Fever?"
+    ],
+    "supplies": [
+      "nebulizer with salbutamol",
+      "oxygen",
+      "pulse oximeter",
+      "paediatric kit",
+      "oral/IV steroid"
+    ],
+    "handover": "Boy 10, known asthma, URTI this week. Acute exacerbation, 4 puffs salbutamol in 30 min with poor effect, speaks few words, tripod, intercostal recession, pale, no cyanosis. Previous admission.",
+    "dashboard": {
+      "urgency": "High",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [],
+      "destination": "Emergency department (SUS Lund)",
+      "prepare_en_route": [
+        "nebulizer with salbutamol drawn up",
+        "oxygen with controlled-flow mask (COPD)",
+        "CPAP if carried",
+        "pulse oximeter"
+      ],
+      "pre_alert": "ED if SpO2 low or exhausted",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "boy 10, asthma, 4 puffs salbutamol no effect",
+        "few words per breath, recession, no cyanosis",
+        "previous admission"
+      ],
+      "scene_notes": [
+        "terraced house Linero",
+        "weight unknown - estimate ~32 kg for age"
+      ],
+      "urgency": "B",
+      "bring": [
+        "nebulizer with salbutamol",
+        "oxygen",
+        "pulse oximeter",
+        "paediatric kit",
+        "oral/IV steroid"
+      ],
+      "open_questions": [
+        "Is he getting tired or drowsy?",
+        "Weight?",
+        "Does he have steroid tablets at home?",
+        "Fever?"
+      ],
+      "unit": "AMB 1270",
+      "ambulance_position": {
+        "lat": 55.712,
+        "lng": 13.215
+      },
+      "destination_hospital": {
+        "name": "SUS Lund, Barnakuten",
+        "detail": "Paediatric emergency department",
+        "lat": 55.7139,
+        "lng": 13.1972
+      }
+    }
+  }
+}

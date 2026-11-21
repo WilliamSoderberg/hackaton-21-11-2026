@@ -1,0 +1,14 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_28_fender_bender_no_injury: Low-speed rear-end collision, nobody hurt
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Someone drove into the back of my car at the traffic lights. I don't know who to call.
+[00:09] OPERATOR: Where are you?
+[00:11] CALLER: Trollebergsvägen, at the lights by the Coop.
+[00:16] OPERATOR: Is anyone hurt?
+[00:18] CALLER: No, nobody. It was slow, like walking speed. We're both standing outside talking.
+[00:25] OPERATOR: Any neck pain, dizziness, anyone pregnant or children in the cars?
+[00:30] CALLER: No, I feel fine, he says he's fine too. Just a dent in the bumper.
+[00:36] OPERATOR: Are the cars blocking traffic?
+[00:39] CALLER: A bit, but we can drive them to the side.
+[00:43] OPERATOR: Then you don't need an ambulance. Move the cars to the side, exchange details and fill in an accident report. If you feel neck pain later, contact 1177. I'll inform the police.

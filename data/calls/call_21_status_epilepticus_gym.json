@@ -1,0 +1,212 @@
+{
+  "call_id": "call_21_status_epilepticus_gym",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Man seizing at the gym for over 5 minutes",
+  "incident_id": "call_21_status_epilepticus_gym",
+  "language": "en",
+  "location": {
+    "address": "Nova Lund shopping centre, gym upstairs",
+    "lat": 55.7186,
+    "lng": 13.2274
+  },
+  "tricky_aspects": [
+    "unknown history",
+    "seizure not stopping",
+    "bystander caller"
+  ],
+  "duration_s": 55,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "A guy is having a seizure here at the gym, he's shaking all over!"
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Which gym, what address?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "The gym at Nova Lund shopping centre, upstairs."
+    },
+    {
+      "t": 15,
+      "time": "00:15",
+      "speaker": "operator",
+      "text": "How long has he been shaking?"
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "caller",
+      "text": "It started before I called, now it's like six, seven minutes. It's not stopping."
+    },
+    {
+      "t": 24,
+      "time": "00:24",
+      "speaker": "operator",
+      "text": "Is there anything around him he can hit? Move things away, don't put anything in his mouth."
+    },
+    {
+      "t": 30,
+      "time": "00:30",
+      "speaker": "caller",
+      "text": "We moved the weights. There's foam coming from his mouth and his lips look blue."
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "Does anyone know him? Does he have epilepsy or diabetes?"
+    },
+    {
+      "t": 41,
+      "time": "00:41",
+      "speaker": "caller",
+      "text": "Nobody knows him. He was lifting heavy and then just fell."
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance with sirens. When the shaking stops, turn him on his side and check if he's breathing."
+    },
+    {
+      "t": 55,
+      "time": "00:55",
+      "speaker": "caller",
+      "text": "Still shaking. Okay. Staff is getting the defibrillator too."
+    }
+  ],
+  "gold_label": {
+    "category": "seizure",
+    "secondary_categories": [
+      "unconscious_cardiac_arrest"
+    ],
+    "urgency": "A",
+    "urgency_rationale": "Generalised seizure over 5 minutes (status epilepticus), cyanosis, unknown history. A seizure can also be the first sign of cardiac arrest - check breathing when it stops.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "B"
+      },
+      {
+        "t": 17,
+        "time": "00:17",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "first responder with AED"
+    ],
+    "red_flags": [
+      {
+        "label": "seizure > 5 min",
+        "quote": "now it's like six, seven minutes. It's not stopping",
+        "turn_index": 5,
+        "t": 17,
+        "speaker": "caller"
+      },
+      {
+        "label": "cyanosis",
+        "quote": "his lips look blue",
+        "turn_index": 7,
+        "t": 30,
+        "speaker": "caller"
+      },
+      {
+        "label": "unknown history",
+        "quote": "Nobody knows him",
+        "turn_index": 9,
+        "t": 41,
+        "speaker": "caller"
+      },
+      {
+        "label": "collapse during exertion",
+        "quote": "He was lifting heavy and then just fell",
+        "turn_index": 9,
+        "t": 41,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Approximate age?",
+      "Did he hit his head when he fell?",
+      "Any drugs or supplements (e.g. stimulants)?"
+    ],
+    "supplies": [
+      "buccal/IV midazolam",
+      "suction",
+      "oxygen",
+      "glucometer",
+      "defibrillator (AED)"
+    ],
+    "handover": "Adult male, collapsed while lifting weights at Nova Lund gym, generalised seizure >7 min ongoing, cyanotic, frothing. History unknown. AED being brought by staff.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "first responder with AED"
+      ],
+      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
+      "prepare_en_route": [
+        "buccal/IV midazolam dose by weight",
+        "suction",
+        "glucometer",
+        "paediatric kit if child"
+      ],
+      "pre_alert": "ED if seizure ongoing on arrival",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "adult male, seizure >7 min, cyanotic",
+        "collapsed while lifting weights, history unknown"
+      ],
+      "scene_notes": [
+        "Nova Lund gym upstairs - staff bringing AED",
+        "check for cardiac arrest when seizure stops"
+      ],
+      "urgency": "A",
+      "bring": [
+        "buccal/IV midazolam",
+        "suction",
+        "oxygen",
+        "glucometer",
+        "defibrillator (AED)"
+      ],
+      "open_questions": [
+        "Approximate age?",
+        "Did he hit his head when he fell?",
+        "Any drugs or supplements (e.g. stimulants)?"
+      ],
+      "unit": "AMB 1310",
+      "ambulance_position": {
+        "lat": 55.73,
+        "lng": 13.208
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

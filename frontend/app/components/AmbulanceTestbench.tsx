@@ -38,7 +38,7 @@ export default function AmbulanceTestbench() {
           <div>
             <h1 className="text-lg font-semibold leading-tight">Ambulance Model Testbench</h1>
             <p className="text-xs text-slate-500">
-              Trained {modelInfo.trainedOn} · {modelInfo.termCount} terms · leave-one-call-out {ev.correct}/{ev.total}
+              Trained {modelInfo.trainedOn} · {modelInfo.termCount} terms · held-out {ev.correct}/{ev.total}
             </p>
           </div>
           <AppNav />
@@ -91,8 +91,8 @@ export default function AmbulanceTestbench() {
             className="h-[28rem] w-full resize-y rounded-md border border-slate-300 bg-white p-3 font-mono text-sm text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:outline-none"
           />
           <p className="mt-2 text-xs text-slate-400">
-            One turn per line. &quot;Caller:&quot;, &quot;Responder:&quot;, &quot;Operator:&quot; and timestamps like
-            [00:12] are ignored; the model reads the whole conversation. {turns.length} turn{turns.length === 1 ? "" : "s"}.
+            One turn per line. The model reads only the caller: &quot;Responder:&quot; / &quot;Operator:&quot; lines are
+            skipped, and unlabelled lines count as the caller. {turns.length} caller turn{turns.length === 1 ? "" : "s"}.
           </p>
         </section>
 
@@ -104,9 +104,10 @@ export default function AmbulanceTestbench() {
               <p className="mt-3 text-xs text-slate-500">
                 Dataset label: <span className="font-semibold text-slate-700">{goldLabel[example.gold]}</span>
                 {example.heldOut
-                  ? ` · held-out score ${Math.round(example.looProb * 100)}% (model trained without this call)`
+                  ? ` · held-out score ${Math.round(example.looProb * 100)}% (model trained without any hand-written call)`
                   : " · not used in training"}
-                . The score above is from the final model, which has seen {example.heldOut ? "this call" : "the others"}.
+                . The score above is from the final model, which{" "}
+                {example.gold === "unclear" ? "has not seen this call either" : "was also trained on this call"}.
               </p>
             )}
           </div>
@@ -118,13 +119,13 @@ export default function AmbulanceTestbench() {
                 {trace.map((p, i) => (
                   <div
                     key={i}
-                    title={`After turn ${i + 1}: ${Math.round(p * 100)}%`}
+                    title={`After caller turn ${i + 1}: ${Math.round(p * 100)}%`}
                     className={`flex-1 rounded-t-sm ${p >= modelInfo.threshold ? "bg-red-500" : "bg-emerald-500"}`}
                     style={{ height: `${Math.max(4, p * 100)}%` }}
                   />
                 ))}
               </div>
-              <p className="mt-2 text-xs text-slate-400">Probability after each turn · threshold {modelInfo.threshold * 100}%</p>
+              <p className="mt-2 text-xs text-slate-400">Probability after each caller turn · threshold {modelInfo.threshold * 100}%</p>
             </div>
           )}
 

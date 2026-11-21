@@ -93,13 +93,15 @@ Suggested scoring: category accuracy, urgency exact + within-one, ambulance accu
 
 ## Ambulance model (`model/`)
 
-A small trained "ambulance or not" classifier over the whole responder + caller conversation: TF-IDF (word unigrams + bigrams) and logistic regression, plain Python, no dependencies.
+A small trained "ambulance or not" classifier over what the **caller** says (responder turns are ignored): TF-IDF (word unigrams + bigrams) and logistic regression, plain Python, no dependencies. Words after a negation are tagged (`not breathing` -> `not_breathing`), so "can't breathe" and "breathing fine" are different features; pronouns, filler words, numbers and street/town names are dropped.
 
 ```
-python3 data/model/train_ambulance.py    # ~1 min; writes frontend/app/lib/ambulanceModel.json + data/model/results.md
+python3 data/model/generated_calls.py    # optional: prints sample generated calls and counts
+python3 data/model/train_ambulance.py    # ~5 s; writes frontend/app/lib/ambulanceModel.json + data/model/results.md
 ```
 
-- Trains on the calls above with `ambulance` yes/no ("unclear" is left out), including partial transcripts so it works mid-call, plus `model/extra_training_calls.py`: 24 extra SYNTHETIC calls, mostly no-ambulance, because the main set has only 5.
-- Leave-one-call-out on the main set: **27/29** (ambulance 23/24, no ambulance 4/5). Misses: 07a (collision witness) and 16 (prank call). Full table in `model/results.md`.
+- Training data: `model/generated_calls.py` (~200 template SYNTHETIC calls over 14 topics, in contrasting pairs: same opening, ambulance vs. no ambulance decided by the details, varied callers/tone/fillers), `model/extra_training_calls.py` (24 hand-written extras) and, for the final model, the calls above with `ambulance` yes/no ("unclear" is left out). Partial transcripts are included so it works mid-call.
+- Held-out test: a model trained **without** any of the calls above scores them: **22/29** (ambulance 17/24, no ambulance 5/5). Misses are the deliberately tricky ones (atypical MI, downplayed arrest, hidden suicide risk, resolved TIA, self-harm teen). Full table in `model/results.md`.
 - The frontend runs it in the browser (`frontend/app/lib/ambulanceModel.ts`, which must tokenise exactly like the Python). The dashboard's **Ambulance** tile re-scores the live conversation every 2 s; **Model testbench** (`/testbench`) lets you paste a conversation and see the verdict, the score turn by turn, and the words that drove it.
-- Tiny synthetic dataset: it partly learns surface cues (e.g. third-person "he/she" calls lean ambulance). Not clinically validated.
+- Callers who say nothing informative yet (e.g. just "Yes") get the model's base rate (~60%), not a low score.
+- Template data: it learns the templates' phrasing, so unusual wording is weaker. Not clinically validated.

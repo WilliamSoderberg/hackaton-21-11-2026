@@ -1,0 +1,247 @@
+{
+  "call_id": "call_05_stroke_language_barrier",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Stroke, caller with limited English (mixes Swedish)",
+  "incident_id": "call_05_stroke_language_barrier",
+  "language": "en (limited) + sv",
+  "location": {
+    "address": "Kämnärsvägen 22, Lund (flat 1104)",
+    "lat": 55.7228,
+    "lng": 13.1797
+  },
+  "tricky_aspects": [
+    "language barrier",
+    "mixed Swedish/English",
+    "onset time unclear"
+  ],
+  "duration_s": 74,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hello. Ambulans please. My pappa... he is not good."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Okay. Where are you? Address?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "Address... Norra Fäladen, Kämnärsvägen 22, Lund. Lägenhet... flat 1104."
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "operator",
+      "text": "Kämnärsvägen 22, flat 1104. What happened to your father?"
+    },
+    {
+      "t": 23,
+      "time": "00:23",
+      "speaker": "caller",
+      "text": "His face... one side is, how you say, down. Hänger. And he talk strange, I cannot understand him."
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "operator",
+      "text": "Can he lift both arms?"
+    },
+    {
+      "t": 34,
+      "time": "00:34",
+      "speaker": "caller",
+      "text": "Arms? Wait. ... Pappa, lyft armarna. ... Right arm no. Only left arm up."
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "operator",
+      "text": "When did this start? What time?"
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "caller",
+      "text": "I come home now, ten minutes. He was like this. Before, morning, he was okay."
+    },
+    {
+      "t": 53,
+      "time": "00:53",
+      "speaker": "operator",
+      "text": "What time in the morning did you last see him okay?"
+    },
+    {
+      "t": 56,
+      "time": "00:56",
+      "speaker": "caller",
+      "text": "Morning... I go to work eight o'clock. He was okay, drinking coffee."
+    },
+    {
+      "t": 62,
+      "time": "01:02",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance with sirens. Is he awake?"
+    },
+    {
+      "t": 65,
+      "time": "01:05",
+      "speaker": "caller",
+      "text": "Yes awake, sitting on floor. He fall down from chair."
+    },
+    {
+      "t": 70,
+      "time": "01:10",
+      "speaker": "operator",
+      "text": "Don't give him anything to eat or drink. Do you want an interpreter? Arabic?"
+    },
+    {
+      "t": 74,
+      "time": "01:14",
+      "speaker": "caller",
+      "text": "Yes, Arabic, yes please."
+    }
+  ],
+  "gold_label": {
+    "category": "stroke",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Sudden facial droop, right arm weakness and speech disturbance, last seen well ~08:00 (unknown exact onset). Fell from chair.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 23,
+        "time": "00:23",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "interpreter (Arabic)",
+      "stroke unit pre-alert"
+    ],
+    "red_flags": [
+      {
+        "label": "facial droop",
+        "quote": "one side is, how you say, down",
+        "turn_index": 5,
+        "t": 23,
+        "speaker": "caller"
+      },
+      {
+        "label": "speech disturbance",
+        "quote": "he talk strange, I cannot understand him",
+        "turn_index": 5,
+        "t": 23,
+        "speaker": "caller"
+      },
+      {
+        "label": "one-sided arm weakness",
+        "quote": "Right arm no. Only left arm up",
+        "turn_index": 7,
+        "t": 34,
+        "speaker": "caller"
+      },
+      {
+        "label": "fall",
+        "quote": "He fall down from chair",
+        "turn_index": 13,
+        "t": 65,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Father's age?",
+      "Blood thinners (e.g. Waran/Eliquis) or diabetes?",
+      "Did he hit his head when he fell?",
+      "Is he breathing normally?",
+      "Door code for the building?"
+    ],
+    "supplies": [
+      "glucometer",
+      "oxygen",
+      "12-lead ECG",
+      "stroke scale card (e.g. FAST/NIHSS)",
+      "pre-alert to stroke unit"
+    ],
+    "handover": "Elderly male, right facial droop, right arm weakness, dysarthria/aphasia. Last seen well 08:00, found ~10 min before call. Fell from chair. Family speaks Arabic; interpreter requested.",
+    "translations": {
+      "pappa": "dad",
+      "hänger": "is hanging / drooping",
+      "lägenhet": "apartment",
+      "lyft armarna": "lift your arms"
+    },
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "interpreter (Arabic)",
+        "stroke unit pre-alert"
+      ],
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "prepare_en_route": [
+        "glucometer (rule out low sugar)",
+        "stroke scale card",
+        "note last-seen-well time",
+        "list of medications / anticoagulants"
+      ],
+      "pre_alert": "Stroke team (stroke alarm)",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "elderly male, right face + arm weakness, speech affected",
+        "last seen well 08:00",
+        "fell from chair"
+      ],
+      "scene_notes": [
+        "family speaks Arabic - interpreter by phone",
+        "flat 1104, door code unknown"
+      ],
+      "urgency": "A",
+      "bring": [
+        "glucometer",
+        "oxygen",
+        "12-lead ECG",
+        "stroke scale card (e.g. FAST/NIHSS)",
+        "pre-alert to stroke unit"
+      ],
+      "open_questions": [
+        "Father's age?",
+        "Blood thinners (e.g. Waran/Eliquis) or diabetes?",
+        "Did he hit his head when he fell?",
+        "Is he breathing normally?",
+        "Door code for the building?"
+      ],
+      "unit": "AMB 1140",
+      "ambulance_position": {
+        "lat": 55.7085,
+        "lng": 13.169
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

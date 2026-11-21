@@ -1,0 +1,251 @@
+{
+  "call_id": "call_03_downplaying_cardiac_arrest",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Elderly husband downplays: wife 'a bit sleepy' (cardiac arrest)",
+  "incident_id": "call_03_downplaying_cardiac_arrest",
+  "language": "en",
+  "location": {
+    "address": "Kastanjegatan 3, Dalby",
+    "lat": 55.6662,
+    "lng": 13.3477
+  },
+  "tricky_aspects": [
+    "caller downplaying",
+    "agonal breathing described as snoring",
+    "polite / apologetic caller"
+  ],
+  "duration_s": 100,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Yes, good evening, I'm sorry to bother you, it's probably nothing."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "That's fine. What's happening?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "My wife, she's a bit sleepy, she sat down in the chair and now she's, she won't really answer me."
+    },
+    {
+      "t": 17,
+      "time": "00:17",
+      "speaker": "operator",
+      "text": "What's your address?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "Kastanjegatan 3, Dalby. It's a yellow house."
+    },
+    {
+      "t": 24,
+      "time": "00:24",
+      "speaker": "operator",
+      "text": "Kastanjegatan 3, Dalby. Go to her now. Shake her shoulders and shout her name. Does she react?"
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "caller",
+      "text": "Margit! Margit! ... No. No, she doesn't. Her eyes are half open."
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "Is she breathing? Look at her chest."
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "She's breathing kind of funny, like snoring, every now and then. She does that sometimes when she sleeps."
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "operator",
+      "text": "Okay, listen to me carefully. That is not normal breathing. I'm sending an ambulance now with sirens. We're going to start CPR together."
+    },
+    {
+      "t": 54,
+      "time": "00:54",
+      "speaker": "caller",
+      "text": "CPR? Oh God. Is she, is she..."
+    },
+    {
+      "t": 57,
+      "time": "00:57",
+      "speaker": "operator",
+      "text": "Can you get her down on the floor, on her back?"
+    },
+    {
+      "t": 60,
+      "time": "01:00",
+      "speaker": "caller",
+      "text": "I'll try, she's heavy. Okay. Okay she's on the floor."
+    },
+    {
+      "t": 70,
+      "time": "01:10",
+      "speaker": "operator",
+      "text": "Put the heel of your hand in the middle of her chest, the other hand on top. Push down hard and fast. Count out loud with me. One, two, three, four..."
+    },
+    {
+      "t": 78,
+      "time": "01:18",
+      "speaker": "caller",
+      "text": "One, two, three, four, five..."
+    },
+    {
+      "t": 95,
+      "time": "01:35",
+      "speaker": "operator",
+      "text": "Good, keep going, don't stop. Is there anyone else in the house? Is there a defibrillator nearby?"
+    },
+    {
+      "t": 100,
+      "time": "01:40",
+      "speaker": "caller",
+      "text": "No, just us. I don't know about a defibrillator. Twenty-eight, twenty-nine..."
+    }
+  ],
+  "gold_label": {
+    "category": "unconscious_cardiac_arrest",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Unresponsive with agonal (snoring, irregular) breathing = cardiac arrest until proven otherwise. Caller minimised.",
+    "urgency_timeline": [
+      {
+        "t": 10,
+        "time": "00:10",
+        "urgency": "B"
+      },
+      {
+        "t": 31,
+        "time": "00:31",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "AED / first responder dispatch (e.g. SMS-livräddare / Heartrunner)",
+      "rescue service first responder if ambulance far"
+    ],
+    "red_flags": [
+      {
+        "label": "caller minimising",
+        "quote": "it's probably nothing",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "reduced consciousness described as 'sleepy'",
+        "quote": "she won't really answer me",
+        "turn_index": 3,
+        "t": 10,
+        "speaker": "caller"
+      },
+      {
+        "label": "unresponsive to shake and shout",
+        "quote": "No, she doesn't",
+        "turn_index": 7,
+        "t": 31,
+        "speaker": "caller"
+      },
+      {
+        "label": "agonal breathing",
+        "quote": "She's breathing kind of funny, like snoring, every now and then",
+        "turn_index": 9,
+        "t": 40,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Her age?",
+      "Any heart disease or symptoms before she sat down (chest pain, dizziness)?",
+      "Is the front door unlocked / lights on for the crew?"
+    ],
+    "supplies": [
+      "defibrillator (AED)",
+      "bag-valve mask",
+      "airway kit / suction",
+      "adrenaline for CPR",
+      "mechanical CPR device"
+    ],
+    "handover": "Elderly female collapsed in chair, unresponsive, agonal breathing. Telephone CPR started by husband at ~01:10. No AED on scene. Time of collapse just before call.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance x2 if available",
+      "extra_units": [
+        "first responder / rescue service with AED",
+        "physician unit if available",
+        "AED / first responder dispatch (e.g. SMS-livräddare / Heartrunner)",
+        "rescue service first responder if ambulance far"
+      ],
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "prepare_en_route": [
+        "AED/defibrillator first in hand",
+        "mechanical CPR device",
+        "airway + BVM",
+        "adrenaline for CPR"
+      ],
+      "pre_alert": "Resuscitation room",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "elderly female, unresponsive, agonal breathing",
+        "husband doing telephone CPR",
+        "no AED on scene"
+      ],
+      "scene_notes": [
+        "yellow house, Dalby",
+        "elderly husband alone - may need support"
+      ],
+      "urgency": "A",
+      "bring": [
+        "defibrillator (AED)",
+        "bag-valve mask",
+        "airway kit / suction",
+        "adrenaline for CPR",
+        "mechanical CPR device"
+      ],
+      "open_questions": [
+        "Her age?",
+        "Any heart disease or symptoms before she sat down (chest pain, dizziness)?",
+        "Is the front door unlocked / lights on for the crew?"
+      ],
+      "unit": "AMB 1180",
+      "ambulance_position": {
+        "lat": 55.678,
+        "lng": 13.289
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_29_cough_cold_no_ambulance: Cough and cold for 3 days, talks normally
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hi, I've had a bad cough for three days and it hurts a bit to breathe when I cough. I can't get through to my health centre.
+[00:12] OPERATOR: Where are you calling from?
+[00:14] CALLER: Home, Nilstorpsvägen 3 in Lund.
+[00:18] OPERATOR: How old are you? Are you short of breath when you sit still?
+[00:22] CALLER: I'm 41. No, sitting still is fine, it's only when I cough a lot.
+[00:28] OPERATOR: Do you have a fever?
+[00:30] CALLER: Thirty-eight point two yesterday, today thirty-seven point eight.
+[00:35] OPERATOR: Any chest pain when you're not coughing, or coughing up blood?
+[00:39] CALLER: No, none of that. I'm just tired and annoyed.
+[00:43] OPERATOR: Do you have asthma, heart or lung disease?
+[00:46] CALLER: No, I'm healthy otherwise.
+[00:49] OPERATOR: This doesn't need an ambulance. Call 1177 for advice, rest and drink. If you get short of breath at rest, high fever or chest pain, call again.

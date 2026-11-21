@@ -1,0 +1,225 @@
+{
+  "call_id": "call_09_copd_severe_breathing",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Severe breathing difficulty, COPD, caller speaks in fragments",
+  "incident_id": "call_09_copd_severe_breathing",
+  "language": "en",
+  "location": {
+    "address": "Linero torg 6, Lund (3rd floor)",
+    "lat": 55.7062,
+    "lng": 13.2307
+  },
+  "tricky_aspects": [
+    "patient is the caller",
+    "short fragmented speech is itself a red flag"
+  ],
+  "duration_s": 53,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what's your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Can't... breathe."
+    },
+    {
+      "t": 6,
+      "time": "00:06",
+      "speaker": "operator",
+      "text": "I'm sending help. What is your address?"
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "caller",
+      "text": "Linero... torg... 6. Lund."
+    },
+    {
+      "t": 15,
+      "time": "00:15",
+      "speaker": "operator",
+      "text": "Linero torg 6, Lund. Which floor? Do you live alone?"
+    },
+    {
+      "t": 19,
+      "time": "00:19",
+      "speaker": "caller",
+      "text": "Three. Alone."
+    },
+    {
+      "t": 23,
+      "time": "00:23",
+      "speaker": "operator",
+      "text": "Do you have lung disease, asthma or COPD?"
+    },
+    {
+      "t": 27,
+      "time": "00:27",
+      "speaker": "caller",
+      "text": "COPD. Oxygen... at home."
+    },
+    {
+      "t": 31,
+      "time": "00:31",
+      "speaker": "operator",
+      "text": "Are you using the oxygen now?"
+    },
+    {
+      "t": 34,
+      "time": "00:34",
+      "speaker": "caller",
+      "text": "Yes. Not... helping."
+    },
+    {
+      "t": 38,
+      "time": "00:38",
+      "speaker": "operator",
+      "text": "Have you used your inhaler?"
+    },
+    {
+      "t": 41,
+      "time": "00:41",
+      "speaker": "caller",
+      "text": "Twice. Lips... blue... I think."
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "operator",
+      "text": "Sit up and lean forward with your arms on the table. Is your door unlocked?"
+    },
+    {
+      "t": 51,
+      "time": "00:51",
+      "speaker": "caller",
+      "text": "No."
+    },
+    {
+      "t": 53,
+      "time": "00:53",
+      "speaker": "operator",
+      "text": "Don't get up if you can't. The crew will get in. Stay on the line, you don't need to talk, just breathe."
+    }
+  ],
+  "gold_label": {
+    "category": "breathing_difficulty",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Can only speak 1-2 words at a time, possible cyanosis, home oxygen and inhaler not helping, alone with locked door.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [
+      "rescue service / police for door entry"
+    ],
+    "red_flags": [
+      {
+        "label": "unable to speak sentences",
+        "quote": "Can't... breathe.",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "treatment failure",
+        "quote": "Not... helping",
+        "turn_index": 9,
+        "t": 34,
+        "speaker": "caller"
+      },
+      {
+        "label": "cyanosis",
+        "quote": "Lips... blue",
+        "turn_index": 11,
+        "t": 41,
+        "speaker": "caller"
+      },
+      {
+        "label": "alone, door locked",
+        "quote": "No.",
+        "turn_index": 13,
+        "t": 51,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Age?",
+      "Fever or cough recently?",
+      "Chest pain?",
+      "Is the patient getting drowsy?"
+    ],
+    "supplies": [
+      "oxygen (controlled, COPD)",
+      "nebulizer with salbutamol",
+      "pulse oximeter",
+      "bag-valve mask",
+      "CPAP if available"
+    ],
+    "handover": "COPD patient alone, 3rd floor, severe dyspnoea speaking 1-2 words, possible cyanosis, home O2 and inhaler x2 without effect. Door locked, entry needed.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance",
+      "extra_units": [
+        "rescue service / police for door entry"
+      ],
+      "destination": "Emergency department (SUS Lund)",
+      "prepare_en_route": [
+        "nebulizer with salbutamol drawn up",
+        "oxygen with controlled-flow mask (COPD)",
+        "CPAP if carried",
+        "pulse oximeter"
+      ],
+      "pre_alert": "ED if SpO2 low or exhausted",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "COPD, home oxygen + inhaler x2 not helping",
+        "speaks 1-2 words",
+        "possible cyanosis"
+      ],
+      "scene_notes": [
+        "3rd floor, lives alone, door LOCKED - rescue/police for entry or key",
+        "carry chair may be needed"
+      ],
+      "urgency": "A",
+      "bring": [
+        "oxygen (controlled, COPD)",
+        "nebulizer with salbutamol",
+        "pulse oximeter",
+        "bag-valve mask",
+        "CPAP if available"
+      ],
+      "open_questions": [
+        "Age?",
+        "Fever or cough recently?",
+        "Chest pain?",
+        "Is the patient getting drowsy?"
+      ],
+      "unit": "AMB 1190",
+      "ambulance_position": {
+        "lat": 55.695,
+        "lng": 13.212
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

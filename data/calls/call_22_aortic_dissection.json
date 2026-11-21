@@ -1,0 +1,228 @@
+{
+  "call_id": "call_22_aortic_dissection",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Sudden tearing chest pain to the back, man 62",
+  "incident_id": "call_22_aortic_dissection",
+  "language": "en",
+  "location": {
+    "address": "Rådmansvägen 21, Södra Sandby",
+    "lat": 55.7176,
+    "lng": 13.3418
+  },
+  "tricky_aspects": [
+    "not typical heart attack",
+    "tearing pain to back",
+    "aortic dissection must not get aspirin"
+  ],
+  "duration_s": 52,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "My husband got a terrible pain in his chest all of a sudden, he's screaming."
+    },
+    {
+      "t": 8,
+      "time": "00:08",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "caller",
+      "text": "Rådmansvägen 21, Södra Sandby."
+    },
+    {
+      "t": 15,
+      "time": "00:15",
+      "speaker": "operator",
+      "text": "How old is he? Describe the pain."
+    },
+    {
+      "t": 18,
+      "time": "00:18",
+      "speaker": "caller",
+      "text": "62. He says it feels like something is tearing inside, and it goes straight through to his back."
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "operator",
+      "text": "When did it start?"
+    },
+    {
+      "t": 28,
+      "time": "00:28",
+      "speaker": "caller",
+      "text": "Just five minutes ago, it came at once, at full strength, when he was carrying the groceries."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "Is he awake? Is he sweating?"
+    },
+    {
+      "t": 38,
+      "time": "00:38",
+      "speaker": "caller",
+      "text": "He's awake, very pale and sweating. His left leg feels numb, he says."
+    },
+    {
+      "t": 44,
+      "time": "00:44",
+      "speaker": "operator",
+      "text": "Does he have high blood pressure or other illness?"
+    },
+    {
+      "t": 47,
+      "time": "00:47",
+      "speaker": "caller",
+      "text": "Very high blood pressure, but he stopped taking the pills."
+    },
+    {
+      "t": 52,
+      "time": "00:52",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance now with sirens. Let him lie down still. Don't give him any medicine until the ambulance arrives."
+    }
+  ],
+  "gold_label": {
+    "category": "chest_pain",
+    "secondary_categories": [],
+    "urgency": "A",
+    "urgency_rationale": "Sudden maximal tearing chest pain radiating to back, pale and sweaty, leg numbness, untreated hypertension: suspected aortic dissection.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "A"
+      },
+      {
+        "t": 18,
+        "time": "00:18",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "tearing pain",
+        "quote": "it feels like something is tearing inside",
+        "turn_index": 5,
+        "t": 18,
+        "speaker": "caller"
+      },
+      {
+        "label": "radiation to back",
+        "quote": "goes straight through to his back",
+        "turn_index": 5,
+        "t": 18,
+        "speaker": "caller"
+      },
+      {
+        "label": "sudden maximal onset",
+        "quote": "it came at once, at full strength",
+        "turn_index": 7,
+        "t": 28,
+        "speaker": "caller"
+      },
+      {
+        "label": "pale and sweating",
+        "quote": "very pale and sweating",
+        "turn_index": 9,
+        "t": 38,
+        "speaker": "caller"
+      },
+      {
+        "label": "leg numbness (malperfusion)",
+        "quote": "His left leg feels numb",
+        "turn_index": 9,
+        "t": 38,
+        "speaker": "caller"
+      },
+      {
+        "label": "untreated hypertension",
+        "quote": "he stopped taking the pills",
+        "turn_index": 11,
+        "t": 47,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Any fainting?",
+      "Blood thinners?",
+      "Pulse difference between arms (crew)?"
+    ],
+    "supplies": [
+      "12-lead ECG",
+      "defibrillator (AED)",
+      "IV access kit x2",
+      "pain relief (IV)",
+      "blood pressure both arms"
+    ],
+    "handover": "Male 62, untreated hypertension. Sudden maximal tearing chest pain radiating to back 5 min ago while lifting, pale, sweaty, left leg numb. Suspected aortic dissection - avoid aspirin until excluded.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance (nurse-staffed)",
+      "extra_units": [],
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "prepare_en_route": [
+        "12-lead ECG ready to transmit",
+        "defibrillator pads ready",
+        "aspirin + nitro dose checked",
+        "IV kit"
+      ],
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "male 62, untreated hypertension",
+        "sudden tearing chest pain to back, pale, sweaty",
+        "left leg numb"
+      ],
+      "scene_notes": [
+        "SUSPECT AORTIC DISSECTION - no aspirin until excluded",
+        "BP both arms",
+        "pre-alert thoracic surgery via ED"
+      ],
+      "urgency": "A",
+      "bring": [
+        "12-lead ECG",
+        "defibrillator (AED)",
+        "IV access kit x2",
+        "pain relief (IV)",
+        "blood pressure both arms"
+      ],
+      "open_questions": [
+        "Any fainting?",
+        "Blood thinners?",
+        "Pulse difference between arms (crew)?"
+      ],
+      "unit": "AMB 1320",
+      "ambulance_position": {
+        "lat": 55.711,
+        "lng": 13.28
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

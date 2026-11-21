@@ -1,0 +1,14 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_12_known_epilepsy_recovered: Known epilepsy, typical short seizure, now awake (urgency C, ambulance unclear)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: Hi, my roommate just had a seizure. She has epilepsy.
+[00:08] OPERATOR: Where are you?
+[00:10] CALLER: Delphi student housing, Sparta... no sorry, Delphi, Tornavägen 1, room 214.
+[00:18] OPERATOR: Is the seizure over?
+[00:20] CALLER: Yes, it lasted maybe a minute. She's awake now, a bit confused but she knows who I am.
+[00:28] OPERATOR: Is she breathing normally? Did she hurt herself?
+[00:31] CALLER: Breathing is fine. She bit her tongue a bit, there's a little blood. She didn't hit her head, she was on the bed.
+[00:39] OPERATOR: Is this like her usual seizures?
+[00:42] CALLER: I think so? She says it's her normal kind. She forgot her medicine yesterday.
+[00:48] OPERATOR: Okay. Stay with her, let her rest on her side. A nurse will call you back in a few minutes to decide whether she needs to come in.

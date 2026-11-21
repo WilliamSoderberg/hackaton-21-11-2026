@@ -1,0 +1,16 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_31_antibiotic_lip_swelling: Mild lip swelling after new antibiotic (borderline)
+
+[00:00] OPERATOR: 112, what is your emergency?
+[00:03] CALLER: My lip has swollen up a bit. I started penicillin yesterday for a throat infection.
+[00:10] OPERATOR: Where are you?
+[00:12] CALLER: Home, Fäladstorget 10 in Lund.
+[00:16] OPERATOR: How old are you? When did the swelling start?
+[00:19] CALLER: I'm 52. I noticed it maybe half an hour ago. Only the lower lip.
+[00:25] OPERATOR: Any swelling of the tongue or throat, trouble swallowing or breathing, hoarse voice?
+[00:30] CALLER: No, I can swallow and breathe fine. My voice is normal.
+[00:35] OPERATOR: Any rash, itching, dizziness or stomach pain?
+[00:39] CALLER: A few itchy red spots on my neck. No dizziness.
+[00:44] OPERATOR: Have you taken a dose today?
+[00:47] CALLER: Yes, an hour ago.
+[00:50] OPERATOR: Don't take more penicillin. If you have an antihistamine you can take it now. A nurse will call you back to decide if you should come in. If your tongue or throat swells or breathing gets hard, call 112 immediately.

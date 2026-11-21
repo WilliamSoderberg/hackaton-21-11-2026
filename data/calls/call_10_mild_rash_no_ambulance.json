@@ -1,0 +1,170 @@
+{
+  "call_id": "call_10_mild_rash_no_ambulance",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Mild itchy rash, no ambulance needed (negative control)",
+  "incident_id": "call_10_mild_rash_no_ambulance",
+  "language": "en",
+  "location": {
+    "address": "Tunavägen 30, Lund",
+    "lat": 55.7172,
+    "lng": 13.2015
+  },
+  "tricky_aspects": [
+    "negative control: low urgency",
+    "same category as call_04 but D",
+    "tests over-triage"
+  ],
+  "duration_s": 66,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what is your emergency?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, it's maybe not an emergency, but I have a rash and I'm a bit worried."
+    },
+    {
+      "t": 9,
+      "time": "00:09",
+      "speaker": "operator",
+      "text": "Tell me more. Where are you?"
+    },
+    {
+      "t": 11,
+      "time": "00:11",
+      "speaker": "caller",
+      "text": "I'm at home, Tunavägen 30 in Lund. I washed my clothes with a new detergent and now I have red itchy spots on my arms."
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "operator",
+      "text": "When did it start?"
+    },
+    {
+      "t": 22,
+      "time": "00:22",
+      "speaker": "caller",
+      "text": "This morning, so maybe four hours ago. It hasn't really changed."
+    },
+    {
+      "t": 27,
+      "time": "00:27",
+      "speaker": "operator",
+      "text": "Any swelling of your lips, tongue or throat? Any trouble breathing or swallowing?"
+    },
+    {
+      "t": 32,
+      "time": "00:32",
+      "speaker": "caller",
+      "text": "No, nothing like that. Breathing is fine. It's only on my arms."
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "operator",
+      "text": "Do you feel dizzy, faint, or sick to your stomach?"
+    },
+    {
+      "t": 40,
+      "time": "00:40",
+      "speaker": "caller",
+      "text": "No, I feel fine. It's just itchy."
+    },
+    {
+      "t": 43,
+      "time": "00:43",
+      "speaker": "operator",
+      "text": "Do you have any known allergies or an EpiPen?"
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "caller",
+      "text": "No allergies that I know."
+    },
+    {
+      "t": 49,
+      "time": "00:49",
+      "speaker": "operator",
+      "text": "This doesn't sound dangerous right now. You don't need an ambulance. Wash the skin, change clothes, and you can call 1177 for advice or buy an antihistamine at the pharmacy. If your lips or throat swell or you get trouble breathing, call 112 right away."
+    },
+    {
+      "t": 64,
+      "time": "01:04",
+      "speaker": "caller",
+      "text": "Okay, thank you, sorry for calling."
+    },
+    {
+      "t": 66,
+      "time": "01:06",
+      "speaker": "operator",
+      "text": "No problem, that's what we're here for."
+    }
+  ],
+  "gold_label": {
+    "category": "allergic_reaction",
+    "secondary_categories": [],
+    "urgency": "D",
+    "urgency_rationale": "Localised itchy rash 4 h after new detergent, stable, no airway, breathing, circulation or GI symptoms. Model should NOT flag 'allergic' alone as A.",
+    "urgency_timeline": [
+      {
+        "t": 3,
+        "time": "00:03",
+        "urgency": "C"
+      },
+      {
+        "t": 40,
+        "time": "00:40",
+        "urgency": "D"
+      }
+    ],
+    "ambulance": "no",
+    "other_resources": [
+      "1177 advice line",
+      "pharmacy (antihistamine)"
+    ],
+    "red_flags": [],
+    "negative_findings": [
+      {
+        "label": "no airway symptoms",
+        "quote": "No, nothing like that. Breathing is fine",
+        "turn_index": 7,
+        "t": 32,
+        "speaker": "caller"
+      },
+      {
+        "label": "stable over 4 h",
+        "quote": "It hasn't really changed",
+        "turn_index": 5,
+        "t": 22,
+        "speaker": "caller"
+      },
+      {
+        "label": "no systemic symptoms",
+        "quote": "No, I feel fine",
+        "turn_index": 9,
+        "t": 40,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Age?",
+      "Is anyone else at home?"
+    ],
+    "supplies": [],
+    "handover": "No dispatch. Adult with localised contact dermatitis-type rash on arms after new detergent, 4 h, stable. Advised 1177/pharmacy and safety-net instructions.",
+    "dashboard": {
+      "urgency": "Low",
+      "ambulance": false,
+      "type": "physical"
+    },
+    "crew_briefing": null
+  }
+}

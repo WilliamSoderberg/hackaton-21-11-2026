@@ -1,0 +1,275 @@
+{
+  "call_id": "call_02_atypical_mi_woman",
+  "synthetic": true,
+  "_note": "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.",
+  "title": "Atypical heart attack, woman 67 ('just the flu')",
+  "incident_id": "call_02_atypical_mi_woman",
+  "language": "en",
+  "location": {
+    "address": "Södra Esplanaden 9, Lund",
+    "lat": 55.7012,
+    "lng": 13.1931
+  },
+  "tricky_aspects": [
+    "atypical presentation",
+    "no classic chest pain",
+    "caller thinks it's flu"
+  ],
+  "duration_s": 71,
+  "transcript": [
+    {
+      "t": 0,
+      "time": "00:00",
+      "speaker": "operator",
+      "text": "112, what has happened?"
+    },
+    {
+      "t": 3,
+      "time": "00:03",
+      "speaker": "caller",
+      "text": "Hi, um, I'm calling about my mother. I'm not sure if this is an emergency, maybe I should call 1177 instead."
+    },
+    {
+      "t": 10,
+      "time": "00:10",
+      "speaker": "operator",
+      "text": "That's okay, tell me what's going on."
+    },
+    {
+      "t": 12,
+      "time": "00:12",
+      "speaker": "caller",
+      "text": "She's 67, she's been feeling really sick since this morning, she threw up twice. We thought it's the stomach flu."
+    },
+    {
+      "t": 20,
+      "time": "00:20",
+      "speaker": "operator",
+      "text": "Where are you?"
+    },
+    {
+      "t": 22,
+      "time": "00:22",
+      "speaker": "caller",
+      "text": "At her flat, Södra Esplanaden 9 in Lund."
+    },
+    {
+      "t": 26,
+      "time": "00:26",
+      "speaker": "operator",
+      "text": "Is she awake? Is she breathing normally?"
+    },
+    {
+      "t": 29,
+      "time": "00:29",
+      "speaker": "caller",
+      "text": "She's awake, she's lying on the bed. She's a bit out of breath when she walks to the toilet."
+    },
+    {
+      "t": 35,
+      "time": "00:35",
+      "speaker": "operator",
+      "text": "Any pain anywhere?"
+    },
+    {
+      "t": 37,
+      "time": "00:37",
+      "speaker": "caller",
+      "text": "Not really in the stomach. She says her jaw hurts, kind of up into the teeth, and between the shoulder blades. She thought she slept wrong."
+    },
+    {
+      "t": 46,
+      "time": "00:46",
+      "speaker": "operator",
+      "text": "Okay. Anything else unusual?"
+    },
+    {
+      "t": 48,
+      "time": "00:48",
+      "speaker": "caller",
+      "text": "She's very tired, she's never like this. And she's a bit cold and clammy when I touch her."
+    },
+    {
+      "t": 54,
+      "time": "00:54",
+      "speaker": "operator",
+      "text": "Does she have diabetes or any heart disease?"
+    },
+    {
+      "t": 57,
+      "time": "00:57",
+      "speaker": "caller",
+      "text": "She has diabetes, type 2. She takes metformin."
+    },
+    {
+      "t": 61,
+      "time": "01:01",
+      "speaker": "operator",
+      "text": "I'm sending an ambulance now. Keep her resting, don't let her walk around. If she has aspirin and is not allergic she can chew one."
+    },
+    {
+      "t": 69,
+      "time": "01:09",
+      "speaker": "caller",
+      "text": "Really? Is it serious?"
+    },
+    {
+      "t": 71,
+      "time": "01:11",
+      "speaker": "operator",
+      "text": "These symptoms can come from the heart, especially in women with diabetes, so we want her checked right away."
+    }
+  ],
+  "gold_label": {
+    "category": "chest_pain",
+    "secondary_categories": [
+      "breathing_difficulty"
+    ],
+    "urgency": "A",
+    "urgency_rationale": "Atypical ACS: jaw and interscapular pain, nausea/vomiting, unusual fatigue, cold clammy skin, dyspnoea on exertion, female 67 with diabetes.",
+    "urgency_timeline": [
+      {
+        "t": 12,
+        "time": "00:12",
+        "urgency": "C"
+      },
+      {
+        "t": 37,
+        "time": "00:37",
+        "urgency": "B"
+      },
+      {
+        "t": 48,
+        "time": "00:48",
+        "urgency": "A"
+      }
+    ],
+    "ambulance": "yes",
+    "other_resources": [],
+    "red_flags": [
+      {
+        "label": "caller downplays / considers 1177",
+        "quote": "maybe I should call 1177 instead",
+        "turn_index": 1,
+        "t": 3,
+        "speaker": "caller"
+      },
+      {
+        "label": "nausea and vomiting",
+        "quote": "she threw up twice",
+        "turn_index": 3,
+        "t": 12,
+        "speaker": "caller"
+      },
+      {
+        "label": "dyspnoea on exertion",
+        "quote": "She's a bit out of breath when she walks to the toilet",
+        "turn_index": 7,
+        "t": 29,
+        "speaker": "caller"
+      },
+      {
+        "label": "jaw pain (atypical ACS)",
+        "quote": "She says her jaw hurts",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      },
+      {
+        "label": "interscapular back pain",
+        "quote": "between the shoulder blades",
+        "turn_index": 9,
+        "t": 37,
+        "speaker": "caller"
+      },
+      {
+        "label": "unusual fatigue",
+        "quote": "She's very tired, she's never like this",
+        "turn_index": 11,
+        "t": 48,
+        "speaker": "caller"
+      },
+      {
+        "label": "cold clammy skin",
+        "quote": "cold and clammy",
+        "turn_index": 11,
+        "t": 48,
+        "speaker": "caller"
+      },
+      {
+        "label": "diabetes (silent MI risk)",
+        "quote": "She has diabetes, type 2",
+        "turn_index": 13,
+        "t": 57,
+        "speaker": "caller"
+      }
+    ],
+    "missing_questions": [
+      "Any chest pressure or discomfort at all, even mild?",
+      "When exactly did the jaw/back pain start?",
+      "Previous heart problems or heart medication?",
+      "Is she allergic to aspirin?"
+    ],
+    "supplies": [
+      "12-lead ECG",
+      "defibrillator (AED)",
+      "aspirin",
+      "oxygen",
+      "glucometer",
+      "IV access kit"
+    ],
+    "handover": "Female 67, T2 diabetes. Since this morning nausea, vomiting x2, jaw and interscapular pain, unusual fatigue, cold clammy, dyspnoea on exertion. No classic chest pain. Suspected atypical ACS.",
+    "dashboard": {
+      "urgency": "Critical",
+      "ambulance": true,
+      "type": "physical"
+    },
+    "crew_briefing": {
+      "crew": "ambulance (nurse-staffed)",
+      "extra_units": [],
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "prepare_en_route": [
+        "12-lead ECG ready to transmit",
+        "defibrillator pads ready",
+        "aspirin + nitro dose checked",
+        "IV kit"
+      ],
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "lights_and_sirens": true,
+      "key_facts": [
+        "female 67, type 2 diabetes",
+        "NO classic chest pain: jaw + upper back pain, nausea, vomiting",
+        "cold, clammy, tired"
+      ],
+      "scene_notes": [
+        "take ECG early - atypical presentation easy to miss"
+      ],
+      "urgency": "A",
+      "bring": [
+        "12-lead ECG",
+        "defibrillator (AED)",
+        "aspirin",
+        "oxygen",
+        "glucometer",
+        "IV access kit"
+      ],
+      "open_questions": [
+        "Any chest pressure or discomfort at all, even mild?",
+        "When exactly did the jaw/back pain start?",
+        "Previous heart problems or heart medication?",
+        "Is she allergic to aspirin?"
+      ],
+      "unit": "AMB 1130",
+      "ambulance_position": {
+        "lat": 55.6905,
+        "lng": 13.177
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      }
+    }
+  }
+}

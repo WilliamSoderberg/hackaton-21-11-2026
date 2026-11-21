@@ -1,0 +1,18 @@
+# SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated.
+# call_17_escooter_wrist: E-scooter fall, wrist probably broken (stable)
+
+[00:00] OPERATOR: 112, what has happened?
+[00:03] CALLER: Hi, I fell off an electric scooter and I think my wrist is broken.
+[00:08] OPERATOR: Where are you?
+[00:10] CALLER: On Sölvegatan, outside the physics building at LTH.
+[00:15] OPERATOR: Did you hit your head? Were you wearing a helmet?
+[00:18] CALLER: I had a helmet on. I landed on my hand, my head is fine.
+[00:23] OPERATOR: Were you knocked out at all? Any neck pain?
+[00:26] CALLER: No, I remember everything. No neck pain.
+[00:30] OPERATOR: Describe the wrist.
+[00:32] CALLER: It looks bent, kind of like a fork. It hurts a lot but I can move my fingers.
+[00:38] OPERATOR: Is it bleeding? Is the skin broken?
+[00:41] CALLER: No, just swollen. The skin is okay.
+[00:45] OPERATOR: Is someone with you who can drive you to the emergency department?
+[00:49] CALLER: My friend is here, she has a car.
+[00:52] OPERATOR: Then the quickest is that she drives you to the emergency department at SUS Lund. Support the arm, don't eat or drink in case you need surgery. Call back if you feel faint or the fingers go numb.
