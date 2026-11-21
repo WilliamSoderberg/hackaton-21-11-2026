@@ -35,10 +35,10 @@ const sources = [microphoneSource, ...scenarios];
 const urgencyOrder: Urgency[] = ["Low", "Medium", "High", "Critical"];
 
 const urgencyStyles: Record<Urgency, { bar: string; text: string }> = {
-  Low: { bar: "bg-emerald-500", text: "text-emerald-600" },
-  Medium: { bar: "bg-amber-400", text: "text-amber-600" },
-  High: { bar: "bg-orange-500", text: "text-orange-600" },
-  Critical: { bar: "bg-red-500", text: "text-red-600" },
+  Low: { bar: "bg-emerald-700", text: "text-emerald-800" },
+  Medium: { bar: "bg-amber-500", text: "text-amber-800" },
+  High: { bar: "bg-orange-700", text: "text-orange-800" },
+  Critical: { bar: "bg-red-800", text: "text-red-800" },
 };
 
 // --- Role: which side of the call this device is on -----------------------
@@ -157,9 +157,9 @@ function Header({
   const other: Role = role === "responder" ? "caller" : "responder";
   const otherCount = state?.participants[other] ?? 0;
   return (
-    <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 px-6 py-4">
+    <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
       <div className="flex items-center gap-3">
-        <span className="grid h-9 w-9 place-items-center rounded-lg bg-red-600 text-lg font-bold text-white">+</span>
+        <span className="grid h-9 w-9 place-items-center rounded-md bg-slate-800 text-lg font-semibold text-white">+</span>
         <div>
           <h1 className="text-lg font-semibold leading-tight">Emergency Call Dashboard</h1>
           <p className="text-xs text-slate-500">{subtitle}</p>
@@ -169,7 +169,7 @@ function Header({
       </div>
       <div className="flex flex-wrap items-center gap-3">
         <span className="flex items-center gap-1.5 text-xs text-slate-500" title="Devices connected to the shared call">
-          <span className={`h-2 w-2 rounded-full ${connected ? "bg-emerald-500" : "bg-slate-300"}`} />
+          <span className={`h-2 w-2 rounded-full ${connected ? "bg-emerald-600" : "bg-slate-300"}`} />
           {!connected
             ? "Connecting…"
             : otherCount
@@ -292,7 +292,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
           <button
             onClick={answerCall}
             disabled={!connected}
-            className="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500 disabled:opacity-50"
+            className="rounded-md bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-50"
           >
             Answer call
           </button>
@@ -307,7 +307,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
             subtitle={analysing ? "Analysing…" : active ? "Updating from caller's words" : "Waiting for call"}
           >
             {backendError && (
-              <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 ring-1 ring-red-200">
+              <p className="mb-3 rounded-lg bg-red-50/60 px-3 py-2 text-sm text-red-800 ring-1 ring-red-200">
                 Assessment backend unreachable ({backendError}). Start it with <code>cargo run</code> in backend/.
               </p>
             )}
@@ -399,7 +399,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Background noise, caller's tone, landmarks, extra details…"
-              className="h-[32rem] w-full resize-y rounded-md border border-slate-300 bg-white p-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:outline-none lg:h-[calc(100vh-15.5rem)]"
+              className="h-[32rem] w-full resize-y rounded-md border border-slate-300 bg-white p-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none lg:h-[calc(100vh-15.5rem)]"
             />
             <p className="mt-2 text-xs text-slate-400">Notes are included in the PDF summary.</p>
           </Panel>
@@ -500,7 +500,7 @@ function Transcript({
           <li key={i} className={line.speaker === "Caller" ? "pr-6" : "pl-6"}>
             <div
               className={`rounded-lg px-3 py-2 text-sm ${
-                line.speaker === "Caller" ? "bg-slate-100" : "bg-sky-50 text-sky-900"
+                line.speaker === "Caller" ? "bg-slate-100" : "bg-white text-slate-800 ring-1 ring-slate-200"
               }`}
             >
               <span className="mb-0.5 block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
@@ -532,7 +532,7 @@ function Transcript({
 
 function ErrorNote({ message }: { message: string | null }) {
   if (!message) return null;
-  return <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 ring-1 ring-red-200">{message}</p>;
+  return <p className="mb-3 rounded-lg bg-red-50/60 px-3 py-2 text-sm text-red-800 ring-1 ring-red-200">{message}</p>;
 }
 
 // Tap to speak. Taking the floor mutes the other side's microphone, so two
@@ -581,14 +581,14 @@ function TalkControl({
         onClick={onToggle}
         className={`grid shrink-0 place-items-center rounded-full text-white shadow-lg transition-colors ${
           compact ? "h-12 w-12" : "h-20 w-20"
-        } ${micOn ? "bg-red-600 hover:bg-red-500" : "bg-slate-900 hover:bg-slate-700"}`}
+        } ${micOn ? "bg-red-800 hover:bg-red-700" : "bg-slate-900 hover:bg-slate-700"}`}
         aria-pressed={micOn}
         aria-label={micOn ? "Mute microphone" : "Unmute microphone"}
       >
         <MicIcon off={!micOn} className={compact ? "h-5 w-5" : "h-8 w-8"} />
       </button>
       <p className="text-sm text-slate-500">
-        {micOn && <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-red-500" />}
+        {micOn && <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-red-700" />}
         {hint}
       </p>
     </div>
@@ -624,7 +624,7 @@ function Panel({
         <h2 className="text-sm font-semibold">{title}</h2>
         {subtitle && (
           <span className="flex items-center gap-1.5 text-xs text-slate-500">
-            {live && <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />}
+            {live && <span className="h-2 w-2 animate-pulse rounded-full bg-red-700" />}
             {subtitle}
           </span>
         )}
@@ -670,14 +670,14 @@ function AmbulanceTile({ ambulance, hasData }: { ambulance: boolean; hasData: bo
         !hasData
           ? "bg-slate-50 ring-slate-200"
           : ambulance
-            ? "bg-red-50 ring-red-500/40"
-            : "bg-emerald-50 ring-emerald-500/30"
+            ? "bg-red-50/50 ring-red-800/20"
+            : "bg-emerald-50/50 ring-emerald-800/20"
       }`}
     >
       <span className="text-xs text-slate-500">Ambulance</span>
       <p
         className={`text-xl font-bold ${
-          !hasData ? "text-slate-400" : ambulance ? "text-red-700" : "text-emerald-700"
+          !hasData ? "text-slate-400" : ambulance ? "text-red-800" : "text-emerald-800"
         }`}
       >
         {!hasData ? "—" : ambulance ? "Yes" : "No"}
@@ -701,12 +701,12 @@ function SplitBar({ physical, mental }: { physical: number; mental: number }) {
   return (
     <div>
       <div className="mb-2 flex justify-between text-xs">
-        <span className="text-sky-600">Physical {physical}%</span>
-        <span className="text-violet-600">Mental {mental}%</span>
+        <span className="text-slate-700">Physical {physical}%</span>
+        <span className="text-slate-500">Mental {mental}%</span>
       </div>
       <div className="flex h-3 overflow-hidden rounded-full bg-slate-100">
-        <div className="bg-sky-500 transition-all duration-500" style={{ width: `${physical}%` }} />
-        <div className="bg-violet-500 transition-all duration-500" style={{ width: `${mental}%` }} />
+        <div className="bg-slate-600 transition-all duration-500" style={{ width: `${physical}%` }} />
+        <div className="bg-slate-400 transition-all duration-500" style={{ width: `${mental}%` }} />
       </div>
     </div>
   );

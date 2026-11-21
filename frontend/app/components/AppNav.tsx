@@ -28,7 +28,7 @@ export default function AppNav() {
             href={link.href}
             aria-current={current ? "page" : undefined}
             className={`rounded-md px-3 py-1.5 ${
-              current ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-900"
+              current ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200" : "text-slate-500 hover:text-slate-900"
             }`}
           >
             {link.label}

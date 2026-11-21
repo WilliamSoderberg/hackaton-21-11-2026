@@ -16,10 +16,10 @@ type Filter = "active" | "all";
 const urgencyRank: Record<Urgency, number> = { Low: 1, Medium: 2, High: 3, Critical: 4 };
 
 const urgencyBadge: Record<Urgency, string> = {
-  Low: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
-  Medium: "bg-amber-50 text-amber-700 ring-amber-600/20",
-  High: "bg-orange-50 text-orange-700 ring-orange-600/20",
-  Critical: "bg-red-50 text-red-700 ring-red-600/20",
+  Low: "bg-slate-50 text-emerald-800 ring-slate-300",
+  Medium: "bg-slate-50 text-amber-800 ring-slate-300",
+  High: "bg-orange-50/60 text-orange-800 ring-orange-800/20",
+  Critical: "bg-red-50/60 text-red-800 ring-red-800/20",
 };
 
 // Not yet assessed sorts below Low; unknown ambulance sorts below "No".
@@ -93,9 +93,9 @@ export default function CallsOverview() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 px-6 py-4">
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-red-600 text-lg font-bold text-white">+</span>
+          <span className="grid h-9 w-9 place-items-center rounded-md bg-slate-800 text-lg font-semibold text-white">+</span>
           <div>
             <h1 className="text-lg font-semibold leading-tight">Ongoing Calls</h1>
             <p className="text-xs text-slate-500">Call log · updates every {POLL_MS / 1000} s</p>
@@ -104,7 +104,7 @@ export default function CallsOverview() {
         </div>
         <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
           <span className="flex items-center gap-2">
-            <span className={`h-2 w-2 rounded-full ${activeCount ? "animate-pulse bg-red-500" : "bg-slate-300"}`} />
+            <span className={`h-2 w-2 rounded-full ${activeCount ? "animate-pulse bg-red-700" : "bg-slate-300"}`} />
             {activeCount} ongoing
           </span>
           <span>{ambulanceCount} need an ambulance</span>
@@ -133,7 +133,7 @@ export default function CallsOverview() {
 
       <main className="p-4 lg:p-6">
         {error && (
-          <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 ring-1 ring-red-200">
+          <p className="mb-3 rounded-lg bg-red-50/60 px-3 py-2 text-sm text-red-800 ring-1 ring-red-200">
             {error}
             {calls && " · showing the last loaded list"}
           </p>
@@ -251,8 +251,8 @@ function CallRow({
         {call.ambulance === null ? (
           <span className="text-xs text-slate-400">—</span>
         ) : call.ambulance ? (
-          <span className="inline-flex items-center gap-1.5 font-semibold text-red-700">
-            <span className="h-2 w-2 rounded-full bg-red-600" />
+          <span className="inline-flex items-center gap-1.5 font-semibold text-red-800">
+            <span className="h-2 w-2 rounded-full bg-red-700" />
             Yes
           </span>
         ) : (
@@ -283,8 +283,8 @@ function CallRow({
       </td>
       <td className="px-4 py-3">
         {active ? (
-          <span className="inline-flex items-center gap-1.5 text-emerald-700">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+          <span className="inline-flex items-center gap-1.5 text-emerald-800">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-600" />
             In progress
           </span>
         ) : (
@@ -304,7 +304,7 @@ function TranscriptRow({ call }: { call: CallRecord }) {
           <ol className="max-h-64 space-y-1 overflow-y-auto rounded-lg bg-white p-3 text-sm ring-1 ring-slate-200">
             {call.transcript.map((line, i) => (
               <li key={i}>
-                <span className={`font-medium ${line.speaker === "Caller" ? "text-red-700" : "text-slate-500"}`}>
+                <span className={`font-medium ${line.speaker === "Caller" ? "text-slate-900" : "text-slate-500"}`}>
                   {line.speaker === "Caller" ? "Caller" : "Responder"}:
                 </span>{" "}
                 {line.text}

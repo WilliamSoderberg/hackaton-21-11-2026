@@ -81,11 +81,11 @@ export const hospitals: Hospital[] = [
 // Same colours as the dispatcher dashboard (A=Critical … D/E=Low), E in blue
 // as in the guide.
 export const urgencyStyles: Record<UrgencyLevel, { label: string; bg: string; soft: string; text: string; ring: string }> = {
-  A: { label: "Critical", bg: "bg-red-600", soft: "bg-red-50", text: "text-red-700", ring: "ring-red-500/40" },
-  B: { label: "High", bg: "bg-orange-500", soft: "bg-orange-50", text: "text-orange-700", ring: "ring-orange-500/40" },
-  C: { label: "Medium", bg: "bg-amber-400", soft: "bg-amber-50", text: "text-amber-700", ring: "ring-amber-500/40" },
-  D: { label: "Low", bg: "bg-emerald-500", soft: "bg-emerald-50", text: "text-emerald-700", ring: "ring-emerald-500/30" },
-  E: { label: "Other help", bg: "bg-sky-500", soft: "bg-sky-50", text: "text-sky-700", ring: "ring-sky-500/30" },
+  A: { label: "Critical", bg: "bg-red-800", soft: "bg-red-50/60", text: "text-red-800", ring: "ring-red-800/20" },
+  B: { label: "High", bg: "bg-orange-700", soft: "bg-orange-50/60", text: "text-orange-800", ring: "ring-orange-800/20" },
+  C: { label: "Medium", bg: "bg-amber-600", soft: "bg-amber-50/60", text: "text-amber-800", ring: "ring-amber-800/20" },
+  D: { label: "Low", bg: "bg-emerald-700", soft: "bg-emerald-50/60", text: "text-emerald-800", ring: "ring-emerald-800/20" },
+  E: { label: "Other help", bg: "bg-slate-500", soft: "bg-slate-50", text: "text-slate-700", ring: "ring-slate-400/30" },
 };
 
 export function distanceKm(a: LatLng, b: LatLng) {
