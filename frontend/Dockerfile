@@ -26,10 +26,6 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-# Pass build-time public env vars if your app needs them at build time:
-ARG NEXT_PUBLIC_BACKEND_URL
-ENV NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
-
 RUN \
   if [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
   elif [ -f package-lock.json ]; then npm run build; \
@@ -45,6 +41,8 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
+# Backend URL as seen from this container; override at runtime (-e BACKEND_URL=...).
+ENV BACKEND_URL=http://backend:8080
 
 # Create a non-root user for security
 RUN addgroup --system --gid 1001 nodejs
