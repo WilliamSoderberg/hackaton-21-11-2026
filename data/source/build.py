@@ -7,6 +7,8 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..") + "/"
 os.makedirs(OUT + "calls", exist_ok=True)
 NOTE = "SYNTHETIC - written by AI for a hackathon demo. Not real patient data. Not clinically validated."
 
+DASH_URGENCY = {"A": "Critical", "B": "High", "C": "Medium", "D": "Low", "E": "Low"}
+
 def mmss(s): return f"{s//60:02d}:{s%60:02d}"
 
 # ---- guide
@@ -55,6 +57,12 @@ for call in CALLS:
     if "negative_findings" in g:
         g["negative_findings"] = [locate(cid, turns, l, q) for l, q in g["negative_findings"]]
     g["urgency_timeline"] = [{"t": t, "time": mmss(t), "urgency": u} for t, u in g["urgency_timeline"]]
+    cats = [g["category"]] + g["secondary_categories"]
+    mental = "mental_health_suicide" in cats
+    # Same labels as the dashboard (frontend/app/lib/calls.ts): Low/Medium/High/Critical, ambulance bool, physical vs mental
+    g["dashboard"] = {"urgency": DASH_URGENCY[g["urgency"]],
+                      "ambulance": {"yes": True, "no": False}.get(g["ambulance"]),
+                      "type": ("both" if len(cats) > 1 else "mental") if mental else "physical"}
     rec = {"call_id": cid, "synthetic": True, "_note": NOTE, "title": call["title"],
            "incident_id": call.get("incident_id", cid), "language": call.get("language", "en"),
            "tricky_aspects": call["tricky"], "duration_s": turns[-1]["t"], "transcript": turns, "gold_label": g}

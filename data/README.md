@@ -13,7 +13,18 @@
 | `calls/all_calls.jsonl` | All calls, one JSON object per line, for batch evaluation. |
 | `source/` | Python that generates all of the above (`python3 source/build.py`). **In the team repo only `README.md`, `classification_guide.md` and `source/` are committed. Run `python3 data/source/build.py` once to generate `classification_guide.json` and everything in `calls/`.** (Full set is also in data.zip.) It also checks that every red-flag quote appears verbatim in exactly one transcript turn. Edit `calls.py` / `guide.py` and re-run. |
 
-## Calls (12 calls, 11 scenarios)
+## Evaluation: how good is the dashboard's classifier?
+
+`data/eval/eval_keyword_baseline.ts` runs the dashboard's current keyword classifier (`frontend/app/lib/calls.ts`) on every call and compares it with `gold_label.dashboard` (same labels as the dashboard: Low/Medium/High/Critical, ambulance true/false, physical/mental/both).
+
+```
+python3 data/source/build.py
+node --experimental-strip-types data/eval/eval_keyword_baseline.ts
+```
+
+Current result (see `data/eval/keyword_baseline_results.md`): **urgency exact 1/13, under-triaged 11/13, ambulance 6/12, 0 red flags with quotes.** Keywords miss downplaying callers, agonal breathing, atypical heart attack, stroke described in broken English and hidden suicide risk. This is the "before" number for the pitch; swap `classify()` for the Claude classifier and re-run to get the "after" number.
+
+## Calls (13 calls, 12 scenarios)
 
 | Call | Scenario | Category | Urgency | Ambulance | Tricky part |
 |---|---|---|---|---|---|
@@ -42,6 +53,7 @@
 - `missing_questions` – important questions the operator did **not** ask (the co-pilot should suggest these)
 - `supplies` – what the crew should bring
 - `handover` – reference ambulance handover summary
+- `dashboard` – the same gold label mapped to the dashboard's fields: `urgency` (A→Critical, B→High, C→Medium, D/E→Low), `ambulance` (true/false/null = unclear), `type` (physical / mental / both)
 - extras: `patients` (07b, two patients), `translations` (05)
 
 Suggested scoring: category accuracy, urgency exact + within-one, ambulance accuracy, red-flag recall (does the model's quote overlap the gold quote), missing-question recall (judge with Claude).
