@@ -5,7 +5,8 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect } from "react";
-import { TileLayer, useMap } from "react-leaflet";
+import { useMap } from "react-leaflet";
+import MapTiles from "./MapTiles";
 import type { UrgencyLevel } from "../lib/crew";
 
 // Marker colours matching urgencyStyles in lib/crew.ts.
@@ -33,13 +34,9 @@ export function pin(color: string, glyph: string | number, { pulse = false, size
   });
 }
 
+// OSM's own tile servers block this app (403), so this now renders Esri tiles.
 export function OsmTiles() {
-  return (
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-  );
+  return <MapTiles />;
 }
 
 // Zooms the map to fit the points whenever they change (pass a memoised array).
