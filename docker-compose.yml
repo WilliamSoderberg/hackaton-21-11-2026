@@ -16,6 +16,10 @@ services:
     build: ./frontend
     environment:
       BACKEND_URL: http://backend:8080
+      # Optional: crew overview asks Claude for ranking reasons / supplies;
+      # without a key it uses its built-in rules.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      CLAUDE_MODEL: ${CLAUDE_MODEL:-claude-opus-5-5}
     ports:
       - "3000:3000"
     depends_on:

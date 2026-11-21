@@ -7,7 +7,20 @@
       "calls": [
         {
           "call_id": "call_01_classic_chest_pain",
-          "title": "Classic heart attack, man 58"
+          "title": "Classic heart attack, man 58",
+          "minutes_since_call": 5,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 17,
+              "time": "00:17",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "chest_pain",
@@ -18,9 +31,26 @@
         "lng": 13.2047
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 5,
       "handover": [
         "Male 58, central chest pressure radiating to left arm since ~20 min, sweaty, grey, nauseous. Known hypertension. Aspirin advised. Suspected ACS."
       ],
+      "crew": "ambulance (nurse-staffed)",
+      "lights_and_sirens": true,
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "unit": "AMB 1120",
+      "ambulance_position": {
+        "lat": 55.7093,
+        "lng": 13.221
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "12-lead ECG ready to transmit",
@@ -89,22 +119,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance (nurse-staffed)",
-      "lights_and_sirens": true,
-      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
-      "pre_alert": "Cardiology / PCI lab if STEMI",
-      "unit": "AMB 1120",
-      "ambulance_position": {
-        "lat": 55.7093,
-        "lng": 13.221
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_02_atypical_mi_woman",
@@ -112,7 +127,25 @@
       "calls": [
         {
           "call_id": "call_02_atypical_mi_woman",
-          "title": "Atypical heart attack, woman 67 ('just the flu')"
+          "title": "Atypical heart attack, woman 67 ('just the flu')",
+          "minutes_since_call": 11,
+          "urgency_timeline": [
+            {
+              "t": 12,
+              "time": "00:12",
+              "urgency": "C"
+            },
+            {
+              "t": 37,
+              "time": "00:37",
+              "urgency": "B"
+            },
+            {
+              "t": 48,
+              "time": "00:48",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "chest_pain",
@@ -123,9 +156,26 @@
         "lng": 13.1931
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 11,
       "handover": [
         "Female 67, T2 diabetes. Since this morning nausea, vomiting x2, jaw and interscapular pain, unusual fatigue, cold clammy, dyspnoea on exertion. No classic chest pain. Suspected atypical ACS."
       ],
+      "crew": "ambulance (nurse-staffed)",
+      "lights_and_sirens": true,
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "unit": "AMB 1130",
+      "ambulance_position": {
+        "lat": 55.6905,
+        "lng": 13.177
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "12-lead ECG ready to transmit",
@@ -230,22 +280,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance (nurse-staffed)",
-      "lights_and_sirens": true,
-      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
-      "pre_alert": "Cardiology / PCI lab if STEMI",
-      "unit": "AMB 1130",
-      "ambulance_position": {
-        "lat": 55.6905,
-        "lng": 13.177
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_03_downplaying_cardiac_arrest",
@@ -253,7 +288,20 @@
       "calls": [
         {
           "call_id": "call_03_downplaying_cardiac_arrest",
-          "title": "Elderly husband downplays: wife 'a bit sleepy' (cardiac arrest)"
+          "title": "Elderly husband downplays: wife 'a bit sleepy' (cardiac arrest)",
+          "minutes_since_call": 6,
+          "urgency_timeline": [
+            {
+              "t": 10,
+              "time": "00:10",
+              "urgency": "B"
+            },
+            {
+              "t": 31,
+              "time": "00:31",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "unconscious_cardiac_arrest",
@@ -264,9 +312,26 @@
         "lng": 13.3477
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 6,
       "handover": [
         "Elderly female collapsed in chair, unresponsive, agonal breathing. Telephone CPR started by husband at ~01:10. No AED on scene. Time of collapse just before call."
       ],
+      "crew": "ambulance x2 if available",
+      "lights_and_sirens": true,
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "pre_alert": "Resuscitation room",
+      "unit": "AMB 1180",
+      "ambulance_position": {
+        "lat": 55.678,
+        "lng": 13.289
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "first responder / rescue service with AED",
         "physician unit if available",
@@ -339,22 +404,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance x2 if available",
-      "lights_and_sirens": true,
-      "destination": "Cardiac arrest centre (SUS Lund)",
-      "pre_alert": "Resuscitation room",
-      "unit": "AMB 1180",
-      "ambulance_position": {
-        "lat": 55.678,
-        "lng": 13.289
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_04_anaphylaxis_restaurant",
@@ -362,7 +412,20 @@
       "calls": [
         {
           "call_id": "call_04_anaphylaxis_restaurant",
-          "title": "Anaphylaxis after peanuts, 16-year-old in restaurant"
+          "title": "Anaphylaxis after peanuts, 16-year-old in restaurant",
+          "minutes_since_call": 4,
+          "urgency_timeline": [
+            {
+              "t": 2,
+              "time": "00:02",
+              "urgency": "B"
+            },
+            {
+              "t": 17,
+              "time": "00:17",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "allergic_reaction",
@@ -373,9 +436,26 @@
         "lng": 13.1917
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 4,
       "handover": [
         "Female 16, peanut exposure at restaurant, lip swelling, throat tightness, hoarse voice, then dizziness. EpiPen given i.m. thigh at ~00:50 by friend. Second pen unknown."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Emergency department (SUS Lund)",
+      "pre_alert": "ED if airway swelling",
+      "unit": "AMB 1110",
+      "ambulance_position": {
+        "lat": 55.7148,
+        "lng": 13.196
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "adrenaline 0.5 mg IM drawn up (0.3 mg child)",
@@ -463,22 +543,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Emergency department (SUS Lund)",
-      "pre_alert": "ED if airway swelling",
-      "unit": "AMB 1110",
-      "ambulance_position": {
-        "lat": 55.7148,
-        "lng": 13.196
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_05_stroke_language_barrier",
@@ -486,7 +551,20 @@
       "calls": [
         {
           "call_id": "call_05_stroke_language_barrier",
-          "title": "Stroke, caller with limited English (mixes Swedish)"
+          "title": "Stroke, caller with limited English (mixes Swedish)",
+          "minutes_since_call": 8,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 23,
+              "time": "00:23",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "stroke",
@@ -497,9 +575,26 @@
         "lng": 13.1797
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 8,
       "handover": [
         "Elderly male, right facial droop, right arm weakness, dysarthria/aphasia. Last seen well 08:00, found ~10 min before call. Fell from chair. Family speaks Arabic; interpreter requested."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "pre_alert": "Stroke team (stroke alarm)",
+      "unit": "AMB 1140",
+      "ambulance_position": {
+        "lat": 55.7085,
+        "lng": 13.169
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "interpreter (Arabic)",
         "stroke unit pre-alert"
@@ -572,22 +667,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
-      "pre_alert": "Stroke team (stroke alarm)",
-      "unit": "AMB 1140",
-      "ambulance_position": {
-        "lat": 55.7085,
-        "lng": 13.169
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_06_panicking_child_seizure",
@@ -595,7 +675,15 @@
       "calls": [
         {
           "call_id": "call_06_panicking_child_seizure",
-          "title": "Panicking parent, 3-year-old with fever having a seizure"
+          "title": "Panicking parent, 3-year-old with fever having a seizure",
+          "minutes_since_call": 3,
+          "urgency_timeline": [
+            {
+              "t": 2,
+              "time": "00:02",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "seizure",
@@ -606,9 +694,26 @@
         "lng": 13.2093
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 3,
       "handover": [
         "Male 3 y, febrile all day, first-ever generalised tonic-clonic seizure ~2-3 min with perioral cyanosis, stopped at ~00:55, now post-ictal in recovery position, breathing."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
+      "pre_alert": "ED if seizure ongoing on arrival",
+      "unit": "AMB 1160",
+      "ambulance_position": {
+        "lat": 55.654,
+        "lng": 13.188
+      },
+      "destination_hospital": {
+        "name": "SUS Lund, Barnakuten",
+        "detail": "Paediatric emergency department",
+        "lat": 55.7139,
+        "lng": 13.1972
+      },
       "extra_units": [],
       "prepare_en_route": [
         "buccal/IV midazolam dose by weight",
@@ -687,22 +792,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
-      "pre_alert": "ED if seizure ongoing on arrival",
-      "unit": "AMB 1160",
-      "ambulance_position": {
-        "lat": 55.654,
-        "lng": 13.188
-      },
-      "destination_hospital": {
-        "name": "SUS Lund, Barnakuten",
-        "detail": "Paediatric emergency department",
-        "lat": 55.7139,
-        "lng": 13.1972
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "incident_07_collision",
@@ -710,11 +800,32 @@
       "calls": [
         {
           "call_id": "call_07a_collision_witness",
-          "title": "Car vs cyclist, call 1 of 2 (witness)"
+          "title": "Car vs cyclist, call 1 of 2 (witness)",
+          "minutes_since_call": 9,
+          "urgency_timeline": [
+            {
+              "t": 2,
+              "time": "00:02",
+              "urgency": "B"
+            },
+            {
+              "t": 21,
+              "time": "00:21",
+              "urgency": "A"
+            }
+          ]
         },
         {
           "call_id": "call_07b_collision_driver",
-          "title": "Car vs cyclist, call 2 of 2 (driver)"
+          "title": "Car vs cyclist, call 2 of 2 (driver)",
+          "minutes_since_call": 7,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "traffic_trauma",
@@ -725,10 +836,27 @@
         "lng": 13.2152
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 9,
       "handover": [
         "Cyclist (male, age unknown) hit by car at Getingevägen/Byggmästaregatan roundabout, thrown over bonnet, no helmet, head wound, not moving, groaning. Witness pressing on wound.",
         "Update to incident_07: cyclist now opening eyes, repetitive questioning (head injury, GCS reduced). Speed ~40-50 km/h. Driver: airbag deployed, pleuritic chest pain, shaking, ambulatory. Request assessment of 2 patients."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "unit": "AMB 1150",
+      "ambulance_position": {
+        "lat": 55.729,
+        "lng": 13.234
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety / traffic)",
         "rescue service if trapped or fuel/fire",
@@ -867,22 +995,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
-      "pre_alert": "Trauma team if high-energy or reduced consciousness",
-      "unit": "AMB 1150",
-      "ambulance_position": {
-        "lat": 55.729,
-        "lng": 13.234
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_08_hidden_suicide_risk",
@@ -890,7 +1003,25 @@
       "calls": [
         {
           "call_id": "call_08_hidden_suicide_risk",
-          "title": "Calls 'just to talk', hidden suicide risk and overdose"
+          "title": "Calls 'just to talk', hidden suicide risk and overdose",
+          "minutes_since_call": 12,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "D"
+            },
+            {
+              "t": 31,
+              "time": "00:31",
+              "urgency": "B"
+            },
+            {
+              "t": 57,
+              "time": "00:57",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "mental_health_suicide",
@@ -901,9 +1032,26 @@
         "lng": 13.1712
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 12,
       "handover": [
         "Adult, alone, intentional overdose of own sleeping pills (~1 strip, drug name unknown), suicidal intent, letters written, now drowsy. Asked to unlock door."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
+      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
+      "unit": "AMB 1170",
+      "ambulance_position": {
+        "lat": 55.704,
+        "lng": 13.156
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety, entry)",
         "psychiatric ambulance / crisis team if available",
@@ -1005,22 +1153,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
-      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
-      "unit": "AMB 1170",
-      "ambulance_position": {
-        "lat": 55.704,
-        "lng": 13.156
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_09_copd_severe_breathing",
@@ -1028,7 +1161,15 @@
       "calls": [
         {
           "call_id": "call_09_copd_severe_breathing",
-          "title": "Severe breathing difficulty, COPD, caller speaks in fragments"
+          "title": "Severe breathing difficulty, COPD, caller speaks in fragments",
+          "minutes_since_call": 6,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "breathing_difficulty",
@@ -1039,9 +1180,26 @@
         "lng": 13.2307
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 6,
       "handover": [
         "COPD patient alone, 3rd floor, severe dyspnoea speaking 1-2 words, possible cyanosis, home O2 and inhaler x2 without effect. Door locked, entry needed."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Emergency department (SUS Lund)",
+      "pre_alert": "ED if SpO2 low or exhausted",
+      "unit": "AMB 1190",
+      "ambulance_position": {
+        "lat": 55.695,
+        "lng": 13.212
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "rescue service / police for door entry"
       ],
@@ -1112,22 +1270,67 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Emergency department (SUS Lund)",
-      "pre_alert": "ED if SpO2 low or exhausted",
-      "unit": "AMB 1190",
-      "ambulance_position": {
-        "lat": 55.695,
-        "lng": 13.212
+      "dashboard_urgency": "Critical"
+    },
+    {
+      "incident_id": "call_10_mild_rash_no_ambulance",
+      "title": "Mild itchy rash, no ambulance needed (negative control)",
+      "calls": [
+        {
+          "call_id": "call_10_mild_rash_no_ambulance",
+          "title": "Mild itchy rash, no ambulance needed (negative control)",
+          "minutes_since_call": 21,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 40,
+              "time": "00:40",
+              "urgency": "D"
+            }
+          ]
+        }
+      ],
+      "category": "allergic_reaction",
+      "category_name": "Allergic reaction / anaphylaxis",
+      "address": "Tunavägen 30, Lund",
+      "scene": {
+        "lat": 55.7172,
+        "lng": 13.2015
       },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "urgency": "D",
+      "dispatch": "none",
+      "minutes_since_call": 21,
+      "handover": [
+        "No dispatch. Adult with localised contact dermatitis-type rash on arms after new detergent, 4 h, stable. Advised 1177/pharmacy and safety-net instructions."
+      ],
+      "crew": null,
+      "lights_and_sirens": false,
+      "destination": null,
+      "pre_alert": null,
+      "unit": null,
+      "ambulance_position": null,
+      "destination_hospital": null,
+      "extra_units": [
+        "1177 advice line",
+        "pharmacy (antihistamine)"
+      ],
+      "prepare_en_route": [],
+      "bring": [],
+      "key_facts": [
+        "no dispatch - advice given"
+      ],
+      "scene_notes": [],
+      "open_questions": [
+        "Age?",
+        "Is anyone else at home?"
+      ],
+      "red_flags": [],
+      "urgency_name": "Not urgent",
+      "dashboard_urgency": "Low"
     },
     {
       "incident_id": "call_11_tia_symptoms_resolved",
@@ -1135,7 +1338,20 @@
       "calls": [
         {
           "call_id": "call_11_tia_symptoms_resolved",
-          "title": "Stroke symptoms that went away (TIA), urgency B"
+          "title": "Stroke symptoms that went away (TIA), urgency B",
+          "minutes_since_call": 17,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 40,
+              "time": "00:40",
+              "urgency": "B"
+            }
+          ]
         }
       ],
       "category": "stroke",
@@ -1146,9 +1362,26 @@
         "lng": 13.1937
       },
       "urgency": "B",
+      "dispatch": "dispatched",
+      "minutes_since_call": 17,
       "handover": [
         "Male 74, AF on apixaban. ~1 h ago transient dysarthria and left hand weakness for a few minutes, now fully resolved, FAST normal on phone. Suspected TIA."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": false,
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "pre_alert": "Stroke team (stroke alarm)",
+      "unit": "AMB 1210",
+      "ambulance_position": {
+        "lat": 55.711,
+        "lng": 13.183
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "glucometer (rule out low sugar)",
@@ -1212,22 +1445,7 @@
         }
       ],
       "urgency_name": "Urgent, potentially serious",
-      "dashboard_urgency": "High",
-      "crew": "ambulance",
-      "lights_and_sirens": false,
-      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
-      "pre_alert": "Stroke team (stroke alarm)",
-      "unit": "AMB 1210",
-      "ambulance_position": {
-        "lat": 55.711,
-        "lng": 13.183
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "High"
     },
     {
       "incident_id": "call_12_known_epilepsy_recovered",
@@ -1235,7 +1453,20 @@
       "calls": [
         {
           "call_id": "call_12_known_epilepsy_recovered",
-          "title": "Known epilepsy, typical short seizure, now awake (urgency C, ambulance unclear)"
+          "title": "Known epilepsy, typical short seizure, now awake (urgency C, ambulance unclear)",
+          "minutes_since_call": 14,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 31,
+              "time": "00:31",
+              "urgency": "C"
+            }
+          ]
         }
       ],
       "category": "seizure",
@@ -1246,9 +1477,26 @@
         "lng": 13.2072
       },
       "urgency": "C",
+      "dispatch": "pending",
+      "minutes_since_call": 14,
       "handover": [
         "Female student, known epilepsy, typical generalised seizure ~1 min, missed dose yesterday, now awake, mild confusion, tongue bite, no head injury. Nurse call-back for decision."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": false,
+      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
+      "pre_alert": "ED if seizure ongoing on arrival",
+      "unit": "AMB 1220",
+      "ambulance_position": {
+        "lat": 55.73,
+        "lng": 13.198
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "nurse call-back / 1177",
         "own epilepsy clinic"
@@ -1304,21 +1552,6 @@
       ],
       "urgency_name": "Needs assessment, stable now",
       "dashboard_urgency": "Medium",
-      "crew": "ambulance",
-      "lights_and_sirens": false,
-      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
-      "pre_alert": "ED if seizure ongoing on arrival",
-      "unit": "AMB 1220",
-      "ambulance_position": {
-        "lat": 55.73,
-        "lng": 13.198
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      },
       "note": "Dispatch not decided - briefing applies if an ambulance is sent."
     },
     {
@@ -1327,7 +1560,20 @@
       "calls": [
         {
           "call_id": "call_13_child_caller_grandma",
-          "title": "Child (8) calls: grandma won't wake up"
+          "title": "Child (8) calls: grandma won't wake up",
+          "minutes_since_call": 4,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            },
+            {
+              "t": 55,
+              "time": "00:55",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "unconscious_cardiac_arrest",
@@ -1338,9 +1584,26 @@
         "lng": 13.1932
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 4,
       "handover": [
         "Elderly female, insulin-treated diabetes, skipped lunch, found by 8-year-old granddaughter unresponsive to voice, groaning, breathing, sweaty and pale. Placed in recovery position by child. Suspected hypoglycaemia. Child alone on scene."
       ],
+      "crew": "ambulance x2 if available",
+      "lights_and_sirens": true,
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "pre_alert": "Resuscitation room",
+      "unit": "AMB 1230",
+      "ambulance_position": {
+        "lat": 55.693,
+        "lng": 13.206
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "first responder / rescue service with AED",
         "physician unit if available",
@@ -1421,22 +1684,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance x2 if available",
-      "lights_and_sirens": true,
-      "destination": "Cardiac arrest centre (SUS Lund)",
-      "pre_alert": "Resuscitation room",
-      "unit": "AMB 1230",
-      "ambulance_position": {
-        "lat": 55.693,
-        "lng": 13.206
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_14_swedish_shrimp_anaphylaxis",
@@ -1444,7 +1692,20 @@
       "calls": [
         {
           "call_id": "call_14_swedish_shrimp_anaphylaxis",
-          "title": "Swedish-speaking caller: anaphylaxis after shrimp"
+          "title": "Swedish-speaking caller: anaphylaxis after shrimp",
+          "minutes_since_call": 5,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            },
+            {
+              "t": 40,
+              "time": "00:40",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "allergic_reaction",
@@ -1455,9 +1716,26 @@
         "lng": 13.2045
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 5,
       "handover": [
         "Male 34, known shellfish allergy, ate shrimp. Throat tightness, hoarse, lip swelling, widespread urticaria, dizzy, vomited x1. No adrenaline (expired). Anaphylaxis."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Emergency department (SUS Lund)",
+      "pre_alert": "ED if airway swelling",
+      "unit": "AMB 1240",
+      "ambulance_position": {
+        "lat": 55.715,
+        "lng": 13.225
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "adrenaline 0.5 mg IM drawn up (0.3 mg child)",
@@ -1544,22 +1822,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Emergency department (SUS Lund)",
-      "pre_alert": "ED if airway swelling",
-      "unit": "AMB 1240",
-      "ambulance_position": {
-        "lat": 55.715,
-        "lng": 13.225
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_15_dropped_call_not_breathing",
@@ -1567,7 +1830,15 @@
       "calls": [
         {
           "call_id": "call_15_dropped_call_not_breathing",
-          "title": "Dropped call: 'he's not breathing' then line cuts"
+          "title": "Dropped call: 'he's not breathing' then line cuts",
+          "minutes_since_call": 3,
+          "urgency_timeline": [
+            {
+              "t": 2,
+              "time": "00:02",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "unconscious_cardiac_arrest",
@@ -1578,9 +1849,26 @@
         "lng": 13.2063
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 3,
       "handover": [
         "Unknown young adult (student housing), witnessed collapse, reported not breathing. Call dropped at 00:13. Location: Sparta student housing, Tornavägen, building unknown. Call-back and position trace in progress."
       ],
+      "crew": "ambulance x2 if available",
+      "lights_and_sirens": true,
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "pre_alert": "Resuscitation room",
+      "unit": "AMB 1250",
+      "ambulance_position": {
+        "lat": 55.706,
+        "lng": 13.189
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "first responder / rescue service with AED",
         "physician unit if available",
@@ -1647,22 +1935,89 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance x2 if available",
-      "lights_and_sirens": true,
-      "destination": "Cardiac arrest centre (SUS Lund)",
-      "pre_alert": "Resuscitation room",
-      "unit": "AMB 1250",
-      "ambulance_position": {
-        "lat": 55.706,
+      "dashboard_urgency": "Critical"
+    },
+    {
+      "incident_id": "call_16_prank_call",
+      "title": "Prank call: teenagers report a fake accident",
+      "calls": [
+        {
+          "call_id": "call_16_prank_call",
+          "title": "Prank call: teenagers report a fake accident",
+          "minutes_since_call": 25,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            },
+            {
+              "t": 19,
+              "time": "00:19",
+              "urgency": "B"
+            },
+            {
+              "t": 45,
+              "time": "00:45",
+              "urgency": "E"
+            }
+          ]
+        }
+      ],
+      "category": "traffic_trauma",
+      "category_name": "Traffic collision / trauma",
+      "address": "Clemenstorget, Lund",
+      "scene": {
+        "lat": 55.7068,
         "lng": 13.189
       },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "urgency": "E",
+      "dispatch": "none",
+      "minutes_since_call": 25,
+      "handover": [
+        "No dispatch. Hoax call, admitted by caller. Reported to police."
+      ],
+      "crew": null,
+      "lights_and_sirens": false,
+      "destination": null,
+      "pre_alert": null,
+      "unit": null,
+      "ambulance_position": null,
+      "destination_hospital": null,
+      "extra_units": [
+        "police (hoax report)"
+      ],
+      "prepare_en_route": [],
+      "bring": [],
+      "key_facts": [
+        "no dispatch - hoax admitted"
+      ],
+      "scene_notes": [],
+      "open_questions": [
+        "Can a police patrol verify the scene before closing?"
+      ],
+      "red_flags": [
+        {
+          "label": "inconsistent location",
+          "quote": "Or no wait, Clemenstorget",
+          "turn_index": 3,
+          "t": 10,
+          "speaker": "caller",
+          "time": "00:10",
+          "call_id": "call_16_prank_call"
+        },
+        {
+          "label": "laughter / coaching in background",
+          "quote": "Say it's a tractor!",
+          "turn_index": 7,
+          "t": 31,
+          "speaker": "caller",
+          "time": "00:31",
+          "call_id": "call_16_prank_call"
+        }
+      ],
+      "urgency_name": "Other help",
+      "dashboard_urgency": "Low"
     },
     {
       "incident_id": "call_17_escooter_wrist",
@@ -1670,7 +2025,20 @@
       "calls": [
         {
           "call_id": "call_17_escooter_wrist",
-          "title": "E-scooter fall, wrist probably broken (stable)"
+          "title": "E-scooter fall, wrist probably broken (stable)",
+          "minutes_since_call": 19,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 41,
+              "time": "00:41",
+              "urgency": "C"
+            }
+          ]
         }
       ],
       "category": "traffic_trauma",
@@ -1681,9 +2049,26 @@
         "lng": 13.2086
       },
       "urgency": "C",
+      "dispatch": "pending",
+      "minutes_since_call": 19,
       "handover": [
         "Young adult, e-scooter fall, helmet, no head/neck injury. Closed dinner-fork deformity of wrist, fingers move. Advised own transport to ED."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": false,
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "unit": "AMB 1260",
+      "ambulance_position": {
+        "lat": 55.724,
+        "lng": 13.19
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety / traffic)",
         "rescue service if trapped or fuel/fire",
@@ -1722,21 +2107,6 @@
       ],
       "urgency_name": "Needs assessment, stable now",
       "dashboard_urgency": "Medium",
-      "crew": "ambulance",
-      "lights_and_sirens": false,
-      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
-      "pre_alert": "Trauma team if high-energy or reduced consciousness",
-      "unit": "AMB 1260",
-      "ambulance_position": {
-        "lat": 55.724,
-        "lng": 13.19
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      },
       "note": "Dispatch not decided - briefing applies if an ambulance is sent."
     },
     {
@@ -1745,7 +2115,20 @@
       "calls": [
         {
           "call_id": "call_18_child_asthma",
-          "title": "Boy 10 with asthma attack, inhaler only partly helps"
+          "title": "Boy 10 with asthma attack, inhaler only partly helps",
+          "minutes_since_call": 10,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 40,
+              "time": "00:40",
+              "urgency": "B"
+            }
+          ]
         }
       ],
       "category": "breathing_difficulty",
@@ -1756,9 +2139,26 @@
         "lng": 13.2331
       },
       "urgency": "B",
+      "dispatch": "dispatched",
+      "minutes_since_call": 10,
       "handover": [
         "Boy 10, known asthma, URTI this week. Acute exacerbation, 4 puffs salbutamol in 30 min with poor effect, speaks few words, tripod, intercostal recession, pale, no cyanosis. Previous admission."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Emergency department (SUS Lund)",
+      "pre_alert": "ED if SpO2 low or exhausted",
+      "unit": "AMB 1270",
+      "ambulance_position": {
+        "lat": 55.712,
+        "lng": 13.215
+      },
+      "destination_hospital": {
+        "name": "SUS Lund, Barnakuten",
+        "detail": "Paediatric emergency department",
+        "lat": 55.7139,
+        "lng": 13.1972
+      },
       "extra_units": [],
       "prepare_en_route": [
         "nebulizer with salbutamol drawn up",
@@ -1836,22 +2236,7 @@
         }
       ],
       "urgency_name": "Urgent, potentially serious",
-      "dashboard_urgency": "High",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Emergency department (SUS Lund)",
-      "pre_alert": "ED if SpO2 low or exhausted",
-      "unit": "AMB 1270",
-      "ambulance_position": {
-        "lat": 55.712,
-        "lng": 13.215
-      },
-      "destination_hospital": {
-        "name": "SUS Lund, Barnakuten",
-        "detail": "Paediatric emergency department",
-        "lat": 55.7139,
-        "lng": 13.1972
-      }
+      "dashboard_urgency": "High"
     },
     {
       "incident_id": "call_19_panic_attack_chest",
@@ -1859,7 +2244,25 @@
       "calls": [
         {
           "call_id": "call_19_panic_attack_chest",
-          "title": "Young woman, chest tightness and tingling (panic attack)"
+          "title": "Young woman, chest tightness and tingling (panic attack)",
+          "minutes_since_call": 16,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 47,
+              "time": "00:47",
+              "urgency": "C"
+            },
+            {
+              "t": 64,
+              "time": "01:04",
+              "urgency": "C"
+            }
+          ]
         }
       ],
       "category": "chest_pain",
@@ -1870,9 +2273,26 @@
         "lng": 13.1966
       },
       "urgency": "C",
+      "dispatch": "pending",
+      "minutes_since_call": 16,
       "handover": [
         "Female 24, no cardiac history, chest tightness, palpitations, hyperventilation with paraesthesia and carpopedal spasm during exam stress, prior panic attacks, improving with breathing coaching. Nurse call-back."
       ],
+      "crew": "ambulance (nurse-staffed)",
+      "lights_and_sirens": false,
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "unit": "AMB 1280",
+      "ambulance_position": {
+        "lat": 55.695,
+        "lng": 13.183
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "nurse call-back / 1177",
         "psychiatric follow-up"
@@ -1920,21 +2340,6 @@
       ],
       "urgency_name": "Needs assessment, stable now",
       "dashboard_urgency": "Medium",
-      "crew": "ambulance (nurse-staffed)",
-      "lights_and_sirens": false,
-      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
-      "pre_alert": "Cardiology / PCI lab if STEMI",
-      "unit": "AMB 1280",
-      "ambulance_position": {
-        "lat": 55.695,
-        "lng": 13.183
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      },
       "note": "Dispatch not decided - briefing applies if an ambulance is sent."
     },
     {
@@ -1943,7 +2348,25 @@
       "calls": [
         {
           "call_id": "call_20_elderly_hip_fall",
-          "title": "Woman 84 fell at night, can't get up, leg turned out"
+          "title": "Woman 84 fell at night, can't get up, leg turned out",
+          "minutes_since_call": 22,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 37,
+              "time": "00:37",
+              "urgency": "B"
+            },
+            {
+              "t": 56,
+              "time": "00:56",
+              "urgency": "B"
+            }
+          ]
         }
       ],
       "category": "traffic_trauma",
@@ -1954,9 +2377,26 @@
         "lng": 13.1924
       },
       "urgency": "B",
+      "dispatch": "dispatched",
+      "minutes_since_call": 22,
       "handover": [
         "Female 84, fall ~02:00, long lie ~7 h, cold. Right leg shortened and externally rotated (suspected hip fracture). Forehead bump, on warfarin, slightly slow but oriented."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": false,
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "unit": "AMB 1290",
+      "ambulance_position": {
+        "lat": 55.72,
+        "lng": 13.176
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety / traffic)",
         "rescue service if trapped or fuel/fire"
@@ -2038,22 +2478,7 @@
         }
       ],
       "urgency_name": "Urgent, potentially serious",
-      "dashboard_urgency": "High",
-      "crew": "ambulance",
-      "lights_and_sirens": false,
-      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
-      "pre_alert": "Trauma team if high-energy or reduced consciousness",
-      "unit": "AMB 1290",
-      "ambulance_position": {
-        "lat": 55.72,
-        "lng": 13.176
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "High"
     },
     {
       "incident_id": "call_21_status_epilepticus_gym",
@@ -2061,7 +2486,20 @@
       "calls": [
         {
           "call_id": "call_21_status_epilepticus_gym",
-          "title": "Man seizing at the gym for over 5 minutes"
+          "title": "Man seizing at the gym for over 5 minutes",
+          "minutes_since_call": 5,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 17,
+              "time": "00:17",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "seizure",
@@ -2072,9 +2510,26 @@
         "lng": 13.2274
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 5,
       "handover": [
         "Adult male, collapsed while lifting weights at Nova Lund gym, generalised seizure >7 min ongoing, cyanotic, frothing. History unknown. AED being brought by staff."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
+      "pre_alert": "ED if seizure ongoing on arrival",
+      "unit": "AMB 1310",
+      "ambulance_position": {
+        "lat": 55.73,
+        "lng": 13.208
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "first responder with AED"
       ],
@@ -2143,22 +2598,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Emergency department; children to paediatric ED (Barnakuten SUS Lund)",
-      "pre_alert": "ED if seizure ongoing on arrival",
-      "unit": "AMB 1310",
-      "ambulance_position": {
-        "lat": 55.73,
-        "lng": 13.208
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_22_aortic_dissection",
@@ -2166,7 +2606,20 @@
       "calls": [
         {
           "call_id": "call_22_aortic_dissection",
-          "title": "Sudden tearing chest pain to the back, man 62"
+          "title": "Sudden tearing chest pain to the back, man 62",
+          "minutes_since_call": 7,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            },
+            {
+              "t": 18,
+              "time": "00:18",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "chest_pain",
@@ -2177,9 +2630,26 @@
         "lng": 13.3418
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 7,
       "handover": [
         "Male 62, untreated hypertension. Sudden maximal tearing chest pain radiating to back 5 min ago while lifting, pale, sweaty, left leg numb. Suspected aortic dissection - avoid aspirin until excluded."
       ],
+      "crew": "ambulance (nurse-staffed)",
+      "lights_and_sirens": true,
+      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
+      "pre_alert": "Cardiology / PCI lab if STEMI",
+      "unit": "AMB 1320",
+      "ambulance_position": {
+        "lat": 55.711,
+        "lng": 13.28
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "12-lead ECG ready to transmit",
@@ -2266,22 +2736,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance (nurse-staffed)",
-      "lights_and_sirens": true,
-      "destination": "PCI-capable hospital (SUS Lund, cardiology) - bypass local ED if STEMI on ECG",
-      "pre_alert": "Cardiology / PCI lab if STEMI",
-      "unit": "AMB 1320",
-      "ambulance_position": {
-        "lat": 55.711,
-        "lng": 13.28
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_23_wake_up_stroke",
@@ -2289,7 +2744,20 @@
       "calls": [
         {
           "call_id": "call_23_wake_up_stroke",
-          "title": "Woman 79 woke up with weak left side (wake-up stroke)"
+          "title": "Woman 79 woke up with weak left side (wake-up stroke)",
+          "minutes_since_call": 9,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 17,
+              "time": "00:17",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "stroke",
@@ -2300,9 +2768,26 @@
         "lng": 13.2049
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 9,
       "handover": [
         "Female 79, woke with left arm weakness, left facial droop, dysarthria. Last seen well 22:00 last night. No anticoagulant. Wake-up stroke - stroke alarm."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "pre_alert": "Stroke team (stroke alarm)",
+      "unit": "AMB 1330",
+      "ambulance_position": {
+        "lat": 55.66,
+        "lng": 13.225
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "glucometer (rule out low sugar)",
@@ -2377,22 +2862,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
-      "pre_alert": "Stroke team (stroke alarm)",
-      "unit": "AMB 1330",
-      "ambulance_position": {
-        "lat": 55.66,
-        "lng": 13.225
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_24_young_stroke_thought_drunk",
@@ -2400,7 +2870,25 @@
       "calls": [
         {
           "call_id": "call_24_young_stroke_thought_drunk",
-          "title": "Man 38 at a party, friends think he's drunk (stroke)"
+          "title": "Man 38 at a party, friends think he's drunk (stroke)",
+          "minutes_since_call": 6,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 20,
+              "time": "00:20",
+              "urgency": "B"
+            },
+            {
+              "t": 31,
+              "time": "00:31",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "stroke",
@@ -2411,9 +2899,26 @@
         "lng": 13.1986
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 6,
       "handover": [
         "Male 38, ~20 min dysarthria, right arm weakness, facial droop, severe headache after laughing. Two beers only. Suspected stroke (consider haemorrhage/dissection). Stroke alarm."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
+      "pre_alert": "Stroke team (stroke alarm)",
+      "unit": "AMB 1340",
+      "ambulance_position": {
+        "lat": 55.713,
+        "lng": 13.212
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [],
       "prepare_en_route": [
         "glucometer (rule out low sugar)",
@@ -2490,22 +2995,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Stroke unit with thrombectomy (SUS Lund) - time critical",
-      "pre_alert": "Stroke team (stroke alarm)",
-      "unit": "AMB 1340",
-      "ambulance_position": {
-        "lat": 55.713,
-        "lng": 13.212
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_25_suicide_text_message",
@@ -2513,7 +3003,15 @@
       "calls": [
         {
           "call_id": "call_25_suicide_text_message",
-          "title": "Girlfriend got a goodbye text, boyfriend not answering"
+          "title": "Girlfriend got a goodbye text, boyfriend not answering",
+          "minutes_since_call": 8,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "mental_health_suicide",
@@ -2524,9 +3022,26 @@
         "lng": 13.215
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 8,
       "handover": [
         "Male 29, goodbye text to girlfriend, not answering. Previous attempt (pills), job loss. Access to sleeping pills and hunting rifle. Presumed at Vildandsvägen 7. Police lead; ambulance staging."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
+      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
+      "unit": "AMB 1350",
+      "ambulance_position": {
+        "lat": 55.71,
+        "lng": 13.2
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety, entry)",
         "psychiatric ambulance / crisis team if available",
@@ -2609,22 +3124,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
-      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
-      "unit": "AMB 1350",
-      "ambulance_position": {
-        "lat": 55.71,
-        "lng": 13.2
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     },
     {
       "incident_id": "call_26_self_harm_teen",
@@ -2632,7 +3132,25 @@
       "calls": [
         {
           "call_id": "call_26_self_harm_teen",
-          "title": "Mother finds daughter 16 with cut forearm (bleeding controlled)"
+          "title": "Mother finds daughter 16 with cut forearm (bleeding controlled)",
+          "minutes_since_call": 13,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 17,
+              "time": "00:17",
+              "urgency": "B"
+            },
+            {
+              "t": 48,
+              "time": "00:48",
+              "urgency": "B"
+            }
+          ]
         }
       ],
       "category": "mental_health_suicide",
@@ -2643,9 +3161,26 @@
         "lng": 13.188
       },
       "urgency": "B",
+      "dispatch": "dispatched",
+      "minutes_since_call": 13,
       "handover": [
         "Female 16, self-harm forearm, multiple superficial cuts and one gaping 3 cm laceration, bleeding controlled with towel. Denies suicidal intent and overdose. Escalating self-harm. Needs wound care + BUP assessment."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": false,
+      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
+      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
+      "unit": "AMB 1360",
+      "ambulance_position": {
+        "lat": 55.69,
+        "lng": 13.2
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety, entry)",
         "psychiatric ambulance / crisis team if available",
@@ -2714,22 +3249,7 @@
         }
       ],
       "urgency_name": "Urgent, potentially serious",
-      "dashboard_urgency": "High",
-      "crew": "ambulance",
-      "lights_and_sirens": false,
-      "destination": "ED if overdose or injury, otherwise psychiatric emergency (Psykiatrisk akutmottagning Lund)",
-      "pre_alert": "ED / poison info (Giftinformationscentralen) for overdose",
-      "unit": "AMB 1360",
-      "ambulance_position": {
-        "lat": 55.69,
-        "lng": 13.2
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "High"
     },
     {
       "incident_id": "call_27_rollover_trapped",
@@ -2737,7 +3257,15 @@
       "calls": [
         {
           "call_id": "call_27_rollover_trapped",
-          "title": "Car on its roof on E22, driver trapped, fuel smell"
+          "title": "Car on its roof on E22, driver trapped, fuel smell",
+          "minutes_since_call": 4,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "traffic_trauma",
@@ -2748,9 +3276,26 @@
         "lng": 13.2005
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 4,
       "handover": [
         "Single-car rollover on E22 towards Malmö after Lund Södra. Driver trapped upside down, conscious, moaning, reports no feeling in legs, facial bleeding. Fuel smell. Rescue service and police dispatched."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": true,
+      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
+      "pre_alert": "Trauma team if high-energy or reduced consciousness",
+      "unit": "AMB 1370",
+      "ambulance_position": {
+        "lat": 55.705,
+        "lng": 13.223
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "police (scene safety / traffic)",
         "rescue service if trapped or fuel/fire",
@@ -2834,22 +3379,181 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance",
-      "lights_and_sirens": true,
-      "destination": "Trauma centre (SUS Lund) if high-energy mechanism",
-      "pre_alert": "Trauma team if high-energy or reduced consciousness",
-      "unit": "AMB 1370",
-      "ambulance_position": {
-        "lat": 55.705,
-        "lng": 13.223
+      "dashboard_urgency": "Critical"
+    },
+    {
+      "incident_id": "call_28_fender_bender_no_injury",
+      "title": "Low-speed rear-end collision, nobody hurt",
+      "calls": [
+        {
+          "call_id": "call_28_fender_bender_no_injury",
+          "title": "Low-speed rear-end collision, nobody hurt",
+          "minutes_since_call": 18,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 18,
+              "time": "00:18",
+              "urgency": "E"
+            }
+          ]
+        }
+      ],
+      "category": "traffic_trauma",
+      "category_name": "Traffic collision / trauma",
+      "address": "Trollebergsvägen, at the lights by the Coop, Lund",
+      "scene": {
+        "lat": 55.6985,
+        "lng": 13.176
       },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "urgency": "E",
+      "dispatch": "none",
+      "minutes_since_call": 18,
+      "handover": [
+        "No dispatch. Low-speed rear-end collision, no injuries. Advised to move cars and exchange details; police informed."
+      ],
+      "crew": null,
+      "lights_and_sirens": false,
+      "destination": null,
+      "pre_alert": null,
+      "unit": null,
+      "ambulance_position": null,
+      "destination_hospital": null,
+      "extra_units": [
+        "police (non-emergency)",
+        "insurance / towing"
+      ],
+      "prepare_en_route": [],
+      "bring": [],
+      "key_facts": [
+        "no dispatch - no injuries"
+      ],
+      "scene_notes": [],
+      "open_questions": [],
+      "red_flags": [],
+      "urgency_name": "Other help",
+      "dashboard_urgency": "Low"
+    },
+    {
+      "incident_id": "call_29_cough_cold_no_ambulance",
+      "title": "Cough and cold for 3 days, talks normally",
+      "calls": [
+        {
+          "call_id": "call_29_cough_cold_no_ambulance",
+          "title": "Cough and cold for 3 days, talks normally",
+          "minutes_since_call": 27,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 22,
+              "time": "00:22",
+              "urgency": "D"
+            }
+          ]
+        }
+      ],
+      "category": "breathing_difficulty",
+      "category_name": "Breathing difficulty",
+      "address": "Nilstorpsvägen 3, Lund",
+      "scene": {
+        "lat": 55.696,
+        "lng": 13.1985
+      },
+      "urgency": "D",
+      "dispatch": "none",
+      "minutes_since_call": 27,
+      "handover": [
+        "No dispatch. Adult 41, 3-day cough, low-grade fever improving, no dyspnoea at rest. Referred to 1177/health centre."
+      ],
+      "crew": null,
+      "lights_and_sirens": false,
+      "destination": null,
+      "pre_alert": null,
+      "unit": null,
+      "ambulance_position": null,
+      "destination_hospital": null,
+      "extra_units": [
+        "1177 advice line",
+        "health centre"
+      ],
+      "prepare_en_route": [],
+      "bring": [],
+      "key_facts": [
+        "no dispatch - advice given"
+      ],
+      "scene_notes": [],
+      "open_questions": [
+        "Does anyone at home have symptoms or is at risk?"
+      ],
+      "red_flags": [],
+      "urgency_name": "Not urgent",
+      "dashboard_urgency": "Low"
+    },
+    {
+      "incident_id": "call_30_heartburn_known_reflux",
+      "title": "Burning chest after spicy dinner, known reflux",
+      "calls": [
+        {
+          "call_id": "call_30_heartburn_known_reflux",
+          "title": "Burning chest after spicy dinner, known reflux",
+          "minutes_since_call": 15,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "C"
+            },
+            {
+              "t": 41,
+              "time": "00:41",
+              "urgency": "D"
+            }
+          ]
+        }
+      ],
+      "category": "chest_pain",
+      "category_name": "Chest pain / suspected heart attack",
+      "address": "Spolegatan 6, Lund",
+      "scene": {
+        "lat": 55.703,
+        "lng": 13.1965
+      },
+      "urgency": "D",
+      "dispatch": "none",
+      "minutes_since_call": 15,
+      "handover": [
+        "No dispatch. Adult 27, known reflux, burning retrosternal pain after spicy meal, acid taste, relieved by antacid. Safety-net advice given."
+      ],
+      "crew": null,
+      "lights_and_sirens": false,
+      "destination": null,
+      "pre_alert": null,
+      "unit": null,
+      "ambulance_position": null,
+      "destination_hospital": null,
+      "extra_units": [
+        "1177 advice line"
+      ],
+      "prepare_en_route": [],
+      "bring": [],
+      "key_facts": [
+        "no dispatch - advice given"
+      ],
+      "scene_notes": [],
+      "open_questions": [
+        "Smoking, drugs (e.g. cocaine)?"
+      ],
+      "red_flags": [],
+      "urgency_name": "Not urgent",
+      "dashboard_urgency": "Low"
     },
     {
       "incident_id": "call_31_antibiotic_lip_swelling",
@@ -2857,7 +3561,25 @@
       "calls": [
         {
           "call_id": "call_31_antibiotic_lip_swelling",
-          "title": "Mild lip swelling after new antibiotic (borderline)"
+          "title": "Mild lip swelling after new antibiotic (borderline)",
+          "minutes_since_call": 12,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 30,
+              "time": "00:30",
+              "urgency": "C"
+            },
+            {
+              "t": 39,
+              "time": "00:39",
+              "urgency": "C"
+            }
+          ]
         }
       ],
       "category": "allergic_reaction",
@@ -2868,9 +3590,26 @@
         "lng": 13.183
       },
       "urgency": "C",
+      "dispatch": "pending",
+      "minutes_since_call": 12,
       "handover": [
         "Adult 52, started penicillin yesterday, last dose 1 h ago. Lower lip swelling and mild urticaria on neck for 30 min, no airway/breathing/circulation symptoms. Nurse call-back; antihistamine advised, penicillin stopped."
       ],
+      "crew": "ambulance",
+      "lights_and_sirens": false,
+      "destination": "Emergency department (SUS Lund)",
+      "pre_alert": "ED if airway swelling",
+      "unit": "AMB 1380",
+      "ambulance_position": {
+        "lat": 55.712,
+        "lng": 13.17
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "nurse call-back / 1177",
         "own transport to ED"
@@ -2940,21 +3679,6 @@
       ],
       "urgency_name": "Needs assessment, stable now",
       "dashboard_urgency": "Medium",
-      "crew": "ambulance",
-      "lights_and_sirens": false,
-      "destination": "Emergency department (SUS Lund)",
-      "pre_alert": "ED if airway swelling",
-      "unit": "AMB 1380",
-      "ambulance_position": {
-        "lat": 55.712,
-        "lng": 13.17
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      },
       "note": "Dispatch not decided - briefing applies if an ambulance is sent."
     },
     {
@@ -2963,7 +3687,20 @@
       "calls": [
         {
           "call_id": "call_32_opioid_overdose_friend",
-          "title": "Friend found barely breathing after heroin (caller fears police)"
+          "title": "Friend found barely breathing after heroin (caller fears police)",
+          "minutes_since_call": 2,
+          "urgency_timeline": [
+            {
+              "t": 3,
+              "time": "00:03",
+              "urgency": "B"
+            },
+            {
+              "t": 19,
+              "time": "00:19",
+              "urgency": "A"
+            }
+          ]
         }
       ],
       "category": "unconscious_cardiac_arrest",
@@ -2974,9 +3711,26 @@
         "lng": 13.195
       },
       "urgency": "A",
+      "dispatch": "dispatched",
+      "minutes_since_call": 2,
       "handover": [
         "Adult male, IV heroin ~10 min ago after months abstinent. Unresponsive, very slow breathing, cyanotic. Bystander naloxone intranasal given at ~00:55, no effect yet."
       ],
+      "crew": "ambulance x2 if available",
+      "lights_and_sirens": true,
+      "destination": "Cardiac arrest centre (SUS Lund)",
+      "pre_alert": "Resuscitation room",
+      "unit": "AMB 1390",
+      "ambulance_position": {
+        "lat": 55.711,
+        "lng": 13.209
+      },
+      "destination_hospital": {
+        "name": "SUS Lund",
+        "detail": "Skånes universitetssjukhus, Akutmottagningen",
+        "lat": 55.7146,
+        "lng": 13.1953
+      },
       "extra_units": [
         "first responder / rescue service with AED",
         "physician unit if available",
@@ -3066,22 +3820,7 @@
         }
       ],
       "urgency_name": "Life-threatening",
-      "dashboard_urgency": "Critical",
-      "crew": "ambulance x2 if available",
-      "lights_and_sirens": true,
-      "destination": "Cardiac arrest centre (SUS Lund)",
-      "pre_alert": "Resuscitation room",
-      "unit": "AMB 1390",
-      "ambulance_position": {
-        "lat": 55.711,
-        "lng": 13.209
-      },
-      "destination_hospital": {
-        "name": "SUS Lund",
-        "detail": "Skånes universitetssjukhus, Akutmottagningen",
-        "lat": 55.7146,
-        "lng": 13.1953
-      }
+      "dashboard_urgency": "Critical"
     }
   ]
 }
