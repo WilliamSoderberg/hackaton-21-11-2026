@@ -7,16 +7,6 @@ import L from "leaflet";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useMap } from "react-leaflet";
 import MapTiles from "./MapTiles";
-import type { UrgencyLevel } from "../lib/crew";
-
-// Marker colours matching urgencyStyles in lib/crew.ts.
-export const urgencyHex: Record<UrgencyLevel, string> = {
-  A: "#dc2626",
-  B: "#f97316",
-  C: "#fbbf24",
-  D: "#10b981",
-  E: "#0ea5e9",
-};
 
 // Custom pins instead of Leaflet's default image markers (those need extra
 // asset wiring under a bundler).
@@ -39,13 +29,20 @@ export function OsmTiles() {
   return <MapTiles />;
 }
 
-// Zooms the map to fit the points whenever they change (pass a memoised array).
+// Zooms the map to fit the points whenever they change (pass a memoised array)
+// or the map is resized.
 // No animation: a zoom still running when the page is hidden (map removed)
 // would fire on a dead map and throw "reading '_leaflet_pos'".
 export function FitBounds({ points, maxZoom = 15 }: { points: [number, number][]; maxZoom?: number }) {
   const map = useMap();
   useEffect(() => {
-    if (points.length) map.fitBounds(L.latLngBounds(points), { padding: [48, 48], maxZoom, animate: false });
+    if (!points.length) return;
+    const fit = () => map.fitBounds(L.latLngBounds(points), { padding: [48, 48], maxZoom, animate: false });
+    fit();
+    map.on("resize", fit);
+    return () => {
+      map.off("resize", fit);
+    };
   }, [map, points, maxZoom]);
   return null;
 }

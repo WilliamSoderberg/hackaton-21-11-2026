@@ -21,7 +21,13 @@ export type UrgencyStep = { t: number; time: string; urgency: UrgencyLevel };
 type IncidentBase = {
   incident_id: string;
   title: string;
-  calls: { call_id: string; title: string; minutes_since_call: number; urgency_timeline: UrgencyStep[] }[];
+  calls: {
+    call_id: string;
+    title: string;
+    minutes_since_call: number;
+    urgency_timeline: UrgencyStep[];
+    turns: string[]; // call text, one entry per turn
+  }[];
   category: string;
   category_name: string;
   urgency: UrgencyLevel;
@@ -77,16 +83,6 @@ export const crewIncidents = allIncidents.filter((i): i is CrewIncident => i.dis
 export const hospitals: Hospital[] = [
   ...new Map(crewIncidents.map((i) => [i.destination_hospital.name, i.destination_hospital])).values(),
 ];
-
-// Same colours as the dispatcher dashboard (A=Critical … D/E=Low), E in blue
-// as in the guide.
-export const urgencyStyles: Record<UrgencyLevel, { label: string; bg: string; soft: string; text: string; ring: string }> = {
-  A: { label: "Critical", bg: "bg-red-800", soft: "bg-red-50/60", text: "text-red-800", ring: "ring-red-800/20" },
-  B: { label: "High", bg: "bg-orange-700", soft: "bg-orange-50/60", text: "text-orange-800", ring: "ring-orange-800/20" },
-  C: { label: "Medium", bg: "bg-amber-600", soft: "bg-amber-50/60", text: "text-amber-800", ring: "ring-amber-800/20" },
-  D: { label: "Low", bg: "bg-emerald-700", soft: "bg-emerald-50/60", text: "text-emerald-800", ring: "ring-emerald-800/20" },
-  E: { label: "Other help", bg: "bg-slate-500", soft: "bg-slate-50", text: "text-slate-700", ring: "ring-slate-400/30" },
-};
 
 export function distanceKm(a: LatLng, b: LatLng) {
   const rad = Math.PI / 180;

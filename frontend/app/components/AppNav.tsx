@@ -5,16 +5,14 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Dispatcher" },
-  { href: "/crew/overview", label: "Crew overview" },
   { href: "/crew", label: "Ambulance crew" },
   { href: "/calls", label: "Ongoing calls" },
   { href: "/testbench", label: "Model testbench" },
 ];
 
-// "/crew/<incident>" belongs to "Ambulance crew"; the overview has its own tab.
 function isCurrent(pathname: string, href: string) {
-  if (href === "/" || href === "/crew/overview") return pathname === href;
-  return pathname === href || (pathname.startsWith(`${href}/`) && pathname !== "/crew/overview");
+  if (href === "/") return pathname === href;
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function AppNav() {

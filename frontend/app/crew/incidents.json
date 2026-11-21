@@ -20,6 +20,26 @@
               "time": "00:17",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Yes hi, it's my husband, he has really bad chest pain.",
+            "Okay. What is the address?",
+            "Vipeholmsvägen 14 in Lund, second floor.",
+            "Vipeholmsvägen 14, Lund. Is he awake and talking to you?",
+            "Yes he's awake, he's sitting on the sofa but he's all sweaty and grey in the face.",
+            "How old is he and when did the pain start?",
+            "He's 58. It started maybe twenty minutes ago, he was just watching TV.",
+            "Where does it hurt? Does the pain go anywhere?",
+            "In the middle, he says it's like a heavy pressure. And it goes down his left arm.",
+            "Is he short of breath or feeling sick?",
+            "He says he feels sick, yeah. Breathing is okay I think.",
+            "Does he have any heart problems from before?",
+            "He has high blood pressure, he takes pills for that. Nothing else.",
+            "I'm sending an ambulance now with lights and sirens. Is he allergic to aspirin?",
+            "No, not that I know.",
+            "If you have aspirin at home he can chew one tablet now. Keep him sitting, open the door, and call back right away if he faints or stops breathing.",
+            "Okay. Okay. Please hurry."
           ]
         }
       ],
@@ -145,6 +165,25 @@
               "time": "00:48",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Hi, um, I'm calling about my mother. I'm not sure if this is an emergency, maybe I should call 1177 instead.",
+            "That's okay, tell me what's going on.",
+            "She's 67, she's been feeling really sick since this morning, she threw up twice. We thought it's the stomach flu.",
+            "Where are you?",
+            "At her flat, Södra Esplanaden 9 in Lund.",
+            "Is she awake? Is she breathing normally?",
+            "She's awake, she's lying on the bed. She's a bit out of breath when she walks to the toilet.",
+            "Any pain anywhere?",
+            "Not really in the stomach. She says her jaw hurts, kind of up into the teeth, and between the shoulder blades. She thought she slept wrong.",
+            "Okay. Anything else unusual?",
+            "She's very tired, she's never like this. And she's a bit cold and clammy when I touch her.",
+            "Does she have diabetes or any heart disease?",
+            "She has diabetes, type 2. She takes metformin.",
+            "I'm sending an ambulance now. Keep her resting, don't let her walk around. If she has aspirin and is not allergic she can chew one.",
+            "Really? Is it serious?",
+            "These symptoms can come from the heart, especially in women with diabetes, so we want her checked right away."
           ]
         }
       ],
@@ -301,6 +340,26 @@
               "time": "00:31",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Yes, good evening, I'm sorry to bother you, it's probably nothing.",
+            "That's fine. What's happening?",
+            "My wife, she's a bit sleepy, she sat down in the chair and now she's, she won't really answer me.",
+            "What's your address?",
+            "Kastanjegatan 3, Dalby. It's a yellow house.",
+            "Kastanjegatan 3, Dalby. Go to her now. Shake her shoulders and shout her name. Does she react?",
+            "Margit! Margit! ... No. No, she doesn't. Her eyes are half open.",
+            "Is she breathing? Look at her chest.",
+            "She's breathing kind of funny, like snoring, every now and then. She does that sometimes when she sleeps.",
+            "Okay, listen to me carefully. That is not normal breathing. I'm sending an ambulance now with sirens. We're going to start CPR together.",
+            "CPR? Oh God. Is she, is she...",
+            "Can you get her down on the floor, on her back?",
+            "I'll try, she's heavy. Okay. Okay she's on the floor.",
+            "Put the heel of your hand in the middle of her chest, the other hand on top. Push down hard and fast. Count out loud with me. One, two, three, four...",
+            "One, two, three, four, five...",
+            "Good, keep going, don't stop. Is there anyone else in the house? Is there a defibrillator nearby?",
+            "No, just us. I don't know about a defibrillator. Twenty-eight, twenty-nine..."
           ]
         }
       ],
@@ -425,6 +484,24 @@
               "time": "00:17",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what's your emergency?",
+            "My friend is having an allergic reaction, she ate something with peanuts! We're at a restaurant!",
+            "Which restaurant, what address?",
+            "Uh, the Thai place on Klostergatan, Klostergatan 5 in Lund.",
+            "How old is she and how is she now?",
+            "She's 16. Her lips are swelling up really fast and she's scratching her neck.",
+            "Is she having any trouble breathing?",
+            "She says her throat feels tight. And her voice sounds weird, kind of hoarse. [background: is she okay?]",
+            "Does she have an EpiPen, an adrenaline pen?",
+            "Yes, it's in her bag, but she said she wants to wait and see if it gets better.",
+            "She needs to use it now. Take the pen, blue cap off, press the orange tip hard into the outside of her thigh, through the jeans is fine, and hold for three seconds.",
+            "Okay okay, I'm doing it... done. I held it.",
+            "Good. I'm sending an ambulance with sirens. Let her sit if she's breathing badly, or lie down with legs up if she feels faint.",
+            "She says she feels dizzy now.",
+            "Then lay her down with her legs up. Does she have a second pen?",
+            "I don't know, I'll check."
           ]
         }
       ],
@@ -564,6 +641,24 @@
               "time": "00:23",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hello. Ambulans please. My pappa... he is not good.",
+            "Okay. Where are you? Address?",
+            "Address... Norra Fäladen, Kämnärsvägen 22, Lund. Lägenhet... flat 1104.",
+            "Kämnärsvägen 22, flat 1104. What happened to your father?",
+            "His face... one side is, how you say, down. Hänger. And he talk strange, I cannot understand him.",
+            "Can he lift both arms?",
+            "Arms? Wait. ... Pappa, lyft armarna. ... Right arm no. Only left arm up.",
+            "When did this start? What time?",
+            "I come home now, ten minutes. He was like this. Before, morning, he was okay.",
+            "What time in the morning did you last see him okay?",
+            "Morning... I go to work eight o'clock. He was okay, drinking coffee.",
+            "I'm sending an ambulance with sirens. Is he awake?",
+            "Yes awake, sitting on floor. He fall down from chair.",
+            "Don't give him anything to eat or drink. Do you want an interpreter? Arabic?",
+            "Yes, Arabic, yes please."
           ]
         }
       ],
@@ -683,6 +778,24 @@
               "time": "00:02",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what's your emergency?",
+            "Help me! Help, my son, he's shaking, he's shaking, oh my God please!",
+            "I'm here to help. Tell me your address first.",
+            "He's shaking! Please just come!",
+            "I can only send help if I know where you are. What is the address?",
+            "Okay, okay, Ringvägen 40, Staffanstorp, the white house!",
+            "Ringvägen 40, Staffanstorp. Good. How old is your son?",
+            "He's three. He had a fever all day, and now his eyes are rolled back and his arms are jerking.",
+            "Is he lying on the floor or the bed?",
+            "On the bed. His lips look a bit blue, is he dying? Is he dying?",
+            "Help is on the way with sirens. Move anything hard away from him, don't put anything in his mouth, don't hold him down. How long has he been shaking?",
+            "I don't know, maybe two minutes? Three? It feels like forever.",
+            "Okay. Is it still going on now?",
+            "Yes... wait, it's slowing down... it stopped. He's not moving, he's breathing, he's breathing heavy.",
+            "Good. Turn him on his side, like this, top leg bent. Keep watching his breathing. Has he ever had a seizure before?",
+            "No, never. He's never had anything."
           ]
         }
       ],
@@ -813,6 +926,20 @@
               "time": "00:21",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "There's been an accident, a car hit a cyclist! At the roundabout, Getingevägen and Byggmästaregatan, in Lund.",
+            "Getingevägen and Byggmästaregatan. Are you safe, are you off the road?",
+            "Yes I'm on the pavement. The guy on the bike flew over the hood, he's on the ground.",
+            "Is he moving? Is he talking?",
+            "No, he's not moving. There's blood coming from his head. He doesn't have a helmet.",
+            "Is he breathing? Can you see his chest moving?",
+            "I... I think so, yes, he's making sounds. Like groaning.",
+            "I'm sending ambulance and police. How many people are injured? Is the driver okay?",
+            "The driver got out, she's walking around on the phone. I think it's just the cyclist.",
+            "Don't move him. If there's a lot of bleeding, press a jacket or cloth on it. Is anyone directing traffic?",
+            "Some people stopped. Okay, I'll press on it."
           ]
         },
         {
@@ -825,6 +952,21 @@
               "time": "00:03",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what's your emergency?",
+            "I hit someone. I hit a cyclist with my car, oh God, he came out of nowhere.",
+            "Where are you?",
+            "The roundabout by the big ICA, Getingevägen.",
+            "We have an ambulance on the way to that accident already, someone else called. Are you hurt?",
+            "I don't know. The airbag went off. My chest hurts when I breathe in. I'm okay, I'm okay, it's him.",
+            "Is the cyclist awake now?",
+            "He opened his eyes a bit. He's asking what happened, again and again. Someone is holding his head.",
+            "Okay, that's good information. How fast were you driving?",
+            "Maybe forty? Forty, fifty. I was braking.",
+            "Please sit down somewhere safe, away from the traffic, and stay there. The ambulance crew will check you too.",
+            "I'm shaking. I can't stop shaking.",
+            "That's normal after a shock. Sit down, breathe slowly. Help is almost there."
           ]
         }
       ],
@@ -1021,6 +1163,24 @@
               "time": "00:57",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hi. I don't know if this is the right number. It's not really an emergency.",
+            "That's okay. What's going on?",
+            "I just can't sleep. I haven't slept properly in weeks. I just wanted to talk to someone, I guess.",
+            "I hear you. Are you alone right now?",
+            "Yeah. I gave my cat to my sister yesterday, so it's really quiet here now.",
+            "Why did you give your cat away?",
+            "She'll take better care of him. It won't matter after tonight anyway.",
+            "When you say it won't matter after tonight, are you thinking about killing yourself?",
+            "... I've sorted things out. I wrote some letters. Everyone would be better off, honestly.",
+            "Thank you for telling me. Have you done anything to hurt yourself today? Have you taken anything?",
+            "I took a few of my sleeping pills. Maybe more than a few. The whole strip I think.",
+            "What's your address? I want to get help to you right now.",
+            "I don't know... Fjelievägen 7. Lund. Apartment 3.",
+            "I'm sending an ambulance. Can you unlock your front door? And stay on the line with me.",
+            "I'm getting really tired."
           ]
         }
       ],
@@ -1169,6 +1329,23 @@
               "time": "00:03",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what's your emergency?",
+            "Can't... breathe.",
+            "I'm sending help. What is your address?",
+            "Linero... torg... 6. Lund.",
+            "Linero torg 6, Lund. Which floor? Do you live alone?",
+            "Three. Alone.",
+            "Do you have lung disease, asthma or COPD?",
+            "COPD. Oxygen... at home.",
+            "Are you using the oxygen now?",
+            "Yes. Not... helping.",
+            "Have you used your inhaler?",
+            "Twice. Lips... blue... I think.",
+            "Sit up and lean forward with your arms on the table. Is your door unlocked?",
+            "No.",
+            "Don't get up if you can't. The crew will get in. Stay on the line, you don't need to talk, just breathe."
           ]
         }
       ],
@@ -1291,6 +1468,23 @@
               "time": "00:40",
               "urgency": "D"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hi, it's maybe not an emergency, but I have a rash and I'm a bit worried.",
+            "Tell me more. Where are you?",
+            "I'm at home, Tunavägen 30 in Lund. I washed my clothes with a new detergent and now I have red itchy spots on my arms.",
+            "When did it start?",
+            "This morning, so maybe four hours ago. It hasn't really changed.",
+            "Any swelling of your lips, tongue or throat? Any trouble breathing or swallowing?",
+            "No, nothing like that. Breathing is fine. It's only on my arms.",
+            "Do you feel dizzy, faint, or sick to your stomach?",
+            "No, I feel fine. It's just itchy.",
+            "Do you have any known allergies or an EpiPen?",
+            "No allergies that I know.",
+            "This doesn't sound dangerous right now. You don't need an ambulance. Wash the skin, change clothes, and you can call 1177 for advice or buy an antihistamine at the pharmacy. If your lips or throat swell or you get trouble breathing, call 112 right away.",
+            "Okay, thank you, sorry for calling.",
+            "No problem, that's what we're here for."
           ]
         }
       ],
@@ -1351,6 +1545,21 @@
               "time": "00:40",
               "urgency": "B"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hi, I'm calling for my dad, he's 74. About an hour ago his speech went weird for a few minutes.",
+            "What's the address?",
+            "Stora Södergatan 52, Lund.",
+            "How is he right now?",
+            "Now he seems fine again, he's talking normally and walking around. He says we're overreacting.",
+            "When it happened, did his face droop or was one arm weak?",
+            "His left hand felt numb and he dropped his coffee cup. That's gone now too.",
+            "Ask him to smile and lift both arms now.",
+            "... He smiles normally, both arms go up fine.",
+            "Does he take blood thinners or have heart rhythm problems?",
+            "He has atrial fibrillation, he takes Eliquis.",
+            "This could be a warning sign of a stroke even if it has passed. I'm sending an ambulance so he gets to the stroke unit. Call back immediately if the symptoms come back."
           ]
         }
       ],
@@ -1466,6 +1675,19 @@
               "time": "00:31",
               "urgency": "C"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hi, my roommate just had a seizure. She has epilepsy.",
+            "Where are you?",
+            "Delphi student housing, Sparta... no sorry, Delphi, Tornavägen 1, room 214.",
+            "Is the seizure over?",
+            "Yes, it lasted maybe a minute. She's awake now, a bit confused but she knows who I am.",
+            "Is she breathing normally? Did she hurt herself?",
+            "Breathing is fine. She bit her tongue a bit, there's a little blood. She didn't hit her head, she was on the bed.",
+            "Is this like her usual seizures?",
+            "I think so? She says it's her normal kind. She forgot her medicine yesterday.",
+            "Okay. Stay with her, let her rest on her side. A nurse will call you back in a few minutes to decide whether she needs to come in."
           ]
         }
       ],
@@ -1573,6 +1795,27 @@
               "time": "00:55",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Hi. My mormor won't wake up.",
+            "Okay, you did the right thing calling. What's your name and how old are you?",
+            "I'm Elsa. I'm eight.",
+            "Elsa, is there a grown-up with you?",
+            "No, just me and mormor. Mamma is at work.",
+            "Do you know the address where you are?",
+            "It's mormor's house. It's on Klostergatan, next to the big church. The door is green.",
+            "Good. Is there a number on the door?",
+            "I think it's 8. Yes, eight.",
+            "Go to mormor. Shake her shoulder and say her name loud. Does she wake up?",
+            "Mormor! ... She makes a sound but she doesn't open her eyes.",
+            "Is her chest going up and down?",
+            "Yes, it goes up and down. She's all sweaty and her face is white.",
+            "Is mormor sick with anything? Does she take medicine?",
+            "She has sugar sickness. She does the pen in her tummy. She didn't eat lunch, she said she wasn't hungry.",
+            "Elsa, you're doing great. The ambulance is coming. Can you roll mormor onto her side, like sleeping on the side?",
+            "She's heavy. ... Okay, she's on her side.",
+            "Can you open the green door and then come back to the phone? Stay with mormor."
           ]
         }
       ],
@@ -1705,6 +1948,22 @@
               "time": "00:40",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, vad har hänt?",
+            "Hej, min sambo har ätit räkor och nu får han inte luft ordentligt!",
+            "Vilken adress är ni på?",
+            "Magistratsvägen 47, Lund, trappa tre.",
+            "Hur gammal är han? Är han vaken?",
+            "Han är 34. Han är vaken men han säger att det känns som att halsen blir trång.",
+            "Har han svullnad i ansiktet eller utslag?",
+            "Läpparna är jättesvullna och han har röda prickar över hela magen. Han låter hes.",
+            "Har han varit allergisk förut? Har han en adrenalinpenna?",
+            "Han är allergisk mot skaldjur men vi trodde det var lugnt. Ingen penna, den gick ut förra året.",
+            "Mår han illa eller känner sig yr?",
+            "Han säger att han är yr och han har kräkts en gång.",
+            "Jag skickar en ambulans med blåljus nu. Låt honom sitta upp om han andas lättare så, men lägg honom ner med benen högt om han blir svimfärdig.",
+            "Okej. Snälla skynda er."
           ]
         }
       ],
@@ -1838,6 +2097,14 @@
               "time": "00:02",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Please, my friend, he's not breathing, he just fell down!",
+            "Where are you? Give me the address.",
+            "We're at the student flats on Sparta, Tornavägen, the building by the...",
+            "Hello? Which building? Hello?",
+            "The line is dead. I'm calling back and starting a phone position trace."
           ]
         }
       ],
@@ -1961,6 +2228,19 @@
               "time": "00:45",
               "urgency": "E"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Yeah hi, there's been a huge accident, a guy got hit by like a bus.",
+            "Where is this?",
+            "At, um, Mårtenstorget. Or no wait, Clemenstorget.",
+            "Which one? Is the person awake?",
+            "He's, uh... (laughing in background) shut up! ... He's totally dead, there's blood everywhere.",
+            "Is there a bus there now? Are other people helping?",
+            "Yeah the bus drove away. Say it's a tractor! (laughing)",
+            "I need to tell you that calls to 112 are recorded and your phone number is visible to us. Is anyone actually injured?",
+            "... no. Sorry. It was a joke. Sorry sorry.",
+            "Calling 112 when there is no emergency can stop people who need help. I'm ending the call and this will be reported."
           ]
         }
       ],
@@ -2038,6 +2318,23 @@
               "time": "00:41",
               "urgency": "C"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Hi, I fell off an electric scooter and I think my wrist is broken.",
+            "Where are you?",
+            "On Sölvegatan, outside the physics building at LTH.",
+            "Did you hit your head? Were you wearing a helmet?",
+            "I had a helmet on. I landed on my hand, my head is fine.",
+            "Were you knocked out at all? Any neck pain?",
+            "No, I remember everything. No neck pain.",
+            "Describe the wrist.",
+            "It looks bent, kind of like a fork. It hurts a lot but I can move my fingers.",
+            "Is it bleeding? Is the skin broken?",
+            "No, just swollen. The skin is okay.",
+            "Is someone with you who can drive you to the emergency department?",
+            "My friend is here, she has a car.",
+            "Then the quickest is that she drives you to the emergency department at SUS Lund. Support the arm, don't eat or drink in case you need surgery. Call back if you feel faint or the fingers go numb."
           ]
         }
       ],
@@ -2128,6 +2425,21 @@
               "time": "00:40",
               "urgency": "B"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "My son has asthma and he can't breathe properly, the inhaler isn't working like it should.",
+            "Where are you?",
+            "Linero, Smörlyckan 5, in Lund. It's a terraced house.",
+            "How old is he? How much inhaler has he taken?",
+            "He's ten. He's taken four puffs of the blue one in the last half hour.",
+            "Can he speak in full sentences?",
+            "Only a few words, then he has to breathe. He's sitting leaning forward on the table.",
+            "Is his skin or lips a normal colour?",
+            "His lips are okay. He's pale. I can see the skin pulling in between his ribs.",
+            "Has he been this bad before?",
+            "Once, two years ago, he was at hospital overnight. He has a cold this week.",
+            "I'm sending an ambulance. Give two more puffs with the spacer now. Keep him sitting up, keep calm with him."
           ]
         }
       ],
@@ -2262,6 +2574,23 @@
               "time": "01:04",
               "urgency": "C"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "I think I'm having a heart attack, my heart is racing and my chest is tight!",
+            "Okay, I'm here. Where are you?",
+            "Home, Karl XII-gatan 9, Lund. I'm alone.",
+            "How old are you? When did it start?",
+            "I'm 24. Ten minutes ago, I was studying for an exam tomorrow.",
+            "Are you breathing fast?",
+            "Yes really fast. And my hands and lips are tingling, my fingers are cramping.",
+            "Does the chest pain go to your arm, jaw or back?",
+            "No, it's just tight in the middle. It doesn't get worse when I move.",
+            "Have you had anything like this before? Any heart problems, or medicines?",
+            "I've had panic attacks before, last month. No heart problems. I don't take anything.",
+            "Try to breathe slowly with me: in through the nose for four, out through the mouth for six.",
+            "Okay... it's getting a bit better. The tingling is less.",
+            "Good. A nurse will call you back within a few minutes. If you get pain spreading to your arm, faint, or feel worse, call 112 again."
           ]
         }
       ],
@@ -2366,6 +2695,23 @@
               "time": "00:56",
               "urgency": "B"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Hi, I'm from home care. I just arrived at a client's flat and she's lying on the kitchen floor.",
+            "Address?",
+            "Bryggaregatan 4B, Lund, ground floor.",
+            "Is she awake and talking?",
+            "Yes, she's awake and talking. She says she fell when she got up for water in the night, around two.",
+            "So she has been on the floor for several hours?",
+            "Yes, maybe seven hours. She's very cold and she has wet herself.",
+            "Where does she have pain?",
+            "Her right hip. The right leg looks shorter and the foot is turned out to the side.",
+            "Did she hit her head? Is she confused?",
+            "She has a bump on the forehead. She's a bit slow but she knows where she is.",
+            "Does she take blood thinners?",
+            "Let me check the list... yes, Waran.",
+            "I'm sending an ambulance. Don't try to lift her. Put a blanket over her and under her if you can without moving the leg."
           ]
         }
       ],
@@ -2499,6 +2845,20 @@
               "time": "00:17",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "A guy is having a seizure here at the gym, he's shaking all over!",
+            "Which gym, what address?",
+            "The gym at Nova Lund shopping centre, upstairs.",
+            "How long has he been shaking?",
+            "It started before I called, now it's like six, seven minutes. It's not stopping.",
+            "Is there anything around him he can hit? Move things away, don't put anything in his mouth.",
+            "We moved the weights. There's foam coming from his mouth and his lips look blue.",
+            "Does anyone know him? Does he have epilepsy or diabetes?",
+            "Nobody knows him. He was lifting heavy and then just fell.",
+            "I'm sending an ambulance with sirens. When the shaking stops, turn him on his side and check if he's breathing.",
+            "Still shaking. Okay. Staff is getting the defibrillator too."
           ]
         }
       ],
@@ -2619,6 +2979,21 @@
               "time": "00:18",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "My husband got a terrible pain in his chest all of a sudden, he's screaming.",
+            "Where are you?",
+            "Rådmansvägen 21, Södra Sandby.",
+            "How old is he? Describe the pain.",
+            "62. He says it feels like something is tearing inside, and it goes straight through to his back.",
+            "When did it start?",
+            "Just five minutes ago, it came at once, at full strength, when he was carrying the groceries.",
+            "Is he awake? Is he sweating?",
+            "He's awake, very pale and sweating. His left leg feels numb, he says.",
+            "Does he have high blood pressure or other illness?",
+            "Very high blood pressure, but he stopped taking the pills.",
+            "I'm sending an ambulance now with sirens. Let him lie down still. Don't give him any medicine until the ambulance arrives."
           ]
         }
       ],
@@ -2757,6 +3132,21 @@
               "time": "00:17",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "My wife woke up strange this morning. I don't know if she's just tired.",
+            "What's the address?",
+            "Ringvägen 12, Staffanstorp.",
+            "What is strange about her?",
+            "Her left arm just falls down on the bed when she tries to lift it. And her words are slurry.",
+            "Ask her to smile. Is the face the same on both sides?",
+            "Smile, Inga. ... The left side of the mouth hangs down.",
+            "When did you last see her normal?",
+            "Last night, we watched the news together at ten, she was fine. Then we slept.",
+            "Does she take any blood thinners?",
+            "No, just something for cholesterol.",
+            "This sounds like a stroke. I'm sending an ambulance with sirens. Don't give her food or drink."
           ]
         }
       ],
@@ -2888,6 +3278,19 @@
               "time": "00:31",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hi, sorry, it's loud here. My friend is acting weird, we thought he was just drunk but he only had two beers.",
+            "Where are you?",
+            "A party at Grönegatan 30 in Lund, top floor.",
+            "What is he doing that is weird?",
+            "He's talking like his mouth is full, and he keeps dropping his glass from his right hand.",
+            "Can he smile and lift both arms?",
+            "His smile is crooked. His right arm goes down slower. He says he has a really bad headache.",
+            "When did this start?",
+            "Like twenty minutes ago. Right after he was laughing really hard.",
+            "This could be a stroke, even at his age. I'm sending an ambulance with sirens. Keep him lying with his head a bit up, no more drinks."
           ]
         }
       ],
@@ -3011,6 +3414,19 @@
               "time": "00:03",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "My boyfriend just sent me a text that says 'sorry for everything, I love you, goodbye'. He's not answering.",
+            "Where is he?",
+            "I think at his flat, Vildandsvägen 7 in Lund. I'm in Malmö.",
+            "Has he talked about hurting himself before?",
+            "He tried once before, with pills. He's been really down since he lost his job.",
+            "Does he have access to pills or weapons?",
+            "He has his mum's old sleeping pills. And he has a hunting rifle.",
+            "What's his name, age and phone number?",
+            "Jonas, 29. I'll send you the number. Please hurry.",
+            "I'm sending police and an ambulance to the flat now. Keep trying to call him, and stay on this line."
           ]
         }
       ],
@@ -3150,6 +3566,21 @@
               "time": "00:48",
               "urgency": "B"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "My daughter has cut her arm. There was blood on the bathroom floor.",
+            "Where are you?",
+            "Pilegatan 15, Lund.",
+            "How old is she? Is the bleeding still going?",
+            "She's 16. I pressed a towel on it, it has almost stopped now.",
+            "How deep and long are the cuts?",
+            "Several lines on the forearm, most are shallow but one is open, maybe three centimetres.",
+            "Is she awake and talking? Has she taken any pills or alcohol?",
+            "She's talking, she's crying. She says no pills. She says she did it because she couldn't handle it anymore.",
+            "Has she said she wants to die?",
+            "She says she doesn't want to die, she just wanted the feeling to stop. She has done it before but not like this.",
+            "I'm sending an ambulance. Keep pressing on the wound, stay with her, and remove sharp objects and medicines from the room."
           ]
         }
       ],
@@ -3265,6 +3696,20 @@
               "time": "00:03",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "A car has rolled over on the E22, it's lying on its roof in the ditch!",
+            "Where exactly on the E22? Which direction?",
+            "Towards Malmö, just after the Lund Södra exit.",
+            "How many people are in the car?",
+            "I see one, the driver. He's hanging upside down in the belt. He's stuck, the door won't open.",
+            "Is he awake?",
+            "He's moaning, he says he can't feel his legs.",
+            "Is there fire or smoke? Is your car parked safely?",
+            "No fire, but it smells strongly of petrol. My hazard lights are on.",
+            "Do not get close to the car because of the petrol. I'm sending ambulance, rescue service and police now. Is there bleeding you can see?",
+            "There's blood on his face, I can't see much else."
           ]
         }
       ],
@@ -3400,6 +3845,19 @@
               "time": "00:18",
               "urgency": "E"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Someone drove into the back of my car at the traffic lights. I don't know who to call.",
+            "Where are you?",
+            "Trollebergsvägen, at the lights by the Coop.",
+            "Is anyone hurt?",
+            "No, nobody. It was slow, like walking speed. We're both standing outside talking.",
+            "Any neck pain, dizziness, anyone pregnant or children in the cars?",
+            "No, I feel fine, he says he's fine too. Just a dent in the bumper.",
+            "Are the cars blocking traffic?",
+            "A bit, but we can drive them to the side.",
+            "Then you don't need an ambulance. Move the cars to the side, exchange details and fill in an accident report. If you feel neck pain later, contact 1177. I'll inform the police."
           ]
         }
       ],
@@ -3457,6 +3915,21 @@
               "time": "00:22",
               "urgency": "D"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "Hi, I've had a bad cough for three days and it hurts a bit to breathe when I cough. I can't get through to my health centre.",
+            "Where are you calling from?",
+            "Home, Nilstorpsvägen 3 in Lund.",
+            "How old are you? Are you short of breath when you sit still?",
+            "I'm 41. No, sitting still is fine, it's only when I cough a lot.",
+            "Do you have a fever?",
+            "Thirty-eight point two yesterday, today thirty-seven point eight.",
+            "Any chest pain when you're not coughing, or coughing up blood?",
+            "No, none of that. I'm just tired and annoyed.",
+            "Do you have asthma, heart or lung disease?",
+            "No, I'm healthy otherwise.",
+            "This doesn't need an ambulance. Call 1177 for advice, rest and drink. If you get short of breath at rest, high fever or chest pain, call again."
           ]
         }
       ],
@@ -3516,6 +3989,21 @@
               "time": "00:41",
               "urgency": "D"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "I have a burning feeling in my chest after dinner, I just want to check it's nothing serious.",
+            "Where are you and how old are you?",
+            "Spolegatan 6 in Lund. I'm 27.",
+            "When did it start and what does it feel like?",
+            "About an hour after I ate a very spicy curry. It burns up behind the breastbone, with a sour taste in my mouth.",
+            "Does it go to your arm, jaw or back? Are you sweaty or short of breath?",
+            "No, nothing like that. It's the same feeling I always get with my reflux.",
+            "Have you taken anything for it?",
+            "I took an antacid ten minutes ago and it's already a lot better.",
+            "Any heart problems in you or your family?",
+            "No, none.",
+            "This sounds like your reflux. You don't need an ambulance. If the pain changes, gets worse, spreads, or you feel faint or breathless, call 112 again. You can also call 1177."
           ]
         }
       ],
@@ -3579,6 +4067,21 @@
               "time": "00:39",
               "urgency": "C"
             }
+          ],
+          "turns": [
+            "112, what is your emergency?",
+            "My lip has swollen up a bit. I started penicillin yesterday for a throat infection.",
+            "Where are you?",
+            "Home, Fäladstorget 10 in Lund.",
+            "How old are you? When did the swelling start?",
+            "I'm 52. I noticed it maybe half an hour ago. Only the lower lip.",
+            "Any swelling of the tongue or throat, trouble swallowing or breathing, hoarse voice?",
+            "No, I can swallow and breathe fine. My voice is normal.",
+            "Any rash, itching, dizziness or stomach pain?",
+            "A few itchy red spots on my neck. No dizziness.",
+            "Have you taken a dose today?",
+            "Yes, an hour ago.",
+            "Don't take more penicillin. If you have an antihistamine you can take it now. A nurse will call you back to decide if you should come in. If your tongue or throat swells or breathing gets hard, call 112 immediately."
           ]
         }
       ],
@@ -3700,6 +4203,22 @@
               "time": "00:19",
               "urgency": "A"
             }
+          ],
+          "turns": [
+            "112, what has happened?",
+            "Do the police have to come? My friend is just really out of it, I can't wake him.",
+            "We're here to help your friend. Where are you?",
+            "Södra Esplanaden 22, basement storage area.",
+            "Is he breathing?",
+            "Kind of. Very slow. Like one breath and then nothing for a long time.",
+            "Did he take anything?",
+            "Heroin. He shot up about ten minutes ago. He's been clean for months, so maybe he took too much.",
+            "What colour are his lips?",
+            "Kind of grey-blue.",
+            "Do you have naloxone, the nose spray?",
+            "Yes, I have one in my bag.",
+            "Spray it up his nose now, all of it in one nostril. Then tilt his head back and give rescue breaths if you can. I'm sending an ambulance with sirens.",
+            "Okay. I did it. He's still not moving."
           ]
         }
       ],

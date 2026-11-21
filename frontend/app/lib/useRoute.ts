@@ -49,14 +49,15 @@ function estimate(incident: CrewIncident): CrewRoute {
   };
 }
 
-// Road route for the incident, falling back to straight lines with an
-// estimated drive time while loading or when OSRM is unreachable.
-export function useRoute(incident: CrewIncident): CrewRoute {
+// Road route for the incident (null = none), falling back to straight lines
+// with an estimated drive time while loading or when OSRM is unreachable.
+export function useRoute(incident: CrewIncident | null): CrewRoute | null {
   const [road, setRoad] = useState<{ id: string; route: CrewRoute } | null>(null);
   // Memoised so the map only refits when the route actually changes.
-  const fallback = useMemo(() => estimate(incident), [incident]);
+  const fallback = useMemo(() => (incident ? estimate(incident) : null), [incident]);
 
   useEffect(() => {
+    if (!incident) return;
     const controller = new AbortController();
     const lights = incident.lights_and_sirens;
     Promise.all([
@@ -72,5 +73,6 @@ export function useRoute(incident: CrewIncident): CrewRoute {
     return () => controller.abort();
   }, [incident]);
 
+  if (!incident) return null;
   return road?.id === incident.incident_id ? road.route : fallback;
 }
