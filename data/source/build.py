@@ -2,6 +2,7 @@ import json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from guide import URGENCY_LEVELS, RULES, CATEGORIES, SOURCES
 from calls import CALLS
+from crew import CATEGORY_BRIEFING, CALL_BRIEFING
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..") + "/"
 os.makedirs(OUT + "calls", exist_ok=True)
@@ -63,6 +64,19 @@ for call in CALLS:
     g["dashboard"] = {"urgency": DASH_URGENCY[g["urgency"]],
                       "ambulance": {"yes": True, "no": False}.get(g["ambulance"]),
                       "type": ("both" if len(cats) > 1 else "mental") if mental else "physical"}
+    # Crew briefing: what the ambulance crew gets at dispatch (category template + call-specific facts)
+    if g["ambulance"] == "no":
+        g["crew_briefing"] = None
+    else:
+        cb = dict(CATEGORY_BRIEFING[g["category"]])
+        cb.update(CALL_BRIEFING[cid])
+        cb["urgency"] = g["urgency"]
+        cb["bring"] = g["supplies"]
+        cb["extra_units"] = cb["extra_units"] + [r for r in g["other_resources"] if r not in cb["extra_units"]]
+        cb["open_questions"] = g["missing_questions"]
+        if g["ambulance"] == "unclear":
+            cb["note"] = "Dispatch not decided - briefing applies if an ambulance is sent."
+        g["crew_briefing"] = cb
     rec = {"call_id": cid, "synthetic": True, "_note": NOTE, "title": call["title"],
            "incident_id": call.get("incident_id", cid), "language": call.get("language", "en"),
            "tricky_aspects": call["tricky"], "duration_s": turns[-1]["t"], "transcript": turns, "gold_label": g}
