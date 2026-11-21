@@ -35,7 +35,7 @@ from extra_training_calls import EXTRA  # noqa: E402
 MODEL_OUT = os.path.join(ROOT, "frontend", "app", "lib", "ambulanceModel.json")
 REPORT_OUT = os.path.join(HERE, "results.md")
 
-MIN_CALLS = 3      # a term must appear in at least this many training calls
+MIN_CALLS = 2      # a term must appear in at least this many training calls
 L2 = 1e-3          # regularisation strength
 ITERS = 400
 LR = 2.0

@@ -4,7 +4,7 @@
 // so only import this from components loaded with next/dynamic and ssr: false.
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useMap } from "react-leaflet";
 import MapTiles from "./MapTiles";
 import type { UrgencyLevel } from "../lib/crew";
@@ -40,10 +40,24 @@ export function OsmTiles() {
 }
 
 // Zooms the map to fit the points whenever they change (pass a memoised array).
+// No animation: a zoom still running when the page is hidden (map removed)
+// would fire on a dead map and throw "reading '_leaflet_pos'".
 export function FitBounds({ points, maxZoom = 15 }: { points: [number, number][]; maxZoom?: number }) {
   const map = useMap();
   useEffect(() => {
-    if (points.length) map.fitBounds(L.latLngBounds(points), { padding: [48, 48], maxZoom });
+    if (points.length) map.fitBounds(L.latLngBounds(points), { padding: [48, 48], maxZoom, animate: false });
   }, [map, points, maxZoom]);
   return null;
+}
+
+// With cacheComponents, Next.js hides a page you navigate away from in React
+// <Activity> instead of unmounting it. Hiding runs react-leaflet's cleanup
+// (map.remove()) but keeps the old <div>; showing the page again re-creates
+// Leaflet on that same div, which throws "Map container is being reused by
+// another instance" and crashes the route. Use this as the MapContainer key:
+// it changes on every hide, so the map comes back on a fresh container.
+export function useMapKey() {
+  const [key, setKey] = useState(0);
+  useLayoutEffect(() => () => setKey((k) => k + 1), []);
+  return key;
 }

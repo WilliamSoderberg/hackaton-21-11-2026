@@ -5,7 +5,7 @@
 import { useMemo } from "react";
 import { MapContainer, Marker, Polyline, Tooltip } from "react-leaflet";
 import { type Incident, hospitals } from "../lib/crew";
-import { FitBounds, OsmTiles, pin, urgencyHex } from "./mapParts";
+import { FitBounds, OsmTiles, useMapKey, pin, urgencyHex } from "./mapParts";
 
 const ambulanceIcon = pin("#0f172a", "A", { size: 28 });
 const hospitalIcon = pin("#0284c7", "H", { size: 36 });
@@ -33,8 +33,9 @@ export default function OverviewMap({
   );
   const selected = ranked.find((i) => i.incident_id === selectedId);
 
+  const mapKey = useMapKey();
   return (
-    <MapContainer center={[55.705, 13.2]} zoom={12} scrollWheelZoom={false} className="h-full w-full">
+    <MapContainer key={mapKey} center={[55.705, 13.2]} zoom={12} scrollWheelZoom={false} className="h-full w-full">
       <OsmTiles />
       {hospitals.map((h) => (
         <Marker key={h.name} position={[h.lat, h.lng]} icon={hospitalIcon}>

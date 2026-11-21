@@ -14,6 +14,7 @@ import {
   scenarios,
   speakerLabel,
 } from "../lib/calls";
+import { type AmbulancePrediction, predictAmbulance } from "../lib/ambulanceModel";
 import { addLine, endCall, setFloor, startCall } from "../lib/callActions";
 import { downloadCallSummary } from "../lib/summaryPdf";
 import { useSharedCall } from "../lib/useSharedCall";
@@ -98,6 +99,31 @@ function useCallDuration(state: CallState | null, clockOffset: number) {
   if (!state?.startedAt || (!state.endedAt && !now)) return 0;
   const end = state.endedAt ?? now + clockOffset;
   return Math.max(0, end - state.startedAt);
+}
+
+// Re-reads the conversation every 2 s and asks the trained ambulance model
+// (lib/ambulanceModel.ts) whether it needs an ambulance. Null until there is text.
+const AMBULANCE_MODEL_MS = 2000;
+
+function useAmbulanceModel(lines: TranscriptLine[]): AmbulancePrediction | null {
+  const latest = useRef(lines);
+  const [prediction, setPrediction] = useState<AmbulancePrediction | null>(null);
+  useEffect(() => {
+    latest.current = lines;
+  }, [lines]);
+  useEffect(() => {
+    const evaluate = () => {
+      const turns = latest.current.map((l) => l.text);
+      setPrediction(turns.length ? predictAmbulance(turns) : null);
+    };
+    const first = setTimeout(evaluate, 0);
+    const timer = setInterval(evaluate, AMBULANCE_MODEL_MS);
+    return () => {
+      clearTimeout(first);
+      clearInterval(timer);
+    };
+  }, []);
+  return prediction;
 }
 
 // Transcribes this device's microphone into the shared call as `role`.
@@ -230,6 +256,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
   const classification = callerLineCount && assessment ? assessment.value : emptyClassification;
   const backendError = state?.backendError ?? null;
   const analysing = callerLineCount > 0 && assessment?.callerLineCount !== callerLineCount && !backendError;
+  const ambulanceModel = useAmbulanceModel(lines);
 
   function run(action: () => Promise<void>) {
     setActionError(null);
@@ -313,7 +340,7 @@ function ResponderView({ state, connected, clockOffset, role, setRole }: ViewPro
             )}
             <UrgencyMeter classification={classification} />
             <div className="mt-5 grid grid-cols-2 gap-3">
-              <AmbulanceTile ambulance={classification.ambulance} hasData={callerLineCount > 0} />
+              <AmbulanceTile prediction={ambulanceModel} />
               <Stat label="Location" value={lines.length ? scenario.location : "—"} />
             </div>
             <div className="mt-5">
@@ -663,7 +690,10 @@ function UrgencyMeter({ classification }: { classification: Classification }) {
   );
 }
 
-function AmbulanceTile({ ambulance, hasData }: { ambulance: boolean; hasData: boolean }) {
+// Shows the trained model's verdict (updated every 2 s), not the backend's.
+function AmbulanceTile({ prediction }: { prediction: AmbulancePrediction | null }) {
+  const hasData = prediction !== null;
+  const ambulance = prediction?.ambulance ?? false;
   return (
     <div
       className={`rounded-lg p-3 ring-1 ${
@@ -682,6 +712,9 @@ function AmbulanceTile({ ambulance, hasData }: { ambulance: boolean; hasData: bo
       >
         {!hasData ? "—" : ambulance ? "Yes" : "No"}
       </p>
+      <span className="text-[11px] text-slate-400">
+        {hasData ? `Trained model · ${Math.round(prediction.probability * 100)}%` : "Trained model · every 2 s"}
+      </span>
     </div>
   );
 }

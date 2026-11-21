@@ -6,7 +6,7 @@ import { useMemo } from "react";
 import { MapContainer, Marker, Polyline, Tooltip } from "react-leaflet";
 import type { CrewIncident } from "../lib/crew";
 import type { CrewRoute } from "../lib/useRoute";
-import { FitBounds, OsmTiles, pin } from "./mapParts";
+import { FitBounds, OsmTiles, useMapKey, pin } from "./mapParts";
 
 const icons = {
   scene: pin("#dc2626", "!", { pulse: true }),
@@ -18,8 +18,10 @@ export default function CrewMap({ incident, route }: { incident: CrewIncident; r
   const { scene, ambulance_position: ambulance, destination_hospital: hospital } = incident;
   const dashed = route.source === "estimate" ? "8 10" : undefined;
   const points = useMemo(() => [...route.toScene.path, ...route.toHospital.path], [route]);
+  const mapKey = useMapKey();
   return (
     <MapContainer
+      key={mapKey}
       center={[scene.lat, scene.lng]}
       zoom={13}
       scrollWheelZoom={false}

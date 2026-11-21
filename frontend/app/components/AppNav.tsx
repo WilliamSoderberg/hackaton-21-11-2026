@@ -8,6 +8,7 @@ const links = [
   { href: "/crew/overview", label: "Crew overview" },
   { href: "/crew", label: "Ambulance crew" },
   { href: "/calls", label: "Ongoing calls" },
+  { href: "/testbench", label: "Model testbench" },
 ];
 
 // "/crew/<incident>" belongs to "Ambulance crew"; the overview has its own tab.

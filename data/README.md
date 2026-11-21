@@ -90,3 +90,16 @@ Suggested scoring: category accuracy, urgency exact + within-one, ambulance accu
 - **1177 Skåne** – Swedish three-level ambulance priority description.
 - **HF `spikecodes/911-call-transcripts`** (MIT tag, empty README, provenance unknown, 518 calls, `messages` role/content, no timestamps) – looked at for conversational style only (disfluencies, "112/911, what's your emergency?" opening). Nothing copied, not included here.
 - Medical content (FAST, telephone CPR, anaphylaxis signs etc.) is general first-aid knowledge written in our own words.
+
+## Ambulance model (`model/`)
+
+A small trained "ambulance or not" classifier over the whole responder + caller conversation: TF-IDF (word unigrams + bigrams) and logistic regression, plain Python, no dependencies.
+
+```
+python3 data/model/train_ambulance.py    # ~1 min; writes frontend/app/lib/ambulanceModel.json + data/model/results.md
+```
+
+- Trains on the calls above with `ambulance` yes/no ("unclear" is left out), including partial transcripts so it works mid-call, plus `model/extra_training_calls.py`: 24 extra SYNTHETIC calls, mostly no-ambulance, because the main set has only 5.
+- Leave-one-call-out on the main set: **27/29** (ambulance 23/24, no ambulance 4/5). Misses: 07a (collision witness) and 16 (prank call). Full table in `model/results.md`.
+- The frontend runs it in the browser (`frontend/app/lib/ambulanceModel.ts`, which must tokenise exactly like the Python). The dashboard's **Ambulance** tile re-scores the live conversation every 2 s; **Model testbench** (`/testbench`) lets you paste a conversation and see the verdict, the score turn by turn, and the words that drove it.
+- Tiny synthetic dataset: it partly learns surface cues (e.g. third-person "he/she" calls lean ambulance). Not clinically validated.
