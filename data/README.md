@@ -13,16 +13,19 @@
 | `calls/all_calls.jsonl` | All calls, one JSON object per line, for batch evaluation. |
 | `source/` | Python that generates all of the above (`python3 source/build.py`). **In the team repo only `README.md`, `classification_guide.md` and `source/` are committed. Run `python3 data/source/build.py` once to generate `classification_guide.json` and everything in `calls/`.** (Full set is also in data.zip.) It also checks that every red-flag quote appears verbatim in exactly one transcript turn. Edit `calls.py` / `guide.py` and re-run. |
 
-## Evaluation: how good is the dashboard's classifier?
+## Evaluation: how good is the classifier?
 
-`data/eval/eval_keyword_baseline.ts` runs the dashboard's current keyword classifier (`frontend/app/lib/calls.ts`) on every call and compares it with `gold_label.dashboard` (same labels as the dashboard: Low/Medium/High/Critical, ambulance true/false, physical/mental/both).
+`data/eval/eval_classifier.ts` sends every call to the backend (`POST /api/classify`) and compares the answer with `gold_label.dashboard` (same labels as the dashboard: Low/Medium/High/Critical, ambulance true/false, physical/mental/both). It works in both backend modes, so you get a "before" (keyword) and "after" (Claude) number.
 
 ```
-python3 data/source/build.py
-node --experimental-strip-types data/eval/eval_keyword_baseline.ts
+python3 data/source/build.py                      # generates data/calls/*
+cd backend && cargo run                           # keyword mode; set ANTHROPIC_API_KEY for Claude mode
+node --experimental-strip-types data/eval/eval_classifier.ts   # from repo root, in another terminal
 ```
 
-Current result (see `data/eval/keyword_baseline_results.md`): **urgency exact 1/13, under-triaged 11/13, ambulance 6/12, 0 red flags with quotes.** Keywords miss downplaying callers, agonal breathing, atypical heart attack, stroke described in broken English and hidden suicide risk. This is the "before" number for the pitch; swap `classify()` for the Claude classifier and re-run to get the "after" number.
+Results are written to `data/eval/results_keyword.md` or `data/eval/results_claude.md`.
+
+Keyword mode (measured 21 Nov): **urgency exact 1/13, under-triaged 11/13, ambulance 6/12, red flags matched ~8/59.** Keywords miss downplaying callers, agonal breathing, atypical heart attack, stroke described in broken English and hidden suicide risk.
 
 ## Calls (13 calls, 12 scenarios)
 
