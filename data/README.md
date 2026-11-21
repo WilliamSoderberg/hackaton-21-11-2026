@@ -53,6 +53,7 @@ Current result (see `data/eval/keyword_baseline_results.md`): **urgency exact 1/
 - `missing_questions` – important questions the operator did **not** ask (the co-pilot should suggest these)
 - `supplies` – what the crew should bring
 - `handover` – reference ambulance handover summary
+- `crew_briefing` – what the ambulance crew gets at dispatch: `crew`, `extra_units` (police, rescue, interpreter…), `lights_and_sirens`, `destination` (suggested Lund hospital), `pre_alert`, `prepare_en_route`, `bring` (supplies), `key_facts`, `scene_notes`, `open_questions`. `null` when no ambulance is sent. Templates per category + call-specific facts live in `source/crew.py`.
 - `dashboard` – the same gold label mapped to the dashboard's fields: `urgency` (A→Critical, B→High, C→Medium, D/E→Low), `ambulance` (true/false/null = unclear), `type` (physical / mental / both)
 - extras: `patients` (07b, two patients), `translations` (05)
 
