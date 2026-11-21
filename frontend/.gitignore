@@ -43,3 +43,6 @@ next-env.d.ts
 
 # downloaded call summaries
 /call-summary-*.pdf
+
+# demo HTTPS certificate (npm run dev:demo)
+/certificates

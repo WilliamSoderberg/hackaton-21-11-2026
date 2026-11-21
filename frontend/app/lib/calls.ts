@@ -93,6 +93,30 @@ export const emptyClassification: Classification = {
   indicators: [],
 };
 
-// All categorisation happens in the Rust backend (backend/src); the frontend
-// only sends the transcript and displays the result, via the classifyTranscript
-// Server Action (app/lib/classify.ts).
+// Live calls come from the participants' microphones instead of a script.
+export const MICROPHONE_SOURCE_ID = "microphone";
+
+// Which side of the call this device is on. Each device picks one; the
+// responder runs the dispatcher dashboard, the caller is the person in need.
+export type Role = "responder" | "caller";
+
+export const roleSpeaker: Record<Role, Speaker> = { responder: "Operator", caller: "Caller" };
+export const speakerLabel: Record<Speaker, string> = { Operator: "Responder", Caller: "Caller" };
+
+// The single shared call that every connected device sees. Lives on the
+// Next.js server (app/lib/callStore.ts) and is streamed to devices over
+// /api/call/events. All categorisation happens in the Rust backend
+// (backend/src), and only the caller's lines are sent to it.
+export type CallState = {
+  callId: number;
+  status: "idle" | "active" | "ended";
+  sourceId: string; // MICROPHONE_SOURCE_ID or a scenario id
+  startedAt: number | null; // server clock, ms
+  endedAt: number | null;
+  lines: TranscriptLine[];
+  // Latest backend assessment, tagged with how many caller lines it covers.
+  assessment: { callerLineCount: number; value: Classification } | null;
+  backendError: string | null;
+  participants: Record<Role, number>;
+  serverNow: number; // server clock when this state was sent
+};
