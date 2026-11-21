@@ -2,7 +2,7 @@
 //!
 //! `POST /api/classify` takes the current call transcript from the dashboard
 //! and runs two models in parallel:
-//!   * a triage model  -> urgency, urgency score, ambulance yes/no, physical/mental split
+//!   * a triage model  -> urgency, urgency score, ambulance yes/no
 //!   * an indicator model -> the detected indicators shown as chips
 //!
 //! `POST /api/triage/keyword` rates several transcripts with the keyword
@@ -31,8 +31,8 @@ use crate::{
     calls::CallDb,
     claude::ClaudeClient,
     types::{
-        Classification, ClassifyRequest, KeywordTriageRequest, KeywordUrgency, ModelSource, Sources, Speaker, TranscriptLine, Triage,
-        Urgency, format_transcript,
+        Classification, ClassifyRequest, KeywordTriageRequest, KeywordUrgency, ModelSource,
+        Sources, Speaker, TranscriptLine, Triage, Urgency, format_transcript,
     },
 };
 
@@ -158,13 +158,10 @@ async fn classify(claude: Option<&ClaudeClient>, lines: &[TranscriptLine]) -> Cl
         ),
     };
 
-    let physical = triage.physical;
     Classification {
         urgency: triage.urgency,
         urgency_score: triage.urgency_score,
         ambulance: triage.ambulance,
-        physical,
-        mental: 100 - physical,
         indicators: indicators.into_iter().map(|i| i.label).collect(),
         sources: Sources {
             triage: triage_src,
@@ -178,14 +175,11 @@ fn empty_classification() -> Classification {
         urgency: Urgency::Low,
         urgency_score: 0,
         ambulance: false,
-        physical: 50,
     };
     Classification {
         urgency: t.urgency,
         urgency_score: t.urgency_score,
         ambulance: t.ambulance,
-        physical: t.physical,
-        mental: 100 - t.physical,
         indicators: vec![],
         sources: Sources {
             triage: ModelSource::Keyword,
@@ -203,7 +197,6 @@ mod tests {
         let c = classify(None, &[]).await;
         assert_eq!(c.urgency_score, 0);
         assert!(c.indicators.is_empty());
-        assert_eq!(c.physical + c.mental, 100);
     }
 
     #[tokio::test]

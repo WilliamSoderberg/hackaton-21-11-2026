@@ -11,8 +11,6 @@ export type Classification = {
   urgency: Urgency;
   urgencyScore: number; // 0–100
   ambulance: boolean;
-  physical: number; // 0–100, share of physical indicators
-  mental: number; // 0–100, share of mental indicators
   indicators: string[];
   // Which backend model produced each part ("claude" or offline "keyword").
   sources?: { triage: ModelSource; indicators: ModelSource };
@@ -88,8 +86,6 @@ export const emptyClassification: Classification = {
   urgency: "Low",
   urgencyScore: 0,
   ambulance: false,
-  physical: 50,
-  mental: 50,
   indicators: [],
 };
 
@@ -137,8 +133,6 @@ export type CallRecord = {
   urgency: Urgency | null;
   urgencyScore: number | null;
   ambulance: boolean | null;
-  physical: number | null;
-  mental: number | null;
   indicators: string[];
   transcript: TranscriptLine[];
   updatedAt: number;

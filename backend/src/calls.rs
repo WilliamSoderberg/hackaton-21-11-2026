@@ -36,8 +36,6 @@ CREATE TABLE IF NOT EXISTS calls (
     urgency       TEXT    CHECK (urgency IN ('Low', 'Medium', 'High', 'Critical')),
     urgency_score INTEGER,
     ambulance     INTEGER,                   -- 0/1, NULL until first assessment
-    physical      INTEGER,
-    mental        INTEGER,
     indicators    TEXT    NOT NULL DEFAULT '[]', -- JSON array of strings
     transcript    TEXT    NOT NULL DEFAULT '[]', -- JSON array of TranscriptLine
     updated_at    INTEGER NOT NULL
@@ -46,7 +44,7 @@ CREATE INDEX IF NOT EXISTS calls_status ON calls (status, started_at);
 ";
 
 const COLUMNS: &str = "id, source_id, label, location, status, started_at, ended_at, urgency, \
-     urgency_score, ambulance, physical, mental, indicators, transcript, updated_at";
+     urgency_score, ambulance, indicators, transcript, updated_at";
 
 /// Upper bounds on what one request may store.
 const MAX_TEXT: usize = 500;
@@ -109,15 +107,13 @@ impl CallDb {
         if let Some(a) = &patch.assessment {
             tx.execute(
                 "UPDATE calls SET urgency = ?2, urgency_score = ?3, ambulance = ?4,
-                     physical = ?5, mental = ?6, indicators = ?7
+                     indicators = ?5
                  WHERE id = ?1",
                 params![
                     id,
                     format!("{:?}", a.urgency),
                     a.urgency_score,
                     a.ambulance,
-                    a.physical,
-                    a.mental,
                     serde_json::to_string(&a.indicators).expect("strings serialize"),
                 ],
             )?;
@@ -187,8 +183,6 @@ fn from_row(row: &Row) -> rusqlite::Result<CallRecord> {
         urgency: urgency.as_deref().and_then(parse_urgency),
         urgency_score: row.get("urgency_score")?,
         ambulance: row.get("ambulance")?,
-        physical: row.get("physical")?,
-        mental: row.get("mental")?,
         indicators: serde_json::from_str(&indicators).unwrap_or_default(),
         transcript: serde_json::from_str(&transcript).unwrap_or_default(),
         updated_at: row.get("updated_at")?,
@@ -241,8 +235,6 @@ pub struct CallRecord {
     pub urgency: Option<Urgency>,
     pub urgency_score: Option<u8>,
     pub ambulance: Option<bool>,
-    pub physical: Option<u8>,
-    pub mental: Option<u8>,
     pub indicators: Vec<String>,
     pub transcript: Vec<TranscriptLine>,
     pub updated_at: i64,
@@ -265,8 +257,6 @@ pub struct Assessment {
     pub urgency: Urgency,
     pub urgency_score: u8,
     pub ambulance: bool,
-    pub physical: u8,
-    pub mental: u8,
     #[serde(default)]
     pub indicators: Vec<String>,
 }
@@ -371,8 +361,6 @@ mod tests {
                 urgency: Urgency::Critical,
                 urgency_score: 90,
                 ambulance: true,
-                physical: 80,
-                mental: 20,
                 indicators: vec!["Not breathing".into()],
             }),
             transcript: Some(vec![TranscriptLine {

@@ -15,7 +15,7 @@
 
 ## Evaluation: how good is the classifier?
 
-`data/eval/eval_classifier.ts` sends every call to the backend (`POST /api/classify`) and compares the answer with `gold_label.dashboard` (same labels as the dashboard: Low/Medium/High/Critical, ambulance true/false, physical/mental/both). It works in both backend modes, so you get a "before" (keyword) and "after" (Claude) number.
+`data/eval/eval_classifier.ts` sends every call to the backend (`POST /api/classify`) and compares the answer with `gold_label.dashboard` (same labels as the dashboard: Low/Medium/High/Critical, ambulance true/false). It works in both backend modes, so you get a "before" (keyword) and "after" (Claude) number.
 
 ```
 python3 data/source/build.py                      # generates data/calls/*

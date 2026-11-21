@@ -13,13 +13,12 @@ runs two models in parallel and returns:
 ```json
 {
   "urgency": "Critical", "urgencyScore": 80, "ambulance": true,
-  "physical": 100, "mental": 0,
   "indicators": ["Not breathing", "Unresponsive"],
   "sources": { "triage": "claude", "indicators": "claude" }
 }
 ```
 
-- **Triage model**: urgency, urgency score, ambulance yes/no, physical/mental split.
+- **Triage model**: urgency, urgency score, ambulance yes/no.
 - **Indicator model**: the detected indicators.
 
 With `ANTHROPIC_API_KEY` set, both are Claude calls (`claude-opus-5-5` by default, override

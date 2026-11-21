@@ -52,27 +52,17 @@ impl Urgency {
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize, Serialize)]
-#[serde(rename_all = "lowercase")]
-pub enum IndicatorKind {
-    Physical,
-    Mental,
-}
-
 /// Output of the triage model: how urgent, and whether to send an ambulance.
 #[derive(Debug, Clone, PartialEq)]
 pub struct Triage {
     pub urgency: Urgency,
     pub urgency_score: u8,
     pub ambulance: bool,
-    /// 0–100 share of the problem that is physical; mental = 100 - physical.
-    pub physical: u8,
 }
 
 #[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
 pub struct Indicator {
     pub label: String,
-    pub kind: IndicatorKind,
 }
 
 /// Which model produced each part of the answer.
@@ -96,8 +86,6 @@ pub struct Classification {
     pub urgency: Urgency,
     pub urgency_score: u8,
     pub ambulance: bool,
-    pub physical: u8,
-    pub mental: u8,
     pub indicators: Vec<String>,
     pub sources: Sources,
 }
