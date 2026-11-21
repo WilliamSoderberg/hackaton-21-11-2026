@@ -25,9 +25,9 @@ node --experimental-strip-types data/eval/eval_classifier.ts   # from repo root,
 
 Results are written to `data/eval/results_keyword.md` or `data/eval/results_claude.md`.
 
-Keyword mode (measured 21 Nov): **urgency exact 1/13, under-triaged 11/13, ambulance 6/12, red flags matched ~8/59.** Keywords miss downplaying callers, agonal breathing, atypical heart attack, stroke described in broken English and hidden suicide risk.
+Keyword mode (measured 21 Nov on calls 01-12): **urgency exact 1/13, under-triaged 11/13, ambulance 6/12, red flags matched ~8/59.** Keywords miss downplaying callers, agonal breathing, atypical heart attack, stroke described in broken English and hidden suicide risk.
 
-## Calls (13 calls, 12 scenarios)
+## Calls (33 calls, 32 scenarios)
 
 | Call | Scenario | Category | Urgency | Ambulance | Tricky part |
 |---|---|---|---|---|---|
@@ -44,6 +44,26 @@ Keyword mode (measured 21 Nov): **urgency exact 1/13, under-triaged 11/13, ambul
 | 10 | Itchy rash after new detergent | allergic_reaction | D | **no** | negative control (over-triage test) |
 | 11 | Speech trouble that went away, AF | stroke | B | yes | TIA, symptoms resolved |
 | 12 | Known epilepsy, typical seizure, awake | seizure | C | **unclear** | borderline, AI should ask, not guess |
+| 13 | Grandma won't wake up, caller is 8 years old | unconscious_cardiac_arrest | A | yes | child caller alone, hypoglycaemia |
+| 14 | Shrimp allergy, throat tight (**whole call in Swedish**) | allergic_reaction | A | yes | non-English transcript, no EpiPen |
+| 15 | "He's not breathing" then line drops | unconscious_cardiac_arrest | A | yes | dropped call, partial address |
+| 16 | Teenagers report fake bus accident | traffic_trauma | E | **no** | prank call, admits hoax |
+| 17 | E-scooter fall, deformed wrist | traffic_trauma | C | **unclear** | obvious injury but stable, own transport |
+| 18 | Boy 10, asthma, inhaler not helping | breathing_difficulty | B | yes | partial response, child |
+| 19 | Woman 24, chest tight + tingling hands | chest_pain | C | **unclear** | panic attack mimics MI |
+| 20 | Woman 84 on floor since night, leg turned out | traffic_trauma | B | yes | long lie, hip fracture, warfarin |
+| 21 | Man seizing 7 min at gym | seizure | A | yes | status epilepticus, unknown history |
+| 22 | Tearing chest pain to the back | chest_pain | A | yes | aortic dissection (no aspirin) |
+| 23 | Woke up with weak left side | stroke | A | yes | wake-up stroke, last seen well |
+| 24 | Man 38 at party, "just drunk" | stroke | A | yes | symptoms blamed on alcohol |
+| 25 | Goodbye text, boyfriend not answering | mental_health_suicide | A | yes | third-party caller, firearm, police lead |
+| 26 | Daughter 16 cut her forearm | mental_health_suicide | B | yes | self-harm, bleeding controlled |
+| 27 | Car on roof on E22, driver trapped | traffic_trauma | A | yes | rescue + police, fuel leak |
+| 28 | Low-speed rear-end, nobody hurt | traffic_trauma | E | **no** | negative control |
+| 29 | Cough and cold 3 days | breathing_difficulty | D | **no** | negative control |
+| 30 | Burning chest after curry, known reflux | chest_pain | D | **no** | negative control for chest pain |
+| 31 | Lip swelling after new penicillin | allergic_reaction | C | **unclear** | borderline allergy |
+| 32 | Friend barely breathing after heroin | unconscious_cardiac_arrest | A | yes | caller fears police, naloxone |
 
 ## Gold label fields
 
