@@ -78,3 +78,19 @@ CALL_LOCATIONS = {
     "call_32_opioid_overdose_friend": dict(address="Södra Esplanaden 22, Lund (basement storage)", lat=55.7000, lng=13.1950,
                                            unit="AMB 1390", amb_lat=55.7110, amb_lng=13.2090, hospital="sus_lund"),
 }
+
+# Minutes between the 112 call and "now" when the demo page loads (synthetic). The crew overview ranks by
+# urgency, then time-critical category, then this wait time; the page keeps counting up from here.
+MINUTES_SINCE_CALL = {
+    "call_01_classic_chest_pain": 5, "call_02_atypical_mi_woman": 11, "call_03_downplaying_cardiac_arrest": 6,
+    "call_04_anaphylaxis_restaurant": 4, "call_05_stroke_language_barrier": 8, "call_06_panicking_child_seizure": 3,
+    "call_07a_collision_witness": 9, "call_07b_collision_driver": 7, "call_08_hidden_suicide_risk": 12,
+    "call_09_copd_severe_breathing": 6, "call_10_mild_rash_no_ambulance": 21, "call_11_tia_symptoms_resolved": 17,
+    "call_12_known_epilepsy_recovered": 14, "call_13_child_caller_grandma": 4, "call_14_swedish_shrimp_anaphylaxis": 5,
+    "call_15_dropped_call_not_breathing": 3, "call_16_prank_call": 25, "call_17_escooter_wrist": 19,
+    "call_18_child_asthma": 10, "call_19_panic_attack_chest": 16, "call_20_elderly_hip_fall": 22,
+    "call_21_status_epilepticus_gym": 5, "call_22_aortic_dissection": 7, "call_23_wake_up_stroke": 9,
+    "call_24_young_stroke_thought_drunk": 6, "call_25_suicide_text_message": 8, "call_26_self_harm_teen": 13,
+    "call_27_rollover_trapped": 4, "call_28_fender_bender_no_injury": 18, "call_29_cough_cold_no_ambulance": 27,
+    "call_30_heartburn_known_reflux": 15, "call_31_antibiotic_lip_swelling": 12, "call_32_opioid_overdose_friend": 2,
+}
