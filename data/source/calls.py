@@ -551,3 +551,7 @@ CALLS.append(dict(
         handover="Female student, known epilepsy, typical generalised seizure ~1 min, missed dose yesterday, now awake, mild confusion, tongue bite, no head injury. Nurse call-back for decision.",
     ),
 ))
+
+# ---------------------------------------------------------------- 13-32
+from calls_more import MORE
+CALLS += MORE
