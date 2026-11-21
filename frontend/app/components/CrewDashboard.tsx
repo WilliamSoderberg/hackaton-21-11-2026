@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { type CrewUrgencies, urgencyBands } from "../lib/modelUrgency";
-import AppNav from "./AppNav";
+import PageHeader from "./PageHeader";
 
 // Leaflet needs `window`, so the map is only rendered in the browser.
 const CrewMap = dynamic(() => import("./CrewMap"), {
@@ -13,19 +13,14 @@ const CrewMap = dynamic(() => import("./CrewMap"), {
 export default function CrewDashboard({ urgencies }: { urgencies: CrewUrgencies }) {
   return (
     <div className="flex h-dvh flex-col bg-slate-50 text-slate-900">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-red-600 text-lg font-bold text-white">+</span>
-          <div>
-            <h1 className="text-lg font-semibold leading-tight">Ambulance crew</h1>
-            <p className="text-xs text-slate-500">{"Colour = urgency ("}
-              {urgencies.source === "keyword" ? "keyword model" : "data labels, backend offline"}
-              {") · number = % chance an ambulance is needed (trained model) · hover for details"}</p>
-          </div>
-          <AppNav />
-        </div>
+      <PageHeader
+        title="Ambulance crew"
+        subtitle={`Colour = urgency (${
+          urgencies.source === "keyword" ? "keyword model" : "data labels, backend offline"
+        }) · number = % chance an ambulance is needed (trained model) · hover for details`}
+      >
         <Legend />
-      </header>
+      </PageHeader>
       <main className="min-h-0 flex-1">
         <CrewMap urgencies={urgencies} />
       </main>

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { modelInfo, parseConversation, predictAmbulance, type ModelExample } from "../lib/ambulanceModel";
-import AppNav from "./AppNav";
+import PageHeader from "./PageHeader";
 
 // Paste a responder/caller conversation and see what the trained ambulance
 // model (data/model/train_ambulance.py) says. Runs entirely in the browser.
@@ -32,18 +32,10 @@ export default function AmbulanceTestbench() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-slate-800 text-lg font-semibold text-white">+</span>
-          <div>
-            <h1 className="text-lg font-semibold leading-tight">Ambulance Model Testbench</h1>
-            <p className="text-xs text-slate-500">
-              Trained {modelInfo.trainedOn} · {modelInfo.termCount} terms · held-out {ev.correct}/{ev.total}
-            </p>
-          </div>
-          <AppNav />
-        </div>
-      </header>
+      <PageHeader
+        title="Ambulance model testbench"
+        subtitle={`Trained ${modelInfo.trainedOn} · ${modelInfo.termCount} terms · held-out ${ev.correct}/${ev.total}`}
+      />
 
       <main className="grid gap-4 p-4 lg:grid-cols-5 lg:p-6">
         <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:col-span-3">
@@ -56,7 +48,7 @@ export default function AmbulanceTestbench() {
                   const ex = modelInfo.examples.find((x) => x.callId === e.target.value);
                   if (ex) load(ex);
                 }}
-                className="max-w-64 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm"
+                className="max-w-64 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm"
                 aria-label="Load a call from the dataset"
               >
                 <option value="" disabled>
@@ -88,7 +80,7 @@ export default function AmbulanceTestbench() {
             }}
             placeholder={PLACEHOLDER}
             spellCheck={false}
-            className="h-[28rem] w-full resize-y rounded-md border border-slate-300 bg-white p-3 font-mono text-sm text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:outline-none"
+            className="h-[28rem] w-full resize-y rounded-md border border-slate-300 bg-white p-3 font-mono text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none"
           />
           <p className="mt-2 text-xs text-slate-400">
             One turn per line. The model reads only the caller: &quot;Responder:&quot; / &quot;Operator:&quot; lines are
@@ -178,7 +170,7 @@ export default function AmbulanceTestbench() {
                       key={e.callId}
                       onClick={() => load(e)}
                       className={`cursor-pointer border-b border-slate-100 hover:bg-slate-50 ${
-                        loaded === e.callId ? "bg-sky-50" : ""
+                        loaded === e.callId ? "bg-slate-100" : ""
                       }`}
                     >
                       <td className="py-1.5 pr-3">{e.title}</td>

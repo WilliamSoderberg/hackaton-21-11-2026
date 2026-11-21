@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useMemo, useState } from "react";
 import type { CallRecord, Urgency } from "../lib/calls";
-import AppNav from "./AppNav";
+import PageHeader, { Segmented } from "./PageHeader";
 
 // Table of the calls in the backend's SQLite call log, refreshed every few
 // seconds. Sorting happens here; the backend returns newest first.
@@ -93,43 +93,22 @@ export default function CallsOverview() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-slate-800 text-lg font-semibold text-white">+</span>
-          <div>
-            <h1 className="text-lg font-semibold leading-tight">Ongoing Calls</h1>
-            <p className="text-xs text-slate-500">Call log · updates every {POLL_MS / 1000} s</p>
-          </div>
-          <AppNav />
-        </div>
-        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
-          <span className="flex items-center gap-2">
-            <span className={`h-2 w-2 rounded-full ${activeCount ? "animate-pulse bg-red-700" : "bg-slate-300"}`} />
-            {activeCount} ongoing
-          </span>
-          <span>{ambulanceCount} need an ambulance</span>
-          <div role="radiogroup" aria-label="Show" className="flex rounded-md bg-slate-100 p-0.5 ring-1 ring-slate-200">
-            {(
-              [
-                ["active", "Ongoing"],
-                ["all", "All calls"],
-              ] as const
-            ).map(([value, label]) => (
-              <button
-                key={value}
-                role="radio"
-                aria-checked={filter === value}
-                onClick={() => setFilter(value)}
-                className={`rounded px-3 py-1.5 font-medium ${
-                  filter === value ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </header>
+      <PageHeader title="Ongoing calls" subtitle={`Call log · updates every ${POLL_MS / 1000} s`}>
+        <span className="flex items-center gap-2">
+          <span className={`h-2 w-2 rounded-full ${activeCount ? "animate-pulse bg-red-700" : "bg-slate-300"}`} />
+          {activeCount} ongoing
+        </span>
+        <span>{ambulanceCount} need an ambulance</span>
+        <Segmented
+          label="Show"
+          value={filter}
+          onChange={setFilter}
+          options={[
+            ["active", "Ongoing"],
+            ["all", "All calls"],
+          ]}
+        />
+      </PageHeader>
 
       <main className="p-4 lg:p-6">
         {error && (

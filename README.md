@@ -18,6 +18,9 @@ Each person opens the app on their own device and picks **Responder** or **Calle
 
 Browsers only allow the microphone on `localhost` or over HTTPS, so for other devices run the frontend with:
 
+
+finally done 
+
 ```sh
 cd frontend && npm run dev:demo   # needs openssl
 ```
@@ -32,9 +35,9 @@ Locally without Docker: run `cargo run` in `backend/` (port 8080) and `npm run d
 
 Calls are stored by the backend in SQLite (`backend/calls.db` locally, override with `CALLS_DB`; a `calls-db` volume in Docker). The frontend's call store records each call as it is answered, assessed and ended:
 
-| Method | Path | Body / query |
-|---|---|---|
-| `GET` | `/api/calls` | `?status=active\|ended` (optional), newest first |
-| `POST` | `/api/calls` | `{ sourceId, label, location, startedAt }` |
-| `PATCH` | `/api/calls/{id}` | any of `{ status, endedAt, assessment, transcript }` |
-| `POST` | `/api/calls/end-active` | marks every active call ended (sent when the frontend restarts) |
+| Method  | Path                    | Body / query                                                    |
+| ------- | ----------------------- | --------------------------------------------------------------- |
+| `GET`   | `/api/calls`            | `?status=active\|ended` (optional), newest first                |
+| `POST`  | `/api/calls`            | `{ sourceId, label, location, startedAt }`                      |
+| `PATCH` | `/api/calls/{id}`       | any of `{ status, endedAt, assessment, transcript }`            |
+| `POST`  | `/api/calls/end-active` | marks every active call ended (sent when the frontend restarts) |

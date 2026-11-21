@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { segmentedGroup, segmentedItem } from "./PageHeader";
 
 const links = [
   { href: "/", label: "Dispatcher" },
@@ -18,7 +19,7 @@ function isCurrent(pathname: string, href: string) {
 export default function AppNav() {
   const pathname = usePathname();
   return (
-    <nav className="flex rounded-lg bg-slate-100 p-1 text-sm font-medium" aria-label="Main">
+    <nav className={segmentedGroup} aria-label="Main">
       {links.map((link) => {
         const current = isCurrent(pathname, link.href);
         return (
@@ -26,9 +27,7 @@ export default function AppNav() {
             key={link.href}
             href={link.href}
             aria-current={current ? "page" : undefined}
-            className={`rounded-md px-3 py-1.5 ${
-              current ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200" : "text-slate-500 hover:text-slate-900"
-            }`}
+            className={segmentedItem(current)}
           >
             {link.label}
           </Link>
