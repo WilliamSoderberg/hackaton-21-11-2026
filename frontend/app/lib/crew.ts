@@ -78,14 +78,14 @@ export const hospitals: Hospital[] = [
   ...new Map(crewIncidents.map((i) => [i.destination_hospital.name, i.destination_hospital])).values(),
 ];
 
-// Same colours as the dispatcher dashboard (A=Critical … D/E=Low), E in blue
+// Muted versions of the dispatcher dashboard colours (A=Critical … D/E=Low), E in blue
 // as in the guide.
 export const urgencyStyles: Record<UrgencyLevel, { label: string; bg: string; soft: string; text: string; ring: string }> = {
-  A: { label: "Critical", bg: "bg-red-600", soft: "bg-red-50", text: "text-red-700", ring: "ring-red-500/40" },
-  B: { label: "High", bg: "bg-orange-500", soft: "bg-orange-50", text: "text-orange-700", ring: "ring-orange-500/40" },
-  C: { label: "Medium", bg: "bg-amber-400", soft: "bg-amber-50", text: "text-amber-700", ring: "ring-amber-500/40" },
-  D: { label: "Low", bg: "bg-emerald-500", soft: "bg-emerald-50", text: "text-emerald-700", ring: "ring-emerald-500/30" },
-  E: { label: "Other help", bg: "bg-sky-500", soft: "bg-sky-50", text: "text-sky-700", ring: "ring-sky-500/30" },
+  A: { label: "Critical", bg: "bg-[#a63d32]", soft: "bg-[#f6ebe8]", text: "text-[#8c3329]", ring: "ring-[#a63d32]/25" },
+  B: { label: "High", bg: "bg-[#c0733a]", soft: "bg-[#f7eee5]", text: "text-[#94552a]", ring: "ring-[#c0733a]/25" },
+  C: { label: "Medium", bg: "bg-[#c49a2c]", soft: "bg-[#f8f2e1]", text: "text-[#8a6c1f]", ring: "ring-[#c49a2c]/25" },
+  D: { label: "Low", bg: "bg-[#5f8f72]", soft: "bg-[#ecf3ee]", text: "text-[#46705a]", ring: "ring-[#5f8f72]/25" },
+  E: { label: "Other help", bg: "bg-[#5b7fa0]", soft: "bg-[#ebf0f5]", text: "text-[#46647f]", ring: "ring-[#5b7fa0]/25" },
 };
 
 export function distanceKm(a: LatLng, b: LatLng) {

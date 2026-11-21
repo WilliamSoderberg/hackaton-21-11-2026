@@ -12,7 +12,7 @@ import { BellIcon, Card, PinIcon, SupplyIcon } from "./crewUi";
 // Leaflet needs `window`, so the map is only rendered in the browser.
 const CrewMap = dynamic(() => import("./CrewMap"), {
   ssr: false,
-  loading: () => <div className="grid h-full place-items-center text-slate-400">Loading map…</div>,
+  loading: () => <div className="grid h-full place-items-center text-stone-400">Loading map…</div>,
 });
 
 // Same order as the overview's priority queue.
@@ -32,24 +32,24 @@ export default function CrewPreparation({ initialId }: { initialId?: string }) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 px-6 py-4">
+    <div className="min-h-screen bg-stone-50 text-stone-900">
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200 px-6 py-4">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-red-600 text-lg font-bold text-white">+</span>
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-stone-200 text-lg font-semibold text-stone-600">+</span>
           <div>
             <h1 className="text-lg font-semibold leading-tight">Ambulance Crew Preparation</h1>
-            <p className="text-xs text-slate-500">Crew tablet · dispatch briefing</p>
+            <p className="text-xs text-stone-500">Crew tablet · dispatch briefing</p>
           </div>
           <AppNav />
         </div>
         <div className="flex items-center gap-4">
-          <span className="flex items-center gap-2 text-sm text-slate-500">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+          <span className="flex items-center gap-2 text-sm text-stone-500">
+            <span className="h-2 w-2 rounded-full bg-stone-400" />
             {incidents.length} active incidents
           </span>
           <Link
             href="/crew/overview"
-            className="rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+            className="rounded-md bg-stone-900 px-4 py-2 text-sm font-semibold text-white hover:bg-stone-700"
           >
             All incidents overview
           </Link>
@@ -72,7 +72,7 @@ export default function CrewPreparation({ initialId }: { initialId?: string }) {
 function IncidentList({ selectedId, onSelect }: { selectedId: string; onSelect: (id: string) => void }) {
   return (
     <aside className="min-w-0 lg:sticky lg:top-6 lg:self-start">
-      <h2 className="mb-2 px-1 text-xs font-medium uppercase tracking-wide text-slate-500">Active incidents</h2>
+      <h2 className="mb-2 px-1 text-xs font-medium text-stone-500">Active incidents</h2>
       <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
         {incidents.map((i) => {
           const style = urgencyStyles[i.urgency];
@@ -84,19 +84,19 @@ function IncidentList({ selectedId, onSelect }: { selectedId: string; onSelect: 
                 aria-pressed={selected}
                 className={`flex w-full items-start gap-3 rounded-xl border p-3 text-left transition-colors ${
                   selected
-                    ? "border-slate-900 bg-white shadow-md ring-1 ring-slate-900"
-                    : "border-slate-200 bg-white shadow-sm hover:border-slate-400"
+                    ? "border-stone-400 bg-white shadow-sm ring-1 ring-stone-300"
+                    : "border-stone-200 bg-white shadow-sm hover:border-stone-400"
                 }`}
               >
                 <span
-                  className={`grid h-10 w-10 shrink-0 place-items-center rounded-lg text-lg font-bold text-white ${style.bg}`}
+                  className={`grid h-10 w-10 shrink-0 place-items-center rounded-lg text-base font-semibold text-white ${style.bg}`}
                 >
                   {i.urgency}
                 </span>
                 <span className="min-w-0">
                   <span className="block text-sm font-semibold leading-snug">{i.category_name}</span>
-                  <span className="block truncate text-sm text-slate-500">{i.address}</span>
-                  <span className="mt-1 block text-xs font-medium text-slate-400">
+                  <span className="block truncate text-sm text-stone-500">{i.address}</span>
+                  <span className="mt-1 block text-xs font-medium text-stone-400">
                     {i.unit}
                     {i.calls.length > 1 && ` · ${i.calls.length} calls`}
                   </span>
@@ -131,32 +131,32 @@ function IncidentBriefing({
       <section className={`overflow-hidden rounded-xl bg-white shadow-sm ring-1 ${style.ring}`}>
         <div className="flex flex-wrap items-stretch">
           <div className={`flex min-w-36 flex-col items-center justify-center px-6 py-4 text-white ${style.bg}`}>
-            <span className="text-xs font-semibold uppercase tracking-widest opacity-90">Urgency</span>
-            <span className="text-6xl font-black leading-none">{incident.urgency}</span>
+            <span className="text-xs font-medium opacity-80">Urgency</span>
+            <span className="text-5xl font-semibold leading-none">{incident.urgency}</span>
             <span className="mt-1 text-sm font-semibold">{style.label}</span>
           </div>
           <div className="flex min-w-0 flex-1 flex-col justify-center gap-1 px-5 py-4">
-            <p className={`text-sm font-semibold uppercase tracking-wide ${style.text}`}>{incident.urgency_name}</p>
-            <h2 className="text-2xl font-bold leading-tight sm:text-3xl">{incident.category_name}</h2>
-            <p className="text-lg text-slate-600">{incident.title}</p>
+            <p className={`text-sm font-medium ${style.text}`}>{incident.urgency_name}</p>
+            <h2 className="text-2xl font-semibold leading-tight">{incident.category_name}</h2>
+            <p className="text-lg text-stone-600">{incident.title}</p>
             <p className="flex items-center gap-2 text-lg font-medium">
-              <PinIcon className="h-5 w-5 shrink-0 text-red-600" />
+              <PinIcon className="h-5 w-5 shrink-0 text-stone-400" />
               {incident.address}
             </p>
           </div>
-          <div className="grid w-full grid-cols-3 border-t border-slate-200 sm:w-auto sm:grid-cols-1 sm:border-t-0 sm:border-l">
+          <div className="grid w-full grid-cols-3 border-t border-stone-200 sm:w-auto sm:grid-cols-1 sm:border-t-0 sm:border-l">
             <HeaderStat label="ETA to scene" value={`${eta} min`} big />
             <HeaderStat label="Distance" value={`${km.toFixed(1)} km`} />
             <HeaderStat
               label="Response"
               value={incident.lights_and_sirens ? "Lights & sirens" : "No lights"}
-              accent={incident.lights_and_sirens ? "text-red-600" : "text-slate-600"}
+              accent={incident.lights_and_sirens ? "text-[#8c3329]" : "text-stone-600"}
             />
           </div>
         </div>
         {incident.note && (
-          <p className="border-t border-amber-200 bg-amber-50 px-5 py-3 text-base font-medium text-amber-800">
-            ⚠ {incident.note}
+          <p className="border-t border-stone-200 bg-amber-50/50 px-5 py-3 text-base text-stone-700">
+            {incident.note}
           </p>
         )}
       </section>
@@ -172,11 +172,11 @@ function IncidentBriefing({
           <div className="h-[22rem] sm:h-[28rem] xl:h-full xl:min-h-[30rem]">
             <CrewMap incident={incident} route={route} />
           </div>
-          <div className="flex flex-wrap gap-x-5 gap-y-1 border-t border-slate-200 px-4 py-2.5 text-sm text-slate-600">
-            <Legend color="bg-slate-900" label={`Ambulance ${incident.unit}`} />
-            <Legend color="bg-red-600" label={`To scene · ${eta} min`} />
-            <Legend color="bg-sky-600" label={`To hospital · ${toHospital} min`} />
-            <span className="ml-auto text-xs text-slate-400">
+          <div className="flex flex-wrap gap-x-5 gap-y-1 border-t border-stone-200 px-4 py-2.5 text-sm text-stone-600">
+            <Legend color="bg-stone-900" label={`Ambulance ${incident.unit}`} />
+            <Legend color="bg-[#a63d32]" label={`To scene · ${eta} min`} />
+            <Legend color="bg-[#5b7fa0]" label={`To hospital · ${toHospital} min`} />
+            <span className="ml-auto text-xs text-stone-400">
               {route.source === "road" ? "Road route (OSRM)" : "Straight-line estimate"} · synthetic positions
             </span>
           </div>
@@ -198,37 +198,36 @@ function IncidentBriefing({
       <div className="grid gap-4 lg:grid-cols-2">
         <Card title="Key facts" subtitle="From the call">
           <BulletList items={incident.key_facts} />
-          <h3 className="mt-5 mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Scene notes</h3>
+          <h3 className="mt-5 mb-2 text-xs font-medium text-stone-500">Scene notes</h3>
           {incident.scene_notes.length ? (
             <ul className="flex flex-col gap-2">
               {incident.scene_notes.map((note) => (
                 <li
                   key={note}
-                  className="flex gap-3 rounded-lg bg-amber-50 px-3 py-2.5 text-base text-amber-900 ring-1 ring-amber-200"
+                  className="flex gap-3 rounded-lg bg-amber-50/50 px-3 py-2.5 text-base text-stone-700 ring-1 ring-amber-200/60"
                 >
-                  <span aria-hidden>⚠</span>
                   {note}
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-base text-slate-400">None</p>
+            <p className="text-base text-stone-400">None</p>
           )}
         </Card>
         <Card title="Open questions" subtitle="Not answered in the call: check on scene">
           <ul className="flex flex-col gap-2">
             {incident.open_questions.map((q) => (
-              <li key={q} className="flex gap-3 rounded-lg bg-slate-50 px-3 py-2.5 text-base ring-1 ring-slate-200">
-                <span className="font-bold text-sky-600" aria-hidden>
+              <li key={q} className="flex gap-3 rounded-lg bg-stone-50 px-3 py-2.5 text-base ring-1 ring-stone-200">
+                <span className="font-medium text-stone-400" aria-hidden>
                   ?
                 </span>
                 {q}
               </li>
             ))}
           </ul>
-          <h3 className="mt-5 mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Dispatcher summary</h3>
+          <h3 className="mt-5 mb-2 text-xs font-medium text-stone-500">Dispatcher summary</h3>
           {incident.handover.map((h) => (
-            <p key={h} className="mb-2 text-base leading-relaxed text-slate-700">
+            <p key={h} className="mb-2 text-base leading-relaxed text-stone-700">
               {h}
             </p>
           ))}
@@ -240,15 +239,15 @@ function IncidentBriefing({
 
 function PackExtra({ items }: { items: string[] }) {
   return (
-    <section className="rounded-xl bg-red-600 p-4 text-white shadow-sm">
+    <section className="rounded-xl border border-stone-200 bg-white p-4 text-stone-800 shadow-sm">
       <div className="mb-3 flex items-baseline justify-between gap-2">
-        <h2 className="text-base font-bold uppercase tracking-wide">Pack extra</h2>
-        <span className="text-sm text-red-100">{items.length} items</span>
+        <h2 className="text-base font-semibold">Pack extra</h2>
+        <span className="text-sm text-stone-500">{items.length} items</span>
       </div>
       <ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
         {items.map((item) => (
-          <li key={item} className="flex items-center gap-3 rounded-lg bg-white px-3 py-2.5 text-base font-semibold text-slate-900">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-red-50 text-red-600">
+          <li key={item} className="flex items-center gap-3 rounded-lg bg-stone-50 px-3 py-2.5 text-base font-medium text-stone-800">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-white text-stone-500 ring-1 ring-stone-200">
               <SupplyIcon item={item} />
             </span>
             <span className="first-letter:uppercase">{item}</span>
@@ -264,21 +263,21 @@ function Destination({ incident, minutes }: { incident: CrewIncident; minutes: n
   return (
     <Card title="Destination & pre-alert">
       <div className="flex items-start gap-3">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-sky-600 text-xl font-bold text-white">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-[#5b7fa0] text-xl font-semibold text-white">
           H
         </span>
         <div className="min-w-0">
-          <p className="text-xl font-bold">{hospital.name}</p>
-          <p className="text-sm text-slate-500">
+          <p className="text-lg font-semibold">{hospital.name}</p>
+          <p className="text-sm text-stone-500">
             {hospital.detail} · ~{minutes} min from scene
           </p>
         </div>
       </div>
-      <p className="mt-3 text-base text-slate-700">{incident.destination}</p>
+      <p className="mt-3 text-base text-stone-700">{incident.destination}</p>
       <div className="mt-3 flex items-start gap-3 rounded-lg bg-sky-50 px-3 py-2.5 ring-1 ring-sky-200">
         <BellIcon className="mt-0.5 h-5 w-5 shrink-0 text-sky-700" />
         <div>
-          <span className="text-xs font-semibold uppercase tracking-wide text-sky-700">Pre-alert</span>
+          <span className="text-xs font-medium text-sky-800/80">Pre-alert</span>
           <p className="text-base font-semibold text-sky-950">{incident.pre_alert}</p>
         </div>
       </div>
@@ -299,9 +298,9 @@ function Checklist({
   const done = keys.filter((k) => checked[k]).length;
   return (
     <Card title="Prepare en route" subtitle={`${done}/${keys.length} ready`}>
-      <div className="mb-3 h-2 overflow-hidden rounded-full bg-slate-100">
+      <div className="mb-3 h-2 overflow-hidden rounded-full bg-stone-100">
         <div
-          className="h-full bg-emerald-500 transition-all duration-500"
+          className="h-full bg-[#5f8f72] transition-all duration-500"
           style={{ width: `${(done / keys.length) * 100}%` }}
         />
       </div>
@@ -312,14 +311,14 @@ function Checklist({
             <li key={item}>
               <label
                 className={`flex cursor-pointer items-center gap-3 rounded-lg px-3 py-3 text-base ring-1 transition-colors ${
-                  isChecked ? "bg-emerald-50 text-slate-500 ring-emerald-200" : "bg-white ring-slate-200 hover:bg-slate-50"
+                  isChecked ? "bg-emerald-50 text-stone-500 ring-emerald-200" : "bg-white ring-stone-200 hover:bg-stone-50"
                 }`}
               >
                 <input
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => onToggle(keys[i])}
-                  className="h-6 w-6 shrink-0 accent-emerald-600"
+                  className="h-6 w-6 shrink-0 accent-[#5f8f72]"
                 />
                 <span className={`first-letter:uppercase ${isChecked ? "line-through" : "font-medium"}`}>{item}</span>
               </label>
@@ -352,31 +351,31 @@ function Resources({ incident }: { incident: CrewIncident }) {
           return (
             <li
               key={kind.label}
-              className={`rounded-lg p-3 ring-1 ${needed ? "bg-red-50 ring-red-500/40" : "bg-slate-50 ring-slate-200"}`}
+              className={`rounded-lg p-3 ring-1 ${needed ? "bg-amber-50/50 ring-amber-300/60" : "bg-stone-50 ring-stone-200"}`}
             >
               <div className="flex items-center justify-between gap-2">
-                <span className={`text-base font-semibold ${needed ? "text-slate-900" : "text-slate-400"}`}>
+                <span className={`text-base font-semibold ${needed ? "text-stone-900" : "text-stone-400"}`}>
                   {kind.label}
                 </span>
                 <span
-                  className={`rounded-full px-2 py-0.5 text-xs font-bold ${
-                    needed ? "bg-red-600 text-white" : "bg-slate-200 text-slate-500"
+                  className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                    needed ? "bg-stone-700 text-white" : "bg-stone-200 text-stone-500"
                   }`}
                 >
-                  {needed ? "NEEDED" : "No"}
+                  {needed ? "Needed" : "No"}
                 </span>
               </div>
-              {needed && <p className="mt-1 text-sm text-slate-600">{reasons[0]}</p>}
+              {needed && <p className="mt-1 text-sm text-stone-600">{reasons[0]}</p>}
             </li>
           );
         })}
       </ul>
       {other.length > 0 && (
         <>
-          <h3 className="mt-4 mb-2 text-xs font-medium uppercase tracking-wide text-slate-500">Also involved</h3>
+          <h3 className="mt-4 mb-2 text-xs font-medium text-stone-500">Also involved</h3>
           <ul className="flex flex-wrap gap-2">
             {other.map((u) => (
-              <li key={u} className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
+              <li key={u} className="rounded-full bg-stone-100 px-3 py-1 text-sm text-stone-700">
                 {u}
               </li>
             ))}
@@ -395,18 +394,18 @@ function RedFlags({ incident }: { incident: CrewIncident }) {
         {incident.red_flags.map((flag) => (
           <li
             key={`${flag.call_id}-${flag.quote}`}
-            className="flex flex-col gap-2 rounded-lg border-l-4 border-red-500 bg-red-50/60 px-4 py-3"
+            className="flex flex-col gap-2 rounded-lg border-l-2 border-[#a63d32]/50 bg-stone-50 px-4 py-3"
           >
             <div className="flex items-center justify-between gap-2">
-              <span className="text-base font-bold text-red-700 first-letter:uppercase">{flag.label}</span>
-              <span className="shrink-0 rounded bg-white px-2 py-0.5 font-mono text-xs text-slate-500 ring-1 ring-slate-200">
+              <span className="text-base font-medium text-[#8c3329] first-letter:uppercase">{flag.label}</span>
+              <span className="shrink-0 rounded bg-white px-2 py-0.5 font-mono text-xs text-stone-500 ring-1 ring-stone-200">
                 {flag.time}
               </span>
             </div>
-            <blockquote className="text-lg leading-snug text-slate-900">
-              <span className="rounded bg-yellow-200/80 px-1 box-decoration-clone">“{flag.quote}”</span>
+            <blockquote className="text-lg leading-snug text-stone-900">
+              <span className="rounded bg-amber-100/70 px-1 box-decoration-clone">“{flag.quote}”</span>
             </blockquote>
-            <span className="text-xs text-slate-500">
+            <span className="text-xs text-stone-500">
               {flag.speaker === "caller" ? "Caller" : "Operator"}
               {multiCall && ` · ${incident.calls.find((c) => c.call_id === flag.call_id)?.title}`}
             </span>
@@ -419,9 +418,9 @@ function RedFlags({ incident }: { incident: CrewIncident }) {
 
 function HeaderStat({ label, value, big, accent = "" }: { label: string; value: string; big?: boolean; accent?: string }) {
   return (
-    <div className="flex flex-col justify-center px-5 py-3 sm:border-b sm:border-slate-200 sm:last:border-b-0">
-      <span className="text-xs text-slate-500">{label}</span>
-      <span className={`font-bold ${big ? "text-3xl" : "text-lg"} ${accent}`}>{value}</span>
+    <div className="flex flex-col justify-center px-5 py-3 sm:border-b sm:border-stone-200 sm:last:border-b-0">
+      <span className="text-xs text-stone-500">{label}</span>
+      <span className={`font-semibold ${big ? "text-2xl" : "text-lg"} ${accent}`}>{value}</span>
     </div>
   );
 }
@@ -440,8 +439,8 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="flex flex-col gap-2">
       {items.map((item) => (
         <li key={item} className="flex gap-3 text-base">
-          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
-          <span className={item.startsWith("UPDATE") ? "font-semibold text-red-700" : ""}>{item}</span>
+          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-stone-400" />
+          <span className={item.startsWith("UPDATE") ? "font-medium text-[#8c3329]" : ""}>{item}</span>
         </li>
       ))}
     </ul>

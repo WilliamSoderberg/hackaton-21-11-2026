@@ -7,8 +7,8 @@ import { MapContainer, Marker, Polyline, Tooltip } from "react-leaflet";
 import { type Incident, hospitals } from "../lib/crew";
 import { FitBounds, OsmTiles, pin, urgencyHex } from "./mapParts";
 
-const ambulanceIcon = pin("#0f172a", "A", { size: 28 });
-const hospitalIcon = pin("#0284c7", "H", { size: 36 });
+const ambulanceIcon = pin("#44403c", "A", { size: 28 });
+const hospitalIcon = pin("#5b7fa0", "H", { size: 36 });
 
 export default function OverviewMap({
   ranked,
@@ -23,7 +23,7 @@ export default function OverviewMap({
   const icons = useMemo(
     () =>
       ranked.map((i, rank) =>
-        pin(i.dispatch === "none" ? "#94a3b8" : urgencyHex[i.urgency], rank + 1, {
+        pin(i.dispatch === "none" ? "#a8a29e" : urgencyHex[i.urgency], rank + 1, {
           pulse: rank === 0,
           size: rank === 0 ? 52 : i.incident_id === selectedId ? 42 : 34,
           ring: i.incident_id === selectedId,
@@ -55,7 +55,7 @@ export default function OverviewMap({
             [selected.ambulance_position.lat, selected.ambulance_position.lng],
             [selected.scene.lat, selected.scene.lng],
           ]}
-          pathOptions={{ color: "#0f172a", weight: 4, opacity: 0.8, dashArray: "6 8" }}
+          pathOptions={{ color: "#44403c", weight: 4, opacity: 0.8, dashArray: "6 8" }}
         />
       )}
       {ranked.map((i, rank) => (

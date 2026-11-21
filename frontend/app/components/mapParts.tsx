@@ -11,11 +11,11 @@ import type { UrgencyLevel } from "../lib/crew";
 
 // Marker colours matching urgencyStyles in lib/crew.ts.
 export const urgencyHex: Record<UrgencyLevel, string> = {
-  A: "#dc2626",
-  B: "#f97316",
-  C: "#fbbf24",
-  D: "#10b981",
-  E: "#0ea5e9",
+  A: "#a63d32",
+  B: "#c0733a",
+  C: "#c49a2c",
+  D: "#5f8f72",
+  E: "#5b7fa0",
 };
 
 // Custom pins instead of Leaflet's default image markers (those need extra
@@ -28,8 +28,8 @@ export function pin(color: string, glyph: string | number, { pulse = false, size
     iconAnchor: [size / 2, size / 2],
     tooltipAnchor: [0, -size / 2 - 2],
     html: `<div style="position:relative;width:${size}px;height:${size}px">
-      ${pulse ? `<span style="position:absolute;inset:0;border-radius:9999px;background:${color};opacity:.35" class="animate-ping"></span>` : ""}
-      <span style="position:absolute;inset:${inset}px;display:grid;place-items:center;border-radius:9999px;background:${color};color:#fff;font:700 ${Math.round(size * 0.38)}px/1 var(--font-geist-sans),sans-serif;border:3px solid #fff;box-shadow:0 0 0 ${ring ? 3 : 0}px #0f172a,0 2px 6px rgba(15,23,42,.35)">${glyph}</span>
+      ${pulse ? `<span style="position:absolute;inset:0;border-radius:9999px;background:${color};opacity:.18"></span>` : ""}
+      <span style="position:absolute;inset:${inset}px;display:grid;place-items:center;border-radius:9999px;background:${color};color:#fff;font:700 ${Math.round(size * 0.38)}px/1 var(--font-geist-sans),sans-serif;border:3px solid #fff;box-shadow:0 0 0 ${ring ? 3 : 0}px #44403c,0 1px 3px rgba(28,25,23,.25)">${glyph}</span>
     </div>`,
   });
 }

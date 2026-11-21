@@ -9,9 +9,9 @@ import type { CrewRoute } from "../lib/useRoute";
 import { FitBounds, OsmTiles, pin } from "./mapParts";
 
 const icons = {
-  scene: pin("#dc2626", "!", { pulse: true }),
-  ambulance: pin("#0f172a", "A"),
-  hospital: pin("#0284c7", "H"),
+  scene: pin("#a63d32", "!", { pulse: true }),
+  ambulance: pin("#44403c", "A"),
+  hospital: pin("#5b7fa0", "H"),
 };
 
 export default function CrewMap({ incident, route }: { incident: CrewIncident; route: CrewRoute }) {
@@ -27,8 +27,8 @@ export default function CrewMap({ incident, route }: { incident: CrewIncident; r
       attributionControl
     >
       <OsmTiles />
-      <Polyline positions={route.toHospital.path} pathOptions={{ color: "#0284c7", weight: 5, opacity: 0.8, dashArray: dashed }} />
-      <Polyline positions={route.toScene.path} pathOptions={{ color: "#dc2626", weight: 6, opacity: 0.9, dashArray: dashed }} />
+      <Polyline positions={route.toHospital.path} pathOptions={{ color: "#5b7fa0", weight: 5, opacity: 0.8, dashArray: dashed }} />
+      <Polyline positions={route.toScene.path} pathOptions={{ color: "#a63d32", weight: 6, opacity: 0.9, dashArray: dashed }} />
       <Marker position={[ambulance.lat, ambulance.lng]} icon={icons.ambulance}>
         <Tooltip direction="top">{incident.unit}</Tooltip>
       </Marker>

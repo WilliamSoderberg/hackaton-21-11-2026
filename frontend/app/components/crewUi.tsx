@@ -19,13 +19,13 @@ export function Card({
 }) {
   return (
     <section
-      className={`flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${
+      className={`flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm ${
         flush ? "" : "p-4"
       } ${className}`}
     >
       <div className={`flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 ${flush ? "px-4 pt-4 pb-3" : "mb-4"}`}>
         <h2 className="text-base font-semibold">{title}</h2>
-        {subtitle && <span className="text-sm text-slate-500">{subtitle}</span>}
+        {subtitle && <span className="text-sm text-stone-500">{subtitle}</span>}
       </div>
       <div className="flex min-h-0 flex-1 flex-col">{children}</div>
     </section>
