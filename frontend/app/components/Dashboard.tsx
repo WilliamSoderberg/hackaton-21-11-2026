@@ -12,6 +12,7 @@ import {
 import { classifyTranscript } from "../lib/classify";
 import { downloadCallSummary } from "../lib/summaryPdf";
 import { isSpeechRecognitionSupported, useSpeechRecognition } from "../lib/useSpeechRecognition";
+import AppNav from "./AppNav";
 
 const LINE_INTERVAL_MS = 2200;
 
@@ -155,6 +156,7 @@ export default function Dashboard() {
             <h1 className="text-lg font-semibold leading-tight">Emergency Call Dashboard</h1>
             <p className="text-xs text-slate-500">Dispatcher console</p>
           </div>
+          <AppNav />
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <select
