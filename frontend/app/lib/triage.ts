@@ -1,20 +1,14 @@
 import { predictAmbulance } from "./ambulanceModel";
 import type { Incident, RedFlag } from "./crew";
 
-// Triage for the crew map: urgency and order from the trained ambulance model,
-// supplies and the key quote from rules over the crew_briefing data.
+// Triage for the crew map: ambulance % from the trained ambulance model,
+// supplies and the key quote from rules over the crew_briefing data. Urgency
+// comes from the Rust keyword model (lib/crewUrgency.ts).
 
 // Model probability that the incident needs an ambulance: the highest over
 // its calls (an incident can have several callers).
 export function ambulanceProbability(incident: Incident): number {
   return Math.max(...incident.calls.map((c) => predictAmbulance(c.turns).probability));
-}
-
-// Incidents with their model probability, most likely ambulance first.
-export function rankByModel(incidents: Incident[]): { incident: Incident; probability: number }[] {
-  return incidents
-    .map((incident) => ({ incident, probability: ambulanceProbability(incident) }))
-    .sort((a, b) => b.probability - a.probability);
 }
 
 // The red flag that raised the call to its final urgency: the last flag

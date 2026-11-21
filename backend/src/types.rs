@@ -19,6 +19,20 @@ pub struct ClassifyRequest {
     pub lines: Vec<TranscriptLine>,
 }
 
+/// Several transcripts to rate with the keyword model only (crew map).
+#[derive(Debug, Deserialize)]
+pub struct KeywordTriageRequest {
+    pub transcripts: Vec<Vec<TranscriptLine>>,
+}
+
+/// Keyword-model urgency for one transcript.
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct KeywordUrgency {
+    pub urgency: Urgency,
+    pub urgency_score: u8,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Deserialize, Serialize)]
 pub enum Urgency {
     Low,

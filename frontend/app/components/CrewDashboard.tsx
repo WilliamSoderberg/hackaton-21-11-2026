@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { urgencyBands } from "../lib/modelUrgency";
+import { type CrewUrgencies, urgencyBands } from "../lib/modelUrgency";
 import AppNav from "./AppNav";
 
 // Leaflet needs `window`, so the map is only rendered in the browser.
@@ -10,7 +10,7 @@ const CrewMap = dynamic(() => import("./CrewMap"), {
   loading: () => <div className="grid h-full place-items-center text-slate-400">Loading map…</div>,
 });
 
-export default function CrewDashboard() {
+export default function CrewDashboard({ urgencies }: { urgencies: CrewUrgencies }) {
   return (
     <div className="flex h-dvh flex-col bg-slate-50 text-slate-900">
       <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white px-6 py-4">
@@ -18,14 +18,16 @@ export default function CrewDashboard() {
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-red-600 text-lg font-bold text-white">+</span>
           <div>
             <h1 className="text-lg font-semibold leading-tight">Ambulance crew</h1>
-            <p className="text-xs text-slate-500">Pins show the % chance an ambulance is needed (trained model) · hover for details</p>
+            <p className="text-xs text-slate-500">{"Colour = urgency ("}
+              {urgencies.source === "keyword" ? "keyword model" : "data labels, backend offline"}
+              {") · number = % chance an ambulance is needed (trained model) · hover for details"}</p>
           </div>
           <AppNav />
         </div>
         <Legend />
       </header>
       <main className="min-h-0 flex-1">
-        <CrewMap />
+        <CrewMap urgencies={urgencies} />
       </main>
     </div>
   );
@@ -33,7 +35,7 @@ export default function CrewDashboard() {
 
 function Legend() {
   const items = [
-    ...urgencyBands.map((b, i) => [b.hex, b.min ? `${b.label} ≥${b.min * 100}%` : `${b.label} <${urgencyBands[i - 1].min * 100}%`]),
+    ...urgencyBands.map((b) => [b.hex, b.label]),
     ["#3f6185", "Hospital"],
   ];
   return (

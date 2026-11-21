@@ -5,6 +5,9 @@
 //!   * a triage model  -> urgency, urgency score, ambulance yes/no, physical/mental split
 //!   * an indicator model -> the detected indicators shown as chips
 //!
+//! `POST /api/triage/keyword` rates several transcripts with the keyword
+//! model only (never Claude); the crew map uses it for pin urgency.
+//!
 //! With `ANTHROPIC_API_KEY` set both models are Claude; otherwise (or if a
 //! Claude call fails) the offline keyword models answer instead.
 
@@ -28,7 +31,7 @@ use crate::{
     calls::CallDb,
     claude::ClaudeClient,
     types::{
-        Classification, ClassifyRequest, ModelSource, Sources, Speaker, TranscriptLine, Triage,
+        Classification, ClassifyRequest, KeywordTriageRequest, KeywordUrgency, ModelSource, Sources, Speaker, TranscriptLine, Triage,
         Urgency, format_transcript,
     },
 };
@@ -81,6 +84,7 @@ fn router(state: Arc<AppState>) -> Router {
     Router::new()
         .route("/health", get(|| async { "ok" }))
         .route("/api/classify", post(classify_handler))
+        .route("/api/triage/keyword", post(keyword_triage_handler))
         .route(
             "/api/calls",
             get(calls::list_handler).post(calls::create_handler),
@@ -101,6 +105,28 @@ async fn classify_handler(
         return Err((StatusCode::PAYLOAD_TOO_LARGE, "transcript too long".into()));
     }
     Ok(Json(classify(state.claude.as_ref(), &req.lines).await))
+}
+
+async fn keyword_triage_handler(
+    Json(req): Json<KeywordTriageRequest>,
+) -> Result<Json<Vec<KeywordUrgency>>, (StatusCode, String)> {
+    let lines = req.transcripts.iter().map(Vec::len).sum::<usize>();
+    let chars: usize = req.transcripts.iter().flatten().map(|l| l.text.len()).sum();
+    if lines > MAX_LINES * 10 || chars > MAX_CHARS * 10 {
+        return Err((StatusCode::PAYLOAD_TOO_LARGE, "transcripts too long".into()));
+    }
+    Ok(Json(
+        req.transcripts
+            .iter()
+            .map(|t| {
+                let triage = keyword::triage(t);
+                KeywordUrgency {
+                    urgency: triage.urgency,
+                    urgency_score: triage.urgency_score,
+                }
+            })
+            .collect(),
+    ))
 }
 
 async fn classify(claude: Option<&ClaudeClient>, lines: &[TranscriptLine]) -> Classification {

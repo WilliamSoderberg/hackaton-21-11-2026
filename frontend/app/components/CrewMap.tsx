@@ -8,18 +8,18 @@ import type { LatLngTuple, Map as LeafletMap } from "leaflet";
 import { type CSSProperties, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, Polyline, Tooltip } from "react-leaflet";
 import { type CrewIncident, type Incident, allIncidents, hospitals } from "../lib/crew";
-import { urgencyBand } from "../lib/modelUrgency";
-import { rankByModel, ruleSupplies, triggerFlag } from "../lib/triage";
+import { type CrewUrgencies, type KeywordUrgency, urgencyBand } from "../lib/modelUrgency";
+import { ambulanceProbability, ruleSupplies, triggerFlag } from "../lib/triage";
 import { type CrewRoute, useRoute } from "../lib/useRoute";
 import { FitBounds, OsmTiles, pin, useMapKey } from "./mapParts";
 
-// Urgency = the ambulance model's probability for the call text.
-const ranked = rankByModel(allIncidents);
-const points = ranked.map(({ incident: i }): [number, number] => [i.scene.lat, i.scene.lng]);
+const points = allIncidents.map((i): [number, number] => [i.scene.lat, i.scene.lng]);
 const ambulanceIcon = pin("#0f172a", "A", { size: 28 });
 const hospitalIcon = pin("#3f6185", "H", { size: 30 });
 
-export default function CrewMap() {
+// Colour/order = Rust keyword-model urgency; pin number = ambulance model %.
+export default function CrewMap({ urgencies }: { urgencies: CrewUrgencies }) {
+  const ranked = useMemo(() => rankByUrgency(urgencies), [urgencies]);
   const [active, setActive] = useState<{ id: string; anchor: Anchor } | null>(null);
   const [map, setMap] = useState<LeafletMap | null>(null);
   const activate = (id: string, at: LatLngTuple) => {
@@ -33,14 +33,14 @@ export default function CrewMap() {
   const route = useRoute(incident && incident.dispatch !== "none" ? incident : null);
   const icons = useMemo(
     () =>
-      ranked.map(({ incident: i, probability }, rank) =>
-        pin(urgencyBand(probability).hex, Math.round(probability * 100), {
+      ranked.map(({ incident: i, probability, urgency }, rank) =>
+        pin(urgencyBand(urgency.urgency).hex, Math.round(probability * 100), {
           pulse: rank === 0,
           size: i.incident_id === active?.id ? 42 : 34,
           ring: i.incident_id === active?.id,
         }),
       ),
-    [active?.id],
+    [active?.id, ranked],
   );
 
   const mapKey = useMapKey();
@@ -87,11 +87,22 @@ export default function CrewMap() {
       </MapContainer>
       {current && active && (
         <FloatingCard anchor={active.anchor}>
-          <IncidentCard incident={current.incident} probability={current.probability} route={route} />
+          <IncidentCard incident={current.incident} probability={current.probability} urgency={current.urgency} route={route} />
         </FloatingCard>
       )}
     </div>
   );
+}
+
+// Most urgent first (keyword score), then the ambulance model's probability.
+function rankByUrgency({ byIncident }: CrewUrgencies) {
+  return allIncidents
+    .map((incident) => ({
+      incident,
+      probability: ambulanceProbability(incident),
+      urgency: byIncident[incident.incident_id] ?? { urgency: "Low" as const, urgencyScore: 0 },
+    }))
+    .sort((a, b) => b.urgency.urgencyScore - a.urgency.urgencyScore || b.probability - a.probability);
 }
 
 // The pin's position inside the map and the map's size, in pixels.
@@ -151,13 +162,15 @@ function ActiveRoute({ incident, route }: { incident: CrewIncident; route: CrewR
 function IncidentCard({
   incident,
   probability,
+  urgency,
   route,
 }: {
   incident: Incident;
   probability: number;
+  urgency: KeywordUrgency;
   route: CrewRoute | null;
 }) {
-  const band = urgencyBand(probability);
+  const band = urgencyBand(urgency.urgency);
   const flag = triggerFlag(incident);
   const { critical, possible } = ruleSupplies(incident);
   const needs = [...critical, ...possible].slice(0, 5);
