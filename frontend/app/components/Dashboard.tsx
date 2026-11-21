@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   type Classification,
   type Scenario,
   type TranscriptLine,
   type Urgency,
-  classify,
   emptyClassification,
+  fetchClassification,
   scenarios,
 } from "../lib/calls";
 import { downloadCallSummary } from "../lib/summaryPdf";
@@ -49,10 +49,33 @@ export default function Dashboard() {
 
   const scenario = sources.find((s) => s.id === scenarioId)!;
   const usingMic = scenario.id === microphoneSource.id;
-  const classification = useMemo(
-    () => (lines.length ? classify(lines) : emptyClassification),
-    [lines],
-  );
+  // Latest assessment from the Rust backend, tagged with how many transcript
+  // lines it covers.
+  const [assessment, setAssessment] = useState<{ lineCount: number; value: Classification } | null>(null);
+  const [backendError, setBackendError] = useState<string | null>(null);
+  const requestSeq = useRef(0);
+  const appliedSeq = useRef(0);
+  const classification = lines.length && assessment ? assessment.value : emptyClassification;
+  const analysing = lines.length > 0 && assessment?.lineCount !== lines.length && !backendError;
+
+  // Send the transcript to the backend whenever it changes. Responses can
+  // arrive out of order, so only apply one that is newer than what is shown.
+  useEffect(() => {
+    if (lines.length === 0) return;
+    const seq = ++requestSeq.current;
+    const lineCount = lines.length;
+    fetchClassification(lines)
+      .then((value) => {
+        if (seq < appliedSeq.current) return;
+        appliedSeq.current = seq;
+        setAssessment({ lineCount, value });
+        setBackendError(null);
+      })
+      .catch((err: unknown) => {
+        if (seq < appliedSeq.current) return;
+        setBackendError(err instanceof Error ? err.message : "Backend unavailable");
+      });
+  }, [lines]);
 
   const interim = useSpeechRecognition({
     listening: active && usingMic,
@@ -90,6 +113,10 @@ export default function Dashboard() {
       return;
     }
     setMicError(null);
+    // Drop any assessment still in flight from the previous call.
+    appliedSeq.current = ++requestSeq.current;
+    setAssessment(null);
+    setBackendError(null);
     setLines(usingMic ? [] : [scenario.transcript[0]]);
     setNotes("");
     setStartedAt(Date.now());
@@ -165,7 +192,15 @@ export default function Dashboard() {
       <main className="grid gap-4 p-4 lg:grid-cols-3 lg:p-6">
         {/* Segment 1: assessment of the current call */}
         <section className="flex flex-col gap-4 lg:col-span-1">
-          <Panel title="Live assessment" subtitle={active ? "Updating from transcript" : "Waiting for call"}>
+          <Panel
+            title="Live assessment"
+            subtitle={analysing ? "Analysing…" : active ? "Updating from transcript" : "Waiting for call"}
+          >
+            {backendError && (
+              <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 ring-1 ring-red-200">
+                Assessment backend unreachable ({backendError}). Start it with <code>cargo run</code> in backend/.
+              </p>
+            )}
             <UrgencyMeter classification={classification} />
             <div className="mt-5 grid grid-cols-2 gap-3">
               <AmbulanceTile ambulance={classification.ambulance} hasData={lines.length > 0} />
@@ -188,6 +223,11 @@ export default function Dashboard() {
                 <p className="text-sm text-slate-400">None yet</p>
               )}
             </div>
+            {classification.sources && (
+              <p className="mt-4 text-[11px] text-slate-400">
+                Triage: {classification.sources.triage} model · Indicators: {classification.sources.indicators} model
+              </p>
+            )}
           </Panel>
 
           <Panel title="Current call" subtitle={lines.length ? scenario.label : "No patient yet"}>
