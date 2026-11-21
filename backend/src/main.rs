@@ -41,6 +41,9 @@ struct AppState {
 
 #[tokio::main]
 async fn main() {
+    // Load backend/.env if present; real environment variables take precedence.
+    let _ = dotenvy::dotenv();
+
     tracing_subscriber::fmt()
         .with_env_filter(
             tracing_subscriber::EnvFilter::try_from_default_env()
