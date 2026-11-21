@@ -5,7 +5,8 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect } from "react";
-import { MapContainer, Marker, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
+import { MapContainer, Marker, Polyline, Tooltip, useMap } from "react-leaflet";
+import MapTiles from "./MapTiles";
 import type { CrewIncident } from "../lib/crew";
 import type { CrewRoute } from "../lib/useRoute";
 
@@ -50,10 +51,7 @@ export default function CrewMap({ incident, route }: { incident: CrewIncident; r
       className="h-full w-full"
       attributionControl
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+      <MapTiles />
       <Polyline positions={route.toHospital.path} pathOptions={{ color: "#0284c7", weight: 5, opacity: 0.8, dashArray: dashed }} />
       <Polyline positions={route.toScene.path} pathOptions={{ color: "#dc2626", weight: 6, opacity: 0.9, dashArray: dashed }} />
       <Marker position={[ambulance.lat, ambulance.lng]} icon={icons.ambulance}>
