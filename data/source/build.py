@@ -16,7 +16,7 @@ def mmss(s): return f"{s//60:02d}:{s%60:02d}"
 # ---- guide
 guide = {"_note": NOTE.replace("written by AI", "classification guide written by AI in our own words"),
          "urgency_levels": URGENCY_LEVELS, "rules": RULES, "categories": CATEGORIES, "sources": SOURCES}
-json.dump(guide, open(OUT + "classification_guide.json", "w"), indent=2, ensure_ascii=False)
+json.dump(guide, open(OUT + "classification_guide.json", "w", encoding="utf-8"), indent=2, ensure_ascii=False)
 
 md = ["# Emergency call classification guide", "",
       f"> {guide['_note']} Structure inspired by Dansk Indeks (symptom group -> criteria -> A-E) and RETTS colour levels; all text is our own.", "",
@@ -33,7 +33,7 @@ for c in CATEGORIES:
     md += ["", f"**Ambulance:** {c['ambulance']}", "", "**Supplies for the crew:** " + ", ".join(c["supplies"]), "",
            "**Operator instructions to caller:** " + "; ".join(c["operator_instructions"]), ""]
 md += ["## Sources", ""] + [f"- {s['name']}" + (f" ({s['url']})" if s["url"] else "") + f": {s['use']}" for s in SOURCES]
-open(OUT + "classification_guide.md", "w").write("\n".join(md) + "\n")
+open(OUT + "classification_guide.md", "w", encoding="utf-8").write("\n".join(md) + "\n")
 
 # ---- calls
 cat_ids = {c["id"] for c in CATEGORIES}
@@ -90,13 +90,13 @@ for call in CALLS:
            "incident_id": call.get("incident_id", cid), "language": call.get("language", "en"),
            "location": {"address": loc["address"], "lat": loc["lat"], "lng": loc["lng"]} if loc else None,
            "tricky_aspects": call["tricky"], "duration_s": turns[-1]["t"], "transcript": turns, "gold_label": g}
-    json.dump(rec, open(f"{OUT}calls/{cid}.json", "w"), indent=2, ensure_ascii=False)
+    json.dump(rec, open(f"{OUT}calls/{cid}.json", "w", encoding="utf-8"), indent=2, ensure_ascii=False)
     txt = [f"# {NOTE}", f"# {cid}: {call['title']}", ""] + [f"[{t['time']}] {t['speaker'].upper()}: {t['text']}" for t in turns]
-    open(f"{OUT}calls/{cid}.txt", "w").write("\n".join(txt) + "\n")
+    open(f"{OUT}calls/{cid}.txt", "w", encoding="utf-8").write("\n".join(txt) + "\n")
     all_jsonl.append(json.dumps(rec, ensure_ascii=False))
     index.append((cid, call["title"], g["category"], g["urgency"], g["ambulance"], rec["incident_id"]))
 
-open(OUT + "calls/all_calls.jsonl", "w").write("\n".join(all_jsonl) + "\n")
+open(OUT + "calls/all_calls.jsonl", "w", encoding="utf-8").write("\n".join(all_jsonl) + "\n")
 
 # ---- ambulance crew page (frontend/app/crew): one entry per dispatched incident.
 # Written into the frontend and committed, so the Docker build (context ./frontend) can bundle it.
